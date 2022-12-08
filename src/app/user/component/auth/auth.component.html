@@ -1,0 +1,38 @@
+
+<div [@formState]="animationChange" style="width: 100px; height: 100px; background: black" ></div>
+
+<form   [formGroup]="formGroup" (ngSubmit)="authenticationSubmitting()">
+
+
+  <ion-list    class="ion-margin ion-padding" style="background: rgba(0,0,0,.75); border-radius: 5px">
+    <ion-list-header>
+      <ion-title color="light" style="cursor: default" class="ion-text-uppercase">{{authTitle}}</ion-title>
+      <ion-button color="light" (click)="showAuthButton()" fill="clear">
+        <ion-icon slot="icon-only" [name]="showAuth ? 'close-outline' : 'lock-closed-outline'"></ion-icon>
+      </ion-button>
+    </ion-list-header>
+
+    <div>
+      <ion-item class="ion-margin-top" style="--background: transparent"
+                *ngFor="let form of formGroup.controls | keyvalue" fill="outline" >
+        <ion-label color="danger" position="floating" class="ion-text-capitalize" [innerText]="form.key"></ion-label>
+        <ion-input color="light"  [type]="form.key === 'password' || form.key === 'passwordConfirm'? 'password': 'text'"
+                   [formControlName]="form.key" type="text" [clearInput]="true"></ion-input>
+      </ion-item>
+
+      <ion-item style="--background: transparent" class="ion-margin-top" lines="none">
+        <ion-card-subtitle *ngFor="let ary of ['Login', 'Register', 'Rest']">
+              <span *ngIf="fragment && fragment !== ary" routerLink="/home" [fragment]="ary"
+                    style="cursor:pointer;margin-left: 10px;   border: 1px solid; border-radius: 5px; padding: 5px" [innerText]="ary"></span>
+        </ion-card-subtitle>
+        <ion-button [disabled]="formGroup.invalid" type="submit" slot="end" color="danger" size="medium">
+          <ion-spinner *ngIf="formDisable" name="circles"></ion-spinner> &nbsp; <span
+          *ngIf="!formDisable">{{fragment}}</span>
+        </ion-button>
+      </ion-item>
+    </div>
+  </ion-list>
+
+</form>
+
+

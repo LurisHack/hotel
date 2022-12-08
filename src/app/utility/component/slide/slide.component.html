@@ -1,0 +1,14 @@
+<swiper   effect="fade"  [loop]="true"  (swiper)="setSwiperInstance($event)">
+  <ng-template swiperSlide *ngFor="let img of  images">
+    <ion-img  [src]="img.url" style="object-fit: cover; width: 100vw; height: 100vh"></ion-img>
+  </ng-template>
+</swiper>
+
+
+
+
+
+
+
+
+
