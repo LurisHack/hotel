@@ -8,11 +8,13 @@ import {AppRoutingModule} from "./app-routing.module";
 import {StoreModule} from "@ngrx/store";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {reducers} from "./app.reducer";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment.prod";
 
 @NgModule({
 declarations: [AppComponent],
   imports: [IonicModule.forRoot(), BrowserModule, UserHomeComponent,
-    AppRoutingModule, StoreModule.forRoot(reducers),
+    AppRoutingModule, StoreModule.forRoot(reducers), AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule],
   bootstrap: [AppComponent],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}]
