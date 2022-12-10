@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Store} from "@ngrx/store";
 import {ACTIVATED_ROUTE} from "./multi/store/activatedRoute/activatedRoute.action";
+import {AuthService} from "./user/component/auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,6 @@ export class AppComponent {
     activatedRoute.fragment.subscribe((s: any) => {
       store.dispatch({type: ACTIVATED_ROUTE, payload: s})
     })
-
-
 
   }
 

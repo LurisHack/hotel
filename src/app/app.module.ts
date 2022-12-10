@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
-import {UserHomeComponent} from "./user/component/user-home/user-home.component";
+import {WelcomeComponent} from "./user/component/welcome/welcome.component";
 import {IonicModule, IonicRouteStrategy} from "@ionic/angular";
 import {BrowserModule} from "@angular/platform-browser";
 import {RouteReuseStrategy} from "@angular/router";
@@ -13,8 +13,13 @@ import {environment} from "../environments/environment.prod";
 
 @NgModule({
 declarations: [AppComponent],
-  imports: [IonicModule.forRoot(), BrowserModule, UserHomeComponent,
-    AppRoutingModule, StoreModule.forRoot(reducers), AngularFireModule.initializeApp(environment.firebase),
+  imports: [
+    IonicModule.forRoot(),
+    BrowserModule,
+    WelcomeComponent,
+    AppRoutingModule,
+    StoreModule.forRoot(reducers),
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule],
   bootstrap: [AppComponent],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}]

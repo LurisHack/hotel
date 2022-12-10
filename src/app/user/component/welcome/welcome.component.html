@@ -1,0 +1,40 @@
+<ion-content style="position: relative; width: 100vw; height: 100vh" scroll-y="false">
+
+  <app-slide [images]="images" (slideDidChange)="slideDidChange($event)"></app-slide>
+
+  <ion-grid *ngIf="authService.isLoggedIn$ | async"
+            style="position: absolute;   left: 0; right: 0; top: 0; bottom: 0; background: transparent; z-index: 15">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="4" offset-md="8" size-lg="4" offset-lg="8" size-xl="4" offset-xl="8">
+        <ion-buttons style="background: rgba(0,0,0,0.7); color: yellowgreen">
+          <ion-button>Home</ion-button>
+          <ion-button>Profile</ion-button>
+          <ion-button routerLink="/admin-home">Admin</ion-button>
+          <ion-button (click)="logout()">Logout</ion-button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="authService.isLoggedOut$ | async"
+            style="position: absolute;   left: 0; right: 0; top: 0; bottom: 0; background: transparent; z-index: 15">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="4" offset-md="8" size-lg="4" offset-lg="8" size-xl="4" offset-xl="8">
+        <app-auth></app-auth>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="homeText" style="position: absolute;   left: 0; bottom: 15%; background: transparent; z-index: 20">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="8" size-xl="8">
+        <ion-text [innerText]="homeText"
+                  style="text-shadow: 0 0 3px #FF0000, 0 0 5px #000009; color: white;
+                   font-size: 30px; font-weight: bold; font-family: Marion,fantasy">
+
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

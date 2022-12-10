@@ -5,6 +5,9 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {Store} from "@ngrx/store";
+import {AuthService} from "./auth.service";
+import {ToastService} from "../../../utility/service/toast.service";
+import {Subscription} from "rxjs";
 
 class AuthForm {
   forgot = {
@@ -31,19 +34,7 @@ class AuthForm {
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
-  animations: [
-    trigger('formState' ,
-      [
-      state('normal', style({
-        background: 'blue'
-      })),
-      state('change', style({
-        background: 'red',
-        transform: 'translateX(100px)'
-      })),
-      transition('normal => change', animate(500))
-    ])
-  ]
+  providers: [ToastService]
 })
 
 export class AuthComponent implements OnInit {
@@ -60,7 +51,11 @@ export class AuthComponent implements OnInit {
   animationChange = 'normal'
 
 
-  constructor(private store: Store<{ activatedRoute: { activatedRoute: string } }>) {
+  subscription: any;
+
+
+  constructor(private store: Store<{ activatedRoute: { activatedRoute: string } }>,
+              public authService: AuthService, private toastService: ToastService) {
 
     setTimeout(() => {
       this.animationChange = 'change'
@@ -69,17 +64,13 @@ export class AuthComponent implements OnInit {
 
   }
 
-  // toastHelper = (message: string, position: 'top' | 'bottom' | 'middle', cancelBtnText: string, hasBtn?: boolean) => {
-  //   this.toastService.toastStart(message, position, cancelBtnText, hasBtn).then()
-  // };
-
 
   ngOnInit(): void {
     let formObj: any;
     const authForm = new AuthForm();
 
 
-    this.store.select('activatedRoute')
+   this.subscription = this.store.select('activatedRoute')
       .subscribe(fragment => {
         console.log(fragment)
 
@@ -115,66 +106,46 @@ export class AuthComponent implements OnInit {
     //
     //   await this.toastService.toastEnd().then()
     //
-    //   this.formDisable = true;
-    //   const formValue = this.formGroup.value;
-    //   const email = formValue.email;
-    //   const password = formValue.password;
-    //   const passwordConfirm = formValue.passwordConfirm;
-    //   let resultMessage = null;
-    //   let errorMessage = null
+      this.formDisable = true;
+      const formValue = this.formGroup.value;
 
-    //   const submitToServer = () => {
-    //     switch (this.fragment) {
-    //       case 'Login':
-    //         errorMessage = 'Please email verify'
-    //         return this.afa.signInWithEmailAndPassword(email, password)
-    //       case 'Register':
-    //         if (password !== passwordConfirm) {
-    //           console.log('Password does not match!');
-    //           return;
-    //         }
-    //         resultMessage = 'Successfully registered. Please verify  check in spam of your email.'
-    //         return this.afa.createUserWithEmailAndPassword(email, password)
-    //       case 'Rest':
-    //         resultMessage = 'Successfully password rest link sent. Please check in spam of your email.'
-    //         return this.afa.sendPasswordResetEmail(email)
-    //
-    //     }
-    //   }
-    //
-    //   submitToServer()
-    //     .then(result => {
-    //       switch (this.fragment) {
-    //         case 'Login':
-    //           if (!result.user.emailVerified) {
-    //             this.afa.signOut().then(t => {
-    //               this.toastHelper(errorMessage, 'bottom', 'Close', true)
-    //             });
-    //             return;
-    //           }
-    //           break;
-    //
-    //         case 'Register':
-    //           result.user.sendEmailVerification().then(r => {
-    //             this.toastHelper(resultMessage, 'bottom', 'Close', true)
-    //           }).catch(error => {
-    //             this.toastHelper(error.message.replace('Firebase:', ''), 'bottom', 'Close', true)
-    //           })
-    //             .finally(() => this.formDisable = false);
-    //           break;
-    //
-    //         case 'Rest':
-    //           this.toastHelper(resultMessage, 'bottom', 'Close', true)
-    //           break;
-    //       }
-    //     })
-    //     .catch(error => {
-    //       this.toastHelper(error.message.replace('Firebase:', ''), 'bottom', 'Close', true)
-    //     })
-    //     .finally(() => this.formDisable = false);
-    //
-    //
-  }
+
+
+      this.authService.submitToServer(this.fragment, formValue)
+        .then((result: any) => {
+          switch (this.fragment) {
+            case 'Login':
+              if (!result.user.emailVerified) {
+                this.authService.signOut()
+                  .finally(() => {
+                    this.toastService.toast({message: 'Please email verify!', position: 'bottom'})
+                  });
+                return;
+              }
+
+              this.authService.isLoggedIn$.subscribe(authResult => console.log(authResult))
+              break;
+
+            case 'Register':
+              result.user.sendEmailVerification().then((r: string) => {
+                this.toastService.toast({message: 'Successfully registered. Please verify  check in spam of your email.', position: 'bottom'})
+              }).catch((error: any) => {
+                this.toastService.toast({message: error.message.replace('Firebase:', ''), position: 'bottom'})
+              }).finally(() => this.formDisable = false);
+              break;
+
+            case 'Rest':
+              this.toastService.toast({message: 'Successfully password rest link sent. Please check in spam of your email.', position: 'bottom'})
+               break;
+          }
+        })
+        .catch(error => {
+          this.toastService.toast({message: error.message.replace('Firebase:', ''),
+            position: 'bottom'})
+         })
+        .finally(() => this.formDisable = false);
+
+   }
 
 
   showAuthButton() {
@@ -205,6 +176,11 @@ export class AuthComponent implements OnInit {
       // this.authHeight = '12vh'
     }
 
+  }
+
+  ionViewDidLeave(){
+    this.subscription.unsubscribe()
+    console.log('component leaved')
   }
 
 }

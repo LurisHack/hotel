@@ -1,62 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>adminHome</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-split-pane when="md" contentId="main">
+  <ion-menu contentId="main">
 
-<!--<ion-split-pane contentId="main-content">-->
-<!--  <ion-menu contentId="main-content" type="overlay">-->
-<!--    <ion-content>-->
-<!--      <ion-list id="inbox-list">-->
-<!--        <ion-list-header>Golden 72</ion-list-header>-->
-<!--        <ion-note>Inn</ion-note>-->
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Golden 72</ion-title>
+        <ion-card-subtitle>Inn</ion-card-subtitle>
+      </ion-toolbar>
+    </ion-header>
 
-<!--        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">-->
-<!--          <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">-->
-<!--            <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>-->
-<!--            <ion-label>{{ p.title }}</ion-label>-->
-<!--          </ion-item>-->
-<!--        </ion-menu-toggle>-->
-<!--      </ion-list>-->
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+          <ion-item routerDirection="root" [routerLink]="'/admin-home/'+p.title"   lines="none" detail="false" routerLinkActive="selected">
+            <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
 
-<!--      &lt;!&ndash;        <ion-list id="labels-list">&ndash;&gt;-->
-<!--      &lt;!&ndash;          <ion-list-header>Labels</ion-list-header>&ndash;&gt;-->
+              <ion-list id="labels-list">
+                <ion-list-header>Additional Features</ion-list-header>
 
-<!--      &lt;!&ndash;          <ion-item *ngFor="let label of labels" lines="none">&ndash;&gt;-->
-<!--      &lt;!&ndash;            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>&ndash;&gt;-->
-<!--      &lt;!&ndash;            <ion-label>{{ label }}</ion-label>&ndash;&gt;-->
-<!--      &lt;!&ndash;          </ion-item>&ndash;&gt;-->
-<!--      &lt;!&ndash;        </ion-list>&ndash;&gt;-->
-<!--    </ion-content>-->
-<!--  </ion-menu>-->
-<!--&lt;!&ndash;  <ion-router-outlet id="main-content"></ion-router-outlet>&ndash;&gt;-->
-<!--</ion-split-pane>-->
+                <ion-menu-toggle auto-hide="false" *ngFor="let additionalFeature of additionalFeatures">
+                <ion-item routerDirection="root" [routerLink]="'/admin-home/'+additionalFeature.title"  lines="none">
+                  <ion-icon slot="start" [ios]="additionalFeature.icon + '-outline'" [md]="additionalFeature.icon + '-sharp'"></ion-icon>
+                  <ion-label>{{ additionalFeature.title }}</ion-label>
+                </ion-item>
+
+                </ion-menu-toggle>
+
+                <ion-menu-toggle auto-hide="false">
+                <ion-item routerDirection="root" routerLink="" (click)="signOut()" lines="none">
+                    <ion-icon slot="start" [ios]="'log-out-outline'" [md]="'log-out-sharp'"></ion-icon>
+                    <ion-label>Logout</ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+
+              </ion-list>
+    </ion-content>
+  </ion-menu>
 
 
-<!--<ion-router-outlet id="main-content"></ion-router-outlet>-->
+  <div class="ion-page" id="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Main View</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-router-outlet></ion-router-outlet>
+    </ion-content>
+  </div>
 
-<!--<ion-content id="main-content">-->
-<!--</ion-content>-->
+</ion-split-pane>
 
-
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">This is the menu content.</ion-content>
-</ion-menu>
-<div class="ion-page" id="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    Tap the button in the toolbar to open the menu.
-  </ion-content>
-</div>

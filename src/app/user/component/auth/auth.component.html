@@ -1,10 +1,7 @@
-
-<div [@formState]="animationChange" style="width: 100px; height: 100px; background: black" ></div>
-
-<form   [formGroup]="formGroup" (ngSubmit)="authenticationSubmitting()">
-
+<form  [formGroup]="formGroup" (ngSubmit)="authenticationSubmitting()">
 
   <ion-list    class="ion-margin ion-padding" style="background: rgba(0,0,0,.75); border-radius: 5px">
+
     <ion-list-header>
       <ion-title color="light" style="cursor: default" class="ion-text-uppercase">{{authTitle}}</ion-title>
       <ion-button color="light" (click)="showAuthButton()" fill="clear">
@@ -22,7 +19,7 @@
 
       <ion-item style="--background: transparent" class="ion-margin-top" lines="none">
         <ion-card-subtitle *ngFor="let ary of ['Login', 'Register', 'Rest']">
-              <span *ngIf="fragment && fragment !== ary" routerLink="/home" [fragment]="ary"
+              <span *ngIf="fragment && fragment !== ary" routerLink="/welcome" [fragment]="ary"
                     style="cursor:pointer;margin-left: 10px;   border: 1px solid; border-radius: 5px; padding: 5px" [innerText]="ary"></span>
         </ion-card-subtitle>
         <ion-button [disabled]="formGroup.invalid" type="submit" slot="end" color="danger" size="medium">

@@ -4,17 +4,19 @@ import {IonicModule} from "@ionic/angular";
 import {AuthComponent} from "../auth/auth.component";
 import {Store} from "@ngrx/store";
 import {CommonModule} from "@angular/common";
+import {AuthService} from "../auth/auth.service";
+import {RouterModule} from "@angular/router";
 
 @Component({
   standalone: true,
-  imports: [SlideComponent, IonicModule, AuthComponent, CommonModule],
-  selector: 'app-user-home',
-  templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.scss'],
+  imports: [SlideComponent, IonicModule, AuthComponent, CommonModule, RouterModule],
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.scss'],
 })
 
 
-export class UserHomeComponent {
+export class WelcomeComponent {
 
   images =  [
     {name: 'Welcome from Golden72 inn', url:'assets/images/hotel/hotel1.jpg'},
@@ -25,9 +27,8 @@ export class UserHomeComponent {
 
    homeText = ''
 
-  constructor(private store: Store<{activatedRoute: {activatedRoute: string}}>) {
-    console.log('user-home component work')
-
+  constructor(private store: Store<{activatedRoute: {activatedRoute: string}}>,
+              public authService: AuthService) {
     store.select('activatedRoute').subscribe(s =>  console.log(s))
   }
 
@@ -51,5 +52,9 @@ export class UserHomeComponent {
     }
 
     },   10000 / (text1.length * 2 ))
+  }
+
+ async logout() {
+     await this.authService.signOut()
   }
 }
