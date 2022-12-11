@@ -3,13 +3,32 @@
   <app-slide [images]="images" (slideDidChange)="slideDidChange($event)"></app-slide>
 
   <ion-grid *ngIf="authService.isLoggedIn$ | async"
-            style="position: absolute;   left: 0; right: 0; top: 0; bottom: 0; background: transparent; z-index: 15">
+            style="position: absolute;   left: 0; right: 0; top: 0; bottom: 0; background: transparent; z-index: 15; text-align: center">
     <ion-row>
-      <ion-col size-xs="12" size-sm="12" size-md="4" offset-md="8" size-lg="4" offset-lg="8" size-xl="4" offset-xl="8">
+      <ion-col size-xs="5" offset-xs="7" size-sm="4" size-md="3" size-lg="2" offset-lg="4">
         <ion-buttons style="background: rgba(0,0,0,0.7); color: yellowgreen">
+          <ion-icon style="margin-left: 5px;" size="small" name="home"></ion-icon>
           <ion-button>Home</ion-button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col size-xs="5" offset-xs="7" size-sm="4" size-md="3" size-lg="2">
+        <ion-buttons style="background: rgba(0,0,0,0.7); color: yellowgreen">
+          <ion-icon style="margin-left: 5px;" size="small" name="person"></ion-icon>
           <ion-button>Profile</ion-button>
-          <ion-button routerLink="/admin-home">Admins</ion-button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col size-xs="5" offset-xs="7" size-sm="4" size-md="3" size-lg="2">
+        <ion-buttons style="background: rgba(0,0,0,0.7); color: yellowgreen">
+          <ion-icon style="margin-left: 5px;" size="small" name="people"></ion-icon>
+          <ion-button routerLink="/admin-home">
+            Admin
+          </ion-button>
+        </ion-buttons>
+      </ion-col>
+<!--      <ion-col size-xs="4" offset-xs="8" size-sm="4" offset-sm="8" size-md="3" offset-md="8" size-lg="4" offset-lg="8" size-xl="4" offset-xl="8">-->
+      <ion-col size-xs="5" offset-xs="7" size-sm="4" size-md="3" size-lg="2">
+        <ion-buttons style="background: rgba(0,0,0,0.7); color: yellowgreen">
+          <ion-icon style="margin-left: 5px;" size="small" name="log-out"></ion-icon>
           <ion-button (click)="logout()">Logout</ion-button>
         </ion-buttons>
       </ion-col>
