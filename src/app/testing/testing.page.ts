@@ -12,15 +12,6 @@ export class TestingPage implements OnInit {
   constructor(private toastService: ToastService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.toastService.toast({header: 'Hello',
-        message: 'Welcome',
-      duration: 2000,
-      position: "bottom",
-      animated: true,
-      color: 'secondary',
-      icon: 'home',})
-    },2000)
   }
 
 }

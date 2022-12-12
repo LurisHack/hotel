@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {AuthService} from "../../user/component/auth/auth.service";
 import {RouterService} from "../../utility/service/router.service";
 import {ToastService} from "../../utility/service/toast.service";
@@ -22,6 +22,8 @@ export class AdminHomePage{
 
   ];
 
+  @Output() addData = new EventEmitter<any>()
+
   public additionalFeatures = [
     {title: 'USERS', icon: 'person'},
     {title:'PERMISSIONS', icon: 'shield-checkmark'},
@@ -42,5 +44,9 @@ export class AdminHomePage{
           duration: 2000
         })
       })
+  }
+
+  add() {
+    alert('hello')
   }
 }
