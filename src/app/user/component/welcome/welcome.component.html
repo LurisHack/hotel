@@ -5,31 +5,31 @@
   <ion-grid *ngIf="authService.isLoggedIn$ | async"
             style="position: absolute;   left: 0; right: 0; top: 0; bottom: 0; background: transparent; z-index: 15; text-align: center">
     <ion-row>
-      <ion-col size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="2" size-md="2" offset-md="4" size-lg="2" offset-lg="4" >
+      <ion-col style="cursor: pointer" size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="2" size-md="2" offset-md="4" size-lg="2" offset-lg="4" >
         <ion-buttons style="background: rgba(255,255,255,0.5); color: black">
           <ion-icon style="margin-left: 5px;" size="small" name="home"></ion-icon>
           <ion-button>Home</ion-button>
         </ion-buttons>
       </ion-col>
-      <ion-col size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="0" size-md="2" size-lg="2">
+      <ion-col style="cursor: pointer" size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="0" size-md="2" size-lg="2">
         <ion-buttons style="background: rgba(255,255,255,0.5); color: black">
           <ion-icon style="margin-left: 5px;" size="small" name="person-circle"></ion-icon>
           <ion-button>Profile</ion-button>
         </ion-buttons>
       </ion-col>
-      <ion-col size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="0" size-md="2" size-lg="2">
+      <ion-col style="cursor: pointer" routerLink="/admin-home" size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="0" size-md="2" size-lg="2">
         <ion-buttons style="background: rgba(255,255,255,0.5); color: black">
           <ion-icon style="margin-left: 5px;" size="small" name="happy"></ion-icon>
-          <ion-button routerLink="/admin-home">
+          <ion-button>
             Admin
           </ion-button>
         </ion-buttons>
       </ion-col>
 <!--      <ion-col size-xs="4" offset-xs="8" size-sm="4" offset-sm="8" size-md="3" offset-md="8" size-lg="4" offset-lg="8" size-xl="4" offset-xl="8">-->
-      <ion-col size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="0" size-md="2" size-lg="2">
+      <ion-col (click)="logout()" style="cursor: pointer" size-xs="5" offset-xs="7" size-sm="2.5" offset-sm="0" size-md="2" size-lg="2">
         <ion-buttons style="background: rgba(255,255,255,0.5); color: black">
           <ion-icon style="margin-left: 5px;" size="small" name="log-out"></ion-icon>
-          <ion-button (click)="logout()">Logout</ion-button>
+          <ion-button>Logout</ion-button>
         </ion-buttons>
       </ion-col>
     </ion-row>
