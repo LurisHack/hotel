@@ -10,6 +10,8 @@ import { AdminHomePage } from './admin-home.page';
 import {POSComponent} from "../component/pos/pos.component";
 import {TestingComponent} from "../../testingComponent/testing/testing.component";
 import {STOREComponent} from "../component/store/store.component";
+import {PosUIComponent} from "../subComponent/pos-ui/pos-ui.component";
+
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import {STOREComponent} from "../component/store/store.component";
     IonicModule,
     AdminHomePageRoutingModule,
   ],
-  declarations: [AdminHomePage, POSComponent, STOREComponent, TestingComponent]
+  declarations: [AdminHomePage, POSComponent, STOREComponent, PosUIComponent]
 })
 export class AdminHomePageModule {}
