@@ -19,10 +19,8 @@ export class AdminHomePage{
     {title: 'INVENTORY', icon: 'reader'},
     {title: 'LOG',  icon: 'library'},
     {title: 'SETTING',  icon: 'settings'},
-
   ];
 
-  @Output() addData = new EventEmitter<any>()
 
   public additionalFeatures = [
     {title: 'USERS', icon: 'person'},
