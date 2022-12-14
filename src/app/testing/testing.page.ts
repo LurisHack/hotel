@@ -11,12 +11,10 @@ import {ADD_VALUE} from "./store/testing.action";
 })
 export class TestingPage implements OnInit {
 
-  constructor(private toastService: ToastService,
-              public store: Store<{testingReducer: {testingReducer: number[]} ,
+  constructor(public store: Store<{testingValue: {testingValue: number[]} ,
               activatedRoute: {activatedRoute: string}}>) { }
 
   ngOnInit() {
-
 
     setTimeout(() => {
       this.store.dispatch({payload:[4], type: ADD_VALUE})
@@ -29,10 +27,8 @@ export class TestingPage implements OnInit {
 
     },20000)
 
-
-
     this.store.subscribe(s => console.log(s))
-    this.store.select('testingReducer').subscribe(s => console.log(s))
+    this.store.select('testingValue').subscribe(s => console.log(s))
 
   }
 

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {AdminComponentModule} from "../../component/admin-component.module";
 
 @Component({
-  selector: 'app-pos-ui',
+  standalone: true,
+  imports: [AdminComponentModule],
+   selector: 'app-pos-ui',
   templateUrl: './pos-ui.component.html',
   styleUrls: ['./pos-ui.component.scss'],
 })

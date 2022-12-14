@@ -11,8 +11,7 @@ export const testingReducer = (state = initialValue, action: TestingAction.Testi
   switch (action.type) {
     case TestingAction.ADD_VALUE:
       console.log(action)
-      console.log({testingValue: [...state.testingValue, ...action.payload]})
-      return {testingValue: [...state.testingValue, ...action.payload]}
+       return {testingValue: [...state.testingValue, ...action.payload]}
     default:
       return state
 

@@ -2,6 +2,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {AuthService} from "../../user/component/auth/auth.service";
 import {RouterService} from "../../utility/service/router.service";
 import {ToastService} from "../../utility/service/toast.service";
+import {IonRouterOutlet} from "@ionic/angular";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-admin-welcome',
@@ -27,7 +30,9 @@ export class AdminHomePage{
     {title:'PERMISSIONS', icon: 'shield-checkmark'},
      ]
 
-  constructor(private authService: AuthService, private routeService: RouterService, private toastService: ToastService) {}
+  constructor(private authService: AuthService,
+              private routeService: RouterService,
+              private toastService: ToastService) {}
 
   signOut() {
     this.authService.signOut()
@@ -44,7 +49,8 @@ export class AdminHomePage{
       })
   }
 
-  add() {
-    alert('hello')
+
+  ionSplitPaneVisible($event: any) {
+    console.log($event)
   }
 }
