@@ -3,7 +3,7 @@
   <ion-grid>
     <ion-row>
 
-      <ion-col size="auto">
+      <ion-col size-md="0" size-xs="1">
         <ion-buttons>
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
@@ -13,7 +13,11 @@
         <ion-text slot="start"><strong>ROOMS</strong></ion-text>
       </ion-col>
 
-      <ion-col size="auto">
+      <ion-col *ngIf="scrollIndex" size-xs="12" size-sm="6">
+         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>
+      </ion-col>
+
+      <ion-col size="auto" push-sm="5">
         <ion-segment style="height: 35px" scrollable="true"  value="CheckIn">
           <ion-segment-button value="CheckIn">
             <ion-label>CheckIn</ion-label>
@@ -26,10 +30,6 @@
           </ion-segment-button>
         </ion-segment>
       </ion-col>
-
-      <ion-col *ngIf="scrollIndex" size="4">
-         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>
-        </ion-col>
 
     </ion-row>
   </ion-grid>
