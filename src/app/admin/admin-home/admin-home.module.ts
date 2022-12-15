@@ -10,6 +10,8 @@ import { AdminHomePage } from './admin-home.page';
 import {POSComponent} from "../component/pos/pos.component";
 import {STOREComponent} from "../component/store/store.component";
 import {ROOMComponent} from "../component/room/room.component";
+import {INVENTORYComponent} from "../component/inventory/inventory.component";
+import {InventoryUIComponent} from "../subComponent/inventory-ui/inventory-ui.component";
 
 @NgModule({
   imports: [
@@ -17,7 +19,7 @@ import {ROOMComponent} from "../component/room/room.component";
     FormsModule,
     IonicModule,
     AdminHomePageRoutingModule,
-    ROOMComponent,POSComponent, STOREComponent,
+    ROOMComponent,POSComponent, STOREComponent, INVENTORYComponent,
   ],
   declarations: [AdminHomePage,
     ]
