@@ -30,6 +30,9 @@ export class AdminHomePage{
     {title:'PERMISSIONS', icon: 'shield-checkmark'},
      ]
 
+
+  showSplit = false;
+
   constructor(private authService: AuthService,
               private routeService: RouterService,
               private toastService: ToastService) {}
@@ -51,6 +54,7 @@ export class AdminHomePage{
 
 
   ionSplitPaneVisible($event: any) {
-    console.log($event)
+    console.log('split pane event ', $event)
+    this.showSplit = !$event.detail.visible
   }
 }

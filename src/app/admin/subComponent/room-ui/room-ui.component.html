@@ -13,6 +13,7 @@
     <ion-row class="ion-no-margin" style="border-bottom: 1px solid lightgray">
       <ion-col  style="height: 30vh;border-right: 1px solid lightgray">
 
+        <div style="border-bottom: 1px solid lightgray; padding: 5px">
         <ion-item color="light"  lines="none" style="--min-height: 25px;"  class="ion-no-margin ion-no-padding">
           <ion-icon size="small"  name="timer-outline"></ion-icon>
           <ion-badge  color="light">
@@ -20,13 +21,13 @@
           </ion-badge>
         </ion-item>
 
-        <ion-item color="light"  style="--min-height: 25px;" class="ion-no-margin ion-no-padding">
+        <ion-item lines="none" color="light"  style="--min-height: 25px;" class="ion-no-margin ion-no-padding">
           <ion-icon size="small"   name="log-in-outline"></ion-icon>
           <ion-badge   color="light">
             12/3/2004 &nbsp; 10:30 PM
           </ion-badge>
         </ion-item>
-
+        </div>
          <ion-toolbar color="light" style="--min-height: 20px">
           <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">FOC ITEMS</small>
         </ion-toolbar>
@@ -45,64 +46,62 @@
       </ion-col>
 
 
-      <ion-col>
+      <ion-col style="height: 30vh">
+
+        <div style="height: 100%">
+
+          <div style="height: 50%; border-bottom: 1px solid lightgray">
+            <ion-toolbar color="light" style="--min-height: 20px">
+              <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Store</small>
+            </ion-toolbar>
+            <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">
+              <ion-item lines="none" style="--min-height: 15px; --background: transparent">
+                <ion-text color="medium"><small>Tiger Beer</small></ion-text></ion-item>
+              <ion-item lines="none"  style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>Soda</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>Vodka</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>Coca cola</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>Sting</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>VeVe</small></ion-text></ion-item>
+            </cdk-virtual-scroll-viewport>
+
+          </div>
+
+          <div style="height: 50%">
+            <ion-toolbar color="light" style="--min-height: 20px">
+              <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Restaurant</small>
+            </ion-toolbar>
+
+            <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">
+              <ion-item lines="none" style="--min-height: 15px; --background: transparent">
+                <ion-text color="medium"><small>ထမင်းေကြာ</small></ion-text></ion-item>
+              <ion-item lines="none"  style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>မုန့်ဟင်းခါး</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>ပဲပလာတာ</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>ငါးကင်</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>ပုဇွန်ကင်</small></ion-text></ion-item>
+              <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
+                <ion-text  color="medium"><small>ဆက်ဖုတ်</small></ion-text></ion-item>
+            </cdk-virtual-scroll-viewport>
+
+          </div>
+
+
+        </div>
 
       </ion-col>
 
     </ion-row>
   </ion-grid>
-  <!--    <ion-row>-->
-  <!--      <ion-col class="fontSize" size="6">-->
-  <!--        <strong>16</strong>-->
-  <!--      </ion-col>-->
-  <!--      <ion-col size="6">-->
-  <!--        <ion-row>-->
-  <!--          <ion-text>MAY</ion-text>-->
-  <!--        </ion-row>-->
-  <!--        <ion-row>-->
-  <!--          <ion-text>2016</ion-text>-->
-  <!--        </ion-row>-->
 
-
-  <!--        <ion-grid>-->
-  <!--          <ion-row>-->
-  <!--            <ion-col>-->
-  <!--              <ion-icon class="ion-margin-end" name="calendar"></ion-icon>-->
-  <!--              <ion-text>Check In</ion-text>-->
-  <!--            </ion-col>-->
-  <!--          </ion-row>-->
-  <!--          <ion-row>-->
-  <!--            <ion-col class="fontSize" size="6">-->
-  <!--              <strong>16</strong>-->
-  <!--            </ion-col>-->
-  <!--            <ion-col>-->
-  <!--              <ion-row>-->
-  <!--                <ion-text>MAY</ion-text>-->
-  <!--              </ion-row>-->
-  <!--              <ion-row>-->
-  <!--                <ion-text>2016</ion-text>-->
-  <!--              </ion-row>-->
-  <!--            </ion-col>-->
-  <!--          </ion-row>-->
-  <!--        </ion-grid>-->
-
-
-  <!--      </ion-col>-->
-
-
-  <!--      <ion-col>-->
-
-  <!--        <ion-list style="height: 10vh">-->
-  <!--          <ion-list-header>-->
-  <!--            <ion-label>Video Games</ion-label>-->
-  <!--          </ion-list-header>-->
-  <!--          <ion-item>-->
-  <!--            <ion-label>Pokémon Yellow</ion-label>-->
-  <!--          </ion-item>-->
-  <!--        </ion-list>-->
-  <!--      </ion-col>-->
-  <!--    </ion-row>-->
-  <ion-grid>
+   <ion-grid>
     <ion-row>
       <ion-col size="6">
         <ion-row style="align-items: center;">
@@ -112,13 +111,15 @@
         </ion-row>
       </ion-col>
       <ion-col>
-        <ion-row style="align-items: center; justify-content: center">
-          <ion-button size="small" class="ion-no-margin" style="--background: red; color: white">
-            <ion-icon slot="start" name="checkmark-outline"></ion-icon>
-            <ion-label>CHECK OUT</ion-label>
+        <ion-row style="align-items: center;  justify-content: right">
+          <ion-button (click)="addItems()" size="small" fill="clear" color="danger" class="ion-no-margin">
+               <ion-icon slot="icon-only"  name="create-outline"></ion-icon>
           </ion-button>
-        </ion-row>
+          <ion-button size="small" fill="clear" color="danger" class="ion-no-margin">
+          <ion-icon  slot="icon-only" name="checkmark"></ion-icon>
+          </ion-button>
+          </ion-row>
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-card>
+ </ion-card>

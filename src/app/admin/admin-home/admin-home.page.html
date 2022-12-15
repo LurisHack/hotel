@@ -3,16 +3,19 @@
 
     <ion-header mode="ios">
       <ion-toolbar>
-         <ion-text color="primary"><div class="ion-text-center">Golden72</div></ion-text>
+        <ion-text color="primary">
+          <div class="ion-text-center">Golden72</div>
+        </ion-text>
       </ion-toolbar>
-     </ion-header>
+    </ion-header>
 
     <ion-content>
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-          <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"   [routerLink]="'/admin-home/'+p.title" lines="none" detail="false"
+          <ion-item routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/'+p.title"
+                    lines="none" detail="false"
                     routerLinkActive="selected">
-            <ion-icon class="ion-margin-start"   [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+            <ion-icon class="ion-margin-start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
             <ion-label style="padding-left: 5px"><small>{{ p.title }}</small></ion-label>
           </ion-item>
         </ion-menu-toggle>
@@ -21,8 +24,9 @@
       <ion-list id="labels-list">
         <ion-list-header>Additional Features</ion-list-header>
 
-        <ion-menu-toggle auto-hide="false"  *ngFor="let additionalFeature of additionalFeatures">
-          <ion-item routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/'+additionalFeature.title" lines="none">
+        <ion-menu-toggle auto-hide="false" *ngFor="let additionalFeature of additionalFeatures">
+          <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
+                    [routerLink]="'/admin-home/'+additionalFeature.title" lines="none">
             <ion-icon class="ion-margin-start" [ios]="additionalFeature.icon + '-outline'"
                       [md]="additionalFeature.icon + '-sharp'"></ion-icon>
             <ion-label style="padding-left: 5px"><small>{{ additionalFeature.title }}</small></ion-label>
@@ -30,8 +34,9 @@
         </ion-menu-toggle>
 
         <ion-menu-toggle auto-hide="false">
-          <ion-item class="ion-no-padding ion-no-margin" routerDirection="root" routerLink="" (click)="signOut()" lines="none">
-            <ion-icon  class="ion-margin-start" [ios]="'log-out-outline'" [md]="'log-out-sharp'"></ion-icon>
+          <ion-item class="ion-no-padding ion-no-margin" routerDirection="root" routerLink="" (click)="signOut()"
+                    lines="none">
+            <ion-icon class="ion-margin-start" [ios]="'log-out-outline'" [md]="'log-out-sharp'"></ion-icon>
             <ion-label style="padding-left: 5px">Logout</ion-label>
           </ion-item>
         </ion-menu-toggle>
@@ -54,8 +59,11 @@
     <!--    </ion-buttons>-->
 
     <ion-content class="ion-padding">
-<ion-title style="text-align: center;">
-  <ion-text style="font-size: 50px">Golden 72</ion-text></ion-title>
+
+      <div *ngIf="showSplit">
+      <ion-title style="text-align: center;">
+        <ion-text style="font-size: 50px">Golden 72</ion-text>
+      </ion-title>
       <ion-grid style="padding-bottom: 10px">
         <ion-row>
           <ion-col size="auto">
@@ -75,14 +83,14 @@
           </ion-col>
           <ion-col size="auto">
             <ion-card mode="ios">
-             <ion-card-title class="ion-padding">Restaurant</ion-card-title>
+              <ion-card-title class="ion-padding">Restaurant</ion-card-title>
             </ion-card>
           </ion-col>
-          <ion-col size="auto" >
-          <ion-card mode="ios">
-            <ion-card-title class="ion-padding">Inventory</ion-card-title>
-          </ion-card>
-        </ion-col>
+          <ion-col size="auto">
+            <ion-card mode="ios">
+              <ion-card-title class="ion-padding">Inventory</ion-card-title>
+            </ion-card>
+          </ion-col>
           <ion-col size="auto">
             <ion-card mode="ios">
               <ion-card-title class="ion-padding">Log</ion-card-title>
@@ -90,38 +98,42 @@
           </ion-col>
           <ion-col size="auto">
             <ion-card mode="ios">
-             <ion-card-title class="ion-padding">Setting</ion-card-title>
+              <ion-card-title class="ion-padding">Setting</ion-card-title>
             </ion-card>
           </ion-col>
 
 
-
         </ion-row>
       </ion-grid>
+      <ion-label>
+        Golden72
+        Additional Features
+      </ion-label>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="auto">
+            <ion-card mode="ios">
+              <ion-card-title class="ion-padding">Users</ion-card-title>
+            </ion-card>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-card mode="ios">
+              <ion-card-title class="ion-padding">Permissions</ion-card-title>
+            </ion-card>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-card mode="ios">
+              <ion-card-title class="ion-padding">Log out</ion-card-title>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      </div>
 
-        <ion-label>
-          Golden72
-          Additional Features</ion-label>
-<ion-grid>
-  <ion-row>
-    <ion-col size="auto">
-      <ion-card mode="ios">
-        <ion-card-title class="ion-padding">Users</ion-card-title>
-      </ion-card>
-    </ion-col>
-    <ion-col size="auto">
-      <ion-card mode="ios">
-        <ion-card-title class="ion-padding">Permissions</ion-card-title>
-      </ion-card>
-    </ion-col>
-    <ion-col size="auto">
-      <ion-card mode="ios">
-        <ion-card-title class="ion-padding">Log out</ion-card-title>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+
       <ion-router-outlet></ion-router-outlet>
+
+
     </ion-content>
   </div>
 
