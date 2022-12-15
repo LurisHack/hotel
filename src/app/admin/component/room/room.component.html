@@ -3,9 +3,9 @@
   <ion-grid>
     <ion-row>
 
-      <ion-col size-md="0" size-xs="1">
-        <ion-buttons>
-          <ion-menu-button></ion-menu-button>
+      <ion-col size="auto" class="ion-no-margin ion-no-padding">
+        <ion-buttons class="ion-no-margin ion-no-padding">
+          <ion-menu-button class="ion-no-margin ion-no-padding"></ion-menu-button>
         </ion-buttons>
       </ion-col>
 
@@ -13,23 +13,23 @@
         <ion-text slot="start"><strong>ROOMS</strong></ion-text>
       </ion-col>
 
-      <ion-col *ngIf="scrollIndex" size-xs="12" size-sm="6" >
-         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>
-      </ion-col>
-
-      <ion-col size="auto" push-md="9">
-        <ion-segment style="height: 35px" scrollable="true"  value="CheckIn">
-          <ion-segment-button value="CheckIn">
+      <ion-col size="auto" class="ion-no-margin ion-no-padding">
+        <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true"  value="CheckIn">
+          <ion-segment-button  class="ion-no-margin ion-no-padding" value="CheckIn">
             <ion-label>CheckIn</ion-label>
           </ion-segment-button>
-          <ion-segment-button value="Available">
+          <ion-segment-button class="ion-no-margin ion-no-padding" value="Available">
             <ion-label>Available</ion-label>
           </ion-segment-button>
-          <ion-segment-button value="All">
+          <ion-segment-button class="ion-no-margin ion-no-padding" value="All">
             <ion-label>All</ion-label>
           </ion-segment-button>
         </ion-segment>
       </ion-col>
+
+      <ion-col *ngIf="scrollIndex" size="4">
+         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>
+        </ion-col>
 
     </ion-row>
   </ion-grid>
@@ -40,7 +40,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let i of [1,2,2,2,3,4,45]" size-sm="6">
+      <ion-col *ngFor="let i of [1,2,2,2,3,4,45]" size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
         <app-room-ui></app-room-ui>
       </ion-col>
     </ion-row>

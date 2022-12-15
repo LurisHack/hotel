@@ -8,83 +8,119 @@
 <!--</ion-header>-->
 
 
-   <ion-card>
+<ion-card   class="ion-no-margin ion-no-padding">
+  <ion-grid class="ion-no-margin ion-no-padding">
+    <ion-row class="ion-no-margin" style="border-bottom: 1px solid lightgray">
+      <ion-col  style="height: 30vh;border-right: 1px solid lightgray">
+
+        <ion-item   lines="none" style="--min-height: 25px;"  class="ion-no-margin ion-no-padding">
+          <ion-icon size="small"  name="timer-outline"></ion-icon>
+          <ion-badge  color="light">
+            3h
+          </ion-badge>
+        </ion-item>
+
+        <ion-item  style="--min-height: 25px;" class="ion-no-margin ion-no-padding">
+          <ion-icon size="small"   name="log-in-outline"></ion-icon>
+          <ion-badge   color="light">
+            12/3/2004 &nbsp; 10:30 PM
+          </ion-badge>
+        </ion-item>
+
+        <small style="display: block; text-align: center; color: grey; margin-top: 3px;">FOC ITEMS</small>
+
+        <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">
+           <ion-item lines="none" style="--min-height: 15px">
+             <small>Soap</small></ion-item>
+          <ion-item lines="none" style="--min-height: 15px"><small>Drinking Water</small></ion-item>
+          <ion-item lines="none" style="--min-height: 15px"><small>ToothPaste</small></ion-item>
+          <ion-item lines="none" style="--min-height: 15px"><small>Shampoo</small></ion-item>
+         </cdk-virtual-scroll-viewport>
+      </ion-col>
+
+      <ion-col>
+        <ion-item class="ion-no-margin ion-no-padding">
+          <ion-icon size="small" slot="start" name="calendar"></ion-icon>
+          <div>
+            <ion-item-divider class="ion-no-margin ion-no-padding">
+              12/3/2004
+            </ion-item-divider>
+            <ion-item-divider class="ion-no-margin ion-no-padding">
+              10:30 PM
+            </ion-item-divider>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--    <ion-row>-->
+  <!--      <ion-col class="fontSize" size="6">-->
+  <!--        <strong>16</strong>-->
+  <!--      </ion-col>-->
+  <!--      <ion-col size="6">-->
+  <!--        <ion-row>-->
+  <!--          <ion-text>MAY</ion-text>-->
+  <!--        </ion-row>-->
+  <!--        <ion-row>-->
+  <!--          <ion-text>2016</ion-text>-->
+  <!--        </ion-row>-->
+
+
+  <!--        <ion-grid>-->
+  <!--          <ion-row>-->
+  <!--            <ion-col>-->
+  <!--              <ion-icon class="ion-margin-end" name="calendar"></ion-icon>-->
+  <!--              <ion-text>Check In</ion-text>-->
+  <!--            </ion-col>-->
+  <!--          </ion-row>-->
+  <!--          <ion-row>-->
+  <!--            <ion-col class="fontSize" size="6">-->
+  <!--              <strong>16</strong>-->
+  <!--            </ion-col>-->
+  <!--            <ion-col>-->
+  <!--              <ion-row>-->
+  <!--                <ion-text>MAY</ion-text>-->
+  <!--              </ion-row>-->
+  <!--              <ion-row>-->
+  <!--                <ion-text>2016</ion-text>-->
+  <!--              </ion-row>-->
+  <!--            </ion-col>-->
+  <!--          </ion-row>-->
+  <!--        </ion-grid>-->
+
+
+  <!--      </ion-col>-->
+
+
+  <!--      <ion-col>-->
+
+  <!--        <ion-list style="height: 10vh">-->
+  <!--          <ion-list-header>-->
+  <!--            <ion-label>Video Games</ion-label>-->
+  <!--          </ion-list-header>-->
+  <!--          <ion-item>-->
+  <!--            <ion-label>Pokémon Yellow</ion-label>-->
+  <!--          </ion-item>-->
+  <!--        </ion-list>-->
+  <!--      </ion-col>-->
+  <!--    </ion-row>-->
   <ion-grid>
-    <ion-row style="border-bottom: 1px solid lightgray">
-      <ion-col style="border-right: 1px solid lightgray">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-icon class="ion-margin-end" name="calendar"></ion-icon>
-            <ion-text>Check In</ion-text>
-          </ion-col>
+    <ion-row>
+      <ion-col size="6">
+        <ion-row style="align-items: center;">
+          <ion-icon style="background: red; padding: 5px; border-radius: 50%"
+                    color="light" name="bed"></ion-icon>
+          <ion-label color="dark" style="margin-left: 5px;">Rooms</ion-label>
         </ion-row>
-        <ion-row>
-          <ion-col class="fontSize" size="6">
-            <strong>16</strong>
-          </ion-col>
-          <ion-col size="6">
-            <ion-row>
-              <ion-text>MAY</ion-text>
-            </ion-row>
-            <ion-row>
-              <ion-text>2016</ion-text>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-col>
+      </ion-col>
       <ion-col>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-icon class="ion-margin-end" name="calendar"></ion-icon>
-              <ion-text>Check In</ion-text>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col class="fontSize" size="6">
-              <strong>16</strong>
-            </ion-col>
-            <ion-col>
-              <ion-row>
-                <ion-text>MAY</ion-text>
-              </ion-row>
-              <ion-row>
-                <ion-text>2016</ion-text>
-              </ion-row>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-row style="align-items: center; justify-content: center">
+          <ion-button size="small" class="ion-no-margin" style="--background: red; color: white">
+            <ion-icon slot="start" name="checkmark-outline"></ion-icon>
+            <ion-label>CHECK OUT</ion-label>
+          </ion-button>
+        </ion-row>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-padding-top">
-      <ion-col>
-        <ion-icon class="ion-margin-end ion-margin-start" name="bed"></ion-icon>
-        <ion-text>Rooms</ion-text>
-      </ion-col>
-      <ion-col>
-        <ion-icon class="ion-margin-end ion-margin-start" name="people"></ion-icon>
-        <ion-text>Travellers</ion-text>
-      </ion-col>
-    </ion-row>
-    <ion-card>
-      <ion-grid class="ion-no-margin ion-no-padding">
-        <ion-row class="ion-no-margin ion-no-padding">
-          <ion-col style="border-right: 1px solid lightgray">
-            <ion-item class="ion-align-items-center" lines="none">
-              <ion-text>Room 1</ion-text>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item lines="none">
-              <ion-select value="1">
-                <ion-select-option value="1">1</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card>
   </ion-grid>
 </ion-card>
