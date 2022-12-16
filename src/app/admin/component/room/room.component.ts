@@ -17,13 +17,10 @@ export class ROOMComponent{
 
   scrollIndex = 0
 
-  showRoomUi = false
 
   constructor(private store: Store<{testingValue: {testingValue: number[]}}>) {
 
-    setTimeout(() => {
-      this.showRoomUi = true
-    }, 5000)
+
 
   }
 
