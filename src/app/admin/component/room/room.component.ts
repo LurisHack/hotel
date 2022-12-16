@@ -3,10 +3,11 @@ import {Store} from "@ngrx/store";
 import {RoomUIComponent} from "../../subComponent/room-ui/room-ui.component";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {AdminComponentModule} from "../admin-component.module";
+import {RoomSkeletonComponent} from "../../skeletonComponent/room-skeleton/room-skeleton.component";
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule, RoomUIComponent, ScrollingModule],
+    imports: [AdminComponentModule, RoomUIComponent, ScrollingModule, RoomSkeletonComponent],
   selector: 'app-room',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss'],
@@ -23,7 +24,7 @@ export class ROOMComponent{
 
     setTimeout(() => {
       this.showRoomUi = true
-    }, 5000)
+    }, 10000)
 
   }
 
