@@ -1,3 +1,15 @@
-<p>
-  user-ui works!
-</p>
+<ion-card *ngFor="let i of [1,2,3,4,5]">
+  <ion-grid >
+    <ion-row>
+      <ion-col style="color: gold;background: blue" size-xs="12" size-sm="6" size-md="4"  >
+        Name
+      </ion-col>
+      <ion-col style="color: gold;background: black" size-xs="12" size-sm="6" size-md="4">
+        Gmail
+      </ion-col>
+      <ion-col style="color: gold;background: blue" size-xs="12" size-md="4" >
+        Role
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

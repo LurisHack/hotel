@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
+import {UserUIComponent} from "../../subComponent/user-ui/user-ui.component";
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule],
+  imports: [AdminComponentModule,UserUIComponent ],
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],

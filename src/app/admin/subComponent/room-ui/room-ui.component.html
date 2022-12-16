@@ -1,12 +1,3 @@
-<!--<ion-header mode="ios">-->
-<!--  <ion-toolbar>-->
-<!--    <ion-menu-button slot="start"></ion-menu-button>-->
-<!--    <ion-title>-->
-<!--      Room-->
-<!--    </ion-title>-->
-<!--  </ion-toolbar>-->
-<!--</ion-header>-->
-
 
 <ion-card color="light"    class="ion-no-margin">
   <ion-grid class="ion-no-margin ion-no-padding">
@@ -47,14 +38,11 @@
 
 
       <ion-col style="height: 30vh">
-
-        <div style="height: 100%">
-
-          <div style="height: 50%; border-bottom: 1px solid lightgray">
-            <ion-toolbar color="light" style="--min-height: 20px">
+        <div style="height: 15vh; border-bottom: 1px solid lightgray">
+            <ion-toolbar color="light" style="--min-height: 10%">
               <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Store</small>
             </ion-toolbar>
-            <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">
+            <cdk-virtual-scroll-viewport style="height: 80%" itemSize="" minBufferPx="" maxBufferPx="">
               <ion-item lines="none" style="--min-height: 15px; --background: transparent">
                 <ion-text color="medium"><small>Tiger Beer</small></ion-text></ion-item>
               <ion-item lines="none"  style="--min-height: 15px;  --background: transparent">
@@ -68,15 +56,14 @@
               <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
                 <ion-text  color="medium"><small>VeVe</small></ion-text></ion-item>
             </cdk-virtual-scroll-viewport>
-
-          </div>
+        </div>
 
           <div style="height: 50%">
-            <ion-toolbar color="light" style="--min-height: 20px">
+            <ion-toolbar color="light" style="--min-height: 10%">
               <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Restaurant</small>
             </ion-toolbar>
 
-            <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">
+            <cdk-virtual-scroll-viewport  style="height: 80%" itemSize="" minBufferPx="900" maxBufferPx="900">
               <ion-item lines="none" style="--min-height: 15px; --background: transparent">
                 <ion-text color="medium"><small>ထမင်းေကြာ</small></ion-text></ion-item>
               <ion-item lines="none"  style="--min-height: 15px;  --background: transparent">
@@ -90,11 +77,7 @@
               <ion-item lines="none"    style="--min-height: 15px;  --background: transparent">
                 <ion-text  color="medium"><small>ဆက်ဖုတ်</small></ion-text></ion-item>
             </cdk-virtual-scroll-viewport>
-
           </div>
-
-
-        </div>
 
       </ion-col>
 
@@ -103,23 +86,28 @@
 
    <ion-grid>
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="4">
         <ion-row style="align-items: center;">
           <ion-icon style="background: red; padding: 5px; border-radius: 50%"
                     color="light" name="bed"></ion-icon>
           <ion-label color="dark" style="margin-left: 5px;">Rooms</ion-label>
         </ion-row>
       </ion-col>
-      <ion-col>
-        <ion-row style="align-items: center;  justify-content: right">
-          <ion-button (click)="addItems()" size="small" fill="clear" color="danger" class="ion-no-margin">
-               <ion-icon slot="icon-only"  name="create-outline"></ion-icon>
+      <ion-col size="auto">
+        <ion-row style="align-items: center;  justify-content: right; display: flex">
+          <ion-button (click)="roomPopup()" size="small" color="light"    class="ion-no-margin">
+               <ion-icon slot="start"  name="create-outline"></ion-icon>
+            <ion-label><small>ADD ITEM</small></ion-label>
           </ion-button>
-          <ion-button size="small" fill="clear" color="danger" class="ion-no-margin">
+          <ion-button size="small"  color="light" class="ion-no-margin" style="margin-left: 5px;">
           <ion-icon  slot="icon-only" name="checkmark"></ion-icon>
+            <ion-label><small class="ion-text-uppercase">CHECK OUT</small></ion-label>
           </ion-button>
           </ion-row>
       </ion-col>
     </ion-row>
   </ion-grid>
- </ion-card>
+
+  <ion-progress-bar color="success" [value]="progress"></ion-progress-bar>
+
+</ion-card>
