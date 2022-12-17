@@ -2,13 +2,13 @@
     <ion-card *ngFor="let i of [1,2,3,4,5]">
       <ion-grid>
         <ion-row>
-          <ion-col  size-xs="4" >
+          <ion-col  size-xs="12"  size-sm="4" size-md="4" >
             Name
           </ion-col>
-          <ion-col size-xs="4">
+          <ion-col size-xs="12" size-sm="4" size-md="4">
             Email
           </ion-col>
-          <ion-col size-xs="4">
+          <ion-col size-xs="12"  size-sm="4" size-md="4">
           Role
           </ion-col>
         </ion-row>
@@ -20,13 +20,22 @@
   <ion-grid >
     <ion-row>
       <ion-col  size-xs="12" size-sm="6" size-md="4" >
-        <ion-skeleton-text  [animated]="true">Name</ion-skeleton-text>
+        <ion-row>
+          <ion-skeleton-text   [animated]="true" style="width: 25%"></ion-skeleton-text>
+          <ion-skeleton-text  [animated]="true" style="width:70%;margin-left: 3% "></ion-skeleton-text>
+        </ion-row>
       </ion-col>
       <ion-col size-xs="12" size-sm="6" size-md="4">
-        <ion-skeleton-text   [animated]="true">Email</ion-skeleton-text>
+        <ion-row>
+        <ion-skeleton-text   [animated]="true" style="width: 25%"></ion-skeleton-text>
+        <ion-skeleton-text  [animated]="true" style="width:70%;margin-left: 3% "></ion-skeleton-text>
+        </ion-row>
       </ion-col>
       <ion-col  size-xs="12" size-md="4" >
-        <ion-skeleton-text  [animated]="true">Role</ion-skeleton-text>
+        <ion-row>
+          <ion-skeleton-text   [animated]="true" style="width: 25%"></ion-skeleton-text>
+          <ion-skeleton-text  [animated]="true" style="width:70%;margin-left: 3% "></ion-skeleton-text>
+          </ion-row>
       </ion-col>
     </ion-row>
   </ion-grid>
