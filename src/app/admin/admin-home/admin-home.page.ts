@@ -32,6 +32,7 @@ export class AdminHomePage{
 
 
   showSplit = false;
+  private to: any;
 
   constructor(private authService: AuthService,
               private routeService: RouterService,
@@ -57,4 +58,5 @@ export class AdminHomePage{
     console.log('split pane event ', $event)
     this.showSplit = !$event.detail.visible
   }
+
 }
