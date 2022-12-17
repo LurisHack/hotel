@@ -1,6 +1,6 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {RoomUIComponent} from "../../subComponent/room-ui/room-ui.component";
+import {RoomUIComponent} from "../../uiComponent/room-ui/room-ui.component";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {AdminComponentModule} from "../admin-component.module";
 

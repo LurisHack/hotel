@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
-import {InventoryUIComponent} from "../../subComponent/inventory-ui/inventory-ui.component";
+import {InventoryUIComponent} from "../../uiComponent/inventory-ui/inventory-ui.component";
 
 @Component({
   standalone: true,

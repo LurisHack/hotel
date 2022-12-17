@@ -1,17 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
+import {MenuController} from "@ionic/angular";
+import {RouterModule} from "@angular/router";
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule],
+  imports: [AdminComponentModule, RouterModule],
   selector: 'app-setting',
   templateUrl: './setting.component.html',
   styleUrls: ['./setting.component.scss'],
 })
-export class SETTINGComponent implements OnInit {
+export class SETTINGComponent{
 
-  constructor() { }
+  constructor(private menu: MenuController) { }
 
-  ngOnInit() {}
+  // openFirst() {
+  //   this.menu.enable(true, 'setting');
+  //   this.menu.open('setting');
+  // }
+  //
+  // openEnd() {
+  //   this.menu.open('end');
+  // }
+
 
 }

@@ -13,6 +13,12 @@ export class RoomSkeletonComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+
+
+
+
+  }
 
 }
