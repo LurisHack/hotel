@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PosUIComponent } from './pos-ui.component';
+import { StoreUiComponent } from './store-ui.component';
 
-describe('PosUIComponent', () => {
-  let component: PosUIComponent;
-  let fixture: ComponentFixture<PosUIComponent>;
+describe('StoreUiComponent', () => {
+  let component: StoreUiComponent;
+  let fixture: ComponentFixture<StoreUiComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PosUIComponent ],
+      declarations: [ StoreUiComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PosUIComponent);
+    fixture = TestBed.createComponent(StoreUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
