@@ -1,6 +1,5 @@
-ion-col {
-  background-color: #135d54;
-  border: solid 1px #fff;
-  color: #fff;
-  text-align: center;
+ion-skeleton-text{
+  --border-radius: 9999px;
+  --background: rgb(246, 227, 10);
+  --background-rgb: 100, 60, 100;
 }

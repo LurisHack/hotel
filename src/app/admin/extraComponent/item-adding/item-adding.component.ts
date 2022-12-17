@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {IonSegment, ModalController} from "@ionic/angular";
 import {AdminComponentModule} from "../../component/admin-component.module";
 
 @Component({

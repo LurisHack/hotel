@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
-import {PosUIComponent} from "../../subComponent/pos-ui/pos-ui.component";
+import {PosUIComponent} from "../../uiComponent/pos-ui/pos-ui.component";
 
 @Component({
   standalone: true,

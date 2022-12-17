@@ -1,11 +1,35 @@
+<ion-content>
+<ion-list inset="true">
+  <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="3">
+          <ion-text>Pokémon Yellow</ion-text>
+        </ion-col>
 
+        <ion-col size="3.25">
+          <ion-label>Price</ion-label>
+        </ion-col>
 
+        <ion-col size="2.5">
+          <strong>Count</strong>
+        </ion-col>
 
+        <ion-col size="3.25">
+          <ion-label>total</ion-label>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-item-divider>
+
+</ion-list>
+</ion-content>
 
 <ion-grid style="position: absolute; bottom: 5px; left: 0; right: 0; margin: 0; padding: 0;">
   <ion-row style="align-items: center; justify-content: right; border-top: 1px solid lightgray;
    height: 30px; margin: 0; padding: 0">
-       <ion-text  color="danger" class="ion-margin-end"><strong>123452MMK</strong></ion-text>
-      <ion-button  color="danger"  style="height: 32px; border-radius: 0;  margin: 0">Confirm</ion-button>
+    <ion-button  color="danger"  style="height: 25px; border-radius: 0;  margin: 0 20px 0 0;">Confirm</ion-button>
+    <ion-text  color="danger" class="ion-margin-end"><strong>123452MMK</strong></ion-text>
    </ion-row>
 </ion-grid>

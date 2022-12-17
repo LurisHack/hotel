@@ -11,7 +11,7 @@ import {POSComponent} from "../component/pos/pos.component";
 import {STOREComponent} from "../component/store/store.component";
 import {ROOMComponent} from "../component/room/room.component";
 import {INVENTORYComponent} from "../component/inventory/inventory.component";
-import {InventoryUIComponent} from "../subComponent/inventory-ui/inventory-ui.component";
+import {InventoryUIComponent} from "../uiComponent/inventory-ui/inventory-ui.component";
 
 @NgModule({
   imports: [

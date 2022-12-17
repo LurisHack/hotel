@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Store} from "@ngrx/store";
-import {ACTIVATED_ROUTE} from "./multi/store/activatedRoute/activatedRoute.action";
+import {ACTIVATED_ROUTE} from "./utility/store/activatedRoute/activatedRoute.action";
 import * as firebase from "@firebase/firestore"
 
 

@@ -10,6 +10,8 @@ import {LOGComponent} from "../component/log/log.component";
 import {SETTINGComponent} from "../component/setting/setting.component";
 import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
+import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
+import {WelcomePresentationComponent} from "../extraComponent/welcome-presentation/welcome-presentation.component";
 
 const routes: Routes = [
   {
@@ -42,7 +44,17 @@ const routes: Routes = [
       },
       {
         path: 'SETTING',
-        component: SETTINGComponent
+        component: SETTINGComponent,
+        children: [
+          {
+            path: 'roomList',
+            component: RoomListComponent
+          },
+          {
+            path: 'welcomePresentation',
+            component: WelcomePresentationComponent
+           }
+        ]
       },
       {
         path: 'USERS',

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ToastService} from "../utility/service/toast.service";
-import {Store} from "@ngrx/store";
-import {ADD_VALUE} from "./store/testing.action";
+
 
 @Component({
   selector: 'app-testing',
@@ -9,27 +8,16 @@ import {ADD_VALUE} from "./store/testing.action";
   styleUrls: ['./testing.page.scss'],
   providers: [ToastService]
 })
-export class TestingPage implements OnInit {
+export class TestingPage{
 
-  constructor(public store: Store<{testingValue: {testingValue: number[]} ,
-              activatedRoute: {activatedRoute: string}}>) { }
+     loaded = true
 
-  ngOnInit() {
-
-    setTimeout(() => {
-      this.store.dispatch({payload:[4], type: ADD_VALUE})
-      this.store.select('activatedRoute')
-        .subscribe(s => console.log(s))
-    },10000)
-
-    setTimeout(() => {
-      this.store.dispatch({payload:[5], type: ADD_VALUE})
-
-    },20000)
-
-    this.store.subscribe(s => console.log(s))
-    this.store.select('testingValue').subscribe(s => console.log(s))
-
+  constructor() {
+       setTimeout(() => {
+         this.loaded = false
+       }, 5000)
   }
+
+
 
 }
