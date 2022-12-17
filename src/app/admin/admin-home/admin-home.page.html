@@ -58,70 +58,78 @@
     <!--      <ion-menu-button></ion-menu-button>-->
     <!--    </ion-buttons>-->
 
-    <ion-content class="ion-padding">
+    <ion-content class="ion-padding" >
 
-      <div *ngIf="showSplit">
-      <ion-title style="text-align: center;">
-        <ion-text style="font-size: 50px">Golden 72</ion-text>
-      </ion-title>
-      <ion-grid style="padding-bottom: 20px">
+ <ion-header>
+        <ion-toolbar>
+          <ion-text >
+            <div class="ion-text-center">Golden72</div>
+          </ion-text>
+        </ion-toolbar>
+      </ion-header>
+      <ion-grid class="ion-text-center" >
         <ion-row>
-
-          <ion-col  size="3">
-            <ion-chip [outline]="true">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Room</ion-card-title>
-            </ion-chip>
+            </ion-card>
           </ion-col>
-
-
-          <ion-col size-xs="2"   size-md="3">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Pos</ion-card-title>
+            </ion-card>
           </ion-col>
-
-          <ion-col   size="3">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Store</ion-card-title>
+            </ion-card>
           </ion-col>
-
-          <ion-col size-xs="4"   size-md="3">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Restaurant</ion-card-title>
+            </ion-card>
           </ion-col>
-
-          <ion-col   size="4">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Inventory</ion-card-title>
-          </ion-col>
-
-          <ion-col  size="4">
+            </ion-card>
+  ~         </ion-col>
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Log</ion-card-title>
+            </ion-card>
           </ion-col>
-
-          <ion-col   size="4">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Setting</ion-card-title>
+            </ion-card>
           </ion-col>
 
 
         </ion-row>
       </ion-grid>
-      <ion-item   fill="solid">
-        Golden72
-        Additional Features
-      </ion-item>
+        <ion-text>
+          <ins ><b>Golden additional features</b> </ins>
+        </ion-text>
       <ion-grid>
         <ion-row>
-          <ion-col size="4">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Users</ion-card-title>
+            </ion-card>
           </ion-col>
-
-          <ion-col  size="4">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Permissions</ion-card-title>
+            </ion-card>
           </ion-col>
-
-          <ion-col size="4">
+          <ion-col size="auto">
+            <ion-card>
               <ion-card-title class="ion-padding">Log out</ion-card-title>
+            </ion-card>
           </ion-col>
-
         </ion-row>
       </ion-grid>
-      </div>
 
 
       <ion-router-outlet></ion-router-outlet>
