@@ -1,107 +1,106 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>PACKAGE</ion-card-title>
+  </ion-card-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-select interface="popover" placeholder="Add package">
+            <ion-select-option>1H</ion-select-option>
+            <ion-select-option>2H</ion-select-option>
+            <ion-select-option>3H</ion-select-option>
+            <ion-select-option>4H</ion-select-option>
+            <ion-select-option>5H</ion-select-option>
+            <ion-select-option>6H</ion-select-option>
+            <ion-select-option>1D</ion-select-option>
+            <ion-select-option>2D</ion-select-option>
+          </ion-select>
+          <ion-button slot="end" size="small" color="success">OK</ion-button>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-chip>3H</ion-chip>
+        <ion-chip>6H</ion-chip>
+        <ion-chip>1D</ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
 
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      ADD ITEM
+    </ion-card-title>
+  </ion-card-header>
 
-<ion-content>
+  <ion-card-content>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Package</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-select interface="popover" placeholder="Add package">
-          <ion-select-option>1H</ion-select-option>
-          <ion-select-option>2H</ion-select-option>
-          <ion-select-option>3H</ion-select-option>
-          <ion-select-option>4H</ion-select-option>
-          <ion-select-option>5H</ion-select-option>
-          <ion-select-option>6H</ion-select-option>
-          <ion-select-option>1D</ion-select-option>
-          <ion-select-option>2D</ion-select-option>
-        </ion-select>
-        <ion-button slot="end" size="small" color="medium">OK</ion-button>
-      </ion-item>
-    </ion-card-content>
-    <ion-card-content>
-      <ion-chip>3H</ion-chip>
-    </ion-card-content>
-  </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-sm="4">
+          <ion-select interface="popover" placeholder="Please select category">
+            <ion-select-option>Store</ion-select-option>
+            <ion-select-option>Restaurant</ion-select-option>
+            <ion-select-option>Mini Bar</ion-select-option>
+            <ion-select-option>FOC Items</ion-select-option>
+            <ion-select-option>Restaurant</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="8">
+          <ion-item lines="none">
+            <ion-input placeholder="Enter Code"></ion-input>
+            <ion-button size="small" slot="end">OK</ion-button>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12">
+          <ion-item lines="none">
+            <ion-label><small>Property name</small></ion-label>
+            <ion-button slot="end" size="small">ADD</ion-button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        ADD ITEM
-      </ion-card-title>
-    </ion-card-header>
+<div>
+  <ion-toolbar style="--min-height: 35px">
+    <strong style="display: block; text-align: center; font-weight: bold;  color: grey">Restaurant</strong>
+  </ion-toolbar>
 
-    <ion-card-content>
+  <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
+    <ion-grid class="ion-no-margin ion-no-padding">
+      <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+        <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+          ထမင်းေကြာ်
+        </ion-col>
+        <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+          <ion-grid class="ion-no-margin ion-no-padding">
+            <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+              <ion-col class="ion-no-margin ion-no-padding">
+                <ion-text color="danger">1230</ion-text>
+              </ion-col>
+              <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center">
+                  <ion-button size="small" color="danger"
+                              fill="clear">-
+                  </ion-button>
+                  <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                  <ion-button size="small"
+                              color="danger" fill="clear">+
+                  </ion-button>
+                </ion-row>
+              </ion-col>
+              <ion-col class="ion-text-right">
+                <ion-card-subtitle color="danger" class="ion-margin-end">12398</ion-card-subtitle>
+              </ion-col>
 
-      <ion-grid>
-        <ion-row>
-          <ion-col size-xs="12" size-sm="4">
-            <ion-select interface="popover" placeholder="Please select category">
-              <ion-select-option>Store</ion-select-option>
-              <ion-select-option>Restaurant</ion-select-option>
-              <ion-select-option>Mini Bar</ion-select-option>
-              <ion-select-option>FOC Items</ion-select-option>
-              <ion-select-option>Restaurant</ion-select-option>
-            </ion-select>
-          </ion-col>
-          <ion-col size-xs="12" size-sm="8">
-            <ion-item lines="none">
-              <ion-input placeholder="Enter Code"></ion-input>
-              <ion-button size="small" slot="end">OK</ion-button>
-            </ion-item>
-          </ion-col>
-          <ion-col size-xs="12">
-            <ion-item lines="none">
-              <ion-label><small>Property name</small></ion-label>
-              <ion-button slot="end" size="small">ADD</ion-button>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
-
-  <div>
-    <ion-toolbar style="--min-height: 35px">
-      <strong style="display: block; text-align: center; font-weight: bold;  color: grey">Restaurant</strong>
-    </ion-toolbar>
-
-    <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
-      <ion-grid class="ion-no-margin ion-no-padding">
-        <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
-          <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
-            ထမင်းေကြာ်
-          </ion-col>
-          <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
-            <ion-grid class="ion-no-margin ion-no-padding">
-              <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
-                <ion-col class="ion-no-margin ion-no-padding">
-                  <ion-text color="danger">1230</ion-text>
-                </ion-col>
-                <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
-                  <ion-row class="ion-align-items-center">
-                    <ion-button size="small" color="danger"
-                                fill="clear">-
-                    </ion-button>
-                    <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
-                    <ion-button size="small"
-                                color="danger" fill="clear">+
-                    </ion-button>
-                  </ion-row>
-                </ion-col>
-                <ion-col class="ion-text-right">
-                  <ion-card-subtitle color="danger" class="ion-margin-end">12398</ion-card-subtitle>
-                </ion-col>
-
-              </ion-row>
-            </ion-grid>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item-divider>
-  </div>
-
-
-</ion-content>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-divider>
+</div>
