@@ -12,7 +12,13 @@ import {RestaurantSkeletonComponent} from "../../skeletonComponent/restaurant-sk
 })
 export class RESTURANTComponent implements OnInit {
 
-  constructor() { }
+  loaded = true
+
+  constructor() {
+    setTimeout(()=>{
+      this.loaded = false
+    },5000)
+  }
 
   ngOnInit() {}
 
