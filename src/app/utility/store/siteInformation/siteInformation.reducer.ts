@@ -1,17 +1,30 @@
-import * as roomAction  from "./siteInformation.action";
+import * as siteInformationAction  from "./siteInformation.action";
 
-const initialState = {buildingName: ''}
+
+export interface AddBuildingNameState {
+  buildingName: any[]
+}
 
 export interface SiteInformationState {
-  buildingName: string
+  buildingName: any[]
 }
 
-export const siteInformationReducer = (state = initialState, action: roomAction.SiteInformationAction) : SiteInformationState => {
-  switch (action.type){
-    case roomAction.ADD_BUILDING_NAME:
-      console.log(state, action)
-      
-
-      return {buildingName: action.payload}
+const initialState = {
+  buildingName: []
   }
+
+
+export const siteInformationReducer = (state = initialState, action: siteInformationAction.AddBuildingNameAction) : AddBuildingNameState  => {
+  switch (action.type) {
+    case siteInformationAction.ADD_BUILDING_NAME:
+      console.log(state, action)
+      return {buildingName: [...state.buildingName, action.payload]}
+
+    // case  siteInformationAction.SITE_INFORMATION:
+    //   return {}
+
 }
+  }
+
+
+
