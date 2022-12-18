@@ -1,17 +1,14 @@
 import {activatedRouteReducer, RouteState} from "./utility/store/activatedRoute/activatedRoute.reducer";
 import {ActionReducerMap} from "@ngrx/store";
-import {testingReducer, TestingState} from "./testing/store/testing.reducer";
-import {roomReducer, RoomState} from "./utility/store/room/room.reducer";
+ import {siteInformationReducer, SiteInformationState} from "./utility/store/siteInformation/siteInformation.reducer";
 
 
 export interface AppState {
   activatedRoute: RouteState
-  testingValue: TestingState
-  room:  RoomState
+   siteInformation:  SiteInformationState
 }
 
 export const reducers: ActionReducerMap<AppState, any> = {
   activatedRoute: activatedRouteReducer,
-  testingValue: testingReducer,
-  room: roomReducer
+   siteInformation: siteInformationReducer
 };
