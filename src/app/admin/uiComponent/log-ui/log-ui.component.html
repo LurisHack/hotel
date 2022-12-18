@@ -1,3 +1,29 @@
-<p>
-  log-ui works!
-</p>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button>ALL</ion-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button>
+      <ion-icon name="calendar"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-grid>
+  <ion-row style="background: lightgray">
+    <ion-col  style="--background: lightgray" class="ion-padding">
+          <ion-title>December, 2022</ion-title>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col *ngFor="let i of [1,2,3,4,5]" size-xs="12" size-sm="6" size-md="4">
+      <ion-item>
+        <ion-label>
+          <p>Username</p>
+          <p>Email</p>
+          <p>Action</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
