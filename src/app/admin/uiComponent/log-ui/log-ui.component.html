@@ -15,15 +15,27 @@
           <ion-title>December, 2022</ion-title>
     </ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col *ngFor="let i of [1,2,3,4,5]" size-xs="12">
-      <ion-item>
+  <ion-row *ngFor="let i of [1,2,3,4,5]" style="border-bottom: 1px solid lightgray;" class="ion-margin-top ion-margin-bottom">
+      <ion-col size-xs="12" size-lg="4">
         <ion-label>
-          <p>Username</p>
-          <p>Email</p>
-          <p>Action</p>
+          <p>
+            Username
+          </p>
         </ion-label>
-      </ion-item>
-    </ion-col>
+      </ion-col>
+      <ion-col size-xs="12" size-lg="4">
+        <ion-label>
+          <p>
+            Email
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col size-xs="12" size-lg="4">
+        <ion-label>
+          <p>
+            Action
+          </p>
+        </ion-label>
+      </ion-col>
   </ion-row>
 </ion-grid>
