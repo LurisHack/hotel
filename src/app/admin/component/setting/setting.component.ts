@@ -18,10 +18,9 @@ export class SETTINGComponent{
   //   this.menu.enable(true, 'setting');
   //   this.menu.open('setting');
   // }
-  //
+
   // openEnd() {
   //   this.menu.open('end');
   // }
-
 
 }

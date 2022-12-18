@@ -1,0 +1,29 @@
+<ion-toolbar>
+  <ion-buttons slot="start" >
+    <ion-skeleton-text style="width: 3vw;height: 2vh;"></ion-skeleton-text>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-button>
+      <ion-skeleton-text style="width: 2vw;height: 3vh;"></ion-skeleton-text>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-grid>
+  <ion-row style="background: lightgray">
+    <ion-col  style="--background: lightgray" class="ion-padding">
+      <ion-skeleton-text style="height: 2.5vh;width: 5vw"></ion-skeleton-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col *ngFor="let i of [1,2,3,4,5]" size-xs="12">
+      <ion-item>
+        <ion-label>
+          <ion-skeleton-text style="width: 10%"></ion-skeleton-text>
+          <ion-skeleton-text style="width: 20%"></ion-skeleton-text>
+          <ion-skeleton-text style="width: 25%"></ion-skeleton-text>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

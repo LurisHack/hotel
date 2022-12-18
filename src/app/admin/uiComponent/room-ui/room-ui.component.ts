@@ -34,7 +34,7 @@ export class RoomUIComponent{
     console.log('Add item button clicked!')
     const modalCtrl = await this.modalCtrl.create({
       component: RoomPopupComponent,
-      cssClass: 'room-popup-modal',
+      cssClass: 'siteInformation-popup-modal',
       backdropDismiss: false
     })
     await modalCtrl.present()

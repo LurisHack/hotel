@@ -3,14 +3,14 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 
 @Component({
   standalone: true,
-  selector: 'app-welcome-presentation-ui',
-  templateUrl: './welcome-presentation-ui.component.html',
-  styleUrls: ['./welcome-presentation-ui.component.scss'],
+  selector: 'app-log-ui',
+  templateUrl: './log-ui.component.html',
+  styleUrls: ['./log-ui.component.scss'],
   imports: [
     AdminComponentModule
   ]
 })
-export class WelcomePresentationUIComponent implements OnInit {
+export class LogUIComponent implements OnInit {
 
   constructor() { }
 

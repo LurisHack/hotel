@@ -1,3 +1,17 @@
-<p>
-  welcome-presentation-skeleton works!
-</p>
+<ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="auto">
+        <ion-skeleton-text [animated]="true" style="width: 80px;height: 80px;"></ion-skeleton-text>
+      </ion-col>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label>
+            <ion-skeleton-text [animated]="true" style="width: 10vw;height: 3vh;line-height: 1vh"></ion-skeleton-text>
+            <ion-skeleton-text [animated]="true" style="width: 30vw;height: 2vh"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>

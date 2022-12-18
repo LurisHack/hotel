@@ -1,3 +1,24 @@
-<p>
-  welcome-presentation works!
-</p>
+ <ion-toolbar *ngIf="!loaded">
+    <ion-button slot="end" color="none" class="ion-margin">
+      <ion-icon color="dark" slot="icon-only" name="add-circle" ></ion-icon>
+      <ion-text color="dark">ADD</ion-text>
+    </ion-button>
+  </ion-toolbar>
+
+ <ion-toolbar *ngIf="loaded">
+   <ion-button slot="end" color="none" class="ion-margin">
+     <ion-skeleton-text [animated]="true" slot="icon-only" style="width: 1.5vw; height: 3vh;border-radius: 50px"></ion-skeleton-text>
+     <ion-skeleton-text [animated]="true" style="width: 2vw;height: 2vh;margin-left: 0.1vw">ADD</ion-skeleton-text>
+   </ion-button>
+ </ion-toolbar>
+
+ <ion-content>
+   <ion-grid>
+     <ion-row *ngFor="let i of [1,2,3]">
+       <ion-col>
+         <app-welcome-presentation-ui *ngIf="!loaded"></app-welcome-presentation-ui>
+         <app-welcome-presentation-skeleton *ngIf="loaded"></app-welcome-presentation-skeleton>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+ </ion-content>
