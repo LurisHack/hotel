@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "hotel-484a0"
+  },
+  "targets": {
+    "hotel-484a0": {
+      "hosting": {
+        "app": [
+          "hotel-484a0"
+        ]
+      }
+    }
   }
 }

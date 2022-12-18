@@ -1,5 +1,5 @@
 export enum SiteInformation {
 
-   SITE_INFORMATION = 'siteInformation'
+   SITE_INFORMATION = 'siteInformation',
 
 }
