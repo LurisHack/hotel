@@ -10,7 +10,10 @@ import {AdminComponentModule} from "../admin-component.module";
 })
 export class STOREComponent implements OnInit {
 
-  constructor() { }
+  loaded = true
+  constructor() {
+
+  }
 
   ngOnInit() {}
 
