@@ -20,10 +20,7 @@ export class AppComponent {
     activatedRoute.fragment.subscribe((s: any) => {
       store.dispatch({type: ACTIVATED_ROUTE, payload: s})
     })
-
     // this.firebaseService.getDoc({doc: SiteInformation.SITE_INFORMATION})
-
-
   }
 
 }
