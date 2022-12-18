@@ -7,28 +7,30 @@
 <!--  </ion-toolbar>-->
 <!--</ion-header>-->
 
-<ion-menu side="end" contentId="setting-content">
+<ion-menu style="--width: 250px" side="end" contentId="setting-content">
   <ion-header mode="ios">
-    <ion-toolbar>
-      <ion-title>Setting Menu</ion-title>
+    <ion-toolbar  class="ion-text-center">
+      <ion-text>Setting Menu</ion-text>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
     <ion-list>
-         <ion-item routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/SETTING/welcomePresentation'"
-                  lines="none" detail="false"
-                  routerLinkActive="selected">
-          <ion-label style="padding-left: 5px"><small>{{ 'Welcome Presentation' }}</small></ion-label>
-           <ion-icon class="ion-margin-start" [ios]="'Heart' + '-outline'" [md]="'heart' + '-sharp'"></ion-icon>
-         </ion-item>
+      <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
+                [routerLink]="'/admin-home/SETTING/welcomePresentation'"
+                lines="none" detail="false"
+                routerLinkActive="selected">
+        <ion-label style="padding-left: 5px"><small>{{ 'Welcome Presentation' }}</small></ion-label>
+        <ion-icon class="ion-margin-start" [ios]="'Heart' + '-outline'" [md]="'heart' + '-sharp'"></ion-icon>
+      </ion-item>
 
-      <ion-item routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/SETTING/roomList'"
+      <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
+                [routerLink]="'/admin-home/SETTING/roomList'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
         <ion-label style="padding-left: 5px"><small>{{ 'Room List' }}</small></ion-label>
         <ion-icon class="ion-margin-start" [ios]="'list' + '-outline'" [md]="'list' + '-sharp'"></ion-icon>
       </ion-item>
-     </ion-list>
+    </ion-list>
   </ion-content>
 </ion-menu>
 
@@ -36,13 +38,13 @@
 <div class="ion-page" id="setting-content">
   <ion-header mode="ios">
     <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-title>SETTINGS</ion-title>
-      </ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>SETTINGS</ion-title>
+    </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
- <ion-router-outlet></ion-router-outlet>
+    <ion-router-outlet></ion-router-outlet>
   </ion-content>
 </div>

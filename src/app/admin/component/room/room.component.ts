@@ -8,7 +8,7 @@ import {RoomSkeletonComponent} from "../../skeletonComponent/room-skeleton/room-
 @Component({
   standalone: true,
   imports: [AdminComponentModule, RoomUIComponent, ScrollingModule, RoomSkeletonComponent],
-  selector: 'app-room',
+  selector: 'app-siteInformation',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss'],
 })

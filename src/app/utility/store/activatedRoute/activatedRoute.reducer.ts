@@ -8,9 +8,6 @@ export interface RouteState{
 
 export const activatedRouteReducer =
   (state: RouteState = initialState, action: ActivateRouteAction.ActivatedRouteAction): RouteState => {
-
-  console.log(action)
-
     switch (action.type) {
       case ActivateRouteAction.ACTIVATED_ROUTE:
         return {activatedRoute: action.payload}
