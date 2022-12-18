@@ -10,7 +10,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {reducers} from "./app.reducer";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment.prod";
-import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
@@ -27,7 +26,6 @@ declarations: [AppComponent],
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
