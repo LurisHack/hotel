@@ -25,10 +25,9 @@ export class FirestoreService {
 
 
   addDoc(param: {doc: string; data: any}){
-        this.dbPrefix.doc(param.doc)
+      return   this.dbPrefix.doc(param.doc)
         .set(param.data)
-          .then((t: any) => console.log(t))
-          .catch((c: any) => console.log(c))
+
 
 
   }

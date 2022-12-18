@@ -6,6 +6,7 @@ import {FirestoreService} from "../../../utility/service/firestore.service";
 import {ADD_BUILDING_NAME} from "../../../utility/store/siteInformation/siteInformation.action";
 import {SiteInformationState} from "../../../utility/store/siteInformation/siteInformation.reducer";
 import {RoomService} from "../../../utility/service/room.service";
+import {SiteInformation} from "../../../utility/enum/site-information";
 
 @Component({
   standalone: true,
@@ -27,13 +28,21 @@ export class RoomListComponent{
       .then( ( alert: any) => {
        console.log(alert)
 
-        // this.store.dispatch(
-        //   {type: ADD_BUILDING_NAME, payload:  alert.data.values[0]})
 
-        console.log(this.roomService.storeSiteInformation)
+        console.log(this.roomService.siteInformation)
 
-        // this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: {test: 'test'}})
+        this.roomService.siteInformation.buildingName = alert.data.values[0]
 
+          this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.roomService.siteInformation})
+            .then((t: any) => {
+              console.log(t)
+
+              this.store.dispatch(
+                {type: ADD_BUILDING_NAME, payload:  alert.data.values[0]})
+
+
+            })
+            .catch((c: any) => console.log(c))
       })
   }
 
