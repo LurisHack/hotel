@@ -7,21 +7,21 @@ import {SiteInformation} from "../enum/site-information";
 export class FirebaseService {
 
 
-  constructor(private angularFireStore: AngularFirestore) { }
+  // constructor(private angularFireStore: AngularFirestore) { }
 
-  dbPrefix = this.angularFireStore.collection(location.hostname)
+  // dbPrefix = this.angularFireStore.collection(location.hostname)
 
   addDocument(){
     console.log(location.pathname)
   }
 
 
-  getDoc(param: {doc: string}){
-    this.dbPrefix.doc(param.doc)
-      .get()
-      .subscribe(data => {
-        console.log(data)
-      })
-  }
+  // getDoc(param: {doc: string}){
+  //   this.dbPrefix.doc(param.doc)
+  //     .get()
+  //     .subscribe(data => {
+  //       console.log(data)
+  //     })
+  // }
 
 }
