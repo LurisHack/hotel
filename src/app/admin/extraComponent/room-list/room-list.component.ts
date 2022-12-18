@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
-import {AlertService} from "../../utility/service/alert.service";
+import {AlertService} from "../../../utility/service/alert.service";
 import {Store} from "@ngrx/store";
 import {FirestoreService} from "../../../utility/service/firestore.service";
 import {SiteInformation} from "../../../utility/enum/site-information";
+import {ADD_BUILDING_NAME} from "../../../utility/store/siteInformation/siteInformation.action";
 
 @Component({
   standalone: true,
@@ -22,9 +23,11 @@ export class RoomListComponent{
     this.alertService.alert()
       .then( ( alert: any) => {
        console.log(alert)
-         // this.store.dispatch(
-         //  {type: ADD_BUILDING_NAME, payload: {buildingName: alert.data.values[0]}})
-        this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: {test: 'test'}})
+
+        this.store.dispatch(
+          {type: ADD_BUILDING_NAME, payload: {buildingName: alert.data.values[0]}})
+
+        // this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: {test: 'test'}})
 
       })
   }
