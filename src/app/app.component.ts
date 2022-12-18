@@ -27,7 +27,7 @@ export class AppComponent {
       store.dispatch({type: ACTIVATED_ROUTE, payload: s})
     })
 
-    this.firebaseService.getDoc({doc: SiteInformation.SITE_INFORMATION})
+    // this.firebaseService.getDoc({doc: SiteInformation.SITE_INFORMATION})
 
 
   }
