@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {AlertService} from "../../utility/service/alert.service";
 import {Store} from "@ngrx/store";
-import {ADD_BUILDING_NAME} from "../../../utility/store/siteInformation/siteInformation.action";
 import {FirestoreService} from "../../../utility/service/firestore.service";
+import {SiteInformation} from "../../../utility/enum/site-information";
 
 @Component({
   standalone: true,
@@ -11,11 +11,11 @@ import {FirestoreService} from "../../../utility/service/firestore.service";
   selector: 'app-siteInformation-list',
   templateUrl: './room-list.component.html',
   styleUrls: ['./room-list.component.scss'],
-  providers: [AlertService]
+  providers: [AlertService, FirestoreService]
 })
 export class RoomListComponent{
 
-  constructor(private alertService: AlertService,
+  constructor(private alertService: AlertService, private firebaseService: FirestoreService,
                private store: Store<{room: {buildingName: string}}>) {}
 
   addBuildingName() {
@@ -24,7 +24,8 @@ export class RoomListComponent{
        console.log(alert)
          // this.store.dispatch(
          //  {type: ADD_BUILDING_NAME, payload: {buildingName: alert.data.values[0]}})
-        // this.firestoreService.getDoc()
+        this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: {test: 'test'}})
+
       })
   }
 
