@@ -31,7 +31,8 @@ export class RoomListComponent{
 
         console.log(this.roomService.siteInformation)
 
-        this.roomService.siteInformation.buildingName = alert.data.values[0]
+       const siteInformation = Object.assign(this.roomService.siteInformation,
+         {buildingName: [...this.roomService.siteInformation.buildingName, alert.data.values[0]]})
 
           this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.roomService.siteInformation})
             .then((t: any) => {

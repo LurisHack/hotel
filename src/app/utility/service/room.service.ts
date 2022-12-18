@@ -6,7 +6,7 @@ import {Store} from "@ngrx/store";
 })
 export class RoomService {
 
-  siteInformation: any;
+  siteInformation: { buildingName: string[] } = {buildingName: []}
 
   constructor(private store: Store<{siteInformation: {siteInformation: any}}>) {
     this.store.select("siteInformation")
