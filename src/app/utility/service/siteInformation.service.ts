@@ -4,7 +4,7 @@ import {Store} from "@ngrx/store";
 @Injectable({
   providedIn: 'root'
 })
-export class RoomService {
+export class SiteInformationService {
 
   siteInformation: { buildingName: string[] } = {buildingName: []}
 

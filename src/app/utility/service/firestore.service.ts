@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { hostName } from "../function/hostName";
+import {map} from "rxjs";
+import {docResolver} from "../function/documentResolver";
 
 @Injectable()
 export class FirestoreService {
@@ -12,14 +14,11 @@ export class FirestoreService {
 }
 
   getDoc(param: {doc: string}){
-
     console.log(this.dbPrefix)
-
-    this.dbPrefix.doc(param.doc)
+  return   this.dbPrefix.doc(param.doc)
       .get()
-      .subscribe((document: any) => {
-        console.log(document)
-      })
+      .pipe(map(docData => docResolver(docData)))
+
 
   }
 

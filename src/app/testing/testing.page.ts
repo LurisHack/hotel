@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ToastService} from "../utility/service/toast.service";
+import {SiteInformationService} from "../utility/service/siteInformation.service";
 
 
 @Component({
@@ -12,10 +13,8 @@ export class TestingPage{
 
      loaded = true
 
-  constructor() {
-       setTimeout(() => {
-         this.loaded = false
-       }, 5000)
+  constructor(private siteInformationService: SiteInformationService) {
+     console.log(siteInformationService.siteInformation)
   }
 
 

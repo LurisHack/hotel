@@ -10,7 +10,6 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 })
 export class ItemAddingComponent implements OnInit {
 
-
   ngOnInit() {}
 
 }

@@ -5,13 +5,12 @@ export const SITE_INFORMATION = 'SITE_INFORMATION'
 
 export class AddBuildingNameAction implements Action {
   readonly type = ADD_BUILDING_NAME
-
-  constructor(public payload: string) {
-  }
+  constructor(public payload: { buildingName: string[]  }) {}
 }
 
-  export class SiteInformation implements Action{
+export class SiteInformationAction implements Action {
   readonly type = SITE_INFORMATION
-    constructor(public payload: any) {
-    }
+  constructor(public payload: { buildingName: string[]  }) {}
 }
+
+export type siteInformationAction = AddBuildingNameAction | SiteInformationAction

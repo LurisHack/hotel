@@ -3,14 +3,16 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {AlertService} from "../../../utility/service/alert.service";
 import {Store} from "@ngrx/store";
 import {FirestoreService} from "../../../utility/service/firestore.service";
-import {ADD_BUILDING_NAME} from "../../../utility/store/siteInformation/siteInformation.action";
 import {SiteInformationState} from "../../../utility/store/siteInformation/siteInformation.reducer";
-import {RoomService} from "../../../utility/service/room.service";
+import {SiteInformationService} from "../../../utility/service/siteInformation.service";
+import {RouterModule} from "@angular/router";
+import {Subscription} from "rxjs";
 import {SiteInformation} from "../../../utility/enum/site-information";
+import {ADD_BUILDING_NAME, SITE_INFORMATION} from "../../../utility/store/siteInformation/siteInformation.action";
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule],
+  imports: [AdminComponentModule, RouterModule],
   selector: 'app-siteInformation-list',
   templateUrl: './room-list.component.html',
   styleUrls: ['./room-list.component.scss'],
@@ -18,29 +20,41 @@ import {SiteInformation} from "../../../utility/enum/site-information";
 })
 export class RoomListComponent{
 
+  storeSubscription: Subscription;
+
+  siteInformation: { buildingName: string[] } = {buildingName: []}
+
   constructor(private alertService: AlertService,
               private firebaseService: FirestoreService,
-               private roomService: RoomService,
-               private store: Store<{siteInformation: SiteInformationState}>) {}
+               private store: Store<{siteInformation: SiteInformationState}>) {
+
+    this.storeSubscription = this.store.select('siteInformation').subscribe(siteInformation => {
+     console.log(siteInformation)
+       this.siteInformation = siteInformation
+     })
+  }
+
+
 
   addBuildingName() {
     this.alertService.alert()
       .then( ( alert: any) => {
+
        console.log(alert)
+        console.log(this.siteInformation)
+
+         Object.assign(this.siteInformation,
+         {buildingName: [...this.siteInformation.buildingName, alert.data.values[0]]})
+
+        console.log(this.siteInformation)
 
 
-        console.log(this.roomService.siteInformation)
-
-       const siteInformation = Object.assign(this.roomService.siteInformation,
-         {buildingName: [...this.roomService.siteInformation.buildingName, alert.data.values[0]]})
-
-          this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.roomService.siteInformation})
+        this.firebaseService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
             .then((t: any) => {
               console.log(t)
 
               this.store.dispatch(
-                {type: ADD_BUILDING_NAME, payload:  alert.data.values[0]})
-
+                {type: SITE_INFORMATION, payload:  this.siteInformation})
 
             })
             .catch((c: any) => console.log(c))
