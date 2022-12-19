@@ -62,7 +62,8 @@ export class RoomListComponent{
   }
 
   deleteBuildName() {
-   this.store.select("siteInformation")
-     .subscribe()
+
+    this.siteInformation.buildingName
+
   }
 }

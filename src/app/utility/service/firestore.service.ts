@@ -26,7 +26,6 @@ export class FirestoreService {
   addDoc(param: {doc: string; data: any}){
       return   this.dbPrefix.doc(param.doc)
         .set(param.data)
-
   }
 
   updateDoc(param: {doc: string; data: any}){
