@@ -4,11 +4,10 @@ import {AlertService} from "../../../utility/service/alert.service";
 import {Store} from "@ngrx/store";
 import {FirestoreService} from "../../../utility/service/firestore.service";
 import {SiteInformationState} from "../../../utility/store/siteInformation/siteInformation.reducer";
-import {SiteInformationService} from "../../../utility/service/siteInformation.service";
 import {RouterModule} from "@angular/router";
 import {Subscription} from "rxjs";
 import {SiteInformation} from "../../../utility/enum/site-information";
-import {ADD_BUILDING_NAME, SITE_INFORMATION} from "../../../utility/store/siteInformation/siteInformation.action";
+import { SITE_INFORMATION } from "../../../utility/store/siteInformation/siteInformation.action";
 
 @Component({
   standalone: true,
@@ -35,8 +34,8 @@ export class RoomListComponent{
   }
 
 
-
   addBuildingName() {
+
     this.alertService.alert()
       .then( ( alert: any) => {
 
