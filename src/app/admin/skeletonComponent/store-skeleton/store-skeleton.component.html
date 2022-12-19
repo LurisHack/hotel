@@ -1,3 +1,41 @@
-<p>
-  store-skeleton works!
-</p>
+<ion-content>
+  <ion-card mode="ios" *ngFor="let i of [1,2,2,2,3,4,5,6,7,8,9,10]">
+    <ion-grid >
+      <ion-row class="ion-text-center">
+        <ion-col size ="2.4" >
+          <ion-skeleton-text [animated]="true" style="width: 5vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 10vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 7vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 7vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 7vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center">
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 5vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 10vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 7vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 7vw; height: 1vw"></ion-skeleton-text>
+        </ion-col>
+        <ion-col size="2.4">
+          <ion-skeleton-text [animated]="true" style="width: 7vw; height: 1vw"></ion-skeleton-text>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
