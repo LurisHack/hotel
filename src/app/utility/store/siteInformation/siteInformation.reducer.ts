@@ -14,7 +14,9 @@ export const siteInformationReducer = (state = initialState, action: siteInforma
   switch (action.type) {
     case siteInformationAction.ADD_BUILDING_NAME:
       console.log(state, action)
-      return {buildingName:  [...state.buildingName, action.payload]}
+      return {
+        ...state,
+        buildingName:  [...state.buildingName, action.payload]}
     case  siteInformationAction.SITE_INFORMATION:
       console.log(action)
       return {...state, ...action.payload}
