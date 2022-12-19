@@ -10,7 +10,12 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
   styleUrls: ['./room-skeleton.component.scss'],
 })
 export class RoomSkeletonComponent implements OnInit {
-loaded: any;
-  constructor() { }
+  loaded: any;
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+}

@@ -21,8 +21,8 @@ import {generateId} from "../../../utility/function/generateId";
 export class RoomListComponent{
 
   storeSubscription: Subscription;
-
-  siteInformation: { buildingName: string[] } = {buildingName: []}
+  siteInformation: { buildingName: { name: string, id: string }[]} = {
+    buildingName: []}
 
   constructor(private alertService: AlertService,
               private firebaseService: FirestoreService,
@@ -30,7 +30,7 @@ export class RoomListComponent{
 
     this.storeSubscription = this.store.select('siteInformation').subscribe(siteInformation => {
      console.log(siteInformation)
-       // this.siteInformation = siteInformation
+       this.siteInformation = siteInformation
      })
   }
 

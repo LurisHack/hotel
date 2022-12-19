@@ -12,14 +12,13 @@
 
 
 <ion-content>
-  <ion-grid>
+  <ion-grid *ngIf="siteInformation &&  siteInformation.buildingName.length">
     <ion-row>
-      <ion-col size="4" >
+      <ion-col size-xs="3" *ngFor="let building of siteInformation.buildingName" >
         <ion-card>
-          <h1></h1>
+          <ion-title class="ion-text-wrap">{{building.name}}</ion-title>
         </ion-card>
       </ion-col>
-
     </ion-row>
   </ion-grid>
 </ion-content>

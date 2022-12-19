@@ -20,7 +20,7 @@ const routes: Routes = [
         path: 'ROOM',
         component: ROOMComponent
       },
-      
+
       {
         path: 'RESTAURANT',
         component: RESTURANTComponent
