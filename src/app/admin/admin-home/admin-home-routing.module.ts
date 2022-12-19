@@ -10,7 +10,6 @@ import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
 import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
 import {WelcomePresentationComponent} from "../extraComponent/welcome-presentation/welcome-presentation.component";
-import {STOREComponent} from "../component/store/store.component";
 
 const routes: Routes = [
   {
@@ -21,11 +20,7 @@ const routes: Routes = [
         path: 'ROOM',
         component: ROOMComponent
       },
-      {
-        path: 'STORE',
-        component: STOREComponent
-      },
-
+      
       {
         path: 'RESTAURANT',
         component: RESTURANTComponent
