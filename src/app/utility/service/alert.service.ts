@@ -24,10 +24,9 @@ export class AlertService {
         ],
       });
 
-       const  a = alertCtrl.onDidDismiss()
+       alertCtrl.onDidDismiss()
+         .then(data => resolve(data.data.values))
 
-      resolve(a)
-      console.log(a)
 
     await alertCtrl.present()
 

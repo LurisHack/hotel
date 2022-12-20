@@ -12,15 +12,4 @@ import {RouterModule} from "@angular/router";
 })
 export class SETTINGComponent{
 
-  constructor(private menu: MenuController) { }
-
-  // openFirst() {
-  //   this.menu.enable(true, 'setting');
-  //   this.menu.open('setting');
-  // }
-
-  // openEnd() {
-  //   this.menu.open('end');
-  // }
-
 }

@@ -30,7 +30,7 @@ export class FirestoreService {
 
   updateDoc(param: {doc: string; data: any}){
     return   this.dbPrefix.doc(param.doc)
-      .set(param.data)
+      .update(param.data)
 
   }
 

@@ -8,14 +8,15 @@ import {LOGComponent} from "../component/log/log.component";
 import {SETTINGComponent} from "../component/setting/setting.component";
 import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
-import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
+import {BuildingListComponent} from "../extraComponent/building-list/building-list.component";
 import {WelcomePresentationComponent} from "../extraComponent/welcome-presentation/welcome-presentation.component";
+import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
 
 const routes: Routes = [
   {
     path: '',
     component: AdminHomePage,
-    children:[
+    children: [
       {
         path: 'ROOM',
         component: ROOMComponent
@@ -38,29 +39,33 @@ const routes: Routes = [
         component: SETTINGComponent,
         children: [
           {
-            path: 'roomList',
-            component: RoomListComponent
+            path: 'buildingList',
+            component: BuildingListComponent,
           },
           {
-            path: 'welcomePresentation',
-            component: WelcomePresentationComponent
-           }
-        ]
-      },
+                path: 'buildingList/roomList/:id',
+                component: RoomListComponent
+              }
+            ]
+          },
       {
-        path: 'USERS',
-        component: USERSComponent
-      },
-      {
-        path: 'PERMISSIONS',
-        component: PERMISSIONSComponent
-      }
-    ]
+        path: 'welcomePresentation',
+        component: WelcomePresentationComponent
+      }]
   },
-];
+  {
+    path: 'USERS',
+    component: USERSComponent
+  },
+  {
+    path: 'PERMISSIONS',
+    component: PERMISSIONSComponent
+  }
+]
+
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), ],
+  imports: [RouterModule.forChild(routes),],
   exports: [RouterModule],
 })
 export class AdminHomePageRoutingModule {
