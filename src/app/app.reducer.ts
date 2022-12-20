@@ -5,10 +5,10 @@ import {ActionReducerMap} from "@ngrx/store";
 
 export interface AppState {
   activatedRoute: RouteState
-   // siteInformation:  SiteInformationState
+   siteInformation:  SiteInformationState
 }
 
 export const reducers: ActionReducerMap<AppState, any> = {
   activatedRoute: activatedRouteReducer,
-   // siteInformation: siteInformationReducer
+  siteInformation: siteInformationReducer
 };

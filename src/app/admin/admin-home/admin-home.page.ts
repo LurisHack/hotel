@@ -1,10 +1,7 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component } from '@angular/core';
 import {AuthService} from "../../user/component/auth/auth.service";
 import {RouterService} from "../../utility/service/router.service";
 import {ToastService} from "../../utility/service/toast.service";
-import {IonRouterOutlet} from "@ionic/angular";
-import {ActivatedRoute, Router} from "@angular/router";
-import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-admin-welcome',
@@ -17,6 +14,8 @@ export class AdminHomePage{
   public appPages = [
     {title: 'ROOM', icon: 'bed'},
     // {title: 'POS',  icon: 'print'},
+    {title: 'ROOFTOP BAR', icon: 'storefront'},
+    {title: 'PLAYGROUND', icon: 'storefront'},
     {title: 'STORE', icon: 'storefront'},
     {title: 'RESTAURANT', icon: 'fast-food'},
     {title: 'INVENTORY', icon: 'reader'},

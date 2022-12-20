@@ -7,20 +7,4 @@ import {StoreSkeletonComponent} from "../../skeletonComponent/store-skeleton/sto
   imports: [AdminComponentModule, StoreSkeletonComponent],
   selector: 'app-store',
   templateUrl: './store.component.html',
-  styleUrls: ['./store.component.scss'],
-})
-export class STOREComponent implements OnInit {
-
-
-  loaded = true
-
-
-  constructor() {
-    setTimeout(()=>{
-      this.loaded = false
-    },5000)
-  }
-
-  ngOnInit() {}
-
-}
+  sty
