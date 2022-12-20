@@ -13,6 +13,7 @@ import {WelcomePresentationComponent} from "../extraComponent/welcome-presentati
 import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
+import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'RESTAURANT',
         component: RESTURANTComponent
+      },
+      {
+        path: 'STORE',
+        component: StoreUiComponent
       },
       {
         path: 'INVENTORY',

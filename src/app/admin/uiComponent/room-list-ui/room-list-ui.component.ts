@@ -24,6 +24,6 @@ export class RoomListUiComponent{
   }
 
   addRoom() {
-    this.siteInformationService.addRoomName()
+    this.siteInformationService.addRoomName(this.activatedRoute.snapshot.params['id'])
   }
 }
