@@ -1,0 +1,29 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-button (click)="addRoom()" size="small">
+      <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
+  <ion-row>
+    <ion-col size-xs="12" size-sm="6" size-md="4"
+             *ngFor="let building of siteInformationService.siteInformation.roomName | roomFilter : activatedRoute.snapshot.params['id']"
+             [routerLink]="'/admin-home/SETTING/buildingList/roomList/'+building.id">
+      <ion-card color="light" class="ion-text-center ion-padding">
+        <ion-label color="dark" class="ion-text-wrap ion-padding ion-margin">
+          <strong>{{building.name}}</strong></ion-label>
+        <ion-item-divider>
+<!--          <ion-icon  slot="end" name="create-outline" (click)="editBuiltName(building.id)"></ion-icon>-->
+<!--          <ion-icon  slot="end" name="trash" (click)="deleteBuildName(building.id)"></ion-icon>-->
+        </ion-item-divider>
+        <ion-item-divider>
+          <ion-text slot="end">View Rooms</ion-text>
+        </ion-item-divider>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
