@@ -11,6 +11,8 @@ import {PERMISSIONSComponent} from "../component/permissions/permissions.compone
 import {BuildingListComponent} from "../extraComponent/building-list/building-list.component";
 import {WelcomePresentationComponent} from "../extraComponent/welcome-presentation/welcome-presentation.component";
 import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
+import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
+import {PlaygroundComponent} from "../component/playground/playground.component";
 
 const routes: Routes = [
   {
@@ -21,7 +23,13 @@ const routes: Routes = [
         path: 'ROOM',
         component: ROOMComponent
       },
-
+      {
+        path: 'ROOFTOPBAR',
+        component: RooftopbarComponent
+      },{
+        path: 'PLAYGROUND',
+        component: PlaygroundComponent
+      },
       {
         path: 'RESTAURANT',
         component: RESTURANTComponent
