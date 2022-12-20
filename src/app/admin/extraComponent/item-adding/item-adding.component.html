@@ -72,42 +72,41 @@
         <strong>RESTAURANT</strong>
       </ion-item>
     </ion-col>
-  </ion-row>
+    <ion-col>
+      <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              ထမင်းေကြာ်
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">1230</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">12398</ion-card-subtitle>
+                  </ion-col>
 
-  <ion-row>
-    <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
-      <ion-grid class="ion-no-margin ion-no-padding">
-        <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
-          <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
-            ထမင်းေကြာ်
-          </ion-col>
-          <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
-            <ion-grid class="ion-no-margin ion-no-padding">
-              <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
-                <ion-col class="ion-no-margin ion-no-padding">
-                  <ion-text color="danger">1230</ion-text>
-                </ion-col>
-                <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
-                  <ion-row class="ion-align-items-center">
-                    <ion-button size="small" color="danger"
-                                fill="clear">-
-                    </ion-button>
-                    <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
-                    <ion-button size="small"
-                                color="danger" fill="clear">+
-                    </ion-button>
-                  </ion-row>
-                </ion-col>
-                <ion-col class="ion-text-right">
-                  <ion-card-subtitle color="danger" class="ion-margin-end">12398</ion-card-subtitle>
-                </ion-col>
-
-              </ion-row>
-            </ion-grid>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item-divider>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+    </ion-col>
   </ion-row>
 
 </ion-grid>
