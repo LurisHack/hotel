@@ -5,11 +5,11 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 @Component({
   standalone: true,
   imports: [AdminComponentModule],
-  selector: 'app-timer-configuration',
-  templateUrl: './timer-configuration.component.html',
-  styleUrls: ['./timer-configuration.component.scss'],
+  selector: 'app-package-configuration',
+  templateUrl: './package-configuration.component.html',
+  styleUrls: ['./package-configuration.component.scss'],
 })
-export class TimerConfigurationComponent implements OnInit {
+export class PackageConfigurationComponent implements OnInit {
 
   oneMinute = 60000
   oneHour = this.oneMinute * 60
@@ -40,6 +40,7 @@ export class TimerConfigurationComponent implements OnInit {
    }
 
   calculateTime() {
+
 
 
 
