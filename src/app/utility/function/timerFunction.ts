@@ -1,18 +1,7 @@
-import {Observable} from "rxjs";
 import * as  firebase  from 'firebase/firestore'
-import { interval, takeUntil, timer } from 'rxjs';
+import {Observable} from "rxjs";
 
-const currentDate = new Date();
-const startOfNextMinute = new Date(
-  currentDate.getFullYear(),
-  currentDate.getMonth(),
-  currentDate.getDate(),
-  currentDate.getHours(),
-  currentDate.getMinutes() + 1
-);
 
-// This could be any observable stream
-const source = interval(1000);
 
 
 const timeStamp = firebase.Timestamp
@@ -20,34 +9,32 @@ const timeStamp = firebase.Timestamp
 
 export const currentTime = () =>  timeStamp.now()
 
-console.log('Timer function invked')
+console.log('Timer function invoked')
+
+export const calculateTime = (params: {startTime: number, package: number}) => {
+
+  let timer = null;
+
+  // return new Observable(observer => {
+
+  timer =  setInterval(() => {
+
+   let useTime = (params.startTime + params.package) - currentTime().seconds
+
+   let remainTime = (currentTime().seconds) - (params.startTime  + params.package)
+
+
+    console.log('use time' , useTime)
+
+    console.log('remain time' , remainTime )
 
 
 
 
+  },60000)
 
-export const timerFunction = () =>
-  new Observable((observer => {
-
-    const timeOBJ = new Date()
-
-    const minute = timeOBJ.getMinutes()
-    const hour = timeOBJ.getHours()
-    const day =    timeOBJ.getDate()
-    const month =  timeOBJ.getMonth() + 1
-    const year = timeOBJ.getFullYear()
-
-    setInterval(() => {
-     observer.next({minute, hour, day, month, year})
-    },1000)
-  }))
-
-
-export const rxjsTimer = () =>
-{
-const result = source.pipe(
-  takeUntil(timer(startOfNextMinute))
-);
-
-result.subscribe(console.log)
+  // })
 }
+
+
+
