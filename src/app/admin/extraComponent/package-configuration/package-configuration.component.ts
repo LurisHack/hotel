@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {currentTime} from "../../../utility/function/timerFunction";
+import {calculateTime, currentTime} from "../../../utility/function/timerFunction";
 import {AdminComponentModule} from "../../component/admin-component.module";
 
 @Component({
@@ -42,7 +42,7 @@ export class PackageConfigurationComponent implements OnInit {
   calculateTime() {
 
 
-
+    calculateTime({startTime: this.room.startTime, package: this.room.package})
 
     console.log((this.room.startTime + this.room.package) - currentTime().seconds)
 

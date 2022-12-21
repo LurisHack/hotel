@@ -11,19 +11,20 @@ export const currentTime = () =>  timeStamp.now()
 
 console.log('Timer function invoked')
 
-export const calculateTime = (params: {stop: boolean}) => {
+export const calculateTime = (params: {startTime: number, package: number}) => {
 
   let timer = null;
 
   return new Observable(observer => {
 
   timer =  setInterval(() => {
-      observer.next(timeStamp)
-    },60000)
 
-    if (params.stop){
-      clearInterval(timer)
-    }
+    console.log((params.startTime + params.package) - currentTime().seconds)
+
+
+  },60000)
+
+
 
 
   })
