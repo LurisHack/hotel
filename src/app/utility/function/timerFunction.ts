@@ -15,19 +15,25 @@ export const calculateTime = (params: {startTime: number, package: number}) => {
 
   let timer = null;
 
-  return new Observable(observer => {
+  // return new Observable(observer => {
 
   timer =  setInterval(() => {
 
-    console.log((params.startTime + params.package) - currentTime().seconds)
+   let useTime = (params.startTime + params.package) - currentTime().seconds
+
+   let remainTime = (currentTime().seconds) - (params.startTime  + params.package)
+
+
+    console.log('use time' , useTime)
+
+    console.log('remain time' , remainTime )
+
+
 
 
   },60000)
 
-
-
-
-  })
+  // })
 }
 
 
