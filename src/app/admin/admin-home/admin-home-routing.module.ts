@@ -14,6 +14,7 @@ import {RoomListComponent} from "../extraComponent/room-list/room-list.component
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
 import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
+import {TimerConfigurationComponent} from "../extraComponent/timer-configuration/timer-configuration.component";
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
       {
         path: 'ROOFTOPBAR',
         component: RooftopbarComponent
-      },{
+      }, {
         path: 'PLAYGROUND',
         component: PlaygroundComponent
       },
@@ -52,15 +53,23 @@ const routes: Routes = [
         component: SETTINGComponent,
         children: [
           {
+            path: 'welcomePresentation',
+            component: WelcomePresentationComponent,
+          },
+          {
             path: 'buildingList',
             component: BuildingListComponent,
           },
           {
-                path: 'buildingList/roomList/:id',
-                component: RoomListComponent
-              }
-            ]
+            path: 'buildingList/roomList/:id',
+            component: RoomListComponent
           },
+          {
+            path: 'timerConfiguration',
+            component: TimerConfigurationComponent
+          }
+        ]
+      },
       {
         path: 'welcomePresentation',
         component: WelcomePresentationComponent
