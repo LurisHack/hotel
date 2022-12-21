@@ -14,7 +14,7 @@ export class AdminHomePage{
   public appPages = [
     {title: 'ROOM', icon: 'bed'},
     // {title: 'POS',  icon: 'print'},
-    {title: 'ROOFTOP BAR', icon: 'business'},
+    {title: 'ROOFTOPBAR', icon: 'business'},
     {title: 'PLAYGROUND', icon: 'golf'},
     {title: 'STORE', icon: 'storefront'},
     {title: 'RESTAURANT', icon: 'fast-food'},

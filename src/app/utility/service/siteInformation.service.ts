@@ -76,12 +76,12 @@ export class SiteInformationService {
       }).catch((c: any) => console.log(c))
   }
 
-  addRoomName() {
+  addRoomName(id: string) {
     this.alertService.alert()
       .then((alert: any) => {
         console.log(alert)
         Object.assign(this.siteInformation,
-          {roomName: [...this.siteInformation.roomName, {name: alert[0], id: generateId()}]})
+          {roomName: [...this.siteInformation.roomName, {name: alert[0], id: id}]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {

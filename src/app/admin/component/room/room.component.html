@@ -14,12 +14,15 @@
       </ion-col>
 
       <ion-col size-xs="7.5" size-sm="5" size-md="4.5" size-lg="3" push-xs="2.3" push-sm="5.3" push-md="6.5" push-lg="8" class="ion-no-margin ion-no-padding">
-        <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true"  value="CheckIn">
+        <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true"  value="CheckIn" (ionChange)="selectedSegment($event)">
           <ion-segment-button  class="ion-no-margin ion-no-padding" value="CheckIn">
             <ion-label>CheckIn</ion-label>
           </ion-segment-button>
           <ion-segment-button class="ion-no-margin ion-no-padding" value="Available">
             <ion-label>Available</ion-label>
+          </ion-segment-button>
+          <ion-segment-button class="ion-no-margin ion-no-padding" value="Booking">
+            <ion-label>Booking</ion-label>
           </ion-segment-button>
           <ion-segment-button class="ion-no-margin ion-no-padding" value="All">
             <ion-label>All</ion-label>
@@ -38,11 +41,30 @@
 
 <cdk-virtual-scroll-viewport (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host" itemSize="56" minBufferPx="900" maxBufferPx="1350">
 
-  <ion-grid>
+  <ion-grid *ngIf="segment === 'CheckIn' && siteInformationService.siteInformation">
     <ion-row>
       <ion-col *ngFor="let i of [1,2,2,2,3,4,45]" size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
         <app-room-ui></app-room-ui>
 <!--        <app-room-skeleton *ngIf="loaded"></app-room-skeleton>-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid *ngIf="segment === 'All' && siteInformationService.siteInformation">
+    <ion-row>
+      <ion-col>
+
+        <ion-list *ngFor="let building of siteInformationService.siteInformation.buildingName">
+          <ion-list-header>
+            {{building.name}}
+          </ion-list-header>
+          <ion-item-divider *ngFor="let room of siteInformationService.siteInformation.roomName | roomFilter: building.id">
+            {{room.name}}
+          </ion-item-divider>
+
+        </ion-list>
+
       </ion-col>
     </ion-row>
   </ion-grid>

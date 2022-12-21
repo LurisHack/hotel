@@ -8,7 +8,7 @@ export class RoomFilterPipe implements PipeTransform {
 
   transform(value: any[], ...args: any[]): any {
     console.log(value, args)
-    return value.filter(rooms => rooms === args[0]);
+    return value.filter(rooms => rooms.id === args[0]);
   }
 
 }

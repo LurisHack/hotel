@@ -4,13 +4,17 @@ import {RoomUIComponent} from "../../uiComponent/room-ui/room-ui.component";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {AdminComponentModule} from "../admin-component.module";
 import {RoomSkeletonComponent} from "../../skeletonComponent/room-skeleton/room-skeleton.component";
+import {SiteInformationService} from "../../../utility/service/siteInformation.service";
+import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
+import {AlertService} from "../../../utility/service/alert.service";
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule, RoomUIComponent, ScrollingModule, RoomSkeletonComponent],
+  imports: [AdminComponentModule, RoomUIComponent, ScrollingModule, RoomSkeletonComponent, RoomFilterPipe],
   selector: 'app-siteInformation',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss'],
+  providers: [SiteInformationService, AlertService]
 })
 
 export class ROOMComponent{
@@ -18,8 +22,9 @@ export class ROOMComponent{
 
   scrollIndex = 0
   loaded = true
+  segment = 'CheckIn'
 
-  constructor(private store: Store<{testingValue: {testingValue: number[]}}>) {
+  constructor(public siteInformationService: SiteInformationService) {
 
     setTimeout(()=>{
       this.loaded = false
@@ -31,5 +36,10 @@ export class ROOMComponent{
     console.log($event)
     this.scrollIndex = $event
 
+  }
+
+  selectedSegment($event: any) {
+    console.log($event.detail.value)
+    this.segment = $event.detail.value
   }
 }
