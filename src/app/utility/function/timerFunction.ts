@@ -19,19 +19,15 @@ export const calculateTime = (params: {startTime: number, package: number}) => {
 
   timer =  setInterval(() => {
 
-   let useTime = (params.startTime + params.package) - currentTime().seconds
-
-   let remainTime = (currentTime().seconds) - (params.startTime  + params.package)
+   let packageTime = (params.startTime + params.package)
 
 
-    console.log('use time' , useTime)
+    console.log(packageTime)
+    console.log(currentTime().seconds)
 
-    console.log('remain time' , remainTime )
+     console.log('progressTime' , packageTime - currentTime().seconds)
 
-
-
-
-  },60000)
+  },10000)
 
   // })
 }

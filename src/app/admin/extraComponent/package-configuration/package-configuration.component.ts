@@ -23,8 +23,7 @@ export class PackageConfigurationComponent implements OnInit {
 
   constructor() {
 
-    this.checkInTime = this.oneHour
-
+    this.checkInTime = this.oneMinute
 
 
   }
