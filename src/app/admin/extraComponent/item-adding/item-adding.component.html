@@ -5,9 +5,9 @@
         <strong>PACKAGE</strong>
       </ion-item>
     </ion-col>
-    <ion-col class="ion-no-margin" size-xs="6" size-sm="6">
+    <ion-col class="ion-no-margin" size-xs="6" size-sm="4">
       <ion-item lines="none" style="--min-height: 5vh">
-        <ion-select style="width: 100%;" class="ion-margin-end" interface="popover" placeholder="Select">
+        <ion-select style="width: 100%;" interface="popover" placeholder="Select Package">
           <ion-select-option>1H</ion-select-option>
           <ion-select-option>2H</ion-select-option>
           <ion-select-option>3H</ion-select-option>
@@ -17,13 +17,15 @@
           <ion-select-option>1D</ion-select-option>
           <ion-select-option>2D</ion-select-option>
         </ion-select>
-        <ion-button slot="end" class="ion-no-margin" size="small" color="light" style="--border-radius: 9999px;">
-          <ion-icon size="small" color="success" name="checkmark"></ion-icon>
-        </ion-button>
       </ion-item>
     </ion-col>
+    <ion-col class="ion-no-padding">
+      <ion-button class="ion-no-margin" style="width: 50px;--border-radius: 9999px;" size="small" color="light" >
+        <ion-icon size="small" color="success" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-col>
     <ion-col class="ion-no-margin" size-xs="6" size-sm="6">
-      <div style="width: 100%;--min-height: 5vh">
+      <div style="width: 100%;--min-height: 5vh" class="ion-margin-start">
         <ion-chip class="ion-float-left" color="danger" slot="end">1H</ion-chip>
         <ion-chip class="ion-float-left" color="danger" slot="end">3H</ion-chip>
         <ion-chip class="ion-float-left" color="danger" slot="end">6H</ion-chip>
@@ -32,13 +34,13 @@
   </ion-row>
 
   <ion-row class="ion-no-padding ion-margin-top ion-align-items-center">
-    <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
+    <ion-col class="ion-margin-bottom" size-xs="12" style="background: #eaeaea;">
       <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
         <strong>ADD&nbsp;&nbsp;ITEM</strong>
       </ion-item>
     </ion-col>
-    <ion-col class="ion-no-margin" size-xs="12" size-sm="5">
-      <ion-item lines="none" class="ion-no-margin" style="--min-height: 5vh;">
+    <ion-col class="ion-no-margin" size-xs="12" size-sm="4">
+      <ion-item lines="none" style="--min-height: 5vh;">
         <ion-select style="width: 100%;" interface="popover" placeholder="Select Category">
           <ion-select-option>Store</ion-select-option>
           <ion-select-option>Restaurant</ion-select-option>
@@ -48,27 +50,69 @@
         </ion-select>
       </ion-item>
     </ion-col>
-    <ion-col class="ion-no-padding" size-sm="7">
-      <ion-row class="ion-no-padding ion-no-margin">
-        <ion-col class="ion-no-margin" size-xs="12">
-          <ion-item lines="none" style="--min-height: 5vh">
-            <ion-input placeholder="Enter Code"></ion-input>
-            <ion-button slot="end" class="ion-no-margin" size="small" color="light" style="--border-radius: 9999px;">
+    <ion-col class="ion-no-padding ion-no-margin" size-sm="8">
+<!--      <ion-row class="ion-no-padding ion-no-margin">-->
+<!--        <ion-col class="ion-no-padding ion-no-margin" size-xs="9">-->
+<!--          <ion-item fill="outline" style="&#45;&#45;min-height: 8px; margin-left: 20px;">-->
+<!--            <ion-input placeholder="Ender Code"></ion-input>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+<!--        <ion-col class="ion-no-padding ion-no-margin" size-xs="3">-->
+<!--          <ion-item lines="none" style="&#45;&#45;min-height: 6px;">-->
+<!--            <ion-button size="small" color="light" style="&#45;&#45;border-radius: 9999px; &#45;&#45;min-height: 4px;">-->
+<!--              <ion-text style="width:25px;" color="success">OK</ion-text>-->
+<!--            </ion-button>-->
+<!--          </ion-item>-->
+<!--        </ion-col>-->
+<!--        <ion-col class="ion-no-margin" size-xs="4">-->
+<!--          <ion-text>Property Name</ion-text>-->
+<!--        </ion-col>-->
+<!--        <ion-col class="ion-no-margin" size-xs="2">-->
+<!--          <ion-button size="small" color="danger"-->
+<!--                      fill="clear">- -->
+<!--          </ion-button>-->
+<!--          <ion-input style="margin-left: 3px; margin-right: 3px;&#45;&#45;width: 10px" placeholder="21"></ion-input>-->
+<!--          <ion-button size="small"-->
+<!--                      color="danger" fill="clear">+-->
+<!--          </ion-button>-->
+<!--        </ion-col>-->
+<!--        <ion-col class="ion-no-margin" size-xs="3">-->
+<!--          <ion-button class="ion-no-margin" size="small" color="light" style="&#45;&#45;border-radius: 9999px;">-->
+<!--            <ion-text style="width:25px;" color="success">ADD</ion-text>-->
+<!--          </ion-button>-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+      <ion-grid class="ion-no-margin ion-no-padding">
+
+        <ion-row class="ion-no-margin ion-padding">
+          <ion-col size-xs="10">
+            <input style="width: 100%;padding: 7px;border-radius: 5px" placeholder="Ender Code"/>
+          </ion-col>
+          <ion-col size-xs="2">
+            <ion-button style="width: 50px;margin-left: 15px" size="small" color="light">
               <ion-text color="success">OK</ion-text>
             </ion-button>
-          </ion-item>
-        </ion-col>
-        <ion-col class="ion-no-margin" size-xs="12">
-          <ion-item lines="none" style="--min-height: 5px;">
-            <ion-label>Property name</ion-label>
-            <ion-button slot="end" class="ion-no-margin" size="small" color="light" style="--border-radius: 9999px;">
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-no-margin ion-padding">
+          <ion-col size-xs="6">
+            <input style="width: 100%;padding: 7px;border: none;background: none" value="Property Name" disabled="true"/>
+          </ion-col>
+          <ion-col size-xs="4" style="display: flex">
+            <ion-button size="small" color="danger" fill="clear">-</ion-button>
+            <ion-input style="--width: 100%" placeholder="1000"></ion-input>
+            <ion-button size="small" color="danger" fill="clear">+</ion-button>
+          </ion-col>
+          <ion-col size-xs="2">
+            <ion-button style="width: 50px;margin-left: 15px" size="small" color="light">
               <ion-text color="success">ADD</ion-text>
             </ion-button>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-col>
+          </ion-col>
+        </ion-row>
 
+      </ion-grid>
+    </ion-col>
   </ion-row>
 
   <ion-row class="ion-no-padding ion-margin-top">
