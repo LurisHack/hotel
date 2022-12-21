@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {currentTime, rxjsTimer, timerFunction} from "../../../utility/function/timerFunction";
+import {currentTime} from "../../../utility/function/timerFunction";
 import {AdminComponentModule} from "../../component/admin-component.module";
-import {interval} from "rxjs";
 
 @Component({
   standalone: true,
@@ -18,7 +17,8 @@ export class TimerConfigurationComponent implements OnInit {
   checkInTime = currentTime().seconds
 
   room = {
-    startTime: null
+    startTime: 0,
+    package: this.oneHour
   }
 
   constructor() {
@@ -32,18 +32,22 @@ export class TimerConfigurationComponent implements OnInit {
   ngOnInit() {
    }
 
-   checkin(){
+   checkIn(){
+
+    this.room.startTime = currentTime().seconds
+     console.log(this.room)
 
    }
 
-  getCurrentTime() {
-    console.log(currentTime().seconds + this.oneHour)
+  calculateTime() {
 
-    console.log(rxjsTimer())
 
-  }
 
-  checkIn() {
+    console.log((this.room.startTime + this.room.package) - currentTime().seconds)
 
-  }
+
+
+   }
+
+
 }
