@@ -1,3 +1,32 @@
-<p>
-  store-ui works!
-</p>
+
+<ion-content>
+  <ion-item-divider  *ngFor="let i of [1,2,2,2,3,4,5,6,7,8,9,10]"  class="--inner-padding-bottom">
+    <ion-grid class="ion-no-padding ion-no-margin">
+      <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">
+        <ion-col size="2" class="ion-text-center" style="color: black">
+          1
+        </ion-col>
+        <ion-col>
+            <ion-grid >
+              <ion-row>
+                <ion-col size-sm="3" size-xs="12" >
+                  water and rice
+                </ion-col>
+                <ion-col style="color: red" size-sm="3" size-xs="12">
+                  1000
+                </ion-col>
+                <ion-col style="color: red" size-sm="3" size-xs="12">
+                  5
+                </ion-col>
+                <ion-col style="color: red" size-sm="3" size-xs="12">
+                  5000
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-item-divider>
+</ion-content>
