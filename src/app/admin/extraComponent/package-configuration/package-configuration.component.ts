@@ -11,14 +11,14 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 })
 export class PackageConfigurationComponent implements OnInit {
 
-  oneMinute = 60000
+  oneMinute = 60
   oneHour = this.oneMinute * 60
 
   checkInTime = currentTime().seconds
 
   room = {
     startTime: 0,
-    package: this.oneHour
+    package: 0
   }
 
   constructor() {
@@ -34,7 +34,9 @@ export class PackageConfigurationComponent implements OnInit {
    checkIn(){
 
     this.room.startTime = currentTime().seconds
+     this.room.package = this.oneMinute
      console.log(this.room)
+
 
    }
 
@@ -43,7 +45,6 @@ export class PackageConfigurationComponent implements OnInit {
 
     calculateTime({startTime: this.room.startTime, package: this.room.package})
 
-    console.log((this.room.startTime + this.room.package) - currentTime().seconds)
 
 
 
