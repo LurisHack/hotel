@@ -16,6 +16,8 @@ export class PackageConfigurationComponent implements OnInit {
 
   checkInTime = currentTime().seconds
 
+  setWidth = 0
+
   room = {
     startTime: 0,
     package: 0
@@ -33,8 +35,7 @@ export class PackageConfigurationComponent implements OnInit {
 
    checkIn(){
 
-    this.room.startTime = currentTime().seconds
-     this.room.package = this.oneMinute
+
      console.log(this.room)
 
 
@@ -42,8 +43,14 @@ export class PackageConfigurationComponent implements OnInit {
 
   calculateTime() {
 
+    this.room.startTime = currentTime().seconds
+    this.room.package = this.oneMinute
 
     calculateTime({startTime: this.room.startTime, package: this.room.package})
+    .subscribe((s:any) => {
+      console.log(s)
+      this.setWidth = s
+    })
 
 
 
