@@ -31,7 +31,8 @@ const routes: Routes = [
       {
         path: 'ROOFTOPBAR',
         component: RooftopbarComponent
-      }, {
+      },
+      {
         path: 'PLAYGROUND',
         component: PlaygroundComponent
       },
