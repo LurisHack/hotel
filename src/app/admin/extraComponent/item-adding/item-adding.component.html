@@ -1,12 +1,12 @@
 <ion-grid>
-  <ion-row class="ion-no-padding ion-align-items-center">
+  <ion-row class="ion-no-padding ion-align-items-center" style="background: whitesmoke;">
     <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
       <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
         <strong>PACKAGE</strong>
       </ion-item>
     </ion-col>
     <ion-col class="ion-no-margin" size-xs="6" size-sm="4">
-      <ion-item lines="none" style="--min-height: 5vh">
+      <ion-item lines="none" style="--min-height: 5vh;--background: whitesmoke">
         <ion-select style="width: 100%;" interface="popover" placeholder="Select Package">
           <ion-select-option>1H</ion-select-option>
           <ion-select-option>2H</ion-select-option>
@@ -19,28 +19,31 @@
         </ion-select>
       </ion-item>
     </ion-col>
-    <ion-col class="ion-no-padding">
+    <ion-col class="ion-no-padding" size-xs="2">
       <ion-button class="ion-no-margin" style="width: 50px;--border-radius: 9999px;" size="small" color="light" >
         <ion-icon size="small" color="success" name="checkmark"></ion-icon>
       </ion-button>
     </ion-col>
-    <ion-col class="ion-no-margin" size-xs="6" size-sm="6">
-      <div style="width: 100%;--min-height: 5vh" class="ion-margin-start">
+    <ion-col class="ion-no-margin" size-xs="4" size-sm="6">
+      <div style="width: 100%;--min-height: 5vh;">
         <ion-chip class="ion-float-left" color="danger" slot="end">1H</ion-chip>
         <ion-chip class="ion-float-left" color="danger" slot="end">3H</ion-chip>
         <ion-chip class="ion-float-left" color="danger" slot="end">6H</ion-chip>
+        <ion-chip class="ion-float-left" color="danger" slot="end">1D</ion-chip>
+        <ion-chip class="ion-float-left" color="danger" slot="end">3D</ion-chip>
+        <ion-chip class="ion-float-left" color="danger" slot="end">5D</ion-chip>
       </div>
     </ion-col>
   </ion-row>
 
-  <ion-row class="ion-no-padding ion-margin-top ion-align-items-center">
+  <ion-row class="ion-no-padding ion-margin-top ion-align-items-center" style="background: whitesmoke;">
     <ion-col class="ion-margin-bottom" size-xs="12" style="background: #eaeaea;">
       <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
         <strong>ADD&nbsp;&nbsp;ITEM</strong>
       </ion-item>
     </ion-col>
     <ion-col class="ion-no-margin" size-xs="12" size-sm="4">
-      <ion-item lines="none" style="--min-height: 5vh;">
+      <ion-item lines="none" style="--min-height: 5vh;--background: whitesmoke;">
         <ion-select style="width: 100%;" interface="popover" placeholder="Select Category">
           <ion-select-option>Store</ion-select-option>
           <ion-select-option>Restaurant</ion-select-option>
@@ -86,7 +89,7 @@
 
         <ion-row class="ion-no-margin ion-padding">
           <ion-col size-xs="10">
-            <input style="width: 100%;padding: 7px;border-radius: 5px" placeholder="Ender Code"/>
+            <input style="width: 100%;padding: 7px;border: 1px solid black;border-radius: 5px;background: whitesmoke;" placeholder="Ender Code"/>
           </ion-col>
           <ion-col size-xs="2">
             <ion-button style="width: 50px;margin-left: 15px" size="small" color="light">
@@ -115,14 +118,14 @@
     </ion-col>
   </ion-row>
 
-  <ion-row class="ion-no-padding ion-margin-top">
+  <ion-row class="ion-no-padding ion-margin-top" style="background: whitesmoke;">
     <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
       <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
         <strong>RESTAURANT</strong>
       </ion-item>
     </ion-col>
     <ion-col>
-      <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
+      <ion-item-divider *ngFor="let i of [1,2,3,4,5]" style="background: whitesmoke;">
         <ion-grid class="ion-no-margin ion-no-padding">
           <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
             <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
