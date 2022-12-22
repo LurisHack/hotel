@@ -13,28 +13,28 @@ console.log('Timer function invoked')
 
 export const calculateTime = (params: {startTime: number, package: number}) => {
 
-  let timer = null;
-
-  // return new Observable(observer => {
-
-  timer =  setInterval(() => {
-
-   let useTime = (params.startTime + params.package) - currentTime().seconds
-
-   let remainTime = (currentTime().seconds) - (params.startTime  + params.package)
+  let packageTime = (params.startTime + params.package)
 
 
-    console.log('use time' , useTime)
-
-    console.log('remain time' , remainTime )
+  return new Observable(observer => {
 
 
+    let clearTime = setInterval(() => {
 
+      observer.next(((params.package / (packageTime - currentTime().seconds)) / 10).toFixed(2))
 
-  },60000)
+      // if (packageTime <= currentTime().seconds) {
+      //   clearInterval(clearTime)
+      // }
 
-  // })
+      if(((params.package / (packageTime - currentTime().seconds)) / 10) >= 1){
+        clearInterval(clearTime)
+      }
+
+    }, 3000)
+  })
 }
+
 
 
 

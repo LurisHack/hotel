@@ -11,20 +11,21 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 })
 export class PackageConfigurationComponent implements OnInit {
 
-  oneMinute = 60000
+  oneMinute = 60
   oneHour = this.oneMinute * 60
 
   checkInTime = currentTime().seconds
 
+  setWidth = 0
+
   room = {
     startTime: 0,
-    package: this.oneHour
+    package: 0
   }
 
   constructor() {
 
-    this.checkInTime = this.oneHour
-
+    this.checkInTime = this.oneMinute
 
 
   }
@@ -34,17 +35,23 @@ export class PackageConfigurationComponent implements OnInit {
 
    checkIn(){
 
-    this.room.startTime = currentTime().seconds
+
      console.log(this.room)
+
 
    }
 
   calculateTime() {
 
+    this.room.startTime = currentTime().seconds
+    this.room.package = this.oneMinute
 
     calculateTime({startTime: this.room.startTime, package: this.room.package})
+    .subscribe((s:any) => {
+      console.log(s)
+      this.setWidth = s
+    })
 
-    console.log((this.room.startTime + this.room.package) - currentTime().seconds)
 
 
 

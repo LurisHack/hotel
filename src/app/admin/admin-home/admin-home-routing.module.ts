@@ -17,6 +17,7 @@ import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
 import {PackageConfigurationComponent} from "../extraComponent/package-configuration/package-configuration.component";
 import {SettingPlayGroundComponent} from "../extraComponent/setting-play-ground/setting-play-ground.component";
 import {SettingRoofTopBarComponent} from "../extraComponent/setting-roof-top-bar/setting-roof-top-bar.component";
+import {SettingStoreComponent} from "../extraComponent/setting-store/setting-store.component";
 
 const routes: Routes = [
   {
@@ -77,6 +78,10 @@ const routes: Routes = [
           {
             path: 'playground',
             component: SettingPlayGroundComponent
+          },
+          {
+            path: 'store',
+            component: SettingStoreComponent
           }
         ]
       },
