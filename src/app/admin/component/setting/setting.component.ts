@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
-import {MenuController} from "@ionic/angular";
 import {RouterModule} from "@angular/router";
 
 @Component({

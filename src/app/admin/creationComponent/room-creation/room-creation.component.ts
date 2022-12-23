@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import {RoomListUiComponent} from "../../uiComponent/room-list-ui/room-list-ui.component";
+import {AdminComponentModule} from "../../component/admin-component.module";
 
 @Component({
   standalone: true,
   imports: [RoomListUiComponent],
-  selector: 'app-room-list',
-  templateUrl: './room-list.component.html',
-  styleUrls: ['./room-list.component.scss'],
+  selector: 'app-room-creation',
+  templateUrl: './room-creation.component.html',
+  styleUrls: ['./room-creation.component.scss'],
 })
-export class RoomListComponent{
+export class RoomCreationComponent {
   constructor() {
     console.log('room list component')
   }
