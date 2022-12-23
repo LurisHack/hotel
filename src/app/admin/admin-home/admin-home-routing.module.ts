@@ -9,7 +9,9 @@ import {SETTINGComponent} from "../component/setting/setting.component";
 import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
 import {BuildingListComponent} from "../extraComponent/building-list/building-list.component";
-import {WelcomePresentationCreationComponent} from "../creationComponent/welcome-presentation-creation/welcome-presentation-creation.component";
+import {
+  WelcomePresentationCreationComponent
+} from "../creationComponent/welcome-presentation-creation/welcome-presentation-creation.component";
 import {RoomCreationComponent} from "../creationComponent/room-creation/room-creation.component";
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
@@ -89,22 +91,23 @@ const routes: Routes = [
       {
         path: 'welcomePresentation',
         component: WelcomePresentationCreationComponent
-      }]
-  },
-  {
-    path: 'USERS',
-    component: USERSComponent
-  },
-  {
-    path: 'PERMISSIONS',
-    component: PERMISSIONSComponent
-  }
-]
+      },
+      {
+        path: 'USERS',
+        component: USERSComponent
+      },
+      {
+        path: 'PERMISSIONS',
+        component: PERMISSIONSComponent
+      }
+    ]
+
+  }]
 
 
-@NgModule({
-  imports: [RouterModule.forChild(routes),],
-  exports: [RouterModule],
-})
-export class AdminHomePageRoutingModule {
-}
+    @NgModule({
+      imports: [RouterModule.forChild(routes),],
+      exports: [RouterModule],
+    })
+    export class AdminHomePageRoutingModule {
+    }
