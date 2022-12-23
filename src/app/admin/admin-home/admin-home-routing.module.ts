@@ -14,10 +14,10 @@ import {RoomCreationComponent} from "../creationComponent/room-creation/room-cre
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
 import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
-import {PackageConfigurationComponent} from "../creationComponent/package-creation/package-configuration.component";
 import {PlayGroundCreationComponent} from "../creationComponent/play-ground-creation/play-ground-creation.component";
 import {RoofTopBarCreationComponent} from "../creationComponent/roof-top-bar-creation/roof-top-bar-creation.component";
 import {RoomTypeCreationComponent} from "../creationComponent/room-type-creation/room-type-creation.component";
+import {RoomPackageCreationComponent} from "../creationComponent/room-package-creation/room-package-creation.component";
 
 const routes: Routes = [
   {
@@ -65,16 +65,16 @@ const routes: Routes = [
             component: RoomTypeCreationComponent
           },
           {
+            path: 'roomTypeCreation/roomPackageCreation/:id',
+            component: RoomPackageCreationComponent,
+          },
+          {
             path: 'buildingList',
             component: BuildingListComponent,
           },
           {
             path: 'buildingList/roomList/:id',
             component: RoomCreationComponent
-          },
-          {
-            path: 'packageConfiguration',
-            component: PackageConfigurationComponent
           },
           {
             path: 'rooftopBar',
