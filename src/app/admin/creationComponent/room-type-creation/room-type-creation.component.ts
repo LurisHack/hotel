@@ -15,14 +15,13 @@ import {generateId} from "../../../utility/function/generateId";
   styleUrls: ['./room-type-creation.component.scss'],
 })
 
-export class RoomTypeCreationComponent implements OnInit {
+export class RoomTypeCreationComponent{
 
   @ViewChild('roomTypeName') roomTypeName: any
 
   constructor(public activatedRoute: ActivatedRoute, private toastService: ToastService,
               public siteInformationService: SiteInformationService) {}
 
-  ngOnInit() {}
 
   AddRoomType() {
 
@@ -33,8 +32,8 @@ export class RoomTypeCreationComponent implements OnInit {
       return
     }
 
-      // this.siteInformationService
-      //   .addRoomType(roomTypeName, generateId(), 'roomType')
+      this.siteInformationService
+        .addRoomType(roomTypeName, generateId(), 'roomType')
     }
 
 
