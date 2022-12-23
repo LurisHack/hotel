@@ -68,7 +68,8 @@ export class SiteInformationService {
   }
 
   private updateSiteInformationData() {
-    this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
+    this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation,
+      updatePropertyName: 'updatePropertyName'})
       .then((t: any) => {
         console.log(t)
         this.store.dispatch(
