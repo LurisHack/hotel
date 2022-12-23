@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import { RouterModule} from "@angular/router";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
-import {FirestoreService} from "../../../utility/service/firestore.service";
-import {AlertService} from "../../../utility/service/alert.service";
 
 @Component({
   standalone: true,
@@ -11,7 +9,7 @@ import {AlertService} from "../../../utility/service/alert.service";
   selector: 'app-building-list-ui',
   templateUrl: './building-list-ui.component.html',
   styleUrls: ['./building-list-ui.component.scss'],
-  providers: [SiteInformationService, FirestoreService, AlertService, RouterModule]
+  providers: [RouterModule]
 })
 
 export class BuildingListUiComponent{

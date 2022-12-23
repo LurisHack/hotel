@@ -5,10 +5,10 @@ import {AdminComponentModule} from "../../component/admin-component.module";
   standalone:true,
   imports:[AdminComponentModule],
   selector: 'app-roof-top-bar-creation',
-  templateUrl: './setting-roof-top-bar.component.html',
-  styleUrls: ['./setting-roof-top-bar.component.scss'],
+  templateUrl: './roof-top-bar-creation.component.html',
+  styleUrls: ['./roof-top-bar-creation.component.scss'],
 })
-export class SettingRoofTopBarComponent implements OnInit {
+export class RoofTopBarCreationComponent implements OnInit {
 
   constructor() { }
 

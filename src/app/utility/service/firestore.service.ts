@@ -4,7 +4,7 @@ import { hostName } from "../function/hostName";
 import {map} from "rxjs";
 import {docResolver} from "../function/documentResolver";
 
-@Injectable()
+@Injectable({providedIn: "root"})
 export class FirestoreService {
 
   dbPrefix: any;
