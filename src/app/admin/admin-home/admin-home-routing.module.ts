@@ -18,6 +18,7 @@ import {PackageConfigurationComponent} from "../extraComponent/package-configura
 import {SettingPlayGroundComponent} from "../extraComponent/setting-play-ground/setting-play-ground.component";
 import {SettingRoofTopBarComponent} from "../extraComponent/setting-roof-top-bar/setting-roof-top-bar.component";
 import {SettingStoreComponent} from "../extraComponent/setting-store/setting-store.component";
+import {RoomTypeComponent} from "../extraComponent/room-type/room-type.component";
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
           {
             path: 'welcomePresentation',
             component: WelcomePresentationComponent,
+          },
+          {
+            path: 'roomType',
+            component: RoomTypeComponent
           },
           {
             path: 'buildingList',

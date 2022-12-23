@@ -3,7 +3,7 @@
 <ion-menu style="--width: 250px" side="end" contentId="setting-content">
   <ion-header mode="ios">
     <ion-toolbar  class="ion-text-center">
-      <ion-text>Setting Menu</ion-text>
+      <ion-text>Creation Panel</ion-text>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
@@ -14,6 +14,14 @@
                 routerLinkActive="selected">
         <ion-label style="padding-left: 5px"><small>{{ 'Welcome Presentation' }}</small></ion-label>
         <ion-icon class="ion-margin-start" [ios]="'Heart' + '-outline'" [md]="'heart' + '-sharp'"></ion-icon>
+      </ion-item>
+
+      <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
+                [routerLink]="'/admin-home/SETTING/roomType'"
+                lines="none" detail="false"
+                routerLinkActive="selected">
+        <ion-label style="padding-left: 5px"><small>{{ 'Room Type' }}</small></ion-label>
+        <ion-icon class="ion-margin-start" [ios]="'bed' + '-outline'" [md]="'bed' + '-sharp'"></ion-icon>
       </ion-item>
 
       <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
