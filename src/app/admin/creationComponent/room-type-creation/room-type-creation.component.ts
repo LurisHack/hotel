@@ -33,13 +33,13 @@ export class RoomTypeCreationComponent implements OnInit {
       return
     }
 
-      this.siteInformationService
-        .addRoomType(roomTypeName, generateId(), 'roomType')
+      // this.siteInformationService
+      //   .addRoomType(roomTypeName, generateId(), 'roomType')
     }
 
 
   deleteRoomType(roomTypeId: string) {
-    this.siteInformationService
-      .deleteRoomType(roomTypeId, 'roomType')
+    // this.siteInformationService
+    //   .deleteRoomType(roomTypeId, 'roomType')
   }
 }

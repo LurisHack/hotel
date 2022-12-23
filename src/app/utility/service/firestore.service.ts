@@ -3,7 +3,6 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { hostName } from "../function/hostName";
 import {map} from "rxjs";
 import {docResolver} from "../function/documentResolver";
-import {updatePassword} from "@angular/fire/auth";
 
 @Injectable({providedIn: "root"})
 export class FirestoreService {
