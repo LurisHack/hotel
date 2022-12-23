@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {RoomListUiComponent} from "../../uiComponent/room-list-ui/room-list-ui.component";
-import {AdminComponentModule} from "../../component/admin-component.module";
 
 @Component({
   standalone: true,
