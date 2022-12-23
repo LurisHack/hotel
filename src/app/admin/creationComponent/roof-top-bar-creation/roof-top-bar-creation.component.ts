@@ -13,14 +13,30 @@ import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
 })
 export class RoofTopBarCreationComponent implements OnInit {
 
-  constructor(
-    public activatedRoute: ActivatedRoute,
-    public siteInformationService: SiteInformationService
-  ) { }
+  check = true;
 
-  ngOnInit() {}
+  constructor(public siteInformationService: SiteInformationService) {
+  }
 
-  SettingRoofTopBar() {
-    this.siteInformationService.addRoomName(this.activatedRoute.snapshot.params['id'])
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  addBuildingName() {
+    this.siteInformationService.RoofTopBar()
+  }
+
+  deleteBuildName(id: string) {
+    this.siteInformationService.deleteSiteInformation(id)
+  }
+
+  editBuiltName(id: string) {
+    // this.siteInformationService.editBuildingName(id)
+    this.check = false;
+  }
+
+
+  doneBuiltName(id: string) {
+    this.check = true;
   }
 }

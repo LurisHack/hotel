@@ -92,4 +92,7 @@ export class SiteInformationService {
       })
   }
 
+  RoofTopBar() {
+
+  }
 }
