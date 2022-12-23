@@ -9,14 +9,14 @@ import {SETTINGComponent} from "../component/setting/setting.component";
 import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
 import {BuildingListComponent} from "../extraComponent/building-list/building-list.component";
-import {WelcomePresentationCreationComponent} from "../creationComponent/welcome-presentation-creation/welcome-presentation-creation.component";
+import { WelcomePresentationCreationComponent } from "../creationComponent/welcome-presentation-creation/welcome-presentation-creation.component";
 import {RoomCreationComponent} from "../creationComponent/room-creation/room-creation.component";
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
 import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
 import {PackageConfigurationComponent} from "../creationComponent/package-creation/package-configuration.component";
 import {PlayGroundCreationComponent} from "../creationComponent/play-ground-creation/play-ground-creation.component";
-import {SettingRoofTopBarComponent} from "../creationComponent/roof-top-bar-creation/setting-roof-top-bar.component";
+import {RoofTopBarCreationComponent} from "../creationComponent/roof-top-bar-creation/roof-top-bar-creation.component";
 import {RoomTypeCreationComponent} from "../creationComponent/room-type-creation/room-type-creation.component";
 
 const routes: Routes = [
@@ -61,7 +61,7 @@ const routes: Routes = [
             component: WelcomePresentationCreationComponent,
           },
           {
-            path: 'roomType',
+            path: 'roomTypeCreation',
             component: RoomTypeCreationComponent
           },
           {
@@ -78,7 +78,7 @@ const routes: Routes = [
           },
           {
             path: 'rooftopBar',
-            component: SettingRoofTopBarComponent
+            component: RoofTopBarCreationComponent
           },
           {
             path: 'playground',
@@ -89,22 +89,23 @@ const routes: Routes = [
       {
         path: 'welcomePresentation',
         component: WelcomePresentationCreationComponent
-      }]
-  },
-  {
-    path: 'USERS',
-    component: USERSComponent
-  },
-  {
-    path: 'PERMISSIONS',
-    component: PERMISSIONSComponent
-  }
-]
+      },
+      {
+        path: 'USERS',
+        component: USERSComponent
+      },
+      {
+        path: 'PERMISSIONS',
+        component: PERMISSIONSComponent
+      }
+    ]
+
+  }]
 
 
-@NgModule({
-  imports: [RouterModule.forChild(routes),],
-  exports: [RouterModule],
-})
-export class AdminHomePageRoutingModule {
-}
+    @NgModule({
+      imports: [RouterModule.forChild(routes),],
+      exports: [RouterModule],
+    })
+    export class AdminHomePageRoutingModule {
+    }
