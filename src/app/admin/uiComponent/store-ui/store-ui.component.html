@@ -1,5 +1,32 @@
 
 <ion-content>
+  <ion-header mode="ios">
+    <ion-toolbar>
+
+        <ion-text>
+          STORE
+        </ion-text>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button slot="start"  size="small">
+                add product
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-input>
+        </ion-input>
+
+        <ion-button slot="end" size="small">ok</ion-button>
+      </ion-item>
+
+    </ion-toolbar>
+  </ion-header>
+
   <ion-item-divider  *ngFor="let i of [1,2,2,2,3,4,5,6,7,8,9,10]"  class="--inner-padding-bottom">
     <ion-grid class="ion-no-padding ion-no-margin">
       <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">
