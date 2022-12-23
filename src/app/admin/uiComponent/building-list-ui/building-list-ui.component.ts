@@ -16,6 +16,8 @@ import {AlertService} from "../../../utility/service/alert.service";
 
 export class BuildingListUiComponent{
 
+  check = true;
+
   constructor(public siteInformationService: SiteInformationService) {}
 
   addBuildingName() {
@@ -27,8 +29,12 @@ export class BuildingListUiComponent{
   }
 
   editBuiltName(id: string) {
-    this.siteInformationService.editBuildingName(id)
+    // this.siteInformationService.editBuildingName(id)
+    this.check = false;
   }
 
 
+  doneBuiltName(id: string) {
+    this.check = true;
+  }
 }
