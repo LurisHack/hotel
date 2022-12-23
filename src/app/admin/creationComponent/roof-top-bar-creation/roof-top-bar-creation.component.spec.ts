@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SettingRoofTopBarComponent } from './setting-roof-top-bar.component';
+import { RoofTopBarCreationComponent } from './roof-top-bar-creation.component';
 
 describe('SettingRoofTopBarComponent', () => {
-  let component: SettingRoofTopBarComponent;
-  let fixture: ComponentFixture<SettingRoofTopBarComponent>;
+  let component: RoofTopBarCreationComponent;
+  let fixture: ComponentFixture<RoofTopBarCreationComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SettingRoofTopBarComponent ],
+      declarations: [ RoofTopBarCreationComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SettingRoofTopBarComponent);
+    fixture = TestBed.createComponent(RoofTopBarCreationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

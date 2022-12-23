@@ -8,10 +8,10 @@ import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
   standalone:true,
   imports: [AdminComponentModule, RouterLink, RoomFilterPipe],
   selector: 'app-roof-top-bar-creation',
-  templateUrl: './setting-roof-top-bar.component.html',
-  styleUrls: ['./setting-roof-top-bar.component.scss'],
+  templateUrl: './roof-top-bar-creation.component.html',
+  styleUrls: ['./roof-top-bar-creation.component.scss'],
 })
-export class SettingRoofTopBarComponent implements OnInit {
+export class RoofTopBarCreationComponent implements OnInit {
 
   constructor(
     public activatedRoute: ActivatedRoute,
