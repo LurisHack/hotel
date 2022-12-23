@@ -7,22 +7,3 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid class="ion-no-padding" *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
-    <ion-row class="ion-align-items-center">
-      <ion-col size-xs="12" size-sm="6" size-md="4"
-               *ngFor="let roomType of siteInformationService.siteInformation.roomType"
-              >
-        <ion-card color="light" class="ion-text-center ion-no-padding">
-          <ion-label  [routerLink]="'/admin-home/SETTING/roomTypeCreation/roomPackageCreation/'+roomType.id" color="dark" class="ion-text-wrap">
-            <strong>{{roomType.name}}</strong></ion-label>
-          <ion-button color="danger" class="ion-no-margin ion-no-padding ion-float-right"
-                      expand="full"
-                      style="--height: 100%; --width: 50px" (click)="deleteRoomType(roomType.id)">
-            <ion-icon name="close-outline" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>

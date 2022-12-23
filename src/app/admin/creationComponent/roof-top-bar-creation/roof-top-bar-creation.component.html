@@ -1,21 +1,38 @@
-<ion-header mode="ios">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar >
+  <ion-button class="ion-no-padding" color="medium" slot="end" (click)="addBuildingName()" size="small">
+    <ion-icon style="margin-left: 3px" slot="icon-only" name="add-circle"></ion-icon>
+    <ion-text style="margin: 0px 3px 0px 3px">
+    RoofTop Bar
+    </ion-text>
+  </ion-button>
+</ion-toolbar>
 
 <ion-content>
-<ion-card>
-  <ion-grid>
-    <ion-row>
+<ion-grid *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.buildingName.length">
+  <ion-row class="ion-margin" style="background: whitesmoke;"
+           *ngFor="let building of siteInformationService.siteInformation.buildingName">
+    <ion-col size-xs="11" size-sm="6"  class="ion-text-center">
+      <ion-label *ngIf="check" color="dark" class="ion-text-wrap ion-padding ion-margin">
+        <strong>{{building.name}}</strong>
+      </ion-label>
+      <ion-label *ngIf="!check"  color="dark" class="ion-text-wrap">
+        <ion-input class="ion-no-padding ion-no-margin" style="font-weight: bold;"
+                   value="{{building.name}}"></ion-input>
+      </ion-label>
+    </ion-col>
+    <ion-col size-xs="1">
+      <ion-icon *ngIf="check" name="create-outline" (click)="editBuiltName(building.id)"></ion-icon>
+      <ion-icon *ngIf="!check" color="success" name="checkmark" (click)="doneBuiltName(building.id)"></ion-icon>
+    </ion-col>
+    <ion-col size-xs="11" size-sm="4" class="ion-text-center" [routerLink]="'/admin-home/SETTING/buildingList/roomList/'+building.id">
+      <ion-text><small>View Rooms</small></ion-text>
+    </ion-col>
+    <ion-col size-xs="1">
+      <ion-icon color="danger" name="trash" (click)="deleteBuildName(building.id)"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
-      <ion-col *ngFor="let i of[1,2,3,4,5,6]" style="background: gold" size-xs="12"  size-sm="3" size-md="4" size-lg="2" size-xl="2">
-        <ion-card>စားမောင်လေးစား မောင်လေးအားရပါးရစား</ion-card>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
-</ion-card>
 </ion-content>
+
+
