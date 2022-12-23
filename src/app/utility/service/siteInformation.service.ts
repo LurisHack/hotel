@@ -14,10 +14,12 @@ export class SiteInformationService {
   storeSubscription: Subscription;
   siteInformation: {
     buildingName: { name: string, id: string }[],
-    roomName: {name: string, id: string}[]
+    roomName: {name: string, id: string}[],
+    roomType:  {name: string, id: string}[]
   } = {
     buildingName: [],
-    roomName: []
+    roomName: [],
+    roomType: []
   }
 
   constructor(private store: Store<{ siteInformation: { siteInformation: any }}>,
