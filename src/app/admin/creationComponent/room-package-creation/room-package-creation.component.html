@@ -1,0 +1,55 @@
+<ion-content>
+  <!--<ion-progress-bar color="dark" [value]="setWidth"></ion-progress-bar>-->
+  <!---->
+  <!--<ion-button (click)="calculateTime()">calculateTime-->
+  <!--</ion-button>-->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Section</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-select interface="popover" placeholder="Select Hour">
+          <ion-select-option *ngFor="let hour of [1,2,3,4,5,6,7,8,9,10,11,12]">
+            {{hour + 'hr'}}
+          </ion-select-option>
+        </ion-select>
+        <ion-item fill="solid">
+          <ion-label>Enter Price</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-button color="danger">ADD</ion-button>
+      </ion-item>
+    </ion-card-content>
+    <ion-card-content>
+
+      <ion-chip *ngFor="let sectionPackage of [1,2,3,4,5]" style="background: mistyrose">
+
+
+        <ion-icon  name="create-outline"></ion-icon>
+        <ion-label><strong style="margin: 5px 10px 5px 10px; color: blueviolet">{{sectionPackage+'hr -'+ sectionPackage + '0000'}}</strong>
+        </ion-label>
+        <ion-icon   name="close-outline"></ion-icon>
+
+        <!--        <ion-button color="light" class="ion-no-margin ion-no-padding"-->
+<!--                    style="&#45;&#45;height: 100%; width: 25px; float: left">-->
+<!--        </ion-button>-->
+<!--        <ion-button  color="light" class="ion-no-margin ion-no-padding"-->
+<!--                    style="&#45;&#45;height: 100%; width: 25px; float: right">-->
+<!--        </ion-button>-->
+
+      </ion-chip>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Full Time</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>This is section package setting</ion-card-content>
+    <ion-card-content>This is packages</ion-card-content>
+  </ion-card>
+
+</ion-content>

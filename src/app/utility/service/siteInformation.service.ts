@@ -14,10 +14,12 @@ export class SiteInformationService {
   storeSubscription: Subscription;
   siteInformation: {
     buildingName: { name: string, id: string }[],
-    roomName: {name: string, id: string}[]
+    roomName: {name: string, id: string}[],
+    roomType: {name: string, id: string}[]
   } = {
     buildingName: [],
-    roomName: []
+    roomName: [],
+    roomType: []
   }
 
   constructor(private store: Store<{ siteInformation: { siteInformation: any }}>,
@@ -68,20 +70,20 @@ export class SiteInformationService {
   }
 
   private updateSiteInformationData() {
-    this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
-      .then((t: any) => {
-        console.log(t)
-        this.store.dispatch(
-          {type: SITE_INFORMATION, payload: this.siteInformation})
-      }).catch((c: any) => console.log(c))
+    // this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
+    //   .then((t: any) => {
+    //     console.log(t)
+    //     this.store.dispatch(
+    //       {type: SITE_INFORMATION, payload: this.siteInformation})
+    //   }).catch((c: any) => console.log(c))
   }
 
-  addRoomName(id: string) {
+  addRoomName(name: string | number, id: string) {
     this.alertService.alert()
       .then((alert: any) => {
         console.log(alert)
         Object.assign(this.siteInformation,
-          {roomName: [...this.siteInformation.roomName, {name: alert[0], id: id}]})
+          {roomName: [...this.siteInformation.roomName, {name, id}]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
@@ -92,4 +94,33 @@ export class SiteInformationService {
       })
   }
 
+  addRoomType(name: string | number, id: string, updatePropertyName: any) {
+
+        Object.assign(this.siteInformation,
+          {roomType: [...this.siteInformation.roomType, {name, id}]})
+        console.log(this.siteInformation)
+        this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation.roomType,
+          updatePropertyName})
+          .then((t: any) => {
+            console.log(t)
+            this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+          })
+          .catch((c: any) => console.log(c))
+
+   }
+
+
+  deleteRoomType(roomTypeId: string, updatePropertyName: any) {
+
+    Object.assign(this.siteInformation,
+      {roomType: this.siteInformation.roomType.filter(roomType => roomType.id != roomTypeId)})
+    this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation.roomType,
+      updatePropertyName})
+      .then((t: any) => {
+        console.log(t)
+        this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+      })
+      .catch((c: any) => console.log(c))
+
+  }
 }

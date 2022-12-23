@@ -3,6 +3,7 @@ import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { hostName } from "../function/hostName";
 import {map} from "rxjs";
 import {docResolver} from "../function/documentResolver";
+import {updatePassword} from "@angular/fire/auth";
 
 @Injectable({providedIn: "root"})
 export class FirestoreService {
@@ -19,18 +20,23 @@ export class FirestoreService {
       .get()
       .pipe(map(docData => docResolver(docData)))
 
-
   }
 
 
   addDoc(param: {doc: string; data: any}){
+
+    console.log(param)
+
       return   this.dbPrefix.doc(param.doc)
         .set(param.data)
   }
 
-  updateDoc(param: {doc: string; data: any}){
+  updateDoc(param: {doc: string; data: any; updatePropertyName: any}){
+
+    console.log(param)
+
     return   this.dbPrefix.doc(param.doc)
-      .update(param.data)
+      .update({[param.updatePropertyName]: param.data})
 
   }
 

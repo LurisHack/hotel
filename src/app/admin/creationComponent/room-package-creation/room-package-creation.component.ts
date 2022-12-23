@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {calculateTime, currentTime} from "../../../utility/function/timerFunction";
+import { Component } from '@angular/core';
+import {currentTime} from "../../../utility/function/timerFunction";
 import {AdminComponentModule} from "../../component/admin-component.module";
+import {calculateTime} from "../../../utility/function/timerFunction";
 
 @Component({
   standalone: true,
   imports: [AdminComponentModule],
-  selector: 'app-package-creation',
-  templateUrl: './package-creation.component.html',
-  styleUrls: ['./package-creation.component.scss'],
+  selector: 'app-room-package-creation',
+  templateUrl: './room-package-creation.component.html',
+  styleUrls: ['./room-package-creation.component.scss'],
 })
-export class PackageConfigurationComponent implements OnInit {
+
+export class RoomPackageCreationComponent{
 
   oneMinute = 60
   oneHour = this.oneMinute * 60
@@ -30,16 +32,6 @@ export class PackageConfigurationComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-   }
-
-   checkIn(){
-
-
-     console.log(this.room)
-
-
-   }
 
   calculateTime() {
 
@@ -47,15 +39,10 @@ export class PackageConfigurationComponent implements OnInit {
     this.room.package = this.oneMinute
 
     calculateTime({startTime: this.room.startTime, package: this.room.package})
-    .subscribe((s:any) => {
-      console.log(s)
-      this.setWidth = s
-    })
+      .subscribe((s:any) => {
+        console.log(s)
+        this.setWidth = s
+      })
 
-
-
-
-   }
-
-
+  }
 }
