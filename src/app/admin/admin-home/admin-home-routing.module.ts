@@ -9,16 +9,15 @@ import {SETTINGComponent} from "../component/setting/setting.component";
 import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
 import {BuildingListComponent} from "../extraComponent/building-list/building-list.component";
-import {WelcomePresentationComponent} from "../extraComponent/welcome-presentation/welcome-presentation.component";
-import {RoomListComponent} from "../extraComponent/room-list/room-list.component";
+import {WelcomePresentationCreationComponent} from "../creationComponent/welcome-presentation-creation/welcome-presentation-creation.component";
+import {RoomCreationComponent} from "../creationComponent/room-creation/room-creation.component";
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
 import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
-import {PackageConfigurationComponent} from "../extraComponent/package-configuration/package-configuration.component";
-import {SettingPlayGroundComponent} from "../extraComponent/setting-play-ground/setting-play-ground.component";
-import {SettingRoofTopBarComponent} from "../extraComponent/setting-roof-top-bar/setting-roof-top-bar.component";
-import {SettingStoreComponent} from "../extraComponent/setting-store/setting-store.component";
-import {RoomTypeComponent} from "../extraComponent/room-type/room-type.component";
+import {PackageConfigurationComponent} from "../creationComponent/package-creation/package-configuration.component";
+import {PlayGroundCreationComponent} from "../creationComponent/play-ground-creation/play-ground-creation.component";
+import {SettingRoofTopBarComponent} from "../creationComponent/roof-top-bar-creation/setting-roof-top-bar.component";
+import {RoomTypeCreationComponent} from "../creationComponent/room-type-creation/room-type-creation.component";
 
 const routes: Routes = [
   {
@@ -59,11 +58,11 @@ const routes: Routes = [
         children: [
           {
             path: 'welcomePresentation',
-            component: WelcomePresentationComponent,
+            component: WelcomePresentationCreationComponent,
           },
           {
             path: 'roomType',
-            component: RoomTypeComponent
+            component: RoomTypeCreationComponent
           },
           {
             path: 'buildingList',
@@ -71,7 +70,7 @@ const routes: Routes = [
           },
           {
             path: 'buildingList/roomList/:id',
-            component: RoomListComponent
+            component: RoomCreationComponent
           },
           {
             path: 'packageConfiguration',
@@ -83,17 +82,13 @@ const routes: Routes = [
           },
           {
             path: 'playground',
-            component: SettingPlayGroundComponent
-          },
-          {
-            path: 'store',
-            component: SettingStoreComponent
+            component: PlayGroundCreationComponent
           }
         ]
       },
       {
         path: 'welcomePresentation',
-        component: WelcomePresentationComponent
+        component: WelcomePresentationCreationComponent
       }]
   },
   {

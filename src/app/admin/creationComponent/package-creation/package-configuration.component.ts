@@ -5,9 +5,9 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 @Component({
   standalone: true,
   imports: [AdminComponentModule],
-  selector: 'app-package-configuration',
-  templateUrl: './package-configuration.component.html',
-  styleUrls: ['./package-configuration.component.scss'],
+  selector: 'app-package-creation',
+  templateUrl: './package-creation.component.html',
+  styleUrls: ['./package-creation.component.scss'],
 })
 export class PackageConfigurationComponent implements OnInit {
 

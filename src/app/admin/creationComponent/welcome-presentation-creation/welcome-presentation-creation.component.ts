@@ -9,16 +9,16 @@ import {
 
 @Component({
   standalone: true,
-  selector: 'app-welcome-presentation',
-  templateUrl: './welcome-presentation.component.html',
-  styleUrls: ['./welcome-presentation.component.scss'],
+  selector: 'app-welcome-presentation-creation',
+  templateUrl: './welcome-presentation-creation.component.html',
+  styleUrls: ['./welcome-presentation-creation.component.scss'],
   imports: [
     WelcomePresentationUIComponent,
     AdminComponentModule,
     WelcomePresentationSkeletonComponent
   ]
 })
-export class WelcomePresentationComponent implements OnInit {
+export class WelcomePresentationCreationComponent implements OnInit {
 
   loaded = true;
 

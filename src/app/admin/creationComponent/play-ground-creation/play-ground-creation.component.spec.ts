@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SettingStoreComponent } from './setting-store.component';
+import { PlayGroundCreationComponent } from './play-ground-creation.component';
 
-describe('SettingStoreComponent', () => {
-  let component: SettingStoreComponent;
-  let fixture: ComponentFixture<SettingStoreComponent>;
+describe('SettingPlayGroundComponent', () => {
+  let component: PlayGroundCreationComponent;
+  let fixture: ComponentFixture<PlayGroundCreationComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SettingStoreComponent ],
+      declarations: [ PlayGroundCreationComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SettingStoreComponent);
+    fixture = TestBed.createComponent(PlayGroundCreationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

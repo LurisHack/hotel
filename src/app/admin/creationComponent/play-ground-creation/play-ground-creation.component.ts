@@ -4,11 +4,11 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 @Component({
   standalone: true,
   imports:[AdminComponentModule],
-  selector: 'app-setting-play-ground',
-  templateUrl: './setting-play-ground.component.html',
-  styleUrls: ['./setting-play-ground.component.scss'],
+  selector: 'app-play-ground-creation',
+  templateUrl: './play-ground-creation.component.html',
+  styleUrls: ['./play-ground-creation.component.scss'],
 })
-export class SettingPlayGroundComponent implements OnInit {
+export class PlayGroundCreationComponent implements OnInit {
 
   constructor() { }
 
