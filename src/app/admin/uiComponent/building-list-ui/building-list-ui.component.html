@@ -30,7 +30,7 @@
   <ion-grid *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.buildingName.length">
     <ion-row class="ion-margin ion-align-items-center" style="background: whitesmoke;"
              *ngFor="let building of siteInformationService.siteInformation.buildingName">
-      <ion-col size-xs="10" size-sm="6"  class="ion-text-center">
+      <ion-col size-xs="12" size-sm="6"  class="ion-text-center">
         <ion-label *ngIf="check" color="dark" class="ion-text-wrap ion-padding ion-margin">
           <strong>{{building.name}}</strong>
         </ion-label>
@@ -43,10 +43,10 @@
         <ion-icon *ngIf="check" name="create-outline" (click)="editBuiltName(building.id)"></ion-icon>
         <ion-icon *ngIf="!check" color="success" name="checkmark" (click)="doneBuiltName(building.id)"></ion-icon>
       </ion-col>
-      <ion-col size-xs="10" size-sm="4" push-xs="2" class="ion-text-end" [routerLink]="'/admin-home/SETTING/buildingList/roomList/'+building.id">
+      <ion-col size-xs="8" size-sm="4" class="ion-text-center" [routerLink]="'/admin-home/SETTING/buildingList/roomList/'+building.id">
         <ion-text><small>View Rooms</small></ion-text>
       </ion-col>
-      <ion-col size-xs="2" size-sm="1" pull-xs="10" class="ion-text-center">
+      <ion-col size-xs="2" size-sm="1" class="ion-text-center">
         <ion-icon color="danger" name="trash" (click)="deleteBuildName(building.id)"></ion-icon>
       </ion-col>
     </ion-row>
