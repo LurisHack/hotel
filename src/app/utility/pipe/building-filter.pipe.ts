@@ -10,15 +10,16 @@ export class BuildingFilterPipe implements PipeTransform {
 
     console.log(value, args)
 
-    const building = Array.from(new Set(value.map(m => m.buildingData.id)))
+    return  Array.from(new Set(value.map(m => m.buildingData.id)))
       .map(id => {
+
+        console.log(Array.from(new Set(value.filter(m => m.buildingData.id === id)))[0].buildingData.name)
+
       return {
-        buildingName:  Array.from(new Set(value.filter(m => m.buildingData.id === id)))[0],
+        buildingName:  Array.from(new Set(value.filter(m => m.buildingData.id === id)))[0].buildingData.name,
         rooms: value.filter(rooms => rooms.buildingData.id === id)
       }
       })
-    console.log(building)
-    return value.filter(rooms => rooms.buildingData.id === args[0] && rooms.roomState === args[1])
-  }
+   }
 
 }

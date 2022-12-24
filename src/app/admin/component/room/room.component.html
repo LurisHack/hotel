@@ -48,13 +48,13 @@
                              itemSize="56" minBufferPx="900" maxBufferPx="1350">
   <ion-grid *ngFor="let building of siteInformationService.siteInformation.roomName | buildingFilterPipe ">
     <ion-item-divider>
-      <ion-label color="dark"><h1>{{building.name}}</h1></ion-label>
+      <ion-label color="dark"><h1>{{building.buildingName}}</h1></ion-label>
     </ion-item-divider>
         <ion-row>
-<!--        <ion-col *ngFor="let room of siteInformationService.siteInformation.roomName | roomFilter: building.id : segment"-->
-<!--                 size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">-->
-<!--          <app-room-ui [roomData]="{name: room.name}"></app-room-ui>-->
-<!--        </ion-col>-->
+        <ion-col *ngFor="let room of building.rooms"
+                 size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
+          <app-room-ui [roomData]="room"></app-room-ui>
+        </ion-col>
       </ion-row>
     </ion-grid>
 
