@@ -5,19 +5,19 @@ import {AdminComponentModule} from "../admin-component.module";
 import {RoomSkeletonComponent} from "../../skeletonComponent/room-skeleton/room-skeleton.component";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
 import {BuildingFilterPipe} from "../../../utility/pipe/building-filter.pipe";
+import {RoomStateFilterPipe} from "../../../utility/pipe/room-state-filter.pipe";
 
 @Component({
   standalone: true,
   imports: [AdminComponentModule, RoomUIComponent, ScrollingModule,
-    RoomSkeletonComponent, BuildingFilterPipe],
+    RoomSkeletonComponent, BuildingFilterPipe, RoomStateFilterPipe],
   selector: 'app-siteInformation',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss'],
  })
 
 export class ROOMComponent{
-
-
+  
   scrollIndex = 0
   loaded = true
   segment = 'CheckIn'

@@ -46,13 +46,13 @@
 <cdk-virtual-scroll-viewport *ngIf="siteInformationService.siteInformation"
                              (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host"
                              itemSize="56" minBufferPx="900" maxBufferPx="1350">
-  <ion-grid *ngFor="let building of siteInformationService.siteInformation.roomName | buildingFilterPipe ">
+  <ion-grid *ngFor="let building of siteInformationService.siteInformation.roomName | buildingFilterPipe : segment">
     <ion-item-divider>
       <ion-label color="dark"><h1>{{building.buildingName}}</h1></ion-label>
     </ion-item-divider>
         <ion-row>
         <ion-col *ngFor="let room of building.rooms"
-                 size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
+                 size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="3">
           <app-room-ui [roomData]="room"></app-room-ui>
         </ion-col>
       </ion-row>
