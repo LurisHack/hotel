@@ -1,6 +1,6 @@
 <ion-card color="light" class="ion-no-padding">
   <ion-grid style="border-bottom: 1px solid lightgray">
-    <ion-row>
+    <ion-row class="ion-align-items-center">
       <ion-col size="auto">
         <ion-badge *ngIf="roomData && roomData.name" color="danger" style="margin-left: 5px">
           <ion-icon class="ion-align-self-center" color="light" name="bed"></ion-icon>
@@ -11,14 +11,14 @@
         <ion-badge color="light">
           3h
         </ion-badge>
-      </ion-col>
-
-      <ion-col size="auto">
+        <br>
         <ion-icon size="small" name="log-in-outline"></ion-icon>
         <ion-badge color="light">
           12/3/2004 &nbsp; 10:30 PM
         </ion-badge>
       </ion-col>
+
+
 
       <!--      <ion-col  style="height: 30vh;border-right: 1px solid lightgray">-->
 
@@ -111,20 +111,20 @@
   <!--          <ion-label *ngIf="roomData && roomData.name" color="dark" style="margin-left: 5px;">{{roomData.name}}</ion-label>-->
   <!--        </ion-row>-->
   <!--      </ion-col>-->
-  <ion-item lines="none" style="--background: transparent; --min-height: 10px">
-    <ion-button slot="end" size="small" color="light" style="margin-right: 3px">
-      <ion-icon slot="start" name="repeat-outline"></ion-icon>
+  <ion-row style="justify-content: space-around">
+    <ion-button    size="small" color="light" style="margin-right: 3px">
+      <ion-icon   name="repeat-outline"></ion-icon>
       <ion-label><small class="ion-text-uppercase">Trans</small></ion-label>
     </ion-button>
-    <ion-button slot="end" (click)="roomPopup()" size="small" color="light">
+    <ion-button     (click)="roomPopup()" size="small" color="light">
       <ion-icon slot="start" name="create-outline"></ion-icon>
       <ion-label><small class="ion-text-uppercase">ADD</small></ion-label>
     </ion-button>
-    <ion-button slot="end" size="small" color="light">
+    <ion-button    size="small" color="light">
       <ion-icon slot="start" name="checkmark"></ion-icon>
       <ion-label><small class="ion-text-uppercase">OUT</small></ion-label>
     </ion-button>
-  </ion-item>
+  </ion-row>
   <ion-progress-bar color="success" [value]="progress"></ion-progress-bar>
 
 </ion-card>
