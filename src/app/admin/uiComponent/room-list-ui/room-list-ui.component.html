@@ -1,10 +1,10 @@
 <ion-header mode="ios">
   <ion-toolbar>
-    <ion-item lines="none">
+<!--    <ion-item lines="none">-->
 
       <ion-label>Select Room Type</ion-label>
       <ion-select #roomType *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
-        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType" [value]="roomType.id" [innerText]="roomType.name"></ion-select-option>
+        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType" [value]="roomType" [innerText]="roomType.name"></ion-select-option>
       </ion-select>
 
       <ion-label>Enter Room Name</ion-label>
@@ -13,7 +13,7 @@
       <ion-button (click)="addRoom()" size="small">
         <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room
       </ion-button>
-    </ion-item>
+<!--    </ion-item>-->
 
   </ion-toolbar>
 </ion-header>
@@ -22,8 +22,7 @@
 <ion-grid *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
   <ion-row>
     <ion-col size-xs="12" size-sm="6" size-md="4"
-             *ngFor="let building of siteInformationService.siteInformation.roomName | roomFilter : activatedRoute.snapshot.params['id']"
-             [routerLink]="'/admin-home/SETTING/buildingListCreation/roomListCreation/'+building.id">
+             *ngFor="let building of siteInformationService.siteInformation.roomName | roomFilter : activatedRoute.snapshot.params['id']">
       <ion-card color="light" class="ion-text-center ion-padding">
         <ion-label color="dark" class="ion-text-wrap ion-padding ion-margin">
           <strong>{{building.name}}</strong></ion-label>

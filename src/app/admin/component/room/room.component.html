@@ -1,58 +1,63 @@
 <ion-header mode="ios">
   <ion-toolbar>
-  <ion-grid>
-    <ion-row>
+    <ion-grid>
+      <ion-row>
 
-      <ion-col size="auto" class="ion-no-margin ion-no-padding">
-        <ion-buttons class="ion-no-margin ion-no-padding">
-          <ion-menu-button class="ion-no-margin ion-no-padding"></ion-menu-button>
-        </ion-buttons>
-      </ion-col>
+        <ion-col size="auto" class="ion-no-margin ion-no-padding">
+          <ion-buttons class="ion-no-margin ion-no-padding">
+            <ion-menu-button class="ion-no-margin ion-no-padding"></ion-menu-button>
+          </ion-buttons>
+        </ion-col>
 
-      <ion-col size="1">
-        <ion-text slot="start"><strong>ROOMS</strong></ion-text>
-      </ion-col>
+        <ion-col size="1">
+          <ion-text slot="start"><strong>ROOMS</strong></ion-text>
+        </ion-col>
 
-      <ion-col  class="ion-no-margin ion-no-padding">
-        <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true"  value="CheckIn" (ionChange)="selectedSegment($event)">
-          <ion-segment-button  class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
-            <ion-label>NearlyTimeUp</ion-label>
-          </ion-segment-button>
-          <ion-segment-button  class="ion-no-margin ion-no-padding" value="CheckIn">
-            <ion-label>CheckIn</ion-label>
-          </ion-segment-button>
-          <ion-segment-button class="ion-no-margin ion-no-padding" value="Available">
-            <ion-label>Available</ion-label>
-          </ion-segment-button>
-          <ion-segment-button class="ion-no-margin ion-no-padding" value="Booking">
-            <ion-label>Booking</ion-label>
-          </ion-segment-button>
-          <ion-segment-button class="ion-no-margin ion-no-padding" value="All">
-            <ion-label>All</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-      </ion-col>
+        <ion-col class="ion-no-margin ion-no-padding">
+          <ion-segment class="ion-no-margin ion-no-padding" scrollable="true" value="CheckIn"
+                       (ionChange)="selectedSegment($event)">
+            <ion-segment-button class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
+              <ion-label>NearlyTimeUp</ion-label>
+            </ion-segment-button>
+            <ion-segment-button class="ion-no-margin ion-no-padding" value="CheckIn">
+              <ion-label>CheckIn</ion-label>
+            </ion-segment-button>
+            <ion-segment-button class="ion-no-margin ion-no-padding" value="Available">
+              <ion-label>Available</ion-label>
+            </ion-segment-button>
+            <ion-segment-button class="ion-no-margin ion-no-padding" value="Booking">
+              <ion-label>Booking</ion-label>
+            </ion-segment-button>
+            <ion-segment-button class="ion-no-margin ion-no-padding" value="All">
+              <ion-label>All</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
 
-<!--      <ion-col *ngIf="scrollIndex" size-xs="12" size-md="6" pull-md="5.5" pull-lg="4">-->
-<!--         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>-->
-<!--        </ion-col>-->
+        <!--      <ion-col *ngIf="scrollIndex" size-xs="12" size-md="6" pull-md="5.5" pull-lg="4">-->
+        <!--         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>-->
+        <!--        </ion-col>-->
 
-    </ion-row>
-  </ion-grid>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<cdk-virtual-scroll-viewport  *ngIf="siteInformationService.siteInformation" (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host" itemSize="56" minBufferPx="900" maxBufferPx="1350">
-  <ion-grid   *ngFor="let building of siteInformationService.siteInformation.buildingName | roomStateFilter">
-       <ion-item-divider>
-         <ion-label color="dark"><strong>{{building.name}}</strong></ion-label>
-      </ion-item-divider>
-    <ion-row>
-      <ion-col  *ngFor="let room of siteInformationService.siteInformation.roomName | roomFilter: building.id" size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
-        <app-room-ui [roomData]="{name: room.name}"></app-room-ui>
-      </ion-col>
-    </ion-row>
-   </ion-grid>
+<cdk-virtual-scroll-viewport *ngIf="siteInformationService.siteInformation"
+                             (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host"
+                             itemSize="56" minBufferPx="900" maxBufferPx="1350">
+  <ion-grid *ngFor="let building of siteInformationService.siteInformation.buildingName | roomStateFilter">
+    <ion-item-divider>
+      <ion-label color="dark"><h1>{{building.name}}</h1></ion-label>
+    </ion-item-divider>
+        <ion-row>
+        <ion-col *ngFor="let room of siteInformationService.siteInformation.roomName | roomFilter: building.id"
+                 size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
+          <app-room-ui [roomData]="{name: room.name}"></app-room-ui>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
 </cdk-virtual-scroll-viewport>
 
 
