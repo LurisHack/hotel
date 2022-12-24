@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RoomListUiComponent } from './room-list-ui.component';
+import { RoomListCreationUiComponent } from './room-list-creation-ui.component';
 
 describe('RoomListUiComponent', () => {
-  let component: RoomListUiComponent;
-  let fixture: ComponentFixture<RoomListUiComponent>;
+  let component: RoomListCreationUiComponent;
+  let fixture: ComponentFixture<RoomListCreationUiComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoomListUiComponent ],
+      declarations: [ RoomListCreationUiComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RoomListUiComponent);
+    fixture = TestBed.createComponent(RoomListCreationUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

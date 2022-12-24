@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {RoomListUiComponent} from "../../uiComponent/room-list-ui/room-list-ui.component";
+import {RoomListCreationUiComponent} from "../../uiComponent/room-list-creation-ui/room-list-creation-ui.component";
 
 @Component({
   standalone: true,
-  imports: [RoomListUiComponent],
+  imports: [RoomListCreationUiComponent],
   selector: 'app-room-list-creation',
   templateUrl: './room-list-creation.component.html',
   styleUrls: ['./room-list-creation.component.scss'],
