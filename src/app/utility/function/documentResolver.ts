@@ -1,7 +1,7 @@
 
 export const docResolver = (docData: any) =>{
   console.log(docData)
-  console.log(docData.data())
+  console.log(docData.payload.data())
 
-  return  docData.data()
+  return  docData.payload.data()
 }

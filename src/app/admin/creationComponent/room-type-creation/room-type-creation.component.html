@@ -24,7 +24,7 @@
 
 <ion-content>
 
-  <ion-grid class="ion-no-padding ion-no-margin" *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
+  <ion-grid class="ion-no-padding ion-no-margin" *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomType.length">
     <ion-row class="ion-no-padding ion-no-margin">
       <ion-col class="ion-text-center" size-xs="12" size-sm="6" size-md="4"
                *ngFor="let roomType of siteInformationService.siteInformation.roomType"
