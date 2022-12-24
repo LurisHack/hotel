@@ -10,12 +10,18 @@ import {AdminComponentModule} from "../admin-component.module";
 })
 export class RooftopbarComponent implements OnInit {
   message: any;
+  RoofTopbarData: any;
+  progress: any;
 
   constructor() { }
 
   ngOnInit() {}
 
   onWillDismiss($event: any) {
+
+  }
+
+  RoofTopBarPopup() {
 
   }
 }

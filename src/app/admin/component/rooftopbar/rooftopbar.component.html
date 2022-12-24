@@ -7,29 +7,26 @@
 </ion-header>
 
 <ion-content>
-<ion-grid>
-  <ion-row>
-    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
-      <ng-template>
-        <ion-header>
-          <ion-toolbar>
-          </ion-toolbar>
-        </ion-header>
-      </ng-template>
-    </ion-modal>
-
-    <ion-col *ngFor="let i of [1,2,3,4,5,6] " size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-
-      <ion-card button="true" style=" --background: #ffffff;
-                                          --color: #52ffe4">
-        <ion-card-header>
-          <ion-card-title style="--color: #000" class="ion-text-center">
-            <ion-button id="open-modal" expand="block">Shwe Ten</ion-button>
-          </ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+            </ion-toolbar>
+          </ion-header>
+        </ng-template>
+      </ion-modal>
+      <ion-col *ngFor="let i of [1,2,3,4,5,6] " size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card button="true" style=" --background: #ffffff;
+                        --color: #52ffe4">
+          <ion-card-header>
+            <ion-card-title style="--color: #000" class="ion-text-center">
+              <ion-button  id="open-modal" expand="block">Shwe Ten</ion-button>
+            </ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
