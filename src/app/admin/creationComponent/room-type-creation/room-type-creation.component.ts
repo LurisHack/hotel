@@ -19,6 +19,8 @@ export class RoomTypeCreationComponent{
 
   @ViewChild('roomTypeName') roomTypeName: any
 
+  check = true;
+
   constructor(public activatedRoute: ActivatedRoute, private toastService: ToastService,
               public siteInformationService: SiteInformationService) {}
 
@@ -38,7 +40,14 @@ export class RoomTypeCreationComponent{
 
 
   deleteRoomType(roomTypeId: string) {
-    // this.siteInformationService
-    //   .deleteRoomType(roomTypeId, 'roomType')
+    // this.siteInformationService.deleteRoomType(roomTypeId, 'roomType')
+  }
+
+  editRoomType(id: string) {
+    this.check = false;
+  }
+
+  doneRoomType(id: string) {
+    this.check = true;
   }
 }

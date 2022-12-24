@@ -1,28 +1,69 @@
-<ion-header mode="ios">
-  <ion-toolbar>
-    <ion-input #roomTypeName></ion-input>
-    <ion-button (click)="AddRoomType()" size="small">
-      <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room Type
-    </ion-button>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-grid style="background: yellow;" class="ion-no-margin ion-no-padding">-->
+<!--  <ion-row style="background: #36abe0" class="ion-no-padding ion-no-margin">-->
+<!--    <ion-col class="ion-no-margin ion-no-padding" offset-xs="4" size-xs="8" offset-sm="6" size-sm="6" offset-md="8" size-md="4">-->
+<!--      <ion-toolbar>-->
+<!--        <ion-item fill="outline" class="ion-margin" style="&#45;&#45;min-height: 30px">-->
+<!--          <ion-input #roomTypeName placeholder="Ender Room Type"></ion-input>-->
+<!--        </ion-item>-->
+<!--        <ion-button slot="end" class="ion-margin-end" color="light" (click)="AddRoomType()">-->
+<!--          ADD-->
+<!--        </ion-button>-->
+<!--      </ion-toolbar>-->
+<!--    </ion-col>-->
+<!--  </ion-row>-->
+<!--</ion-grid>-->
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-toolbar>
+
+      </ion-toolbar>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
 <ion-content>
-  <ion-grid class="ion-no-padding" *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
-    <ion-row class="ion-align-items-center">
-      <ion-col size-xs="12" size-sm="6" size-md="4"
+
+  <ion-grid class="ion-no-padding ion-no-margin" *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
+    <ion-row class="ion-no-padding ion-no-margin">
+      <ion-col class="ion-text-center" size-xs="12" size-sm="6" size-md="4"
                *ngFor="let roomType of siteInformationService.siteInformation.roomType"
               >
-        <ion-card color="light" class="ion-text-center ion-no-padding">
-          <ion-label  [routerLink]="'/admin-home/SETTING/roomTypeCreation/roomPackageCreation/'+roomType.id" color="dark" class="ion-text-wrap">
-            <strong>{{roomType.name}}</strong></ion-label>
-          <ion-button color="danger" class="ion-no-margin ion-no-padding ion-float-right"
-                      expand="full"
-                      style="--height: 100%; --width: 50px" (click)="deleteRoomType(roomType.id)">
-            <ion-icon name="close-outline" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-card>
+<!--        <ion-card color="light" class="">-->
+<!--          <ion-label [routerLink]="'/admin-home/SETTING/roomTypeCreation/roomPackageCreation/'+roomType.id"-->
+<!--                      color="dark" class="ion-text-wrap">-->
+<!--            <strong>{{roomType.name}}</strong>-->
+<!--          </ion-label>-->
+          <ion-row class="ion-no-padding ion-no-margin">
+            <ion-col>
+              <ion-label *ngIf="check" color="dark" class=""
+                         [routerLink]="'/admin-home/SETTING/roomTypeCreation/roomPackageCreation/'+roomType.id">
+                <strong>{{roomType.name}}</strong>
+              </ion-label>
+              <ion-label *ngIf="!check" color="dark" class="">
+                <ion-input class="ion-no-padding ion-no-margin" style="font-weight: bold;"
+                           value="{{roomType.name}}"></ion-input>
+              </ion-label>
+            </ion-col>
+            <ion-col size-xs="auto">
+              <ion-button color="danger" class="ion-no-margin ion-no-padding ion-float-right"
+                          expand="full"
+                          style="height: 100%;" (click)="deleteRoomType(roomType.id)">
+                <ion-icon size="small" class="ion-padding" name="close-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button *ngIf="check" fill="clear" color="medium" expand="full" class="ion-no-margin ion-no-padding ion-float-right"
+                          style="height: 100%;" (click)="editRoomType(roomType.id)">
+                <ion-icon size="small" class="ion-padding" name="create-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button *ngIf="!check" fill="clear" color="medium" expand="full" class="ion-no-margin ion-no-padding ion-float-right"
+                          style="height: 100%;" (click)="doneRoomType(roomType.id)">
+                <ion-icon size="small" class="ion-padding" name="checkmark" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+<!--        </ion-card>-->
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>
