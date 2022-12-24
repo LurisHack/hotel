@@ -1,1 +1,41 @@
 <h1>{{props}}</h1>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <p class="ion-padding-horizontal">can not take my eyes off you </p>
+          <ion-item>
+            <ion-label class="ion-text-wrap" for="terms">Accept</ion-label>
+            <ion-checkbox id="terms" (ionChange)="onTermsChanged($event)" [checked]="canDismiss"></ion-checkbox>
+          </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-label>dance bar</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>dj sai </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>john wink</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Min thant</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Mee Mee Chaw</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>ko San Ko Oo</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Lin Htet Kyaw</ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
