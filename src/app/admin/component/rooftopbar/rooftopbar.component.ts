@@ -9,9 +9,13 @@ import {AdminComponentModule} from "../admin-component.module";
   styleUrls: ['./rooftopbar.component.scss'],
 })
 export class RooftopbarComponent implements OnInit {
+  message: any;
 
   constructor() { }
 
   ngOnInit() {}
 
+  onWillDismiss($event: any) {
+
+  }
 }
