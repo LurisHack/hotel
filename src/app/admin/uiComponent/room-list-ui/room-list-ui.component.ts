@@ -29,4 +29,12 @@ export class RoomListUiComponent{
        this.roomName.value, this.activatedRoute.snapshot.params['id'],
       (<IonSelect>this.roomType).value)
   }
+
+  deleteRoomName(id: string) {
+    this.siteInformationService.deleteRoomName(id)
+  }
+
+  editBuiltName(id: any) {
+
+  }
 }

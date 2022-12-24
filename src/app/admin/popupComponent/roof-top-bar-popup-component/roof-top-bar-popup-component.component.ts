@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class RoofTopBarPopupComponentComponent implements OnInit {
 
+  props: any;
+
   constructor() { }
 
   ngOnInit() {}

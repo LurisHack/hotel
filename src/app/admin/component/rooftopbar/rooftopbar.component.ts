@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
+import {ModalController} from "@ionic/angular";
+import {
+  RoofTopBarPopupComponentComponent
+} from "../../popupComponent/roof-top-bar-popup-component/roof-top-bar-popup-component.component";
 
 @Component({
   standalone:true,
@@ -10,8 +14,22 @@ import {AdminComponentModule} from "../admin-component.module";
 })
 export class RooftopbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {}
+
+  async roofTopBarPopUp(i: number){
+
+    console.log(i)
+
+    const modalCtrl = await this.modalCtrl.create({
+      component: RoofTopBarPopupComponentComponent,
+      componentProps: {props: i}
+    })
+
+
+   await modalCtrl.present()
+
+  }
 
 }
