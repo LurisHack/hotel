@@ -13,8 +13,11 @@
         <ion-text slot="start"><strong>ROOMS</strong></ion-text>
       </ion-col>
 
-      <ion-col size-xs="7.5" size-sm="5" size-md="4.5" size-lg="3" push-xs="2.3" push-sm="5.3" push-md="6.5" push-lg="8" class="ion-no-margin ion-no-padding">
+      <ion-col  class="ion-no-margin ion-no-padding">
         <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true"  value="CheckIn" (ionChange)="selectedSegment($event)">
+          <ion-segment-button  class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
+            <ion-label>NearlyTimeUp</ion-label>
+          </ion-segment-button>
           <ion-segment-button  class="ion-no-margin ion-no-padding" value="CheckIn">
             <ion-label>CheckIn</ion-label>
           </ion-segment-button>
@@ -30,17 +33,17 @@
         </ion-segment>
       </ion-col>
 
-      <ion-col *ngIf="scrollIndex" size-xs="12" size-md="6" pull-md="5.5" pull-lg="4">
-         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>
-        </ion-col>
+<!--      <ion-col *ngIf="scrollIndex" size-xs="12" size-md="6" pull-md="5.5" pull-lg="4">-->
+<!--         <ion-searchbar style="height: 35px; padding: 0;  margin: 0; margin-inside: 0"></ion-searchbar>-->
+<!--        </ion-col>-->
 
     </ion-row>
   </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<cdk-virtual-scroll-viewport  *ngIf="segment === 'CheckIn' && siteInformationService.siteInformation" (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host" itemSize="56" minBufferPx="900" maxBufferPx="1350">
-  <ion-grid   *ngFor="let building of siteInformationService.siteInformation.buildingName">
+<cdk-virtual-scroll-viewport  *ngIf="siteInformationService.siteInformation" (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host" itemSize="56" minBufferPx="900" maxBufferPx="1350">
+  <ion-grid   *ngFor="let building of siteInformationService.siteInformation.buildingName | roomStateFilter">
        <ion-item-divider>
          <ion-label color="dark"><strong>{{building.name}}</strong></ion-label>
       </ion-item-divider>
