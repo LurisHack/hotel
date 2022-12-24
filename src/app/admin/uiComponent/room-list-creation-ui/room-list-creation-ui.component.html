@@ -45,7 +45,7 @@
       <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="3"
                *ngFor="let room of siteInformationService.siteInformation.roomName | roomListCreationPipe : activatedRoute.snapshot.params['id']">
         <ion-card color="light" class="ion-text-center ion-no-padding">
-          <ion-title style="margin: 10px "><strong>{{room.name}}</strong></ion-title>
+          <ion-title style="margin: 7px ">{{room.name}}</ion-title>
           <ion-item-divider class="ion-no-margin ion-padding-end">
             <ion-label>{{room.roomType.name}}</ion-label>
             <ion-icon slot="end" name="create-outline" (click)="editBuiltName(room.id)"></ion-icon>
