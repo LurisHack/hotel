@@ -18,6 +18,13 @@ export class FirestoreService {
   return   this.dbPrefix.doc(param.doc)
       .get()
       .pipe(map(docData => docResolver(docData)))
+  }
+
+  getDocSnapShot(param: {doc: string}){
+    console.log(this.dbPrefix)
+    return   this.dbPrefix.doc(param.doc)
+      .snapshotChanges()
+      .pipe(map(docData => docResolver(docData)))
 
   }
 

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import { RouterModule} from "@angular/router";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
+import {IonInput} from "@ionic/angular";
 
 @Component({
   standalone: true,
@@ -14,12 +15,13 @@ import {SiteInformationService} from "../../../utility/service/siteInformation.s
 
 export class BuildingListUiComponent{
 
+  @ViewChild('buildingName') buildingName: any;
   check = true;
 
   constructor(public siteInformationService: SiteInformationService) {}
 
   addBuildingName() {
-    this.siteInformationService.addBuildingName()
+    this.siteInformationService.addBuildingName((<IonInput>this.buildingName).value)
   }
 
   deleteBuildName(id: string) {
@@ -28,10 +30,8 @@ export class BuildingListUiComponent{
 
   editBuiltName(id: string) {
     // this.siteInformationService.editBuildingName(id)
-    // test
     this.check = false;
   }
-
 
   doneBuiltName(id: string) {
     this.check = true;

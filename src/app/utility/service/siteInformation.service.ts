@@ -35,20 +35,20 @@ export class SiteInformationService {
     })
   }
 
-  addBuildingName() {
-    this.alertService.alert()
-      .then((alert: any) => {
+  addBuildingName(name: any) {
+    // this.alertService.alert()
+    //   .then((alert: any) => {
         console.log(alert)
         Object.assign(this.siteInformation,
-          {buildingName: [...this.siteInformation.buildingName, {name: alert[0], id: generateId()}]})
+          {buildingName: [...this.siteInformation.buildingName, {name, id: generateId()}]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
             console.log(t)
-            this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+            // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
           })
           .catch((c: any) => console.log(c))
-      })
+      // })
   }
 
   deleteSiteInformation(id: string) {
@@ -96,7 +96,7 @@ export class SiteInformationService {
         this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
             console.log(t)
-            this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+            // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
           })
           .catch((c: any) => console.log(c))
       // })
@@ -113,7 +113,7 @@ export class SiteInformationService {
     })
       .then((t: any) => {
         console.log(t)
-        this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+        // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((c: any) => console.log(c))
 
@@ -130,7 +130,7 @@ export class SiteInformationService {
     })
       .then((t: any) => {
         console.log(t)
-        this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+        // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((c: any) => console.log(c))
 
@@ -148,7 +148,7 @@ export class SiteInformationService {
       updatePropertyName: 'roomTypePackage'})
       .then((success: any) => {
         console.log('room type package adding success')
-        this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+        // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((error: any) => console.log(error))
   }
@@ -160,7 +160,7 @@ export class SiteInformationService {
       updatePropertyName: 'roomName'})
       .then((success: any) => {
         console.log('room type name adding success')
-        this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+        // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((error: any) => console.log(error))
   }
