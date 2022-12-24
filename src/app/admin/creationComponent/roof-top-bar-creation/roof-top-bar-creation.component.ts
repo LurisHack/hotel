@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {RouterLink} from "@angular/router";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
-import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
+import {BuildingFilterPipe} from "../../../utility/pipe/building-filter.pipe";
 
 @Component({
   standalone:true,
-  imports: [AdminComponentModule, RouterLink, RoomFilterPipe],
+  imports: [AdminComponentModule, RouterLink, BuildingFilterPipe],
   selector: 'app-roof-top-bar-creation',
   templateUrl: './roof-top-bar-creation.component.html',
   styleUrls: ['./roof-top-bar-creation.component.scss'],

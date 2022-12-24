@@ -1,129 +1,129 @@
-
-<ion-card color="light" class="ion-no-padding" >
-  <ion-grid    style="border-bottom: 1px solid lightgray">
+<ion-card color="light" class="ion-no-padding">
+  <ion-grid style="border-bottom: 1px solid lightgray">
     <ion-row>
-         <ion-col size="auto">
-          <ion-badge *ngIf="roomData && roomData.name" color="danger" style="margin-left: 5px">
-            <ion-icon class="ion-align-self-center" color="light" name="bed"></ion-icon>{{roomData.name}}</ion-badge>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-icon size="small"  name="timer-outline"></ion-icon>
-          <ion-badge  color="light">
-            3h
-          </ion-badge>
-        </ion-col>
+      <ion-col size="auto">
+        <ion-badge *ngIf="roomData && roomData.name" color="danger" style="margin-left: 5px">
+          <ion-icon class="ion-align-self-center" color="light" name="bed"></ion-icon>
+          {{roomData.name}}</ion-badge>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-icon size="small" name="timer-outline"></ion-icon>
+        <ion-badge color="light">
+          3h
+        </ion-badge>
+      </ion-col>
 
-        <ion-col size="auto">
-          <ion-icon size="small"   name="log-in-outline"></ion-icon>
-          <ion-badge   color="light">
-            12/3/2004 &nbsp; 10:30 PM
-          </ion-badge>
-        </ion-col>
+      <ion-col size="auto">
+        <ion-icon size="small" name="log-in-outline"></ion-icon>
+        <ion-badge color="light">
+          12/3/2004 &nbsp; 10:30 PM
+        </ion-badge>
+      </ion-col>
 
-<!--      <ion-col  style="height: 30vh;border-right: 1px solid lightgray">-->
+      <!--      <ion-col  style="height: 30vh;border-right: 1px solid lightgray">-->
 
-<!--        <div style="border-bottom: 1px solid lightgray; padding: 5px">-->
-<!--          <ion-item color="light"  lines="none" style="&#45;&#45;min-height: 25px;"  class="ion-no-margin ion-no-padding">-->
+      <!--        <div style="border-bottom: 1px solid lightgray; padding: 5px">-->
+      <!--          <ion-item color="light"  lines="none" style="&#45;&#45;min-height: 25px;"  class="ion-no-margin ion-no-padding">-->
 
-<!--            <ion-badge *ngIf="roomData && roomData.name" color="danger" style="margin-left: 5px">-->
-<!--              <ion-icon class="ion-align-self-center" color="light" name="bed"></ion-icon>{{roomData.name}}</ion-badge>-->
-<!--          </ion-item>-->
-<!--          <ion-item color="light"  lines="none" style="&#45;&#45;min-height: 25px;"  class="ion-no-margin ion-no-padding">-->
-<!--          <ion-icon size="small"  name="timer-outline"></ion-icon>-->
-<!--          <ion-badge  color="light">-->
-<!--            3h-->
-<!--          </ion-badge>-->
-<!--        </ion-item>-->
+      <!--            <ion-badge *ngIf="roomData && roomData.name" color="danger" style="margin-left: 5px">-->
+      <!--              <ion-icon class="ion-align-self-center" color="light" name="bed"></ion-icon>{{roomData.name}}</ion-badge>-->
+      <!--          </ion-item>-->
+      <!--          <ion-item color="light"  lines="none" style="&#45;&#45;min-height: 25px;"  class="ion-no-margin ion-no-padding">-->
+      <!--          <ion-icon size="small"  name="timer-outline"></ion-icon>-->
+      <!--          <ion-badge  color="light">-->
+      <!--            3h-->
+      <!--          </ion-badge>-->
+      <!--        </ion-item>-->
 
-<!--        <ion-item lines="none" color="light"  style="&#45;&#45;min-height: 25px;" class="ion-no-margin ion-no-padding">-->
-<!--          <ion-icon size="small"   name="log-in-outline"></ion-icon>-->
-<!--          <ion-badge   color="light">-->
-<!--            12/3/2004 &nbsp; 10:30 PM-->
-<!--          </ion-badge>-->
-<!--        </ion-item>-->
-<!--        </div>-->
-<!--         <ion-toolbar color="light" style="&#45;&#45;min-height: 20px">-->
-<!--          <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">FOC ITEMS</small>-->
-<!--        </ion-toolbar>-->
+      <!--        <ion-item lines="none" color="light"  style="&#45;&#45;min-height: 25px;" class="ion-no-margin ion-no-padding">-->
+      <!--          <ion-icon size="small"   name="log-in-outline"></ion-icon>-->
+      <!--          <ion-badge   color="light">-->
+      <!--            12/3/2004 &nbsp; 10:30 PM-->
+      <!--          </ion-badge>-->
+      <!--        </ion-item>-->
+      <!--        </div>-->
+      <!--         <ion-toolbar color="light" style="&#45;&#45;min-height: 20px">-->
+      <!--          <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">FOC ITEMS</small>-->
+      <!--        </ion-toolbar>-->
 
-<!--        <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">-->
-<!--           <ion-item lines="none" style="&#45;&#45;min-height: 15px; &#45;&#45;background: transparent">-->
-<!--             <ion-text color="medium"><small>Soap</small></ion-text></ion-item>-->
-<!--          <ion-item lines="none"  style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--            <ion-text  color="medium"><small>Drinking Water</small></ion-text></ion-item>-->
-<!--          <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--            <ion-text  color="medium"><small>ToothPaste</small></ion-text></ion-item>-->
-<!--          <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--            <ion-text  color="medium"><small>Shampoo</small></ion-text></ion-item>-->
-<!--         </cdk-virtual-scroll-viewport>-->
-<!--      </ion-col>-->
+      <!--        <cdk-virtual-scroll-viewport  itemSize="" minBufferPx="900" maxBufferPx="900">-->
+      <!--           <ion-item lines="none" style="&#45;&#45;min-height: 15px; &#45;&#45;background: transparent">-->
+      <!--             <ion-text color="medium"><small>Soap</small></ion-text></ion-item>-->
+      <!--          <ion-item lines="none"  style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--            <ion-text  color="medium"><small>Drinking Water</small></ion-text></ion-item>-->
+      <!--          <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--            <ion-text  color="medium"><small>ToothPaste</small></ion-text></ion-item>-->
+      <!--          <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--            <ion-text  color="medium"><small>Shampoo</small></ion-text></ion-item>-->
+      <!--         </cdk-virtual-scroll-viewport>-->
+      <!--      </ion-col>-->
 
-<!--      <ion-col style="height: 30vh">-->
-<!--        <div style="height: 15vh; border-bottom: 1px solid lightgray">-->
-<!--            <ion-toolbar color="light" style="&#45;&#45;min-height: 10%">-->
-<!--              <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Store</small>-->
-<!--            </ion-toolbar>-->
-<!--            <cdk-virtual-scroll-viewport style="height: 80%" itemSize="" minBufferPx="" maxBufferPx="">-->
-<!--              <ion-item lines="none" style="&#45;&#45;min-height: 15px; &#45;&#45;background: transparent">-->
-<!--                <ion-text color="medium"><small>Tiger Beer</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"  style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>Soda</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>Vodka</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>Coca cola</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>Sting</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>VeVe</small></ion-text></ion-item>-->
-<!--            </cdk-virtual-scroll-viewport>-->
-<!--        </div>-->
+      <!--      <ion-col style="height: 30vh">-->
+      <!--        <div style="height: 15vh; border-bottom: 1px solid lightgray">-->
+      <!--            <ion-toolbar color="light" style="&#45;&#45;min-height: 10%">-->
+      <!--              <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Store</small>-->
+      <!--            </ion-toolbar>-->
+      <!--            <cdk-virtual-scroll-viewport style="height: 80%" itemSize="" minBufferPx="" maxBufferPx="">-->
+      <!--              <ion-item lines="none" style="&#45;&#45;min-height: 15px; &#45;&#45;background: transparent">-->
+      <!--                <ion-text color="medium"><small>Tiger Beer</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"  style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>Soda</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>Vodka</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>Coca cola</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>Sting</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>VeVe</small></ion-text></ion-item>-->
+      <!--            </cdk-virtual-scroll-viewport>-->
+      <!--        </div>-->
 
-<!--          <div style="height: 50%">-->
-<!--            <ion-toolbar color="light" style="&#45;&#45;min-height: 10%">-->
-<!--              <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Restaurant</small>-->
-<!--            </ion-toolbar>-->
+      <!--          <div style="height: 50%">-->
+      <!--            <ion-toolbar color="light" style="&#45;&#45;min-height: 10%">-->
+      <!--              <small style="display: block; text-align: center; font-weight: bold;  color: grey; margin-top: 3px;">Restaurant</small>-->
+      <!--            </ion-toolbar>-->
 
-<!--            <cdk-virtual-scroll-viewport  style="height: 80%" itemSize="" minBufferPx="900" maxBufferPx="900">-->
-<!--              <ion-item lines="none" style="&#45;&#45;min-height: 15px; &#45;&#45;background: transparent">-->
-<!--                <ion-text color="medium"><small>ထမင်းေကြာ</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"  style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>မုန့်ဟင်းခါး</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>ပဲပလာတာ</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>ငါးကင်</small></ion-text></ion-item>-->
-<!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
-<!--                <ion-text  color="medium"><small>ပုဇွန်ကင်</small></ion-text></ion-item>-->
-<!--              </cdk-virtual-scroll-viewport>-->
-<!--          </div>-->
+      <!--            <cdk-virtual-scroll-viewport  style="height: 80%" itemSize="" minBufferPx="900" maxBufferPx="900">-->
+      <!--              <ion-item lines="none" style="&#45;&#45;min-height: 15px; &#45;&#45;background: transparent">-->
+      <!--                <ion-text color="medium"><small>ထမင်းေကြာ</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"  style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>မုန့်ဟင်းခါး</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>ပဲပလာတာ</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>ငါးကင်</small></ion-text></ion-item>-->
+      <!--              <ion-item lines="none"    style="&#45;&#45;min-height: 15px;  &#45;&#45;background: transparent">-->
+      <!--                <ion-text  color="medium"><small>ပုဇွန်ကင်</small></ion-text></ion-item>-->
+      <!--              </cdk-virtual-scroll-viewport>-->
+      <!--          </div>-->
 
-<!--      </ion-col>-->
+      <!--      </ion-col>-->
 
     </ion-row>
   </ion-grid>
 
 
-<!--      <ion-col size="4">-->
-<!--        <ion-row style="align-items: center;">-->
-<!--          <ion-icon style="background: red; padding: 5px; border-radius: 50%"-->
-<!--                    color="light" name="bed"></ion-icon>-->
-<!--          <ion-label *ngIf="roomData && roomData.name" color="dark" style="margin-left: 5px;">{{roomData.name}}</ion-label>-->
-<!--        </ion-row>-->
-<!--      </ion-col>-->
+  <!--      <ion-col size="4">-->
+  <!--        <ion-row style="align-items: center;">-->
+  <!--          <ion-icon style="background: red; padding: 5px; border-radius: 50%"-->
+  <!--                    color="light" name="bed"></ion-icon>-->
+  <!--          <ion-label *ngIf="roomData && roomData.name" color="dark" style="margin-left: 5px;">{{roomData.name}}</ion-label>-->
+  <!--        </ion-row>-->
+  <!--      </ion-col>-->
   <ion-item lines="none" style="--background: transparent; --min-height: 10px">
-           <ion-button slot="end" size="small" color="light"   style="margin-right: 3px" >
-            <ion-icon slot="start" name="repeat-outline"></ion-icon>
-             <ion-label><small class="ion-text-uppercase">Trans</small></ion-label>
-          </ion-button>
-          <ion-button slot="end" (click)="roomPopup()" size="small" color="light" >
-               <ion-icon slot="start"  name="create-outline"></ion-icon>
-            <ion-label><small class="ion-text-uppercase">ADD</small></ion-label>
-          </ion-button>
-          <ion-button slot="end" size="small"  color="light">
-          <ion-icon  slot="start" name="checkmark"></ion-icon>
-            <ion-label><small class="ion-text-uppercase">OUT</small></ion-label>
-          </ion-button>
+    <ion-button slot="end" size="small" color="light" style="margin-right: 3px">
+      <ion-icon slot="start" name="repeat-outline"></ion-icon>
+      <ion-label><small class="ion-text-uppercase">Trans</small></ion-label>
+    </ion-button>
+    <ion-button slot="end" (click)="roomPopup()" size="small" color="light">
+      <ion-icon slot="start" name="create-outline"></ion-icon>
+      <ion-label><small class="ion-text-uppercase">ADD</small></ion-label>
+    </ion-button>
+    <ion-button slot="end" size="small" color="light">
+      <ion-icon slot="start" name="checkmark"></ion-icon>
+      <ion-label><small class="ion-text-uppercase">OUT</small></ion-label>
+    </ion-button>
   </ion-item>
   <ion-progress-bar color="success" [value]="progress"></ion-progress-bar>
 

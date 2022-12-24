@@ -26,3 +26,6 @@ export class RoofTopBarPopupComponentComponent implements OnInit {
 
   }
 }
+
+export class PlayGroundCreationComponent {
+}

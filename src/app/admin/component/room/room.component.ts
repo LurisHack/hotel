@@ -4,13 +4,12 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
 import {AdminComponentModule} from "../admin-component.module";
 import {RoomSkeletonComponent} from "../../skeletonComponent/room-skeleton/room-skeleton.component";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
-import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
-import {RoomStateFilterPipe} from "../../../utility/pipe/room-state-filter.pipe";
+import {BuildingFilterPipe} from "../../../utility/pipe/building-filter.pipe";
 
 @Component({
   standalone: true,
   imports: [AdminComponentModule, RoomUIComponent, ScrollingModule,
-    RoomSkeletonComponent, RoomFilterPipe, RoomStateFilterPipe],
+    RoomSkeletonComponent, BuildingFilterPipe],
   selector: 'app-siteInformation',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss'],
