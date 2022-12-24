@@ -1,44 +1,58 @@
-<ion-header mode="ios">
-  <ion-toolbar>
 <!--    <ion-item lines="none">-->
 <!--      <ion-label>Select Room Type</ion-label>-->
-      <ion-select #roomType placeholder="Select Room Type" *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
-        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType"
-                            [value]="roomType" [innerText]="roomType.name">
-        </ion-select-option>
-      </ion-select>
+<!--      <ion-select #roomType placeholder="Select Room Type" *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">-->
+<!--        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType"-->
+<!--                            [value]="roomType" [innerText]="roomType.name">-->
+<!--        </ion-select-option>-->
+<!--      </ion-select>-->
 
-      <ion-item fill="outline" class="ion-no-margin ion-no-padding" color="none">
-        <ion-label position="floating">Enter Room Name</ion-label>
-        <ion-input #roomName></ion-input>
-      </ion-item>
+<!--      <ion-item fill="outline" class="ion-no-margin ion-no-padding" color="none">-->
+<!--        <ion-label position="floating">Enter Room Name</ion-label>-->
+<!--        <ion-input #roomName></ion-input>-->
+<!--      </ion-item>-->
 
-      <ion-button (click)="addRoom()" size="small">
-        <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room
-      </ion-button>
+<!--      <ion-button (click)="addRoom()" size="small">-->
+<!--        <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room-->
+<!--      </ion-button>-->
 <!--    </ion-item>-->
 
-  </ion-toolbar>
+<ion-header>
+  <ion-card-title class="ion-padding">Add Room</ion-card-title>
+
+  <ion-grid class="ion-no-padding ion-no-margin">
+    <ion-row class="ion-no-margin ion-no-padding ion-padding-bottom">
+      <ion-col style="margin-left: 8px;" size-xs="12" size-sm="4" size-md="4" size-lg="2">
+        <ion-select #roomType placeholder="Select Room Type" interface="popover"
+                    *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
+          <ion-select-option *ngFor="let roomType of siteInformationService.siteInformation.roomType"
+                             [value]="roomType" [innerText]="roomType.name">
+          </ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="2" class="ion-margin-start">
+        <ion-input placeholder="Ender Room Name" #roomName></ion-input>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="auto" class="ion-margin-start">
+        <ion-button style="width: 90%" color="light" size="small" (click)="addRoom()">ADD</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 <ion-content>
-<ion-grid *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
-  <ion-row>
-    <ion-col size-xs="12" size-sm="6" size-md="4"
-             *ngFor="let room of siteInformationService.siteInformation.roomName | roomListCreationPipe : activatedRoute.snapshot.params['id']">
-      <ion-card color="light" class="ion-text-center ion-padding">
-        <ion-label color="dark" class="ion-text-wrap ion-padding ion-margin">
-          <strong>{{room.name}}</strong></ion-label>
-        <ion-item-divider>
-          <ion-label>{{room.roomType.name}}</ion-label>
-          <ion-icon  slot="end" name="create-outline" (click)="editBuiltName(room.id)"></ion-icon>
-          <ion-icon  slot="end" name="trash" (click)="deleteRoomName(room.id)"></ion-icon>
-        </ion-item-divider>
-        <ion-item-divider>
-          <ion-text slot="end">View Rooms</ion-text>
-        </ion-item-divider>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomName.length">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="6" size-md="4" size-lg="3"
+               *ngFor="let room of siteInformationService.siteInformation.roomName | roomListCreationPipe : activatedRoute.snapshot.params['id']">
+        <ion-card color="light" class="ion-text-center ion-no-padding">
+          <ion-title style="margin: 10px "><strong>{{room.name}}</strong></ion-title>
+          <ion-item-divider class="ion-no-margin ion-padding-end">
+            <ion-label>{{room.roomType.name}}</ion-label>
+            <ion-icon slot="end" name="create-outline" (click)="editBuiltName(room.id)"></ion-icon>
+            <ion-icon slot="end" color="danger" name="trash" (click)="deleteRoomName(room.id)"></ion-icon>
+          </ion-item-divider>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

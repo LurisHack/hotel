@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {SiteInformation} from "../enum/site-information";
 import {FirestoreService} from "./firestore.service";
 import {Subscription} from "rxjs";
 import {generateId} from "../function/generateId";
 import {AlertService} from "./alert.service";
 import {ToastService} from "./toast.service";
+import {SiteInformationEnum} from "../enum/site-information-enum";
 
 @Injectable({providedIn: "root"})
 
@@ -16,7 +16,8 @@ export class SiteInformationService {
     buildingName: { name: string, id: string }[],
     roomName: { name: string, id: string }[],
     roomType: { name: string, id: string }[],
-    roomTypePackage: { roomTypeId: string, price: number | string, hour: number, packageType: string }[]
+    roomTypePackage: { roomTypeId: string, price: number | string, hour?: number, packageType: string,
+      startHour?: any, endHour?: any }[]
   } = {
     buildingName: [],
     roomName: [],
@@ -41,7 +42,7 @@ export class SiteInformationService {
         Object.assign(this.siteInformation,
           {buildingName: [...this.siteInformation.buildingName, {name, id: generateId()}]})
         console.log(this.siteInformation)
-        this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
+        this.firestoreService.addDoc({doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
             console.log(t)
             // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
@@ -93,7 +94,7 @@ export class SiteInformationService {
           {roomName: [...this.siteInformation.roomName, {name, id: generateId(),
               buildingData, roomType, roomState: 'Available'}]})
         console.log(this.siteInformation)
-        this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
+        this.firestoreService.addDoc({doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
             console.log(t)
             // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
@@ -108,7 +109,7 @@ export class SiteInformationService {
       {roomType: [...this.siteInformation.roomType, {name, id}]})
     console.log(this.siteInformation)
     this.firestoreService.updateDoc({
-      doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation.roomType,
+      doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation.roomType,
       updatePropertyName
     })
       .then((t: any) => {
@@ -125,7 +126,7 @@ export class SiteInformationService {
     Object.assign(this.siteInformation,
       {roomType: this.siteInformation.roomType.filter(roomType => roomType.id != roomTypeId)})
     this.firestoreService.updateDoc({
-      doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation.roomType,
+      doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation.roomType,
       updatePropertyName
     })
       .then((t: any) => {
@@ -136,14 +137,39 @@ export class SiteInformationService {
 
   }
 
-  addRoomPackage(roomTypeId: any, hour: number, price: number | string, packageType: any) {
+  // addRoomPackage(roomTypeId: any, hour: number, price: number | string, packageType: any) {
 
     // Object.assign(this.siteInformation, {
     //   roomTypePackage: this.siteInformation.roomType.map(roomType => roomType.id === packageId ? {...roomType, hour, price} : roomType)
     // })
 
+    // this.siteInformation.roomTypePackage.push({roomTypeId, hour, price, packageType})
+    // this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION,
+    //   data: this.siteInformation.roomTypePackage,
+    //   updatePropertyName: 'roomTypePackage'})
+    //   .then((success: any) => {
+    //     console.log('room type package adding success')
+    //     // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+    //   })
+    //   .catch((error: any) => console.log(error))
+  // }
+
+  deleteRoomName(id: string) {
+
+     this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
+      data: this.siteInformation.roomName.filter(roomName => roomName.id !== id),
+      updatePropertyName: 'roomName'})
+      .then((success: any) => {
+        console.log('room type name adding success')
+        // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+      })
+      .catch((error: any) => console.log(error))
+  }
+
+  addRoomSectionPackage(roomTypeId: any, hour: any, price: string | number, packageType: string) {
+
     this.siteInformation.roomTypePackage.push({roomTypeId, hour, price, packageType})
-    this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION,
+    this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
       data: this.siteInformation.roomTypePackage,
       updatePropertyName: 'roomTypePackage'})
       .then((success: any) => {
@@ -153,15 +179,21 @@ export class SiteInformationService {
       .catch((error: any) => console.log(error))
   }
 
-  deleteRoomName(id: string) {
+  addRoomFullTimePackage(roomTypeId: any, startHour: any, endHour: any, price: string | number, packageType: string) {
 
-     this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION,
-      data: this.siteInformation.roomName.filter(roomName => roomName.id !== id),
-      updatePropertyName: 'roomName'})
+   console.log(roomTypeId, startHour, endHour, price, packageType)
+
+    this.siteInformation.roomTypePackage.push({roomTypeId, startHour, endHour, price, packageType})
+    this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
+      data: this.siteInformation.roomTypePackage,
+      updatePropertyName: 'roomTypePackage'})
       .then((success: any) => {
-        console.log('room type name adding success')
+        console.log('room type package adding success')
         // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((error: any) => console.log(error))
+
+
+
   }
 }
