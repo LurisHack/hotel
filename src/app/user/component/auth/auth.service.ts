@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {map, Observable} from "rxjs";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {RouterService} from "../../../utility/service/router.service";
 
 @Injectable({
   providedIn: 'root'

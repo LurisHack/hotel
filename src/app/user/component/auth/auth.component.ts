@@ -1,13 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {trigger, state, style, transition, animate} from '@angular/animations';
 import {CommonModule} from "@angular/common";
-import {RouterModule} from "@angular/router";
-import {Store} from "@ngrx/store";
+import {ActivatedRoute, RouterModule} from "@angular/router";
 import {AuthService} from "./auth.service";
 import {ToastService} from "../../../utility/service/toast.service";
-import {Subscription} from "rxjs";
 
 class AuthForm {
   forgot = {
@@ -38,9 +35,10 @@ class AuthForm {
 })
 
 export class AuthComponent implements OnInit {
+
+  fragment: any = 'Login'
   formGroup: FormGroup = new FormGroup<any>({})
-  fragment = 'Login';
-  state = 'normal';
+   state = 'normal';
   formDisable = false;
   showAuth = false
   authHeight = '50vh'
@@ -54,7 +52,7 @@ export class AuthComponent implements OnInit {
   subscription: any;
 
 
-  constructor(private store: Store<{ activatedRoute: { activatedRoute: string } }>,
+  constructor(private activatedRoute: ActivatedRoute,
               public authService: AuthService, private toastService: ToastService) {
 
     setTimeout(() => {
@@ -68,15 +66,10 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     let formObj: any;
     const authForm = new AuthForm();
-
-
-   this.subscription = this.store.select('activatedRoute')
+    this.activatedRoute.fragment
       .subscribe(fragment => {
         console.log(fragment)
-
-        this.fragment = fragment.activatedRoute
-
-
+        this.fragment = fragment
         switch (this.fragment) {
           case 'Register':
             formObj = authForm.register;
