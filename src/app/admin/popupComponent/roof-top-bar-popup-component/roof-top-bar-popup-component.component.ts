@@ -20,6 +20,7 @@ import {RooftopbarComponent} from "../../component/rooftopbar/rooftopbar.compone
     RooftopbarComponent
   ]
 })
+
 export class RoofTopBarPopupComponentComponent implements OnInit {
 
   constructor() {
