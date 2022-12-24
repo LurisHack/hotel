@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Store} from "@ngrx/store";
 import {SiteInformation} from "../enum/site-information";
-import {SITE_INFORMATION} from "../store/siteInformation/siteInformation.action";
 import {FirestoreService} from "./firestore.service";
 import {Subscription} from "rxjs";
 import {generateId} from "../function/generateId";
@@ -86,7 +85,7 @@ export class SiteInformationService {
     //     console.log(alert)
 
     if (!name || !buildingId || !roomType){
-      this.toastService.toast({message: 'Invalid name or id!'})
+      this.toastService.toast({message: 'Invalid name or id!', duration: 2000})
       return
     }
 
