@@ -1,0 +1,18 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-segment value="itemAdding" (ionChange)="itemAddingSegment($event)">
+      <ion-segment-button value="itemAdding">Item Adding</ion-segment-button>
+      <ion-segment-button value="roomInventory">Room Inventory</ion-segment-button>
+    </ion-segment>
+
+    <ion-button color="light" size="small" slot="end" (click)="modalController.dismiss()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <app-item-adding *ngIf="segmentValue === 'itemAdding'"></app-item-adding>
+  <app-room-inventory *ngIf="segmentValue === 'roomInventory'"></app-room-inventory>
+</ion-content>
