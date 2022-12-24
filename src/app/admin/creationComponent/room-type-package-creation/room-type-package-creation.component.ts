@@ -7,6 +7,7 @@ import {SiteInformationService} from "../../../utility/service/siteInformation.s
 import {IonInput, IonSelect} from "@ionic/angular";
 import {ToastService} from "../../../utility/service/toast.service";
 import {RoomTypePackageFilterPipe} from "../../../utility/pipe/room-type-package-filter.pipe";
+import {SiteInformationEnum} from "../../../utility/enum/site-information-enum";
 
 @Component({
   standalone: true,
@@ -20,6 +21,11 @@ export class RoomTypePackageCreationComponent {
 
   @ViewChild('roomSectionPackagePrice') roomPackagePrice: any;
   @ViewChild('roomSectionTimer') roomSectionTimer: any;
+  @ViewChild('roomSectionPackagePrice') roomSectionPackagePrice: any;
+
+  @ViewChild('roomFullTimeTimerStart') roomFullTimeTimerStart: any;
+  @ViewChild('roomFullTimeTimerEnd') roomFullTimeTimerEnd: any;
+  @ViewChild('roomFullTimePackagePrice') roomFullTimePackagePrice: any;
 
   oneMinute = 60
   oneHour = this.oneMinute * 60
@@ -53,11 +59,11 @@ export class RoomTypePackageCreationComponent {
 
   addRoomSectionPackage() {
 
-   const id = this.activatedRoute.snapshot.params['id'];
+   const roomTypeId = this.activatedRoute.snapshot.params['id'];
    const hour = (<IonSelect>this.roomSectionTimer).value
-    const price = (<IonInput>this.roomPackagePrice).value
+   const price = (<IonInput>this.roomPackagePrice).value
 
-    if(!id){
+    if(!roomTypeId){
       this.toastService.toast({message: 'Invalid room type id!', position: 'bottom', duration: 2000})
       return;
     }
@@ -69,10 +75,27 @@ export class RoomTypePackageCreationComponent {
     }
 
 
-    this.siteInformationService.addRoomPackage(id,hour,price, 'section')
+    this.siteInformationService.addRoomSectionPackage(roomTypeId,hour,price, SiteInformationEnum.SECTION)
   }
 
   addRoomFullTimePackage() {
 
+    const roomTypeId = this.activatedRoute.snapshot.params['id'];
+    const startHour = (<IonSelect>this.roomFullTimeTimerStart).value
+    const endHour = (<IonSelect>this.roomFullTimeTimerEnd).value
+    const price = (<IonInput>this.roomFullTimePackagePrice).value
+
+    console.log(roomTypeId, startHour, endHour, price)
+
+    if(!roomTypeId){
+      this.toastService.toast({message: 'Invalid room type id!', position: 'bottom', duration: 2000})
+      return;
+    }
+
+    if (!startHour || !endHour || !price){
+      this.toastService.toast({message: 'Please fill correctly', position: 'bottom', duration: 2000})
+      return;
+    }
+    this.siteInformationService.addRoomFullTimePackage(roomTypeId,startHour, endHour , price, SiteInformationEnum.FullTime)
   }
 }

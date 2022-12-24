@@ -1,12 +1,8 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Store} from "@ngrx/store";
-import {ACTIVATED_ROUTE} from "./utility/store/activatedRoute/activatedRoute.action";
 import * as firebase from "@firebase/firestore"
 import {FirestoreService} from "./utility/service/firestore.service";
-import {SiteInformation} from "./utility/enum/site-information";
- import {SITE_INFORMATION} from "./utility/store/siteInformation/siteInformation.action";
-import {SiteInformationState} from "./utility/store/siteInformation/siteInformation.reducer";
+import {SiteInformationEnum} from "./utility/enum/site-information-enum";
 import {SiteInformationService} from "./utility/service/siteInformation.service";
 
 @Component({
@@ -28,7 +24,7 @@ export class AppComponent {
 
 
 
-    this.firestoreService.getDocSnapShot({doc: SiteInformation.SITE_INFORMATION})
+    this.firestoreService.getDocSnapShot({doc: SiteInformationEnum.SITE_INFORMATION})
          .subscribe((siteInformationData: any) => {
            console.log(siteInformationData)
            // this.store.dispatch({type: SITE_INFORMATION, payload: siteInformationData})
