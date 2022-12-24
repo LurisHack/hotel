@@ -65,7 +65,7 @@ const routes: Routes = [
             component: RoomTypeCreationComponent
           },
           {
-            path: 'roomTypeCreation/roomPackageCreation/:id',
+            path: 'roomTypeCreation/roomTypePackageCreation/:id',
             component: RoomTypePackageCreationComponent,
           },
           {

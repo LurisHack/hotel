@@ -51,7 +51,7 @@ export class RoomTypePackageCreationComponent {
       })
   }
 
-  addRoomPackage() {
+  addRoomSectionPackage() {
 
    const id = this.activatedRoute.snapshot.params['id'];
    const hour = (<IonSelect>this.roomSectionTimer).value
@@ -70,5 +70,9 @@ export class RoomTypePackageCreationComponent {
 
 
     this.siteInformationService.addRoomPackage(id,hour,price, 'section')
+  }
+
+  addRoomFullTimePackage() {
+
   }
 }
