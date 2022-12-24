@@ -43,7 +43,7 @@
         <ion-icon *ngIf="check" name="create-outline" (click)="editBuiltName(building.id)"></ion-icon>
         <ion-icon *ngIf="!check" color="success" name="checkmark" (click)="doneBuiltName(building.id)"></ion-icon>
       </ion-col>
-      <ion-col size-xs="8" size-sm="4" class="ion-text-center" [routerLink]="'/admin-home/SETTING/buildingList/roomList/'+building.id">
+      <ion-col size-xs="8" size-sm="4" class="ion-text-center" [routerLink]="'/admin-home/SETTING/buildingListCreation/roomListCreation/'+building.id">
         <ion-text><small>View Rooms</small></ion-text>
       </ion-col>
       <ion-col size-xs="2" size-sm="1" class="ion-text-center">

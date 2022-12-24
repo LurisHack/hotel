@@ -39,36 +39,17 @@
   </ion-toolbar>
 </ion-header>
 
-<cdk-virtual-scroll-viewport (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host" itemSize="56" minBufferPx="900" maxBufferPx="1350">
-
-  <ion-grid *ngIf="segment === 'CheckIn' && siteInformationService.siteInformation">
+<cdk-virtual-scroll-viewport  *ngIf="segment === 'CheckIn' && siteInformationService.siteInformation" (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host" itemSize="56" minBufferPx="900" maxBufferPx="1350">
+  <ion-grid   *ngFor="let building of siteInformationService.siteInformation.buildingName">
+       <ion-item-divider>
+         <ion-label color="dark"><strong>{{building.name}}</strong></ion-label>
+      </ion-item-divider>
     <ion-row>
-      <ion-col *ngFor="let i of [1,2,2,2,3,4,45]" size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
-        <app-room-ui></app-room-ui>
-<!--        <app-room-skeleton *ngIf="loaded"></app-room-skeleton>-->
+      <ion-col  *ngFor="let room of siteInformationService.siteInformation.roomName | roomFilter: building.id" size-xs="12" size-sm="6" size-md="6" size-lg="6" size-xl="4">
+        <app-room-ui [roomData]="{name: room.name}"></app-room-ui>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-
-  <ion-grid *ngIf="segment === 'All' && siteInformationService.siteInformation">
-    <ion-row>
-      <ion-col>
-
-        <ion-list *ngFor="let building of siteInformationService.siteInformation.buildingName">
-          <ion-list-header>
-            {{building.name}}
-          </ion-list-header>
-          <ion-item-divider *ngFor="let room of siteInformationService.siteInformation.roomName | roomFilter: building.id">
-            {{room.name}}
-          </ion-item-divider>
-
-        </ion-list>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
+   </ion-grid>
 </cdk-virtual-scroll-viewport>
 
 

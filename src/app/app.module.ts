@@ -15,6 +15,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { RoomTypePackageFilterPipe } from './utility/pipe/room-type-package-filter.pipe';
 
 
 @NgModule({

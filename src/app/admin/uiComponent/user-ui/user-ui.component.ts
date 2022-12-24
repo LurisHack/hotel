@@ -22,6 +22,7 @@ export class UserUIComponent implements OnInit {
     },5000)
   }
 
+  //TODO to create ngOninit
   ngOnInit() {}
 
 }

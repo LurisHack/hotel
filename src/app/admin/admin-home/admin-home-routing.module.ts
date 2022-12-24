@@ -8,16 +8,16 @@ import {LOGComponent} from "../component/log/log.component";
 import {SETTINGComponent} from "../component/setting/setting.component";
 import {USERSComponent} from "../component/users/users.component";
 import {PERMISSIONSComponent} from "../component/permissions/permissions.component";
-import {BuildingListComponent} from "../extraComponent/building-list/building-list.component";
+import {BuildingListCreationComponent} from "../creationComponent/building-list-creation/building-list-creation.component";
 import { WelcomePresentationCreationComponent } from "../creationComponent/welcome-presentation-creation/welcome-presentation-creation.component";
-import {RoomCreationComponent} from "../creationComponent/room-creation/room-creation.component";
+import {RoomListCreationComponent} from "../creationComponent/room-list-creation/room-list-creation.component";
 import {RooftopbarComponent} from "../component/rooftopbar/rooftopbar.component";
 import {PlaygroundComponent} from "../component/playground/playground.component";
 import {StoreUiComponent} from "../uiComponent/store-ui/store-ui.component";
 import {PlayGroundCreationComponent} from "../creationComponent/play-ground-creation/play-ground-creation.component";
 import {RoofTopBarCreationComponent} from "../creationComponent/roof-top-bar-creation/roof-top-bar-creation.component";
 import {RoomTypeCreationComponent} from "../creationComponent/room-type-creation/room-type-creation.component";
-import {RoomPackageCreationComponent} from "../creationComponent/room-package-creation/room-package-creation.component";
+import {RoomTypePackageCreationComponent} from "../creationComponent/room-type-package-creation/room-type-package-creation.component";
 
 const routes: Routes = [
   {
@@ -66,15 +66,15 @@ const routes: Routes = [
           },
           {
             path: 'roomTypeCreation/roomPackageCreation/:id',
-            component: RoomPackageCreationComponent,
+            component: RoomTypePackageCreationComponent,
           },
           {
             path: 'buildingList',
-            component: BuildingListComponent,
+            component: BuildingListCreationComponent,
           },
           {
-            path: 'buildingList/roomList/:id',
-            component: RoomCreationComponent
+            path: 'buildingListCreation/roomListCreation/:id',
+            component: RoomListCreationComponent
           },
           {
             path: 'rooftopBar',

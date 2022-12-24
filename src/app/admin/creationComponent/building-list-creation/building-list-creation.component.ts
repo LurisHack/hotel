@@ -8,10 +8,10 @@ import {BuildingListUiComponent} from "../../uiComponent/building-list-ui/buildi
   standalone: true,
   imports: [AdminComponentModule, RouterModule, BuildingListUiComponent],
   selector: 'app-siteInformation-list',
-  templateUrl: './building-list.component.html',
-  styleUrls: ['./building-list.component.scss'],
+  templateUrl: './building-list-creation.component.html',
+  styleUrls: ['./building-list-creation.component.scss'],
  })
-export class BuildingListComponent {
+export class BuildingListCreationComponent {
 
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { ModalController} from "@ionic/angular";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {RoomPopupComponent} from "../../popupComponent/room-popup/room-popup.component";
@@ -14,6 +14,12 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 export class RoomUIComponent{
 
   public progress = 0;
+
+  @Input() roomData: {
+    name: string
+  } = {
+    name: ''
+  }
 
 
   constructor(private modalCtrl: ModalController) {
