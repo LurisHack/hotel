@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
+import {ModalController} from "@ionic/angular";
 
 @Component({
   standalone:true,
@@ -10,8 +11,24 @@ import {AdminComponentModule} from "../admin-component.module";
 })
 export class PlaygroundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {}
+
+  async PlayGroundPopup(i: number){
+
+    console.log(i)
+
+    const modalCtrl = await this.modalCtrl.create({
+      component: PlaygroundComponent,
+      componentProps: {props: i}
+    })
+
+
+    await modalCtrl.present()
+
+  }
+
+
 
 }
