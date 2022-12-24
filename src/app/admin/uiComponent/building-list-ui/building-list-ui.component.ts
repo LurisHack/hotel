@@ -28,6 +28,7 @@ export class BuildingListUiComponent{
 
   editBuiltName(id: string) {
     // this.siteInformationService.editBuildingName(id)
+    // test
     this.check = false;
   }
 

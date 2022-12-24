@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
-import {ActivatedRoute, RouterLink} from "@angular/router";
+import {RouterLink} from "@angular/router";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
 import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
 
@@ -11,19 +11,18 @@ import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
   templateUrl: './roof-top-bar-creation.component.html',
   styleUrls: ['./roof-top-bar-creation.component.scss'],
 })
-export class RoofTopBarCreationComponent implements OnInit {
+
+export class RoofTopBarCreationComponent{
 
   check = true;
 
   constructor(public siteInformationService: SiteInformationService) {
   }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
   addBuildingName() {
-    this.siteInformationService.RoofTopBar()
+    // this.siteInformationService.RoofTopBar()
   }
 
   deleteBuildName(id: string) {
@@ -36,7 +35,11 @@ export class RoofTopBarCreationComponent implements OnInit {
   }
 
 
+  //TODO To edit doneBuildName
   doneBuiltName(id: string) {
     this.check = true;
   }
+
 }
+
+
