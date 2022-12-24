@@ -80,18 +80,18 @@ export class SiteInformationService {
     //   }).catch((c: any) => console.log(c))
   }
 
-  addRoomName(name: string | number, id: string, roomType: string) {
+  addRoomName(name: string | number, buildingId: string, roomType: string) {
     // this.alertService.alert()
     //   .then((alert: any) => {
     //     console.log(alert)
 
-    if (!name || !id){
+    if (!name || !buildingId || !roomType){
       this.toastService.toast({message: 'Invalid name or id!'})
       return
     }
 
         Object.assign(this.siteInformation,
-          {roomName: [...this.siteInformation.roomName, {name, id, roomType}]})
+          {roomName: [...this.siteInformation.roomName, {name, id: generateId(), buildingId, roomType}]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
@@ -151,6 +151,17 @@ export class SiteInformationService {
         this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((error: any) => console.log(error))
+  }
 
+  deleteRoomName(id: string) {
+
+     this.firestoreService.updateDoc({doc: SiteInformation.SITE_INFORMATION,
+      data: this.siteInformation.roomName.filter(roomName => roomName.id !== id),
+      updatePropertyName: 'roomName'})
+      .then((success: any) => {
+        console.log('room type name adding success')
+        this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+      })
+      .catch((error: any) => console.log(error))
   }
 }
