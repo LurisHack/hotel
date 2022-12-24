@@ -1,5 +1,41 @@
+<ion-header mode="ios" class="ion-no-padding ion-no-margin">
+  <ion-toolbar>
+    <ion-grid class="ion-no-padding ion-no-margin">
+      <ion-row>
+        <ion-col style="padding-top: 30px;"  size-sm="6" size-xs="12">
+          <ion-title class="ion-no-padding ion-no-margin" style="width: auto;font-size: 20px">
+            Store
+          </ion-title>
+        </ion-col>
+        <ion-col  size-sm="6" size-xs="12">
+          <ion-grid>
+            <ion-row>
+          <ion-col size-sm="auto" size-xs="auto"  >
+            <ion-button color="light" mode="ios"  style="width: auto;height: 25px;" size="small">
+              Add Product
+            </ion-button>
+          </ion-col>
+          <ion-col  size-sm="auto" style="padding-top: 5px ;"  size-xs="4"   >
+            <ion-input  mode="ios" class="ion-text-center"  style="width: auto; background: rgba(250,250,250,1);border: solid 1px rgba(218,218,218,1);height: 25px;border-radius: 7px;" placeholder="Enter Code"></ion-input>
+          </ion-col>
+          <ion-col size-sm="auto" size-xs="4"  >
+            <ion-button color="light" mode="ios" style="width: auto;height: 25px;"  size="small">
+              OK
+            </ion-button>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    </ion-col>
+            </ion-row>
+          </ion-grid>
 
+
+
+  </ion-toolbar>
+</ion-header>
 <ion-content>
+
+
   <ion-item-divider  *ngFor="let i of [1,2,2,2,3,4,5,6,7,8,9,10]"  class="--inner-padding-bottom">
     <ion-grid class="ion-no-padding ion-no-margin">
       <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">
@@ -12,13 +48,13 @@
                 <ion-col size-sm="3" size-xs="12" >
                   water and rice
                 </ion-col>
-                <ion-col style="color: red" size-sm="3" size-xs="12">
+                <ion-col style="color: red" size-sm="3" size-xs="4">
                   1000
                 </ion-col>
-                <ion-col style="color: red" size-sm="3" size-xs="12">
+                <ion-col style="color: red" size-sm="3" size-xs="4">
                   5
                 </ion-col>
-                <ion-col style="color: red" size-sm="3" size-xs="12">
+                <ion-col style="color: red" size-sm="3" size-xs="4">
                   5000
                 </ion-col>
               </ion-row>
