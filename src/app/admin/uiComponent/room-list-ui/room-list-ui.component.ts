@@ -3,7 +3,7 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
 import {RoomFilterPipe} from "../../../utility/pipe/room-filter.pipe";
-import {IonInput, IonSelect} from "@ionic/angular";
+import {IonSelect} from "@ionic/angular";
 
 @Component({
   standalone: true,
