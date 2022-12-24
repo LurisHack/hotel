@@ -16,4 +16,7 @@ export class StoreUiComponent implements OnInit {
 
   ngOnInit() {}
 
+    storeUi() {
+
+    }
 }
