@@ -35,12 +35,12 @@ export class SiteInformationService {
     })
   }
 
-  addBuildingName() {
-    this.alertService.alert()
-      .then((alert: any) => {
+  addBuildingName(name: any) {
+    // this.alertService.alert()
+    //   .then((alert: any) => {
         console.log(alert)
         Object.assign(this.siteInformation,
-          {buildingName: [...this.siteInformation.buildingName, {name: alert[0], id: generateId()}]})
+          {buildingName: [...this.siteInformation.buildingName, {name, id: generateId()}]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformation.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
@@ -48,7 +48,7 @@ export class SiteInformationService {
             this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
           })
           .catch((c: any) => console.log(c))
-      })
+      // })
   }
 
   deleteSiteInformation(id: string) {
