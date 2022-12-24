@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
-import {ScrollingModule} from "@angular/cdk/scrolling";
-import {RoomPopupComponent} from "../../popupComponent/room-popup/room-popup.component";
+
 import {ModalController} from "@ionic/angular";
-import {
-  RoofTopBarPopupComponentComponent
-} from "../../popupComponent/roof-top-bar-popup-component/roof-top-bar-popup-component.component";
+
 import {StoreAddProductComponent} from "../../popupComponent/store-add-product/store-add-product.component";
 
 @Component({
