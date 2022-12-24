@@ -1,11 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {SlideComponent} from "../../../utility/component/slide/slide.component";
 import {IonicModule} from "@ionic/angular";
 import {AuthComponent} from "../auth/auth.component";
-import {Store} from "@ngrx/store";
 import {CommonModule} from "@angular/common";
 import {AuthService} from "../auth/auth.service";
-import {RouterModule} from "@angular/router";
+import {ActivatedRoute, RouterModule} from "@angular/router";
 
 @Component({
   standalone: true,
@@ -27,10 +26,7 @@ export class WelcomeComponent {
 
    homeText = ''
 
-  constructor(private store: Store<{activatedRoute: {activatedRoute: string}}>,
-              public authService: AuthService) {
-    store.select('activatedRoute').subscribe(s =>  console.log(s))
-  }
+  constructor(public authService: AuthService) {}
 
   slideDidChange($event: any) {
 
