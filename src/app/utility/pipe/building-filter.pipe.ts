@@ -17,10 +17,7 @@ export class BuildingFilterPipe implements PipeTransform {
         rooms: value.filter(rooms => rooms.buildingData.id === id)
       }
       })
-
     console.log(building)
-
-
     return value.filter(rooms => rooms.buildingData.id === args[0] && rooms.roomState === args[1])
   }
 
