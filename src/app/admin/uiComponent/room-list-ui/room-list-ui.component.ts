@@ -26,9 +26,13 @@ export class RoomListUiComponent{
 
   addRoom() {
 
+    let buildingId = this.activatedRoute.snapshot.params['id'];
+
     this.siteInformationService.addRoomName(
-       this.roomName.value, this.activatedRoute.snapshot.params['id'],
-      (<IonSelect>this.roomType).value)
+       this.roomName.value,
+      this.siteInformationService.siteInformation.buildingName.filter(buildingName => buildingName.id === buildingId)[0],
+      (<IonSelect>this.roomType).value
+      )
   }
 
   deleteRoomName(id: string) {

@@ -7,8 +7,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RoomFilterPipe implements PipeTransform {
 
   transform(value: any[], ...args: any[]): any {
+
     console.log(value, args)
-    return value.filter(rooms => rooms.buildingId === args[0]);
+
+    if (args[0] === 'All'){
+      return  value
+    }
+
+    return value.filter(rooms => rooms.buildingData.id === args[0] && rooms.roomState === args[1])
   }
 
 }
