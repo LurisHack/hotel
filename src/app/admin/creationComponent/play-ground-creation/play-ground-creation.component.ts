@@ -10,8 +10,6 @@ import {PlaygroundComponent} from "../../component/playground/playground.compone
   styleUrls: ['./play-ground-creation.component.scss'],
 })
 export class PlayGroundCreationComponent implements OnInit {
-  props: any;
-  canDismiss: any;
 
   constructor() { }
 
