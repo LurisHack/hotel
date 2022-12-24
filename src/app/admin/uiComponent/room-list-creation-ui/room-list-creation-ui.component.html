@@ -1,14 +1,17 @@
 <ion-header mode="ios">
   <ion-toolbar>
 <!--    <ion-item lines="none">-->
-
-      <ion-label>Select Room Type</ion-label>
-      <ion-select #roomType *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
-        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType" [value]="roomType" [innerText]="roomType.name"></ion-select-option>
+<!--      <ion-label>Select Room Type</ion-label>-->
+      <ion-select #roomType placeholder="Select Room Type" *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
+        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType"
+                            [value]="roomType" [innerText]="roomType.name">
+        </ion-select-option>
       </ion-select>
 
-      <ion-label>Enter Room Name</ion-label>
-      <ion-input #roomName></ion-input>
+      <ion-item fill="outline" class="ion-no-margin ion-no-padding" color="none">
+        <ion-label position="floating">Enter Room Name</ion-label>
+        <ion-input #roomName></ion-input>
+      </ion-item>
 
       <ion-button (click)="addRoom()" size="small">
         <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room

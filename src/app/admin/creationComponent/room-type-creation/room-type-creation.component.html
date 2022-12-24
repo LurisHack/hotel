@@ -14,7 +14,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-grid *ngIf="siteInformationService.siteInformation &&  siteInformationService.siteInformation.roomType.length">
+  <ion-grid *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
     <ion-row>
       <ion-col size-xs="12" size-sm="6" size-md="4" *ngFor="let roomType of siteInformationService.siteInformation.roomType">
         <ion-card>

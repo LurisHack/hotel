@@ -5,30 +5,37 @@
   <!--</ion-button>-->
 
   <ion-card>
-    <ion-card-header>
+    <ion-card-header style="min-height: 20px">
       <ion-card-title>Section</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-select #roomSectionTimer interface="popover" placeholder="Select Hour">
-          <ion-select-option  *ngFor="let hour of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="hour">
-            {{hour + 'hr'}}
-          </ion-select-option>
-        </ion-select>
-        <ion-item fill="solid">
-          <ion-label>Enter Price</ion-label>
-          <ion-input type="number" #roomSectionPackagePrice></ion-input>
-        </ion-item>
-        <ion-button color="danger" (click)="addRoomPackage()">ADD</ion-button>
-      </ion-item>
-    </ion-card-content>
-    <ion-card-content *ngIf="this.siteInformationService.siteInformation && this.siteInformationService.siteInformation.roomTypePackage.length">
+    <ion-grid class="ion-no-padding ion-no-margin">
+      <ion-row class="ion-no-margin ion-no-padding ion-padding-bottom">
+        <ion-col style="margin-left: 8px;" size-xs="11" size-sm="3" size-md="3" size-lg="1.5">
+          <ion-select #roomSectionTimer interface="popover" placeholder="Select Hour">
+            <ion-select-option *ngFor="let hour of [1,2,3,4,5,6,7,8,9,10,11,12]" [value]="hour">
+              {{hour + ' hour'}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="2" class="ion-margin-start">
+          <ion-input placeholder="Enter Price" type="number" #roomSectionPackagePrice></ion-input>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="auto" class="ion-margin-start">
+          <ion-button style="width: 90%" color="light" size="small" (click)="addRoomPackage()">ADD</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content
+      *ngIf="this.siteInformationService.siteInformation && this.siteInformationService.siteInformation.roomTypePackage.length">
 
-      <ion-chip *ngFor="let sectionPackage of this.siteInformationService.siteInformation.roomTypePackage | roomTypePackageFilter : activatedRoute.snapshot.params['id']" style="background: mistyrose">
-        <ion-icon  name="create-outline"></ion-icon>
-        <ion-label><strong style="margin: 5px 10px 5px 10px">{{sectionPackage.hour+'hr = '+ sectionPackage.price }}</strong>
+      <ion-chip
+        *ngFor="let sectionPackage of this.siteInformationService.siteInformation.roomTypePackage | roomTypePackageFilter : activatedRoute.snapshot.params['id']"
+        style="background: mistyrose">
+        <ion-icon name="create-outline"></ion-icon>
+        <ion-label><strong
+          style="margin: 5px 10px 5px 10px">{{sectionPackage.hour + 'hr = ' + sectionPackage.price }}</strong>
         </ion-label>
-        <ion-icon   name="close-outline"></ion-icon>
+        <ion-icon name="close-outline"></ion-icon>
       </ion-chip>
 
     </ion-card-content>
@@ -38,35 +45,43 @@
     <ion-card-header>
       <ion-card-title>Full Time</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-select #roomFullTimeTimerStart interface="popover" placeholder="Start Hour">
-          <ion-select-option  *ngFor="let hour of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]" [value]="hour">
-            {{hour + 'hr'}}
-          </ion-select-option>
-        </ion-select>
 
-        <ion-select #roomFullTimeTimerEnd interface="popover" placeholder="Start Hour">
-          <ion-select-option  *ngFor="let hour of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]" [value]="hour">
-            {{hour + 'hr'}}
-          </ion-select-option>
-        </ion-select>
+    <ion-grid class="ion-no-padding ion-no-margin">
+      <ion-row class="ion-no-margin ion-no-padding ion-padding-bottom">
+        <ion-col style="margin-left: 8px;" size-xs="5" size-sm="5.5" size-md="3" size-lg="1.5">
+          <ion-select #roomFullTimeTimerStart interface="popover" placeholder="Start Hour">
+            <ion-select-option *ngFor="let hour of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
+                               [value]="hour">
+              {{hour + ' hour'}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col style="margin-left: 8px;" size-xs="5" size-sm="5.5" size-md="3" size-lg="1.5">
+          <ion-select #roomFullTimeTimerEnd interface="popover" placeholder="End Hour">
+            <ion-select-option *ngFor="let hour of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]"
+                               [value]="hour">
+              {{hour + ' hour'}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="7.2" size-md="4" size-lg="2" class="ion-margin-start">
+          <ion-input placeholder="Enter Price" type="number"  #roomFullTimePackagePrice></ion-input>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="auto" class="ion-margin-start">
+          <ion-button style="width: 90%" color="light" size="small" (click)="addRoomPackage()">ADD</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-        <ion-item fill="solid">
-          <ion-label>Enter Price</ion-label>
-          <ion-input type="number" #roomFullTimePackagePrice></ion-input>
-        </ion-item>
-        <ion-button color="danger" (click)="addRoomPackage()">ADD</ion-button>
-      </ion-item>
-    </ion-card-content>
-
-    <ion-card-content *ngIf="this.siteInformationService.siteInformation && this.siteInformationService.siteInformation.roomTypePackage.length">
+    <ion-card-content
+      *ngIf="this.siteInformationService.siteInformation && this.siteInformationService.siteInformation.roomTypePackage.length">
 
       <ion-chip *ngFor="let sectionPackage of [1,2,3,4,5]" style="background: mistyrose">
-        <ion-icon  name="create-outline"></ion-icon>
-        <ion-label><strong style="margin: 5px 10px 5px 10px">{{sectionPackage+'hr -> '+ sectionPackage+'hr = '+ sectionPackage+'0000' }}</strong>
+        <ion-icon name="create-outline"></ion-icon>
+        <ion-label><strong
+          style="margin: 5px 10px 5px 10px">{{sectionPackage + 'hr -> ' + sectionPackage + 'hr = ' + sectionPackage + '0000' }}</strong>
         </ion-label>
-        <ion-icon   name="close-outline"></ion-icon>
+        <ion-icon name="close-outline"></ion-icon>
       </ion-chip>
 
     </ion-card-content>
