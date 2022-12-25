@@ -1,3 +1,23 @@
+<ion-header>
+  <ion-grid class="ion-no-padding ion-no-margin">
+    <ion-row class="ion-no-margin ion-no-padding">
+      <ion-toolbar class="ion-no-margin ion-no-padding">
+        <ion-col slot="start" size-xs="12" size-sm="4" size-md="4" size-lg="2" class="ion-margin-top ion-margin-bottom ion-margin-start">
+          <ion-input style="border: 1px solid grey;border-radius: 5px;" class="ion-padding-start" placeholder="Ender Code"></ion-input>
+        </ion-col>
+        <ion-col slot="start">
+          <ion-button color="light" fill="clear" size="small">
+            <ion-icon color="dark" name="search-sharp"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col slot="end" size-xs="12" size-sm="auto" class="ion-margin">
+          <ion-button color="warning" size="small" (click)="addFood()">ADD FOOD</ion-button>
+        </ion-col>
+      </ion-toolbar>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
 <ion-card *ngFor="let i of [1,2,3]">
   <ion-grid>
     <ion-row class="ion-align-items-center">
@@ -18,12 +38,12 @@
 
       <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
         <ion-row class="ion-align-items-center">
-          <ion-button style="background: yellow" size="small" color="danger"
-                      fill="clear">-
+          <ion-button size="small" color="warning"
+                      fill="clear"><ion-text color="danger">-</ion-text>
           </ion-button>
           <strong style="margin-left: 3px; margin-right: 3px;">140</strong>
-          <ion-button style="background: yellow" size="small"
-                      color="danger" fill="clear">+
+          <ion-button size="small"
+                      color="warning" fill="clear"><ion-text color="danger">+</ion-text>
           </ion-button>
         </ion-row>
       </ion-col>
