@@ -5,6 +5,7 @@ import {RoomDataModel} from "../../../utility/model/room-data";
 import {RoomTypePackageFilterPipe} from "../../../utility/pipe/room-type-package-filter.pipe";
 import {FirestoreService} from "../../../utility/service/firestore.service";
 import {IonInput} from "@ionic/angular";
+import {SiteInformationEnum} from "../../../utility/enum/site-information-enum";
 
 @Component({
   standalone: true,
@@ -64,5 +65,27 @@ export class ItemAddingComponent{
 
      console.log(this.siteInformationService.siteInformation)
 
+  }
+
+  checkIn() {
+
+    if(!this.siteInformationService.siteInformation){
+      return
+    }
+
+    console.log(this.roomData)
+
+    Object.assign(this.siteInformationService.siteInformation, {
+      roomData: this.siteInformationService.siteInformation.roomData
+        .map(room => room.id === this.roomData?.id ? {...this.roomData, roomState: 'CheckIn'}: room)
+    })
+
+    console.log(this.siteInformationService.siteInformation)
+
+
+    this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
+    data:  this.siteInformationService.siteInformation?.roomData, updatePropertyName: 'roomData'})
+      .then((t: any) => console.log('check in updated ', t))
+      .catch((c: any) => console.log('check in error ', c))
   }
 }

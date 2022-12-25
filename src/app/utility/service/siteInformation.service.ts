@@ -107,7 +107,7 @@ export class SiteInformationService {
         Object.assign(this.siteInformation,
           {
             roomData: [...this.siteInformation.roomData, {name, id: generateId(),
-              buildingData, roomType, roomState: 'Available'}],
+              buildingData, roomType, roomState: 'Available',
             stayData: [{
               stayTimeLength:  {
                 roomTypeId: '',
@@ -124,7 +124,7 @@ export class SiteInformationService {
               restaurant: [],
               foc: [],
               damage: []
-            }})
+            }} ]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
