@@ -8,15 +8,15 @@
         <br>
         <ion-badge color="light"><ion-text color="medium"><small>{{roomData.roomType.name}}</small></ion-text></ion-badge>
       </ion-col>
-      <ion-col size="auto">
+      <ion-col *ngIf="roomData.stayData[0].stayTimeLength.hour" size="auto" >
         <ion-icon size="small" name="timer-outline"></ion-icon>
-        <ion-badge color="light">
-          3h
+        <ion-badge color="light" >
+         {{roomData.stayData[0].stayTimeLength.hour}}h
         </ion-badge>
         <br>
         <ion-icon size="small" name="log-in-outline"></ion-icon>
         <ion-badge color="light">
-          12/3/2004 &nbsp; 10:30 PM
+          25/12/2022 &nbsp; 2:30 PM
         </ion-badge>
       </ion-col>
 
