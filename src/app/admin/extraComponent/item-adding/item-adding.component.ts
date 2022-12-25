@@ -33,11 +33,23 @@ export class ItemAddingComponent{
 
     console.log(this.siteInformationService.siteInformation)
 
+    console.log((<IonInput>this.sectionSelectValue).value)
 
-    this.siteInformationService.siteInformation?.roomData
-      .map(rooms =>
-         rooms.id === this.roomData?.id ?
-          {...rooms,stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}} : rooms)
+
+    if(this.roomData){
+
+      Object.assign(this.roomData, {stayData: [{stayTimeLength: (<IonInput>this.sectionSelectValue).value }]} )
+
+      console.log(this.roomData)
+    }
+
+
+    // this.siteInformationService.siteInformation?.roomData
+    //   .map(rooms =>
+    //      rooms.id === this.roomData?.id ?
+    //       {...rooms,stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}} : rooms)
+    //
+
 
     // Object.assign(tempData, {stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}})
     //
