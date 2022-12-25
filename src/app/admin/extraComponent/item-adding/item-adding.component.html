@@ -33,7 +33,7 @@
     </ion-col>
     <ion-col class="ion-no-margin" size-xs="4" size-sm="6">
 
-      <div *ngIf="roomData.stayData && roomData.stayData.length" style="width: 100%;--min-height: 5vh;">
+       <div *ngIf="roomData.stayData[0].stayTimeLength.hour" style="width: 100%;--min-height: 5vh;">
         <ion-chip *ngFor="let stayTimeData of roomData.stayData"   color="danger" >
           {{stayTimeData.stayTimeLength.hour + 'HR'}}</ion-chip>
       </div>
