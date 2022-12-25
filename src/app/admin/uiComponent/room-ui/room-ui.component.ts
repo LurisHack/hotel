@@ -12,7 +12,7 @@ import {RoomDataModel} from "../../../utility/model/room-data";
   templateUrl: './room-ui.component.html',
   styleUrls: ['./room-ui.component.scss'],
 })
-export class RoomUIComponent implements OnInit{
+export class RoomUIComponent{
 
   public progress = 0;
 
@@ -25,9 +25,6 @@ export class RoomUIComponent implements OnInit{
     }, 50);
   }
 
-
-  ngOnInit(): void {
-  }
 
   async roomPopup() {
     console.log('Add item button clicked!')
