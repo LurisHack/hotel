@@ -31,22 +31,24 @@ export class ItemAddingComponent{
 
   setStayTime() {
 
-    let tempData = this.siteInformationService.siteInformation.roomName
-      .filter(rooms => rooms.id === this.roomData?.id )[0]
-
-    console.log(tempData)
+    console.log(this.siteInformationService.siteInformation)
 
 
-    Object.assign(tempData, {stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}})
+    this.siteInformationService.siteInformation?.roomData
+      .map(rooms =>
+         rooms.id === this.roomData?.id ?
+          {...rooms,stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}} : rooms)
 
-    console.log(tempData)
-    return
+    // Object.assign(tempData, {stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}})
+    //
+    // console.log(tempData)
+    // return
 
 
-    Object.assign(this.siteInformationService.siteInformation,
-      {roomName: this.siteInformationService.siteInformation.roomName
-          .map((rooms:any) => rooms.id === this.roomData?.id ?
-            tempData : rooms )})
+    // Object.assign(this.siteInformationService.siteInformation,
+    //   {roomName: this.siteInformationService.siteInformation.roomName
+    //       .map((rooms:any) => rooms.id === this.roomData?.id ?
+    //         tempData : rooms )})
 
      console.log(this.siteInformationService.siteInformation)
 

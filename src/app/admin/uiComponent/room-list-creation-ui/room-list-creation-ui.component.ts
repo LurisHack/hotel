@@ -28,6 +28,11 @@ export class RoomListCreationUiComponent {
 
     let buildingId = this.activatedRoute.snapshot.params['id'];
 
+    if(!this.siteInformationService.siteInformation){
+      console.log('site information service error ' , this.siteInformationService.siteInformation)
+      return
+    }
+
     this.siteInformationService.addRoomName(
        this.roomName.value,
       this.siteInformationService.siteInformation.buildingName.filter(buildingName => buildingName.id === buildingId)[0],

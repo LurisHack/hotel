@@ -6,6 +6,7 @@ import {generateId} from "../function/generateId";
 import {AlertService} from "./alert.service";
 import {ToastService} from "./toast.service";
 import {SiteInformationEnum} from "../enum/site-information-enum";
+import {RoomDataModel} from "../model/room-data";
 
 @Injectable({providedIn: "root"})
 
@@ -14,16 +15,11 @@ export class SiteInformationService {
   storeSubscription: Subscription;
   siteInformation: {
     buildingName: { name: string, id: string }[],
-    roomName: { name: string, id: string, stayData:{stayTimeLength: any[]} }[],
+    roomData: RoomDataModel[],
     roomType: { name: string, id: string }[],
     roomTypePackage: { roomTypeId: string, price: number | string, hour?: number, packageType: string,
       startHour?: any, endHour?: any }[]
-  } = {
-    buildingName: [],
-    roomName: [],
-    roomType: [],
-    roomTypePackage: []
-  }
+  } | undefined;
 
   constructor(private store: Store<{ siteInformation: { siteInformation: any } }>,
               private firestoreService: FirestoreService,
@@ -36,30 +32,43 @@ export class SiteInformationService {
   }
 
   addBuildingName(name: any) {
-    // this.alertService.alert()
-    //   .then((alert: any) => {
-        console.log(alert)
-        Object.assign(this.siteInformation,
+
+     if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
+
+    Object.assign(this.siteInformation,
           {buildingName: [...this.siteInformation.buildingName, {name, id: generateId()}]})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {
             console.log(t)
-            // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
-          })
+           })
           .catch((c: any) => console.log(c))
-      // })
-  }
+   }
 
   deleteSiteInformation(id: string) {
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
     Object.assign(this.siteInformation,
       {buildingName: this.siteInformation.buildingName.filter(buildingName => buildingName.id != id)})
     this.updateSiteInformationData()
   }
 
   editBuildingName(id: string) {
+
+
     this.alertService.alert()
       .then((inputData: any) => {
+
+        if (!this.siteInformation){
+          console.log('site information error ', this.siteInformation)
+          return
+        }
+
         if (inputData[0]) {
           Object.assign(this.siteInformation,
             {
@@ -90,9 +99,14 @@ export class SiteInformationService {
       return
     }
 
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
+
         Object.assign(this.siteInformation,
           {
-            roomData: [...this.siteInformation.roomName, {name, id: generateId(),
+            roomData: [...this.siteInformation.roomData, {name, id: generateId(),
               buildingData, roomType, roomState: 'Available'}],
             stayData: [{
               stayTimeLength:  {
@@ -123,6 +137,13 @@ export class SiteInformationService {
 
   addRoomType(name: string | number, id: string, updatePropertyName: any) {
 
+
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
+
+
     Object.assign(this.siteInformation,
       {roomType: [...this.siteInformation.roomType, {name, id}]})
     console.log(this.siteInformation)
@@ -140,6 +161,13 @@ export class SiteInformationService {
 
 
   deleteRoomType(roomTypeId: string, updatePropertyName: any) {
+
+
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
+
 
     Object.assign(this.siteInformation,
       {roomType: this.siteInformation.roomType.filter(roomType => roomType.id != roomTypeId)})
@@ -174,17 +202,31 @@ export class SiteInformationService {
 
   deleteRoomName(id: string) {
 
-     this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
-      data: this.siteInformation.roomName.filter(roomName => roomName.id !== id),
+
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
+
+
+    this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
+      data: this.siteInformation.roomData.filter(roomName => roomName.id !== id),
       updatePropertyName: 'roomName'})
       .then((success: any) => {
         console.log('room type name adding success')
-        // this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
+        //this.store.dispatch({type: SITE_INFORMATION, payload: this.siteInformation})
       })
       .catch((error: any) => console.log(error))
   }
 
   addRoomSectionPackage(roomTypeId: any, hour: any, price: string | number, packageType: string) {
+
+
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
+
 
     this.siteInformation.roomTypePackage.push({roomTypeId, hour, price, packageType})
     this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
@@ -200,6 +242,11 @@ export class SiteInformationService {
   addRoomFullTimePackage(roomTypeId: any, startHour: any, endHour: any, price: string | number, packageType: string) {
 
    console.log(roomTypeId, startHour, endHour, price, packageType)
+
+    if (!this.siteInformation){
+      console.log('site information error ', this.siteInformation)
+      return
+    }
 
     this.siteInformation.roomTypePackage.push({roomTypeId, startHour, endHour, price, packageType})
     this.firestoreService.updateDoc({doc: SiteInformationEnum.SITE_INFORMATION,
