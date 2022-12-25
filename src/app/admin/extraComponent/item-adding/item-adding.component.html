@@ -33,7 +33,7 @@
     </ion-col>
     <ion-col class="ion-no-margin" size-xs="4" size-sm="6">
 
-      <div *ngIf="roomData.stayData && roomData.stayData.length" style="width: 100%;--min-height: 5vh;">
+       <div *ngIf="roomData.stayData[0].stayTimeLength.hour" style="width: 100%;--min-height: 5vh;">
         <ion-chip *ngFor="let stayTimeData of roomData.stayData"   color="danger" >
           {{stayTimeData.stayTimeLength.hour + 'HR'}}</ion-chip>
       </div>
@@ -127,17 +127,17 @@
       </ion-item>
     </ion-col>
     <ion-col>
-      <ion-item-divider *ngFor="let i of [1,2,3,4,5]" style="background: whitesmoke;">
+      <ion-item-divider  style="background: whitesmoke;">
         <ion-grid class="ion-no-margin ion-no-padding">
           <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
             <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
-              ထမင်းေကြာ်
+              Enoki Pork Roll Noodle
             </ion-col>
             <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
               <ion-grid class="ion-no-margin ion-no-padding">
                 <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
                   <ion-col class="ion-no-margin ion-no-padding">
-                    <ion-text color="danger">1230</ion-text>
+                    <ion-text color="danger">7,500MMK</ion-text>
                   </ion-col>
                   <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
                     <ion-row class="ion-align-items-center">
@@ -151,7 +151,7 @@
                     </ion-row>
                   </ion-col>
                   <ion-col class="ion-text-right">
-                    <ion-card-subtitle color="danger" class="ion-margin-end">12398</ion-card-subtitle>
+                    <ion-card-subtitle color="danger" class="ion-margin-end">10,000MMK</ion-card-subtitle>
                   </ion-col>
 
                 </ion-row>
@@ -160,6 +160,300 @@
           </ion-row>
         </ion-grid>
       </ion-item-divider>
+
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              Chicken Noodle
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">7,000MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">95,000MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              Seafood Noodle
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">9,000MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">12,000MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-row class="ion-no-padding ion-margin-top" style="background: whitesmoke;">
+    <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
+      <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
+        <strong>Mini Bar</strong>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              CockTail
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">4,500MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">6,000MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              Wine
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">6,500MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">8,000MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              Guinnes
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">7,000MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">9,000MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-no-padding ion-margin-top" style="background: whitesmoke;">
+    <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
+      <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
+        <strong>FOC Items</strong>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+            Toothpaste and Toothbrush
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">0MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">0MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              Soap
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">0MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">0MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
+      <ion-item-divider  style="background: whitesmoke;">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding ion-align-items-center">
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="4">
+              Water bottle
+            </ion-col>
+            <ion-col class="ion-no-margin ion-no-padding" size-xs="8">
+              <ion-grid class="ion-no-margin ion-no-padding">
+                <ion-row class="ion-align-items-center ion-no-margin ion-no-padding">
+                  <ion-col class="ion-no-margin ion-no-padding">
+                    <ion-text color="danger">0MMK</ion-text>
+                  </ion-col>
+                  <ion-col size="auto" class="ion-align-self-auto ion-no-margin ion-no-padding">
+                    <ion-row class="ion-align-items-center">
+                      <ion-button size="small" color="danger"
+                                  fill="clear">-
+                      </ion-button>
+                      <strong style="margin-left: 3px; margin-right: 3px;">21</strong>
+                      <ion-button size="small"
+                                  color="danger" fill="clear">+
+                      </ion-button>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="ion-text-right">
+                    <ion-card-subtitle color="danger" class="ion-margin-end">0MMK</ion-card-subtitle>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item-divider>
+
     </ion-col>
   </ion-row>
 </ion-grid>
