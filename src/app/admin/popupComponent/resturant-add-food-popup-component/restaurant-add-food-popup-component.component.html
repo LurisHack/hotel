@@ -1,36 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ADD FOOD</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <ion-grid>
-    <ion-row class="ion-padding-top">
-      <ion-col>
-        <ion-title>Header?</ion-title>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col offset-xs="2" size-xs="8">
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Name
-          </ion-label>
-          <ion-input>
-          </ion-input>
-        </ion-item>
+  <form [formGroup]="formGroup" (ngSubmit)="addRestaurantFood()">
+    <ion-grid>
+      <ion-row class="ion-margin-top">
+        <ion-col offset-xs="2" size-xs="8">
+          <ion-item fill="outline" class="ion-margin">
+            <ion-label position="stacked">
+              Name
+            </ion-label>
+            <ion-input formControlName="name">
+            </ion-input>
+          </ion-item>
 
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Price
-          </ion-label>
-          <ion-input>
-          </ion-input>
-        </ion-item>
+          <ion-item fill="outline" class="ion-margin">
+            <ion-label position="stacked">
+              Price
+            </ion-label>
+            <ion-input type="number" formControlName="price">
+            </ion-input>
+          </ion-item>
 
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Count
-          </ion-label>
-          <ion-input>
-          </ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+          <ion-item fill="outline" class="ion-margin">
+            <ion-label position="stacked">
+              Count
+            </ion-label>
+            <ion-input type="number" formControlName="count">
+            </ion-input>
+          </ion-item>
+
+            <ion-button class="ion-margin" color="medium" [disabled]="formGroup.invalid" type="submit">
+              <ion-text color="dark">ADD</ion-text>
+            </ion-button>
+
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
