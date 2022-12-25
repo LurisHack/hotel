@@ -1,4 +1,4 @@
-<ion-grid *ngIf="roomData">
+<ion-grid *ngIf="roomData && siteInformationService.siteInformation">
   <ion-row class="ion-no-padding ion-align-items-center" style="background: whitesmoke;">
     <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
       <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
@@ -32,13 +32,10 @@
       </ion-button>
     </ion-col>
     <ion-col class="ion-no-margin" size-xs="4" size-sm="6">
-      <div style="width: 100%;--min-height: 5vh;">
-        <ion-chip class="ion-float-left" color="danger" slot="end">1H</ion-chip>
-        <ion-chip class="ion-float-left" color="danger" slot="end">3H</ion-chip>
-        <ion-chip class="ion-float-left" color="danger" slot="end">6H</ion-chip>
-        <ion-chip class="ion-float-left" color="danger" slot="end">1D</ion-chip>
-        <ion-chip class="ion-float-left" color="danger" slot="end">3D</ion-chip>
-        <ion-chip class="ion-float-left" color="danger" slot="end">5D</ion-chip>
+
+      <div *ngIf="roomData.stayData && roomData.stayData.length" style="width: 100%;--min-height: 5vh;">
+        <ion-chip *ngFor="let stayTimeData of roomData.stayData"   color="danger" >
+          {{stayTimeData.stayTimeLength.hour + 'HR'}}</ion-chip>
       </div>
     </ion-col>
   </ion-row>
@@ -165,13 +162,14 @@
       </ion-item-divider>
     </ion-col>
   </ion-row>
-
 </ion-grid>
 
-<ion-grid style="position: absolute; bottom: 5px; left: 0; right: 0; margin: 0; padding: 0;">
+<ion-grid *ngIf="roomData && roomData.stayData && roomData.stayData.length" style="background: lightcyan; position: sticky; bottom: 0; left: 0; right: 0; margin: 0; padding: 0;">
   <ion-row style="align-items: center; justify-content: right; border-top: 1px solid lightgray;
    height: 30px; margin: 0; padding: 0">
     <ion-button  color="danger"  style="height: 25px; border-radius: 0;  margin: 0 20px 0 0;">Check In</ion-button>
-    <ion-text  color="danger" class="ion-margin-end"><strong>123452MMK</strong></ion-text>
+    <ion-text  color="danger" class="ion-margin-end"><strong>
+      {{roomData.stayData[0].stayTimeLength.price}}
+    </strong></ion-text>
   </ion-row>
 </ion-grid>

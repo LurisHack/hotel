@@ -31,22 +31,36 @@ export class ItemAddingComponent{
 
   setStayTime() {
 
-    let tempData = this.siteInformationService.siteInformation.roomName
-      .filter(rooms => rooms.id === this.roomData?.id )[0]
+    console.log(this.siteInformationService.siteInformation)
 
-    console.log(tempData)
-
-
-    Object.assign(tempData, {stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}})
-
-    console.log(tempData)
-    return
+    console.log((<IonInput>this.sectionSelectValue).value)
 
 
-    Object.assign(this.siteInformationService.siteInformation,
-      {roomName: this.siteInformationService.siteInformation.roomName
-          .map((rooms:any) => rooms.id === this.roomData?.id ?
-            tempData : rooms )})
+    if(this.roomData){
+
+      Object.assign(this.roomData, {stayData: [{stayTimeLength: (<IonInput>this.sectionSelectValue).value }]} )
+
+      console.log(this.roomData)
+    }
+
+
+    // this.siteInformationService.siteInformation?.roomData
+    //   .map(rooms =>
+    //      rooms.id === this.roomData?.id ?
+    //       {...rooms,stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}} : rooms)
+    //
+
+
+    // Object.assign(tempData, {stayData : {stayTimeLength: [(<IonInput>this.sectionSelectValue).value]}})
+    //
+    // console.log(tempData)
+    // return
+
+
+    // Object.assign(this.siteInformationService.siteInformation,
+    //   {roomName: this.siteInformationService.siteInformation.roomName
+    //       .map((rooms:any) => rooms.id === this.roomData?.id ?
+    //         tempData : rooms )})
 
      console.log(this.siteInformationService.siteInformation)
 
