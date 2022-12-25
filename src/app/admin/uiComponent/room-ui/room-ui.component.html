@@ -1,10 +1,12 @@
-<ion-card color="light" class="ion-no-padding">
+<ion-card *ngIf="roomData" color="light" class="ion-no-padding">
   <ion-grid style="border-bottom: 1px solid lightgray">
     <ion-row class="ion-align-items-center">
-      <ion-col size="auto">
-        <ion-badge *ngIf="roomData && roomData.name" color="danger" style="margin-left: 5px">
+      <ion-col size="auto" class="ion-text-center">
+        <ion-badge *ngIf="roomData.name" color="danger" style="margin-left: 5px">
           <ion-icon class="ion-align-self-center" color="light" name="bed"></ion-icon>
           {{roomData.name}}</ion-badge>
+        <br>
+        <ion-badge color="light"><ion-text color="medium"><small>{{roomData.roomType.name}}</small></ion-text></ion-badge>
       </ion-col>
       <ion-col size="auto">
         <ion-icon size="small" name="timer-outline"></ion-icon>
@@ -112,17 +114,21 @@
   <!--        </ion-row>-->
   <!--      </ion-col>-->
   <ion-row style="justify-content: space-around">
-    <ion-button    size="small" color="light" style="margin-right: 3px">
+    <ion-button   *ngIf="roomData.roomState === 'CheckIn'"   size="small" color="light" style="margin-right: 3px">
       <ion-icon   name="repeat-outline"></ion-icon>
       <ion-label><small class="ion-text-uppercase">Trans</small></ion-label>
     </ion-button>
-    <ion-button     (click)="roomPopup()" size="small" color="light">
+    <ion-button   *ngIf="roomData.roomState === 'CheckIn'" (click)="roomPopup()" size="small" color="light">
       <ion-icon slot="start" name="create-outline"></ion-icon>
       <ion-label><small class="ion-text-uppercase">ADD</small></ion-label>
     </ion-button>
-    <ion-button    size="small" color="light">
+    <ion-button  *ngIf="roomData.roomState === 'CheckIn'"  size="small" color="light">
       <ion-icon slot="start" name="checkmark"></ion-icon>
       <ion-label><small class="ion-text-uppercase">OUT</small></ion-label>
+    </ion-button>
+    <ion-button *ngIf="roomData.roomState !== 'CheckIn'" (click)="roomPopup()"   size="small" color="light">
+      <ion-icon slot="start" name="checkmark"></ion-icon>
+      <ion-label><small class="ion-text-uppercase">IN</small></ion-label>
     </ion-button>
   </ion-row>
   <ion-progress-bar color="success" [value]="progress"></ion-progress-bar>

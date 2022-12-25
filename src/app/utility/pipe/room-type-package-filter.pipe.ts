@@ -10,7 +10,8 @@ export class RoomTypePackageFilterPipe implements PipeTransform {
 
     console.log(value, args)
 
-    return value.filter(roomTypePackage =>  roomTypePackage.roomTypeId === args[0]);
+    return value.filter(roomTypePackage =>
+      roomTypePackage.roomTypeId === args[0] && roomTypePackage.packageType === args[1]);
   }
 
 }

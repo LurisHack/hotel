@@ -14,7 +14,7 @@ export class SiteInformationService {
   storeSubscription: Subscription;
   siteInformation: {
     buildingName: { name: string, id: string }[],
-    roomName: { name: string, id: string }[],
+    roomName: { name: string, id: string, stayData:{stayTimeLength: any[]} }[],
     roomType: { name: string, id: string }[],
     roomTypePackage: { roomTypeId: string, price: number | string, hour?: number, packageType: string,
       startHour?: any, endHour?: any }[]
@@ -91,8 +91,26 @@ export class SiteInformationService {
     }
 
         Object.assign(this.siteInformation,
-          {roomName: [...this.siteInformation.roomName, {name, id: generateId(),
-              buildingData, roomType, roomState: 'Available'}]})
+          {
+            roomData: [...this.siteInformation.roomName, {name, id: generateId(),
+              buildingData, roomType, roomState: 'Available'}],
+            stayData: [{
+              stayTimeLength:  {
+                roomTypeId: '',
+                packageType: '',
+                price: 0,
+                hour: 0,
+                startHour: 0,
+                endHour: 0
+              }}],
+              startTime: null,
+              endTime: null,
+            usedData: {
+              store: [],
+              restaurant: [],
+              foc: [],
+              damage: []
+            }})
         console.log(this.siteInformation)
         this.firestoreService.addDoc({doc: SiteInformationEnum.SITE_INFORMATION, data: this.siteInformation})
           .then((t: any) => {

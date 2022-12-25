@@ -17,10 +17,13 @@ import {RoomStateFilterPipe} from "../../../utility/pipe/room-state-filter.pipe"
  })
 
 export class ROOMComponent{
-  
+
   scrollIndex = 0
   loaded = true
   segment = 'CheckIn'
+
+  forTransferBtn = ['CheckIn']
+  forAddBtn = ['NearlyTimeUp', 'CheckIn']
 
   constructor(public siteInformationService: SiteInformationService) {
 

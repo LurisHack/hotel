@@ -1,4 +1,4 @@
-<ion-grid>
+<ion-grid *ngIf="roomData">
   <ion-row class="ion-no-padding ion-align-items-center" style="background: whitesmoke;">
     <ion-col class="ion-no-margin" size-xs="12" style="background: #eaeaea;">
       <ion-item class="ion-no-margin" lines="none" style="--color: black; --min-height: 15px; --background: #eaeaea;">
@@ -6,21 +6,28 @@
       </ion-item>
     </ion-col>
     <ion-col class="ion-no-margin" size-xs="6" size-sm="4">
+      <ion-segment mode="ios" value="Section" (ionChange)="segmentChange($event)">
+        <ion-segment-button value="Section">Section</ion-segment-button>
+        <ion-segment-button value="FullTime">Full Time</ion-segment-button>
+      </ion-segment>
       <ion-item lines="none" style="--min-height: 5vh;--background: whitesmoke">
-        <ion-select style="width: 100%;" interface="popover" placeholder="Select Package">
-          <ion-select-option>1H</ion-select-option>
-          <ion-select-option>2H</ion-select-option>
-          <ion-select-option>3H</ion-select-option>
-          <ion-select-option>4H</ion-select-option>
-          <ion-select-option>5H</ion-select-option>
-          <ion-select-option>6H</ion-select-option>
-          <ion-select-option>1D</ion-select-option>
-          <ion-select-option>2D</ion-select-option>
+        <ion-select #sectionSelectValue *ngIf="segmentValue === 'Section'" style="width: 100%;" interface="popover" placeholder="Select Package">
+          <ion-select-option
+            *ngFor="let roomTypePackage of siteInformationService.siteInformation.roomTypePackage |
+            roomTypePackageFilter: roomData.roomType.id: segmentValue"
+          [value]="roomTypePackage">{{roomTypePackage.hour+'HR = '+ roomTypePackage.price+'MMK'}}</ion-select-option>
+        </ion-select>
+
+        <ion-select *ngIf="segmentValue === 'FullTime'" style="width: 100%;" interface="popover" placeholder="Select Package">
+          <ion-select-option
+            *ngFor="let roomTypePackage of siteInformationService.siteInformation.roomTypePackage |
+            roomTypePackageFilter: roomData.roomType.id: segmentValue"
+            [value]="roomTypePackage">{{roomTypePackage.startHour + 'HR - ' + roomTypePackage.endHour+'HR = ' + roomTypePackage.price+'MMK'}}</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-col>
     <ion-col class="ion-no-padding" size-xs="2">
-      <ion-button class="ion-no-margin" style="width: 50px;--border-radius: 9999px;" size="small" color="light" >
+      <ion-button class="ion-no-margin" style="width: 50px;--border-radius: 9999px;" (click)="setStayTime()" size="small" color="light" >
         <ion-icon size="small" color="success" name="checkmark"></ion-icon>
       </ion-button>
     </ion-col>
@@ -160,4 +167,12 @@
     </ion-col>
   </ion-row>
 
+</ion-grid>
+
+<ion-grid style="position: absolute; bottom: 5px; left: 0; right: 0; margin: 0; padding: 0;">
+  <ion-row style="align-items: center; justify-content: right; border-top: 1px solid lightgray;
+   height: 30px; margin: 0; padding: 0">
+    <ion-button  color="danger"  style="height: 25px; border-radius: 0;  margin: 0 20px 0 0;">Check In</ion-button>
+    <ion-text  color="danger" class="ion-margin-end"><strong>123452MMK</strong></ion-text>
+  </ion-row>
 </ion-grid>
