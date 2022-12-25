@@ -16,4 +16,7 @@ export class StoreAddProductComponent implements OnInit {
 
   ngOnInit() {}
 
+    addProduct() {
+        console.log()
+    }
 }
