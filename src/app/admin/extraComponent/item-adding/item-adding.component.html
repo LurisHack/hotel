@@ -461,9 +461,11 @@
 <ion-grid *ngIf="roomData && roomData.stayData && roomData.stayData.length" style="background: lightcyan; position: sticky; bottom: 0; left: 0; right: 0; margin: 0; padding: 0;">
   <ion-row style="align-items: center; justify-content: right; border-top: 1px solid lightgray;
    height: 30px; margin: 0; padding: 0">
-    <ion-button  color="danger"  style="height: 25px; border-radius: 0;  margin: 0 20px 0 0;">Check In</ion-button>
+
     <ion-text  color="danger" class="ion-margin-end"><strong>
       {{roomData.stayData[0].stayTimeLength.price}}
     </strong></ion-text>
+
+    <ion-button  color="danger"  style="height: 25px; border-radius: 0;  margin: 20px" (click)="checkIn()">Check In</ion-button>
   </ion-row>
 </ion-grid>

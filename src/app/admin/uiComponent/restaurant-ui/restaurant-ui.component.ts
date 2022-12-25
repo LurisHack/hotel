@@ -14,7 +14,17 @@ import {
 })
 export class RestaurantUIComponent implements OnInit {
 
+  addProperty = [
+    { name: 'Seared Tuna', price: '25000', count: '1',},
+    { name: 'Spicy', price: '6000', count: '5',},
+    { name: 'ထမင်း‌ကြော်', price: '1000', count: '3',},
+    { name: 'ကွတ်တီယို', price: '1500', count: '2',},
+    { name: 'ငါးသံပုရာပေါင်း', price: '5500', count: '1',},
+  ];
+
   constructor(private ModalCtrl: ModalController) { }
+
+
 
   ngOnInit() {}
 
