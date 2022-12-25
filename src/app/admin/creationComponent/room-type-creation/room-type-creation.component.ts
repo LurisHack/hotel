@@ -40,7 +40,7 @@ export class RoomTypeCreationComponent{
 
 
   deleteRoomType(roomTypeId: string) {
-    // this.siteInformationService.deleteRoomType(roomTypeId, 'roomType')
+    this.siteInformationService.deleteRoomType(roomTypeId, 'roomType')
   }
 
   editRoomType(id: string) {

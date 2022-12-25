@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {SlideComponent} from "../../../utility/component/slide/slide.component";
 import {IonicModule} from "@ionic/angular";
 import {AuthComponent} from "../auth/auth.component";
@@ -15,7 +15,7 @@ import {ActivatedRoute, RouterModule} from "@angular/router";
 })
 
 
-export class WelcomeComponent {
+export class WelcomeComponent implements OnDestroy{
 
   images =  [
     {name: 'Welcome from Golden72 inn', url:'assets/images/hotel/hotel1.jpg'},
@@ -25,8 +25,9 @@ export class WelcomeComponent {
     {name: 'quis maximus augue varius. Quisque sed sodales sem', url:'assets/images/hotel/hotel5.jpg'},]
 
    homeText = ''
+    timer: any;
 
-  constructor(public authService: AuthService) {}
+    constructor(public authService: AuthService) {}
 
   slideDidChange($event: any) {
 
@@ -37,14 +38,14 @@ export class WelcomeComponent {
     let text1 = $event.name
     let i = 0
 
-   const timer = setInterval(() => {
+     this.timer = setInterval(() => {
 
      this.homeText += text1[i]
 
      i++
 
      if (text1.length === i){
-      clearInterval(timer)
+      clearInterval(this.timer)
     }
 
     },   10000 / (text1.length * 2 ))
@@ -53,4 +54,9 @@ export class WelcomeComponent {
  async logout() {
      await this.authService.signOut()
   }
+
+  ngOnDestroy() {
+      clearInterval(this.timer)
+  }
+
 }

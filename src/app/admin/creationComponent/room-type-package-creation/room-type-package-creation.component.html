@@ -29,7 +29,8 @@
       *ngIf="this.siteInformationService.siteInformation && this.siteInformationService.siteInformation.roomTypePackage.length">
 
       <ion-chip
-        *ngFor="let sectionPackage of this.siteInformationService.siteInformation.roomTypePackage | roomTypePackageFilter : activatedRoute.snapshot.params['id']"
+        *ngFor="let sectionPackage of this.siteInformationService.siteInformation.roomTypePackage |
+        roomTypePackageFilter : activatedRoute.snapshot.params['id'] : 'Section'"
         style="background: mistyrose">
         <ion-icon name="create-outline"></ion-icon>
         <ion-label><strong
@@ -76,13 +77,29 @@
     <ion-card-content
       *ngIf="this.siteInformationService.siteInformation && this.siteInformationService.siteInformation.roomTypePackage.length">
 
-      <ion-chip *ngFor="let sectionPackage of [1,2,3,4,5]" style="background: mistyrose">
+      <ion-chip
+        *ngFor="let fullTimePackage of this.siteInformationService.siteInformation.roomTypePackage |
+         roomTypePackageFilter : activatedRoute.snapshot.params['id'] : 'FullTime'"
+        style="background: mistyrose">
         <ion-icon name="create-outline"></ion-icon>
-        <ion-label><strong
-          style="margin: 5px 10px 5px 10px">{{sectionPackage + 'hr -> ' + sectionPackage + 'hr = ' + sectionPackage + '0000' }}</strong>
-        </ion-label>
-        <ion-icon name="close-outline"></ion-icon>
-      </ion-chip>
+<!--        <ion-label><strong-->
+<!--          style="margin: 5px 10px 5px 10px">{{sectionPackage.hour + 'hr = ' + sectionPackage.price }}</strong>-->
+<!--        </ion-label>-->
+                <ion-label><strong
+                  style="margin: 5px 10px 5px 10px">{{fullTimePackage.startHour + 'hr -> ' + fullTimePackage.endHour + 'hr = ' + fullTimePackage.price  }}</strong>
+                </ion-label>
+                 <ion-icon name="close-outline"></ion-icon>
+              </ion-chip>
+
+
+
+              <!--      <ion-chip *ngFor="let sectionPackage of [1,2,3,4,5]" style="background: mistyrose">-->
+<!--        <ion-icon name="create-outline"></ion-icon>-->
+<!--        <ion-label><strong-->
+<!--          style="margin: 5px 10px 5px 10px">{{sectionPackage + 'hr -> ' + sectionPackage + 'hr = ' + sectionPackage + '0000' }}</strong>-->
+<!--        </ion-label>-->
+<!--        <ion-icon name="close-outline"></ion-icon>-->
+<!--      </ion-chip>-->
 
     </ion-card-content>
 
