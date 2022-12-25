@@ -1,4 +1,5 @@
 <ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="addStoreProduct()">
   <ion-grid>
     <ion-row class="ion-padding-top">
       <ion-col>
@@ -11,7 +12,7 @@
           <ion-label position="stacked">
             Code
           </ion-label>
-          <ion-input>
+          <ion-input formControlName="code">
           </ion-input>
         </ion-item>
 
@@ -19,7 +20,7 @@
           <ion-label position="stacked">
             Name
           </ion-label>
-          <ion-input>
+          <ion-input formControlName="name">
           </ion-input>
         </ion-item>
 
@@ -27,7 +28,7 @@
           <ion-label position="stacked">
             Price
           </ion-label>
-          <ion-input>
+          <ion-input type="number" formControlName="price">
           </ion-input>
         </ion-item>
 
@@ -35,10 +36,16 @@
           <ion-label position="stacked">
             Count
           </ion-label>
-          <ion-input>
+          <ion-input type="number" formControlName="count">
           </ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-button [disabled]="formGroup.invalid" type="submit">
+        OK
+      </ion-button>
+    </ion-row>
   </ion-grid>
+  </form>
 </ion-content>
