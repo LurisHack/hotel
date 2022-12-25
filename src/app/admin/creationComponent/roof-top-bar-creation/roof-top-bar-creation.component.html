@@ -1,29 +1,43 @@
-<ion-header>
-<ion-grid class="ion-no-margin ion-no-padding">
-  <ion-row class="ion-no-margin ion-no-padding">
-    <ion-col offset-xs="3" offset-sm="5" offset-md="7" offset-lg="9" size-xs="9" size-sm="7" size-md="5" size-lg="3">
-      <ion-toolbar>
-        <ion-item style="--min-height: 25px;" fill="outline" class="ion-margin">
-          <ion-input #buildingName (keyup.enter)="addBuildingName()" placeholder="Enter Building Name"></ion-input>
-        </ion-item>
-      </ion-toolbar>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-</ion-header>
 
 <ion-content>
-<ion-grid>
-  <ion-row >
-    <ion-col *ngFor="let i of[1,2,3,4,5]" size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-      <ion-card button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-        <ion-card-header>
-          <ion-card-title style="--color: #000" class="ion-text-center">setting RoofTopBar</ion-card-title>
-        </ion-card-header>
-      </ion-card>
 
-    </ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid style="height: 10vh" class="ion-no-margin ion-no-padding">
+    <ion-row class="ion-no-margin ion-no-padding">
+      <ion-col class="ion-no-margin ion-no-padding" offset-xs="5" offset-sm="5" offset-md="7" offset-lg="9" size-xs="7" size-sm="7" size-md="5" size-lg="3">
+        <ion-item style="--min-height: 15px;" fill="outline" class="ion-margin">
+          <ion-input  placeholder="Enter Building Name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let i of[1,2,3,4,5,6]" size-xs="12" size-sm="4" size-md="4" size-lg="4" size-xl="4">
+        <ion-card>
+          <ion-grid class="ion-no-margin ion-no-padding">
+            <ion-row class="ion-align-items-center">
+              <ion-col   style="text-align: center">
+                <strong  style="margin: auto"> Setting RoofTopBar
+                </strong>
+              </ion-col>
+              <ion-col size-xs="auto">
+                <ion-button color="danger" class="ion-no-margin ion-no-padding ion-float-right"
+                            expand="full"
+                            style="height: 100%;">
+                  <ion-icon size="small" class="ion-padding" name="trash" slot="icon-only"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" color="medium" expand="full" class="ion-no-margin ion-no-padding ion-float-right"
+                            style="height: 100%;">
+                  <ion-icon size="small" class="ion-padding" name="create-outline" slot="icon-only"></ion-icon>
+                </ion-button>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
