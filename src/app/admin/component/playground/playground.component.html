@@ -9,15 +9,65 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let i of [1,2,3,4,5,6] " size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup(i)" button="true" style=" --background: #ffffff;
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
                         --color: #52ffe4">
           <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Table ' + i"></ion-card-title>
+            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Gym'"></ion-card-title>
 
           </ion-card-header>
         </ion-card>
       </ion-col>
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
+                        --color: #52ffe4">
+          <ion-card-header>
+            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Tennis'"></ion-card-title>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
+                        --color: #52ffe4">
+          <ion-card-header>
+            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Ridding'"></ion-card-title>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
+                        --color: #52ffe4">
+          <ion-card-header>
+            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Swimming'"></ion-card-title>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
+                        --color: #52ffe4">
+          <ion-card-header>
+            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Game'"></ion-card-title>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
+                        --color: #52ffe4">
+          <ion-card-header>
+            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Golf'"></ion-card-title>
+
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>

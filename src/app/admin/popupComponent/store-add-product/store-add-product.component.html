@@ -1,51 +1,54 @@
-<ion-content>
-  <form [formGroup]="formGroup" (ngSubmit)="addStoreProduct()">
-  <ion-grid>
-    <ion-row class="ion-padding-top">
-      <ion-col>
-        <ion-title>Header?</ion-title>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col offset-xs="2" size-xs="8">
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Code
-          </ion-label>
-          <ion-input formControlName="code">
-          </ion-input>
-        </ion-item>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Header
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
 
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Name
-          </ion-label>
-          <ion-input formControlName="name">
-          </ion-input>
-        </ion-item>
 
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Price
-          </ion-label>
-          <ion-input type="number" formControlName="price">
-          </ion-input>
-        </ion-item>
+   <ion-content>
+       <ion-grid>
+      <ion-row>
+        <ion-col offset-xs="2" size-xs="8">
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label position="stacked">
+                Code
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
 
-        <ion-item fill="outline" class="ion-margin">
-          <ion-label position="stacked">
-            Count
-          </ion-label>
-          <ion-input type="number" formControlName="count">
-          </ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-button [disabled]="formGroup.invalid" type="submit">
-        OK
-      </ion-button>
-    </ion-row>
-  </ion-grid>
-  </form>
-</ion-content>
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label  position="stacked">
+                Name
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
+
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label  position="stacked">
+                Price
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
+
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label  position="stacked">
+                Count
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-button (click)="addProduct()" slot="end">
+                    Add product
+                </ion-button>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   </ion-content>
