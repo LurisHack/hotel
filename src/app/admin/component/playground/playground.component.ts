@@ -15,14 +15,13 @@ export class PlaygroundComponent implements OnInit {
 
   ngOnInit() {}
 
-  async PlayGroundPopup(i: number){
+  async PlayGroundPopup(){
 
-    console.log(i)
+    console.log()
 
     const modalCtrl = await this.modalCtrl.create({
-      component: PlaygroundComponent,
-      componentProps: {props: i}
-    })
+      component: PlaygroundComponent}
+    )
 
 
     await modalCtrl.present()
