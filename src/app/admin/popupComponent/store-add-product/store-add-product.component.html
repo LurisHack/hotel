@@ -1,43 +1,51 @@
-<ion-content>
-    <ion-card >
-    <ion-card style="width: 50%;">
-    <ion-item fill="outline"  mode="ios">
-        <ion-label position="stacked">
-            Code
-        </ion-label>
-        <ion-input>
-        </ion-input>
-    </ion-item>
-    </ion-card>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Header
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
 
-    <ion-card style="width: 50%;">
-    <ion-item fill="outline" mode="ios">
-        <ion-label  position="stacked">
-            Name
-        </ion-label>
-        <ion-input>
-        </ion-input>
-    </ion-item>
-    </ion-card>
 
-    <ion-card style="width: 50%;">
-        <ion-item fill="outline" mode="ios">
-            <ion-label  position="stacked">
+   <ion-content>
+       <ion-grid>
+      <ion-row>
+        <ion-col offset-xs="2" size-xs="8">
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label position="stacked">
+                Code
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
+
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label  position="stacked">
+                Name
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
+
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label  position="stacked">
                 Price
-            </ion-label>
-                <ion-input>
-                </ion-input>
-        </ion-item>
-    </ion-card>
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
 
-    <ion-card style="width: 50%;">
-        <ion-item fill="outline" mode="ios">
-            <ion-label  position="stacked">
+
+
+
+            <ion-item fill="outline" class="ion-margin">
+              <ion-label  position="stacked">
                 Count
-            </ion-label>
-                <ion-input>
-                </ion-input>
-        </ion-item>
-    </ion-card>
-    </ion-card>
-</ion-content>
+              </ion-label>
+              <ion-input>
+              </ion-input>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   </ion-content>
