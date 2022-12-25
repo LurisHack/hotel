@@ -18,8 +18,8 @@ export interface RoomDataModel {
       hour?: number;
       startHour?: any;
       endHour?: any;
-    }[],
-  },
+    },
+  }[],
   usedData: {
     store: any[];
     restaurant: any[];
