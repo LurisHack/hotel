@@ -1,0 +1,28 @@
+<ion-header mode="ios">
+  <ion-toolbar>Product Editing</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="addProduct()">
+
+    <ion-list>
+      <ion-list-header color="success">
+        Add Product
+      </ion-list-header>
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-card-subtitle>This is subtitle</ion-card-subtitle>
+        </ion-item-divider>
+        <ion-item *ngFor="let inputs of formInputs" class="ion-margin" fill="outline">
+          <ion-label [innerText]="inputs.name"></ion-label>
+          <ion-input [type]="inputs.type" [formControlName]="inputs.formControlName"></ion-input>
+        </ion-item>
+        <ion-item-divider>
+          <ion-button [disabled]="formGroup.invalid" type="submit">Edit Ok</ion-button>
+        </ion-item-divider>
+      </ion-item-group>
+    </ion-list>
+
+  </form>
+</ion-content>
+
