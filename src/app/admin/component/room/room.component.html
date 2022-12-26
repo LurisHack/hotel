@@ -1,5 +1,5 @@
 <ion-header mode="ios">
-  <ion-toolbar>
+  <ion-toolbar class="transparent-for-ionic-component-tag">
     <ion-grid>
       <ion-row>
 
@@ -14,9 +14,9 @@
         </ion-col>
 
         <ion-col class="ion-no-margin ion-no-padding">
-          <ion-segment color="success" class="ion-no-margin ion-no-padding" scrollable="true" value="CheckIn"
+          <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true" value="CheckIn"
                        (ionChange)="selectedSegment($event)">
-            <ion-segment-button class="ion-no-margin ion-no-padding" value="TimeOver">
+            <ion-segment-button  class="ion-no-margin ion-no-padding" value="TimeOver">
               <ion-label>TimeOver</ion-label>
             </ion-segment-button>
             <ion-segment-button class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
@@ -50,7 +50,6 @@
                              (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host"
                              itemSize="56" minBufferPx="900" maxBufferPx="1350">
   <ion-grid *ngFor="let building of siteInformationService.siteInformation.roomData | buildingFilterPipe : segment">
-    <!--    <ion-item-divider class="transparent-for-ionic-component-tag">-->
 
     <ion-row>
       <ion-title color="light"><strong>{{building.buildingName}}</strong></ion-title>
@@ -62,8 +61,6 @@
         <app-room-ui [roomData]="room"></app-room-ui>
       </ion-col>
     </ion-row>
-
-    <!--    </ion-item-divider>-->
   </ion-grid>
 
 
