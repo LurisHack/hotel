@@ -1,6 +1,6 @@
 <ion-header >
   <ion-toolbar color="warning" class="ion-padding-start" style="font-weight: bold;">
-    ADD FOOD
+    ADD FOOD 🧆🥘🍟🍔🌭
   </ion-toolbar>
 </ion-header>
 
@@ -9,7 +9,7 @@
     <ion-item-group>
       <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline">
         <ion-label position="" [innerText]="item.name"></ion-label>
-        <ion-input [formControlName]="item.name"></ion-input>
+        <ion-input [formControlName]="item.formControlName"></ion-input>
       </ion-item>
       <ion-button [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin-start">
         <ion-text color="dark">ADD</ion-text>
