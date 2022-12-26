@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {ModalController} from "@ionic/angular";
+import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-ui.component";
 
 @Component({
   standalone: true,
@@ -10,27 +12,33 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
   imports: [
     AdminComponentModule,
     ReactiveFormsModule,
+    RestaurantUIComponent,
   ]
 })
 export class RestaurantAddFoodPopupComponentComponent implements OnInit {
 
-  formGroup : any;
+  formGroup: any;
 
-  constructor() { }
+  foodItem = [
+    {name: 'Code', formControlName: 'Code', type: 'text'},
+    {name: 'Name', formControlName: 'Name', type: 'text'},
+    {name: 'Price', formControlName: 'Price', type: 'number'},
+  ]
+
+  constructor(private ModalCtrl: ModalController) {
+  }
 
   ngOnInit() {
 
-    this.formGroup = new FormGroup<any>({
-      name: new FormControl(null, Validators.required),
-      price: new FormControl(null, Validators.required),
-      count: new FormControl(null, Validators.required),
+    this.formGroup = new FormGroup({
+      Code: new FormControl(null, Validators.required),
+      Name: new FormControl(null, Validators.required),
+      Price: new FormControl(null, Validators.required),
     })
+
   }
 
-
-
-
-  addRestaurantFood() {
-    console.log(this.formGroup)
+  addFood() {
+    this.ModalCtrl.dismiss(this.formGroup.value).then()
   }
 }
