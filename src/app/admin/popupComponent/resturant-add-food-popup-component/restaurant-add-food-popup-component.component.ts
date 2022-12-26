@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
+import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-ui.component";
 
 @Component({
   standalone: true,
@@ -11,6 +12,7 @@ import {ModalController} from "@ionic/angular";
   imports: [
     AdminComponentModule,
     ReactiveFormsModule,
+    RestaurantUIComponent,
   ]
 })
 export class RestaurantAddFoodPopupComponentComponent implements OnInit {
@@ -28,7 +30,7 @@ export class RestaurantAddFoodPopupComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    this.formGroup = new FormGroup<any>({
+    this.formGroup = new FormGroup({
       Code: new FormControl(null, Validators.required),
       Name: new FormControl(null, Validators.required),
       Price: new FormControl(null, Validators.required),

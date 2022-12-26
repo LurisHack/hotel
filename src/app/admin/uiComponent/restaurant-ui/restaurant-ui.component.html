@@ -28,25 +28,23 @@
         </ion-col>
         <ion-col class="ion-no-padding ion-margin-start">
           <ion-label class="ion-no-margin ion-no-padding">
-            <h2 style="color: black;font-weight: bold;margin-bottom: 7px" [innerText]="property.name"></h2>
-            <p>
-              {{property.price+' MMK'}}
-            </p>
+            <h2 style="color: black;font-weight: bold;margin-bottom: 7px" [innerText]="property.Name"></h2>
+            <p [innerText]="property.Price+' MMK'"></p>
           </ion-label>
         </ion-col>
 
-<!--        <ion-col size="auto" class="ion-align-self-auto ion-no-padding ion-margin-end">-->
+        <ion-col size="auto" class="ion-align-self-auto ion-no-padding ion-margin-end">
 <!--          <ion-row class="ion-align-items-center">-->
 <!--            <ion-button size="small" color="warning"-->
 <!--                        fill="clear"><ion-text color="danger">-</ion-text>-->
 <!--            </ion-button>-->
-<!--            <ion-input style="margin-left: 3px; margin-right: 3px;width: 50px;text-align: center"-->
-<!--                       value="{{property.count}}"></ion-input>-->
+            <ion-input readonly="true" style="margin-left: 3px; margin-right: 3px;width: 50px;text-align: center"
+                       value="{{property.Code}}"></ion-input>
 <!--            <ion-button size="small"-->
 <!--                        color="warning" fill="clear"><ion-text color="danger">+</ion-text>-->
 <!--            </ion-button>-->
 <!--          </ion-row>-->
-<!--        </ion-col>-->
+        </ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
