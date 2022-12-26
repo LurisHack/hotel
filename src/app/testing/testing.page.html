@@ -55,6 +55,9 @@
           <ion-label slot="start">Price</ion-label>
           <ion-card-subtitle>{{product.Price}}</ion-card-subtitle>
         </ion-item>
+        <ion-item-divider>
+          <ion-button (click)="editProduct(product)" slot="end">Edit</ion-button>
+        </ion-item-divider>
       </ion-card>
     </ion-list>
   </ion-item-group>
