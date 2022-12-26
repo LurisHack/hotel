@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {SiteInformationService} from "../utility/service/siteInformation.service";
+import {ModalController} from "@ionic/angular";
+import {TestingComponent} from "../testingComponent/testing/testing.component";
 
 
 @Component({
@@ -9,12 +11,16 @@ import {SiteInformationService} from "../utility/service/siteInformation.service
 })
 export class TestingPage{
 
-     loaded = true
-
-  constructor(private siteInformationService: SiteInformationService) {
+  constructor(private siteInformationService: SiteInformationService,
+              private modalCtrl: ModalController) {
      console.log(siteInformationService.siteInformation)
   }
 
 
+   async addProductPopup() {
+       const modalCtrl = await this.modalCtrl.create({
+       component: TestingComponent})
+       await modalCtrl.present()
+  }
 
 }
