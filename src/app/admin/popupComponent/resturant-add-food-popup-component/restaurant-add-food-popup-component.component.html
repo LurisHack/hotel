@@ -11,9 +11,11 @@
         <ion-label position="" [innerText]="item.name"></ion-label>
         <ion-input [formControlName]="item.formControlName"></ion-input>
       </ion-item>
-      <ion-button [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin-start">
+    </ion-item-group>
+    <ion-toolbar>
+      <ion-button slot="end" [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin">
         <ion-text color="dark">ADD</ion-text>
       </ion-button>
-    </ion-item-group>
+    </ion-toolbar>
   </form>
 </ion-content>
