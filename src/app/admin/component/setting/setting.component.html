@@ -1,4 +1,16 @@
-
+<div class="ion-page" id="setting-content">
+  <ion-header mode="ios">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>SETTINGS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+</div>
 
 <ion-menu style="--width: 250px" side="end" contentId="setting-content">
   <ion-header mode="ios">
@@ -57,16 +69,4 @@
 </ion-menu>
 
 
-<div class="ion-page" id="setting-content">
-  <ion-header mode="ios">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>SETTINGS</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <ion-router-outlet></ion-router-outlet>
-  </ion-content>
-</div>
+
