@@ -10,7 +10,7 @@
                     <ion-grid>
                         <ion-row>
                             <ion-col>
-                                <ion-button>
+                                <ion-button (click)="testingPopUp()">
                                     Add product
                                 </ion-button>
                             </ion-col>
@@ -30,3 +30,34 @@
         </ion-grid>
     </ion-toolbar>
 </ion-header>
+
+<ion-content>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-title>Products</ion-title>
+    </ion-item-divider>
+    <ion-list>
+      <ion-card *ngFor="let product of productList | testing">
+      <ion-item>
+        <ion-label slot="start">Code</ion-label>
+        <ion-card-subtitle>{{product.Code}}</ion-card-subtitle>
+      </ion-item>
+        <ion-item>
+          <ion-label slot="start">Name</ion-label>
+          <ion-card-subtitle>{{product.Name}}</ion-card-subtitle>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start">Count</ion-label>
+          <ion-card-subtitle>{{product.Count}}</ion-card-subtitle>
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start">Price</ion-label>
+          <ion-card-subtitle>{{product.Price}}</ion-card-subtitle>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </ion-item-group>
+
+
+</ion-content>
