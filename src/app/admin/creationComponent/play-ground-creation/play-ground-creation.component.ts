@@ -18,4 +18,8 @@ export class PlayGroundCreationComponent implements OnInit {
   addBuildingName() {
 
   }
+
+  addPlaygroundName() {
+
+  }
 }
