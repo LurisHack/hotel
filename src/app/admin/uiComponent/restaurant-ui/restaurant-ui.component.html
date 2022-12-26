@@ -19,7 +19,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card class="ion-margin" *ngFor="let restaurant of addProperty">
+  <ion-card class="ion-margin" *ngFor="let property of addProperty">
     <ion-grid>
       <ion-row class="ion-align-items-center">
         <ion-col class="ion-no-padding" size-xs="auto" >
@@ -28,25 +28,25 @@
         </ion-col>
         <ion-col class="ion-no-padding ion-margin-start">
           <ion-label class="ion-no-margin ion-no-padding">
-            <h2 style="color: black;font-weight: bold;margin-bottom: 7px" [innerText]="restaurant.name"></h2>
+            <h2 style="color: black;font-weight: bold;margin-bottom: 7px" [innerText]="property.name"></h2>
             <p>
-              {{restaurant.price+' MMK'}} &nbsp;<strong>{{'x '+restaurant.count}}</strong>
+              {{property.price+' MMK'}}
             </p>
           </ion-label>
         </ion-col>
 
-        <ion-col size="auto" class="ion-align-self-auto ion-no-padding ion-margin-end">
-          <ion-row class="ion-align-items-center">
-            <ion-button size="small" color="warning"
-                        fill="clear"><ion-text color="danger">-</ion-text>
-            </ion-button>
-            <ion-input style="margin-left: 3px; margin-right: 3px;width: 50px;text-align: center"
-                       value="{{restaurant.count}}"></ion-input>
-            <ion-button size="small"
-                        color="warning" fill="clear"><ion-text color="danger">+</ion-text>
-            </ion-button>
-          </ion-row>
-        </ion-col>
+<!--        <ion-col size="auto" class="ion-align-self-auto ion-no-padding ion-margin-end">-->
+<!--          <ion-row class="ion-align-items-center">-->
+<!--            <ion-button size="small" color="warning"-->
+<!--                        fill="clear"><ion-text color="danger">-</ion-text>-->
+<!--            </ion-button>-->
+<!--            <ion-input style="margin-left: 3px; margin-right: 3px;width: 50px;text-align: center"-->
+<!--                       value="{{property.count}}"></ion-input>-->
+<!--            <ion-button size="small"-->
+<!--                        color="warning" fill="clear"><ion-text color="danger">+</ion-text>-->
+<!--            </ion-button>-->
+<!--          </ion-row>-->
+<!--        </ion-col>-->
       </ion-row>
     </ion-grid>
   </ion-card>
