@@ -3,6 +3,13 @@ import {SiteInformationService} from "../utility/service/siteInformation.service
 import {ModalController} from "@ionic/angular";
 import {TestingComponent} from "../testingComponent/testing/testing.component";
 
+type productLitType = {
+  Code: string,
+  Name: string,
+  Price: number,
+  Count: number
+}[]
+
 
 @Component({
   selector: 'app-testing',
@@ -11,16 +18,38 @@ import {TestingComponent} from "../testingComponent/testing/testing.component";
 })
 export class TestingPage{
 
+  productList: productLitType[] = []
+
+
+  loaded = true
+
   constructor(private siteInformationService: SiteInformationService,
               private modalCtrl: ModalController) {
      console.log(siteInformationService.siteInformation)
   }
 
+    async testingPopUp(){
 
-   async addProductPopup() {
+
        const modalCtrl = await this.modalCtrl.create({
-       component: TestingComponent})
-       await modalCtrl.present()
-  }
+         component: TestingComponent
+       })
+
+   modalCtrl.onDidDismiss()
+       .then((data: any) => {
+
+         this.productList.push(data.data)
+
+        this.productList = this.productList.map(m => m)
+         console.log(this.productList)
+
+       })
+
+
+
+      await modalCtrl.present()
+
+
+}
 
 }

@@ -27,7 +27,7 @@ export class BuildingFilterPipe implements PipeTransform {
 
         return {
         buildingName:  (<any>Array.from(new Set(tempAry.filter((m: any) => m.buildingData.id === id)))[0]).buildingData.name,
-        rooms: value.filter(rooms => rooms.buildingData.id === id)
+        rooms: tempAry.filter((rooms:any) => rooms.buildingData.id === id)
       }
       })
    }
