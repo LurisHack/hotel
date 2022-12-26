@@ -30,12 +30,12 @@ export class TestingPage{
 
     async testingPopUp(){
 
-
        const modalCtrl = await this.modalCtrl.create({
          component: TestingComponent
        })
 
-   modalCtrl.onDidDismiss()
+
+      modalCtrl.onDidDismiss()
        .then((data: any) => {
 
          this.productList.push(data.data)
@@ -43,7 +43,7 @@ export class TestingPage{
         this.productList = this.productList.map(m => m)
          console.log(this.productList)
 
-       })
+       }).catch(c => console.log(c))
 
 
 

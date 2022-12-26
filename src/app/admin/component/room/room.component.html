@@ -14,8 +14,11 @@
         </ion-col>
 
         <ion-col class="ion-no-margin ion-no-padding">
-          <ion-segment class="ion-no-margin ion-no-padding" scrollable="true" value="CheckIn"
+          <ion-segment color="success" class="ion-no-margin ion-no-padding" scrollable="true" value="CheckIn"
                        (ionChange)="selectedSegment($event)">
+            <ion-segment-button class="ion-no-margin ion-no-padding" value="TimeOver">
+              <ion-label>TimeOver</ion-label>
+            </ion-segment-button>
             <ion-segment-button class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
               <ion-label>NearlyTimeUp</ion-label>
             </ion-segment-button>
@@ -47,16 +50,22 @@
                              (scrolledIndexChange)="scrollIndexEvent($event)" class="ion-content-scroll-host"
                              itemSize="56" minBufferPx="900" maxBufferPx="1350">
   <ion-grid *ngFor="let building of siteInformationService.siteInformation.roomData | buildingFilterPipe : segment">
-    <ion-item-divider>
-      <ion-label color="dark"><h1>{{building.buildingName}}</h1></ion-label>
-    </ion-item-divider>
-        <ion-row>
-        <ion-col *ngFor="let room of building.rooms"
-                 size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
-          <app-room-ui [roomData]="room"></app-room-ui>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <!--    <ion-item-divider class="transparent-for-ionic-component-tag">-->
+
+    <ion-row>
+      <ion-title color="light"><strong>{{building.buildingName}}</strong></ion-title>
+    </ion-row>
+
+    <ion-row>
+      <ion-col *ngFor="let room of building.rooms"
+               size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
+        <app-room-ui [roomData]="room"></app-room-ui>
+      </ion-col>
+    </ion-row>
+
+    <!--    </ion-item-divider>-->
+  </ion-grid>
+
 
 </cdk-virtual-scroll-viewport>
 
