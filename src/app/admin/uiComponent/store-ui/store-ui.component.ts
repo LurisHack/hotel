@@ -13,6 +13,9 @@ import {StoreAddProductComponent} from "../../popupComponent/store-add-product/s
   styleUrls: ['./store-ui.component.scss'],
 })
 export class StoreUiComponent implements OnInit {
+
+  loaded = true
+
   propertyName = [
     {no: 1,name: 'RRQ',price: 2000, count: 1, total: 2000},
     {no: 2,name: 'Apex',price: 500, count: 2, total: 1000},
@@ -28,9 +31,11 @@ export class StoreUiComponent implements OnInit {
 
   async    storeUi() {
 
+
         const modalCtrl = await this.modalCtrl.create({
           component: StoreAddProductComponent,
         })
+
     await modalCtrl.present()
     }
 }
