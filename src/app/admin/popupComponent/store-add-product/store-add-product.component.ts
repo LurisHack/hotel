@@ -3,6 +3,7 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
 
+
 @Component({
   standalone: true,
   selector: 'app-store-add-product',
@@ -14,7 +15,9 @@ import {ModalController} from "@ionic/angular";
   ]
 })
 export class StoreAddProductComponent implements OnInit {
+
   formGroup: any;
+
 
 
   formInputs = [
@@ -26,13 +29,16 @@ export class StoreAddProductComponent implements OnInit {
 
 
 
-  constructor( private modalCtrl : ModalController) { }
+  constructor( private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.formGroup = new FormGroup({
       Code: new FormControl(null, Validators.required),
+
       Name: new FormControl(null, Validators.required),
+
       Count: new FormControl(null, Validators.required),
+
       Price: new FormControl(null, Validators.required),
     })
   }
@@ -41,4 +47,5 @@ export class StoreAddProductComponent implements OnInit {
     addProduct() {
       this.modalCtrl.dismiss( this.formGroup.value).then()
     }
+
 }
