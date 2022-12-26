@@ -40,7 +40,7 @@ export class TestingComponent implements OnInit {
   addProduct() {
    // console.log(this.formGroup.value)
 
-    this.modalCtrl.dismiss( this.formGroup.value).then()
+    this.modalCtrl.dismiss(this.formGroup.value).then()
 
 
     // this.productList.push(this.formGroup.value)

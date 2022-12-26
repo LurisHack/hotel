@@ -50,3 +50,10 @@ ion-modal.room-popup-modal {
 }
 
 
+.transparent-for-normal-tag{
+  background: transparent;
+}
+
+.transparent-for-ionic-component-tag{
+  --background: transparent;
+}
