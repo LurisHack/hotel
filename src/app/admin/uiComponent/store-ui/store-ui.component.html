@@ -34,26 +34,26 @@
 <ion-content>
 
 
-  <ion-item-divider  *ngFor="let store of propertyName" class="--inner-padding-bottom">
+  <ion-item-divider   *ngFor="let product of productList" class="--inner-padding-bottom">
     <ion-grid class="ion-no-padding ion-no-margin">
       <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">
         <ion-col size="2" class="ion-text-center" style="color: black">
-          {{store.no}}
+          {{product.no}}
         </ion-col>
         <ion-col>
           <ion-grid>
             <ion-row>
               <ion-col size-sm="3" size-xs="12">
-                {{store.name}}
+                {{product.name}}
               </ion-col>
               <ion-col style="color: red" size-sm="3" size-xs="4">
-                {{store.price}}
+                {{product.price}}
               </ion-col>
               <ion-col style="color: red" size-sm="3" size-xs="4">
-                {{store.count}}
+                {{product.count}}
               </ion-col>
               <ion-col style="color: red" size-sm="3" size-xs="4">
-                {{store.total}}
+                {{product.total}}
               </ion-col>
             </ion-row>
           </ion-grid>
