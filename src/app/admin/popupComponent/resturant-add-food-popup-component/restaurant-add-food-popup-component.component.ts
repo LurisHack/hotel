@@ -15,22 +15,27 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 export class RestaurantAddFoodPopupComponentComponent implements OnInit {
 
   formGroup : any;
+  foodItem = [
+    {name: 'Code'},
+    {name: 'Name'},
+    {name: 'Price'},
+    {name: 'Count'}
+  ]
 
   constructor() { }
 
   ngOnInit() {
 
     this.formGroup = new FormGroup<any>({
-      name: new FormControl(null, Validators.required),
-      price: new FormControl(null, Validators.required),
-      count: new FormControl(null, Validators.required),
+      Code: new FormControl(null, Validators.required),
+      Name: new FormControl(null, Validators.required),
+      Price: new FormControl(null, Validators.required),
+      Count: new FormControl(null, Validators.required),
     })
+
   }
 
-
-
-
-  addRestaurantFood() {
+  addFood() {
     console.log(this.formGroup)
   }
 }
