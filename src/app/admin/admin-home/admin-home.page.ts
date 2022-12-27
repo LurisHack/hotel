@@ -33,6 +33,7 @@ export class AdminHomePage{
 
   showSplit = false;
   private to: any;
+  Golden72: any;
 
   constructor(private authService: AuthService,
               private routeService: RouterService,
