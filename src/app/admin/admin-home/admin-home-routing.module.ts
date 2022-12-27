@@ -18,6 +18,22 @@ import {PlayGroundCreationComponent} from "../creationComponent/play-ground-crea
 import {RoofTopBarCreationComponent} from "../creationComponent/roof-top-bar-creation/roof-top-bar-creation.component";
 import {RoomTypeCreationComponent} from "../creationComponent/room-type-creation/room-type-creation.component";
 import {RoomTypePackageCreationComponent} from "../creationComponent/room-type-package-creation/room-type-package-creation.component";
+import {PlaygroundInventoryComponent} from "../inventoryComponent/playground-inventory/playground-inventory.component";
+import {
+  RoofTopBarInventoryComponent
+} from "../inventoryComponent/roof-top-bar-inventory/roof-top-bar-inventory.component";
+
+import {RoomInventoryComponent} from "../extraComponent/room-inventory/room-inventory.component";
+import {StoreInventoryComponent} from "../inventoryComponent/store-inventory/store-inventory.component";
+import {RestaurantInventoryComponent} from "../inventoryComponent/restaurant-inventory/restaurant-inventory.component";
+import {PosInventoryComponent} from "../inventoryComponent/pos-inventory/pos-inventory.component";
+import {DamageInventoryComponent} from "../inventoryComponent/damage-inventory/damage-inventory.component";
+import {ExpendInventoryComponent} from "../inventoryComponent/expend-inventory/expend-inventory.component";
+import {PayrollComponent} from "../component/payroll/payroll.component";
+import {
+  SalaryPackageCreationComponent
+} from "../creationComponent/salary-package-creation/salary-package-creation.component";
+
 
 const routes: Routes = [
   {
@@ -83,9 +99,57 @@ const routes: Routes = [
           {
             path: 'playground',
             component: PlayGroundCreationComponent
+          },
+          {
+           path: 'salaryPackage',
+           component: SalaryPackageCreationComponent
           }
         ]
       },
+
+      {
+        path: 'INVENTORY',
+        component: INVENTORYComponent,
+        children: [
+          {
+            path:'room',
+            component: RoomInventoryComponent
+          },
+
+          {
+            path: 'rooftopBar',
+            component: RoofTopBarInventoryComponent
+          },
+          {
+            path: 'playground',
+            component: PlaygroundInventoryComponent
+          },
+          {
+            path:'store',
+            component: StoreInventoryComponent
+          },
+          {
+            path:'restaurant',
+            component: RestaurantInventoryComponent
+          },
+          {
+            path: 'pos',
+            component: PosInventoryComponent
+          },
+          {
+            path: 'damage',
+            component: DamageInventoryComponent
+          },
+          {
+            path:'expend',
+            component: ExpendInventoryComponent
+          },
+          {
+
+          },
+        ]
+      },
+
       {
         path: 'welcomePresentation',
         component: WelcomePresentationCreationComponent
@@ -93,6 +157,11 @@ const routes: Routes = [
       {
         path: 'USERS',
         component: USERSComponent
+      },
+      {
+
+        path:'PAYROLL',
+        component: PayrollComponent
       },
       {
         path: 'PERMISSIONS',

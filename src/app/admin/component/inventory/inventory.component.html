@@ -1,13 +1,7 @@
-<ion-header mode="ios">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>INVENTORY</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<div class="ion-page" id="setting-content">
+
+
+<div class="ion-page" id="inventory-content">
   <ion-header mode="ios">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -19,9 +13,13 @@
   <ion-content class="ion-padding">
     <ion-router-outlet></ion-router-outlet>
   </ion-content>
+
+  <app-inventory-ui></app-inventory-ui>
 </div>
 
-<ion-menu style="--width: 180px" side="end" contentId="setting-content">
+
+
+<ion-menu style="--width: 180px" side="end" contentId="inventory-content">
   <ion-header mode="ios">
     <ion-toolbar  class="ion-text-center">
       <ion-text>Inventory Panel</ion-text>
@@ -31,8 +29,6 @@
   <ion-content class="ion-padding">
 
     <ion-list>
-
-
       <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
                 [routerLink]="'/admin-home/INVENTORY/room'"
                 lines="none" detail="false"
@@ -49,7 +45,7 @@
         <ion-icon class="ion-margin-start" [ios]="'business'+ '-outline'" [md]="'business' + '-sharp'"></ion-icon>
       </ion-item>
 
-      <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
+      <ion-item   routerDirection="root" class="ion-no-padding ion-no-margin"
                 [routerLink]="'/admin-home/INVENTORY/playground'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
@@ -75,7 +71,7 @@
 
 
       <ion-item routerDirection="root" class="ion-no-padding ion-no-margin"
-                [routerLink]="'/admin-home/INVENTORY/pOS'"
+                [routerLink]="'/admin-home/INVENTORY/pos'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
         <ion-label style="padding-left: 5px"><small>{{ 'POS' }}</small></ion-label>
@@ -98,7 +94,8 @@
         <ion-icon class="ion-margin-start" [ios]="'wallet'+ '-outline'" [md]="'wallet' + '-sharp'"></ion-icon>
       </ion-item>
 
+
+
     </ion-list>
   </ion-content>
 </ion-menu>
-<app-inventory-ui></app-inventory-ui>

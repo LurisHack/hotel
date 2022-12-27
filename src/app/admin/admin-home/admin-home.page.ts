@@ -26,6 +26,7 @@ export class AdminHomePage{
 
   public additionalFeatures = [
     {title: 'USERS', icon: 'person'},
+    {title: 'PAYROLL', icon: 'cash'},
     {title:'PERMISSIONS', icon: 'shield-checkmark'},
      ]
 
