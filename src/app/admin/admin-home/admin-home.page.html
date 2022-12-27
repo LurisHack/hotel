@@ -1,10 +1,10 @@
 <ion-split-pane (ionSplitPaneVisible)="ionSplitPaneVisible($event)" when="md" contentId="main">
   <ion-menu contentId="main" style="--background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat">
 
-    <ion-header mode="ios" style="--background: transparent">
-      <ion-toolbar style="--background: transparent">
-        <ion-text color="primary">
-          <div style="color: gold" class="ion-text-center">Golden72</div>
+    <ion-header mode="ios" style="--background: transparent" routerLink="/welcome" fragment="Login+">
+      <ion-toolbar  style="--background: transparent ; cursor: pointer">
+        <ion-text  color="primary">
+          <div style="color: gold" class="ion-text-center" (click)="Golden72" >Golden72</div>
         </ion-text>
       </ion-toolbar>
     </ion-header>
@@ -58,7 +58,11 @@
     <!--      <ion-menu-button></ion-menu-button>-->
     <!--    </ion-buttons>-->
 
-    <ion-content class="ion-padding">
+    <ion-content scroll-y="false" class="ion-no-padding ion-no-margin" style="--background: rgba(14,12,12,0.77);
+    box-sizing: border-box">
+
+      <img src="/assets/admin/admin_background.jpg"
+               style=" object-fit: cover;   height: 100vh;    filter: blur(7px)"/>
 
 <!-- <ion-header>-->
 <!--        <ion-toolbar>-->

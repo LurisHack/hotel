@@ -26,12 +26,14 @@ export class AdminHomePage{
 
   public additionalFeatures = [
     {title: 'USERS', icon: 'person'},
+    {title: 'PAYROLL', icon: 'cash'},
     {title:'PERMISSIONS', icon: 'shield-checkmark'},
      ]
 
 
   showSplit = false;
   private to: any;
+  Golden72: any;
 
   constructor(private authService: AuthService,
               private routeService: RouterService,

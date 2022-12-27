@@ -16,23 +16,23 @@
         <ion-col class="ion-no-margin ion-no-padding">
           <ion-segment  class="ion-no-margin ion-no-padding" scrollable="true" value="CheckIn"
                        (ionChange)="selectedSegment($event)">
-            <ion-segment-button  class="ion-no-margin ion-no-padding" value="TimeOver">
-              <ion-label>TimeOver</ion-label>
+            <ion-segment-button style="--color: white" class="ion-no-margin ion-no-padding" value="TimeOver">
+              <ion-label><strong>TimeOver</strong></ion-label>
             </ion-segment-button>
-            <ion-segment-button class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
-              <ion-label>NearlyTimeUp</ion-label>
+            <ion-segment-button style="--color: white" class="ion-no-margin ion-no-padding" value="NearlyTimeUp">
+              <ion-label><strong>NearlyTimeUp</strong></ion-label>
             </ion-segment-button>
-            <ion-segment-button class="ion-no-margin ion-no-padding" value="CheckIn">
-              <ion-label>CheckIn</ion-label>
+            <ion-segment-button style="--color: white" class="ion-no-margin ion-no-padding" value="CheckIn">
+              <ion-label><strong>CheckIn</strong></ion-label>
             </ion-segment-button>
-            <ion-segment-button class="ion-no-margin ion-no-padding" value="Available">
-              <ion-label>Available</ion-label>
+            <ion-segment-button style="--color: white" class="ion-no-margin ion-no-padding" value="Available">
+              <ion-label><strong>Available</strong></ion-label>
             </ion-segment-button>
-            <ion-segment-button class="ion-no-margin ion-no-padding" value="Booking">
-              <ion-label>Booking</ion-label>
+            <ion-segment-button style="--color: white" class="ion-no-margin ion-no-padding" value="Booking">
+              <ion-label><strong>Booking</strong></ion-label>
             </ion-segment-button>
-            <ion-segment-button class="ion-no-margin ion-no-padding" value="All">
-              <ion-label>All</ion-label>
+            <ion-segment-button style="--color: white" class="ion-no-margin ion-no-padding" value="All">
+              <ion-label><strong>All</strong></ion-label>
             </ion-segment-button>
           </ion-segment>
         </ion-col>
@@ -52,7 +52,7 @@
   <ion-grid *ngFor="let building of siteInformationService.siteInformation.roomData | buildingFilterPipe : segment">
 
     <ion-row>
-      <ion-title><strong>{{building.buildingName}}</strong></ion-title>
+      <ion-title color="light"><strong>{{building.buildingName}}</strong></ion-title>
     </ion-row>
 
     <ion-row>
@@ -61,7 +61,7 @@
         <app-room-ui [roomData]="room"></app-room-ui>
       </ion-col>
     </ion-row>
-    <ion-item-divider></ion-item-divider>
+    <ion-item-divider style="--background: transparent; border-bottom: 1px solid lightgreen"></ion-item-divider>
   </ion-grid>
 
 
