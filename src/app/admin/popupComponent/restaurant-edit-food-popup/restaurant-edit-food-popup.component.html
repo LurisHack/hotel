@@ -1,0 +1,21 @@
+<ion-header >
+  <ion-toolbar color="warning" class="ion-padding-start" style="font-weight: bold;">
+    EDIT FOOD 🧆🥘🍟🍔🌭
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="EditFood()">
+    <ion-item-group>
+      <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline">
+        <ion-label position="" [innerText]="item.name"></ion-label>
+        <ion-input [readonly]="item.readOnly" [formControlName]="item.formControlName"></ion-input>
+      </ion-item>
+    </ion-item-group>
+    <ion-toolbar>
+      <ion-button slot="end" [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin">
+        <ion-text color="dark">Edit</ion-text>
+      </ion-button>
+    </ion-toolbar>
+  </form>
+</ion-content>
