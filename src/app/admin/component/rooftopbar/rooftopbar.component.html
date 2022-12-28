@@ -2,19 +2,34 @@
   <ion-toolbar class="transparent-for-ionic-component-tag">
     <ion-buttons slot="start">
     </ion-buttons>
-    <ion-title>ROOFTOP BAR</ion-title>
+    <ion-title  color="light" >ROOFTOP BAR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="transparent-for-ionic-component-tag">
 <ion-grid>
   <ion-row>
-    <ion-col *ngFor="let i of [1,2,3,4,5,6] " size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-      <ion-card (click)="roofTopBarPopUp(i)" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-        <ion-card-header>
-          <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Table ' + i"></ion-card-title>
 
+    <ion-col *ngFor="let i of [1,2,3,4,5,6] " size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+
+
+      <ion-card (click)="roofTopBarPopUp(i)" button="true" style=" --background: #ffffff; width: 100%; height:200px;
+                        --color: #52ffe4">
+
+        <ion-img src="https://static6.depositphotos.com/1000291/542/i/950/depositphotos_5428019-stock-photo-close-up-catering-table-set.jpg"
+                 style="width: 100%; height:  100%; -webkit-filter: blur(5px); filter: blur(5px);  background-position: center;
+   background-repeat: no-repeat;"></ion-img>
+
+
+        <ion-img src="https://static6.depositphotos.com/1000291/542/i/950/depositphotos_5428019-stock-photo-close-up-catering-table-set.jpg"
+                 style="position: absolute;  top: 60%;width: 75%; height: 150px;
+ left: 60%; border-radius: 5px !important; overflow: hidden;
+  transform: translate(-50%, -50%); "></ion-img>
+        <strong style="position: absolute; font-size: 30px; font-family: 'Arial Rounded MT Bold', sans-serif;
+  color: white; font-weight: bold;  z-index: 2; text-shadow: 1px 1px #000000; top: 3%; left: 3%; text-transform: capitalize">
+          {{'table'+i}}</strong>
+        <ion-card-header>
+          <ion-card-title style="--color: #000" class="ion-text-center" ></ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>

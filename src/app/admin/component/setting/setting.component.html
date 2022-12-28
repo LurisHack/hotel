@@ -1,18 +1,18 @@
 <div class="ion-page" id="setting-content">
   <ion-header mode="ios">
-    <ion-toolbar>
+    <ion-toolbar class=" transparent-for-ionic-component-tag">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title>SETTINGS</ion-title>
+      <ion-title color="light">SETTINGS</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding">
+  <ion-content  class="ion-padding  transparent-for-ionic-component-tag">
     <ion-router-outlet></ion-router-outlet>
   </ion-content>
 </div>
 
-<ion-menu style="--width: 180px ; --background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat" side="end" contentId="setting-content" >
+<ion-menu  style="--width: 180px ; --background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat" side="end" contentId="setting-content" >
    <ion-header mode="ios">
     <ion-toolbar  class="ion-text-center transparent-for-ionic-component-tag">
       <ion-text style="color: gold">Creation Panel</ion-text>
@@ -26,7 +26,7 @@
                 [routerLink]="'/admin-home/SETTING/welcomePresentation'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px; " color="light"><small>{{ 'Welcome Presentation' }}</small></ion-label>
+        <ion-label class="ion-margin-start" style="padding-left: 5px; " color="light"><small>{{ 'Welcome Presentation' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'Heart' + '-outline'" [md]="'heart' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -34,7 +34,7 @@
                 [routerLink]="'/admin-home/SETTING/roomTypeCreation'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Room Type' }}</small></ion-label>
+        <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'Room Type' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'bed' + '-outline'" [md]="'bed' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -42,7 +42,7 @@
                 [routerLink]="'/admin-home/SETTING/buildingList'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Room List' }}</small></ion-label>
+        <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'Room List' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'list' + '-outline'" [md]="'list' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -50,7 +50,7 @@
                 [routerLink]="'/admin-home/SETTING/playground'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-      <ion-label style="padding-left: 5px" color="light"><small>{{ 'Playground' }}</small></ion-label>
+      <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'Playground' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'golf'+ '-outline'" [md]="'golf' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -58,7 +58,7 @@
                 [routerLink]="'/admin-home/SETTING/rooftopBar'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Rooftop Bar' }}</small></ion-label>
+        <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'Rooftop Bar' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'business'+ '-outline'" [md]="'business' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -66,7 +66,7 @@
                 [routerLink]="'/admin-home/SETTING/salaryPackage'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'SalaryPackage' }}</small></ion-label>
+        <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'SalaryPackage' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'receipt'+ '-outline'" [md]="'receipt' + '-sharp'"></ion-icon>
       </ion-item>
 
