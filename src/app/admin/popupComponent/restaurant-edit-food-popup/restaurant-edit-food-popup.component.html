@@ -4,17 +4,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="--background: url('./assets/restaurant/foodRestaurant.jpg') 0 0/100% 100% no-repeat;">
   <form [formGroup]="formGroup" (ngSubmit)="EditFood()">
     <ion-item-group>
-      <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline">
+      <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline"
+                style="--background: rgba(0,0,0,0.1);color: white;">
         <ion-label position="" [innerText]="item.name"></ion-label>
         <ion-input [readonly]="item.readOnly" [formControlName]="item.formControlName"></ion-input>
       </ion-item>
     </ion-item-group>
-    <ion-toolbar>
+    <ion-toolbar color="none">
       <ion-button slot="end" [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin">
-        <ion-text color="dark">Edit</ion-text>
+        <ion-text color="warning">Edit</ion-text>
       </ion-button>
     </ion-toolbar>
   </form>
