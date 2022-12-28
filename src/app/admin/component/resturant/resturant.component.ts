@@ -6,7 +6,7 @@ import {RestaurantSkeletonComponent} from "../../skeletonComponent/restaurant-sk
 @Component({
   standalone: true,
   imports: [AdminComponentModule,RestaurantUIComponent,RestaurantSkeletonComponent],
-  selector: 'app-resturant',
+  selector: 'app-restaurant',
   templateUrl: './resturant.component.html',
   styleUrls: ['./resturant.component.scss'],
 })
