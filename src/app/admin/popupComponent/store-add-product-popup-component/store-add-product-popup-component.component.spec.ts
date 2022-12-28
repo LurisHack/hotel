@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { StoreAddProductComponent } from './store-add-product.component';
+import { StoreAddProductComponent } from './store-add-product-popup-component.component';
 
 describe('StoreAddProductComponent', () => {
   let component: StoreAddProductComponent;

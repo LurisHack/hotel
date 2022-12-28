@@ -38,22 +38,25 @@
     <ion-grid class="ion-no-padding ion-no-margin">
       <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">
         <ion-col size="2" class="ion-text-center" style="color: black">
-          {{product.no}}
-        </ion-col>
+          {{product.Code}}
+         </ion-col>
         <ion-col>
           <ion-grid>
             <ion-row>
-              <ion-col size-sm="3" size-xs="12">
-                {{product.name}}
+              <ion-col size-sm="4" size-xs="12">
+                {{product.Name}}
               </ion-col>
-              <ion-col style="color: red" size-sm="3" size-xs="4">
-                {{product.price}}
+              <ion-col style="color: red" size-sm="2" size-xs="3.5">
+                {{product.Price}}
               </ion-col>
-              <ion-col style="color: red" size-sm="3" size-xs="4">
-                {{product.count}}
+              <ion-col style="color: red" size-sm="2" size-xs="3.5">
+                {{product.Count}}
               </ion-col>
-              <ion-col style="color: red" size-sm="3" size-xs="4">
-                {{product.total}}
+              <ion-col style="color: red" size-sm="2" size-xs="3.5">
+                {{product.Total}}
+              </ion-col>
+              <ion-col color="dark" size-xs="1" size-sm="1">
+               <ion-icon name="create-outline"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-grid>

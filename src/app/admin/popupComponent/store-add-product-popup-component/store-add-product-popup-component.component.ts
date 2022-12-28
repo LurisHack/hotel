@@ -6,9 +6,9 @@ import {ModalController} from "@ionic/angular";
 
 @Component({
   standalone: true,
-  selector: 'app-store-add-product',
-  templateUrl: './store-add-product.component.html',
-  styleUrls: ['./store-add-product.component.scss'],
+  selector: 'app-store-add-product-popup-component',
+  templateUrl: './store-add-product-.popup-componenrt.component.html',
+  styleUrls: ['./store-add-product-popup-component.component.scss'],
   imports: [
     AdminComponentModule,
     ReactiveFormsModule
@@ -18,13 +18,12 @@ export class StoreAddProductComponent implements OnInit {
 
   formGroup: any;
 
-
-
   formInputs = [
     {name: 'Code', formControlName: 'Code', type: 'text'},
     {name: 'Name', formControlName: 'Name', type: 'text'},
-    {name:  'Price', formControlName: 'Price', type: 'number'},
-    {name: 'Count', formControlName: 'Count', type: 'number'}
+    {name: 'Price', formControlName: 'Price', type: 'number'},
+    {name:  'Count', formControlName: 'Count', type: 'number'},
+    {name: 'Total', formControlName: 'Total', type: 'number'}
   ]
 
 
@@ -37,15 +36,17 @@ export class StoreAddProductComponent implements OnInit {
 
       Name: new FormControl(null, Validators.required),
 
+      Price: new FormControl(null, Validators.required),
+
       Count: new FormControl(null, Validators.required),
 
-      Price: new FormControl(null, Validators.required),
+      Total: new FormControl(null, Validators.required),
     })
   }
 
+  addProduct() {
+    this.modalCtrl.dismiss( this.formGroup.value).then()
+  }
 
-    addProduct() {
-      this.modalCtrl.dismiss( this.formGroup.value).then()
-    }
 
 }

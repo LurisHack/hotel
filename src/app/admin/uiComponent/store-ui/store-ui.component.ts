@@ -3,13 +3,14 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 
 import {ModalController} from "@ionic/angular";
 
-import {StoreAddProductComponent} from "../../popupComponent/store-add-product/store-add-product.component";
+import {StoreAddProductComponent} from "../../popupComponent/store-add-product-popup-component/store-add-product-popup-component.component";
+
 type productLitType = {
-  no: number,
-  name: string,
-  price: number,
-  count: number,
-  total: number,
+  Code: string,
+  Name: string,
+  Price: string,
+  Count: number,
+  Total: number,
 }
 
 @Component({
@@ -34,11 +35,22 @@ export class StoreUiComponent implements OnInit {
         const modalCtrl = await this.modalCtrl.create({
           component: StoreAddProductComponent,
         })
-    modalCtrl.onDidDismiss()
-        .then((data: any) => {
+
+    modalCtrl.onDidDismiss().then((data: any) => {
+
+        console.log(data.data)
+
+
+        if (!data.data){
+            return
+        }
+
+        console.log(data.data)
 
           this.productList.push(data.data)
           this.productList = this.productList.map(m => m)
+
+        console.log(this.productList)
 
         }).catch()
 
