@@ -3,3 +3,23 @@ ion-skeleton-text{
   --background: rgb(246, 227, 10);
   --background-rgb: 100, 60, 100;
 }
+
+
+//@media screen and (max-width: 500px) {
+//  .test{
+//    display: none;
+//  }
+//}
+
+
+@media screen and (min-width: 576px) {
+  .hide-label{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .hide-item-divider{
+    display: none;
+  }
+}
