@@ -1,3 +1,21 @@
-<p>
-  playground-ui works!
-</p>
+<ion-card   button="true" style=" --background: #ffffff; width: 100%; height:200px;
+                        --color: #52ffe4">
+
+
+  <ion-img [src]="playGroundData.link"
+           style="width: 100%; height:  100%; -webkit-filter: blur(5px); filter: blur(5px);  background-position: center;
+   background-repeat: no-repeat;"></ion-img>
+
+
+   <ion-img [src]="playGroundData.link"
+           style="position: absolute;  top: 60%;width: 75%; height: 150px;
+ left: 60%; border-radius: 5px !important; overflow: hidden;
+  transform: translate(-50%, -50%); "></ion-img>
+   <strong style="position: absolute; font-size: 30px; font-family: 'Arial Rounded MT Bold', sans-serif;
+  color: white; font-weight: bold;  z-index: 2; text-shadow: 1px 1px #000000; top: 3%; left: 3%; text-transform: capitalize">
+     {{playGroundData.name}}</strong>
+
+</ion-card>
+
+
+

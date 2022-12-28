@@ -29,17 +29,54 @@ export class RestaurantUIComponent implements OnInit {
   code = false;
   propertyList: addPropertyType[] = []
 
-  constructor(private ModalCtrl: ModalController) {
-  }
+  constructor(private ModalCtrl: ModalController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   async addFood() {
 
     const ModalCtrl = await this.ModalCtrl.create({
-      component: RestaurantAddFoodPopupComponentComponent
+      component: RestaurantAddFoodPopupComponentComponent,
     })
+
+    ModalCtrl.onDidDismiss().then((value:any)=>{
+
+     if(value.data){
+       this.propertyList.push(value.data)
+
+       this.propertyList = this.propertyList.map(m => m)
+     }
+
+    })
+
+    await ModalCtrl.present()
   }
 
+   async editFood(property: any) {
+
+    const editCtrl = await this.ModalCtrl.create({
+      component: RestaurantEditFoodPopupComponent,
+      componentProps: {property: property},
+    })
+
+     editCtrl.onDidDismiss().then((value: any)=> {
+
+       console.log(property , ' - ', value)
+
+       this.propertyList = this.propertyList.map((map: any)=> map.Code === value.data.Code ? value.data : map)
+
+     })
+
+     await editCtrl.present()
+   }
+
+  selected($event: any) {
+    if ($event.detail.value == 'name') {
+      this.name = true;
+      this.code = false;
+    }else if ($event.detail.value == 'code') {
+      this.name = false;
+      this.code = true;
+    }
+  }
 }

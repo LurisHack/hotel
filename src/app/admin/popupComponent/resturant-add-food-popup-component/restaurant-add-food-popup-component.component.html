@@ -5,15 +5,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
- <img src="../../../../assets/restaurant/foodRestaurant.jpg" alt="" />
-  <form [formGroup]="formGroup" (ngSubmit)="addFood()">
+<ion-content>
+ <img src="../../../../assets/restaurant/foodRestaurant.jpg" style="height: 100%; width: 100%;
+ z-index: -1; position: absolute;  filter: blur(2px)"  alt="" />
+  <form [formGroup]="formGroup" (ngSubmit)="addFood()" >
     <ion-item-group>
       <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline"
-                style="--background: rgba(0,0,0,0.1);color: white;">
+                style="--background: rgba(0,0,0,0.5);color: white;">
         <ion-label position="" [innerText]="item.name"></ion-label>
         <ion-input [formControlName]="item.formControlName"></ion-input>
       </ion-item>
     </ion-item-group>
+    <ion-toolbar color="none">
+      <ion-button slot="end" [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin">
+        <ion-text color="warning">ADD</ion-text>
+      </ion-button>
+    </ion-toolbar>
   </form>
 </ion-content>

@@ -1,71 +1,21 @@
 <ion-header mode="ios">
-  <ion-toolbar>
+<!--  <ion-toolbar style="&#45;&#45;background: linear-gradient(to right, rgba(9,40,68,0.9), rgba(13,9,68,0.9))">-->
+    <ion-toolbar style="--background: transparent">
+
     <ion-buttons slot="start">
     </ion-buttons>
-    <ion-title>PLAYGROUND</ion-title>
+    <ion-title color="light">PLAYGROUND</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-          <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Gym'"></ion-card-title>
 
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-          <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Tennis'"></ion-card-title>
-
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-          <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Ridding'"></ion-card-title>
-
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-          <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Swimming'"></ion-card-title>
-
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-          <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Game'"></ion-card-title>
-
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
-        <ion-card (click)="PlayGroundPopup()" button="true" style=" --background: #ffffff;
-                        --color: #52ffe4">
-          <ion-card-header>
-            <ion-card-title style="--color: #000" class="ion-text-center" [innerText]="'Golf'"></ion-card-title>
-
-          </ion-card-header>
-        </ion-card>
+      <ion-col *ngFor="let playGround of playGroundUrl" size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
+<!---->
+        <app-playground-ui [playGroundData]="playGround"></app-playground-ui>
+<!---->
       </ion-col>
 
     </ion-row>
