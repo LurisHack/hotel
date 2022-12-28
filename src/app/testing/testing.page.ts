@@ -9,7 +9,7 @@ type productLitType = {
   Name: string,
   Price: number,
   Count: number
-}[]
+};
 
 
 @Component({
@@ -22,11 +22,21 @@ export class TestingPage {
     productList: productLitType[] = []
 
 
+
+
     loaded = true
 
     constructor(private siteInformationService: SiteInformationService,
                 private modalCtrl: ModalController) {
         console.log(siteInformationService.siteInformation)
+
+      this.generate()
+    }
+
+    generate(){
+      for(let i = 0; i < 20; i++ ){
+        this.productList.push({Code: i + 100, Name: 'Name '+i.toString(), Count: i + 123, Price: 233+i},)
+      }
     }
 
     async testingPopUp() {
