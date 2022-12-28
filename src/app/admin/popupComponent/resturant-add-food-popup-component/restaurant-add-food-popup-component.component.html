@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="warning" class="ion-padding-start" style="font-weight: bold;">
     ADD FOOD 🧆🥘🍟🍔🌭
-    <ion-icon slot="end" size="small" color="dark" class="ion-margin" name="close"></ion-icon>
+    <ion-icon slot="end" size="small" color="dark" class="ion-margin" name="close" (click)="ModalCtrl.dismiss()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -11,15 +11,40 @@
   <form [formGroup]="formGroup" (ngSubmit)="addFood()" >
     <ion-item-group>
       <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline"
-                style="--background: rgba(0,0,0,0.5);color: white;">
+                style="--background: rgba(0,0,0,0.3);color: white;">
         <ion-label position="" [innerText]="item.name"></ion-label>
         <ion-input [formControlName]="item.formControlName"></ion-input>
       </ion-item>
     </ion-item-group>
     <ion-toolbar color="none">
+      <ion-button slot="end" [disabled]="formGroup.invalid" (click)="foodList()" color="light" class="ion-margin">
+        <ion-text color="warning">OK</ion-text>
+      </ion-button>
       <ion-button slot="end" [disabled]="formGroup.invalid" type="submit" color="light" class="ion-margin">
         <ion-text color="warning">ADD</ion-text>
       </ion-button>
     </ion-toolbar>
   </form>
+  <ion-grid>
+    <ion-row *ngIf="label" class="ion-text-center" style="background: rgba(0,0,0,0.3);color: white;">
+      <ion-col>
+        No.
+      </ion-col>
+      <ion-col *ngFor="let item of foodItem">
+        {{item.name}}
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let property of propertyList; index as i" class="ion-text-center" style="--background: rgba(0,0,0,0.1);color: white;">
+      <ion-col [innerText]="i+1"></ion-col>
+      <ion-col>
+        {{property.Code}}
+      </ion-col>
+      <ion-col>
+        {{property.Name}}
+      </ion-col>
+      <ion-col>
+        {{property.Price}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

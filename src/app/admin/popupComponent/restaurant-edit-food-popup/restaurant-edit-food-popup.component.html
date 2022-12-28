@@ -2,13 +2,16 @@
   <ion-toolbar color="warning" class="ion-padding-start" style="font-weight: bold;">
     EDIT FOOD 🧆🥘🍟🍔🌭
   </ion-toolbar>
+  <ion-icon slot="end" size="small" color="dark" class="ion-margin" name="close" (click)="modalCtrl.dismiss()"></ion-icon>
 </ion-header>
 
-<ion-content style="--background: url('./assets/restaurant/foodRestaurant.jpg') 0 0/100% 100% no-repeat;">
+<ion-content>
+  <img src="../../../../assets/restaurant/foodRestaurant.jpg" style="height: 100%; width: 100%;
+ z-index: -1; position: absolute;  filter: blur(2px)"  alt="" />
   <form [formGroup]="formGroup" (ngSubmit)="EditFood()">
     <ion-item-group>
       <ion-item *ngFor="let item of foodItem" class="ion-margin" fill="outline"
-                style="--background: rgba(0,0,0,0.1);color: white;">
+                style="--background: rgba(0,0,0,0.3);color: white;">
         <ion-label position="" [innerText]="item.name"></ion-label>
         <ion-input [readonly]="item.readOnly" [formControlName]="item.formControlName"></ion-input>
       </ion-item>

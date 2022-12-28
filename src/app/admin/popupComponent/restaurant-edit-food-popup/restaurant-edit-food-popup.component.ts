@@ -23,7 +23,7 @@ export class RestaurantEditFoodPopupComponent implements OnInit {
     {name: 'Price', formControlName: 'Price', type: 'number', readOnly: false},
   ]
 
-  constructor(private modalCtrl: ModalController) {
+  constructor(public modalCtrl: ModalController) {
   }
 
   ngOnInit() {
