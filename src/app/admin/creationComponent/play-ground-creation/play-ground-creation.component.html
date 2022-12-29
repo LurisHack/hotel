@@ -1,16 +1,15 @@
+<ion-toolbar class="ion-align-items-center">
+  <ion-title class="hide-title" slot="start">PLAYGROUND</ion-title>
+  <ion-img class="ion-margin-start" slot="end" style="width: 80px;" src="https://www.mirabellointeriors.com/wp-content/uploads/2019/11/home-gym-design.jpg"></ion-img>
+  <ion-item slot="end" fill="outline" class="ion-margin">
+    <ion-input slot="start" (keyup.enter)="addPlaygroundName()" placeholder="Enter Name"></ion-input>
+  </ion-item>
+  <ion-button slot="end" (click)="addPlaygroundName()" color="dark" class="ion-margin-end">
+    ADD
+  </ion-button>
+</ion-toolbar>
 
 <ion-content class="transparent-for-ionic-component-tag">
-
-  <ion-grid style="height: 10vh" class="ion-no-margin ion-no-padding">
-    <ion-row class="ion-no-margin ion-no-padding">
-      <ion-col class="ion-no-margin ion-no-padding" offset-xs="5" offset-sm="5" offset-md="7" offset-lg="9" size-xs="7" size-sm="7" size-md="5" size-lg="3">
-        <ion-item style="--min-height: 15px;" fill="outline" class="ion-margin">
-          <ion-input (keyup.enter)="addPlaygroundName()" placeholder="Enter Playground Name"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let playground of ['Gym','Tennis', 'Ridding', 'Swimming', 'Game', 'Golf']" size-xs="12" size-sm="4" size-md="4" size-lg="4" size-xl="4">
