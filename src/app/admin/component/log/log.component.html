@@ -1,18 +1,18 @@
 <ion-header mode="ios">
-  <ion-toolbar>
+  <ion-toolbar class="transparent-for-ionic-component-tag">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>LOGS</ion-title>
+    <ion-title color="light">LOGS</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="transparent-for-ionic-component-tag">
   <ion-grid>
     <ion-row>
       <ion-col>
         <app-log-ui *ngIf="!loaded"></app-log-ui>
-        <app-log-skeleton *ngIf="loaded"></app-log-skeleton>
+        <app-log-skeleton *ngIf="loaded" class="transparent-for-ionic-component-tag"></app-log-skeleton>
       </ion-col>
     </ion-row>
   </ion-grid>
