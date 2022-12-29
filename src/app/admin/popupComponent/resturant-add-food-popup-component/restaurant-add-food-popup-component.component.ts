@@ -3,6 +3,7 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
 import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-ui.component";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 
 type addPropertyType = {
@@ -20,6 +21,7 @@ type addPropertyType = {
     AdminComponentModule,
     ReactiveFormsModule,
     RestaurantUIComponent,
+    ScrollingModule,
   ]
 })
 export class RestaurantAddFoodPopupComponentComponent implements OnInit {
