@@ -3,6 +3,14 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
 import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-ui.component";
+import {ScrollingModule} from "@angular/cdk/scrolling";
+
+
+type addPropertyType = {
+  Code: string,
+  Name: string,
+  Price: number,
+}
 
 @Component({
   standalone: true,
@@ -13,11 +21,15 @@ import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-
     AdminComponentModule,
     ReactiveFormsModule,
     RestaurantUIComponent,
+    ScrollingModule,
   ]
 })
 export class RestaurantAddFoodPopupComponentComponent implements OnInit {
 
   formGroup: any;
+  propertyList: addPropertyType[] = []
+  label = false;
+  number = 1
 
   foodItem = [
     {name: 'Code', formControlName: 'Code', type: 'text'},
@@ -25,7 +37,7 @@ export class RestaurantAddFoodPopupComponentComponent implements OnInit {
     {name: 'Price', formControlName: 'Price', type: 'number'},
   ]
 
-  constructor(private ModalCtrl: ModalController) {
+  constructor(public ModalCtrl: ModalController) {
   }
 
   ngOnInit() {
@@ -38,7 +50,12 @@ export class RestaurantAddFoodPopupComponentComponent implements OnInit {
 
   }
 
-  addFood() {
+   addFood() {
     this.ModalCtrl.dismiss(this.formGroup.value).then()
+  }
+  foodList() {
+    this.propertyList.push(this.formGroup.value)
+    this.propertyList = this.propertyList.map(m => m)
+    this.label = true;
   }
 }

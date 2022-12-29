@@ -2,8 +2,8 @@
   <ion-toolbar class="transparent-for-ionic-component-tag">
     <ion-grid class="ion-no-padding ion-no-margin">
       <ion-row class="ion-no-margin ion-no-padding">
-        <ion-col size-xs="3" size-md="1" class="ion-margin-top ion-margin-bottom">
-          <ion-select (ionChange)="selected($event)" placeholder="Select">
+        <ion-col style="color: white;" size-xs="3" size-md="1" class="ion-margin-top ion-margin-bottom">
+          <ion-select (ionChange)="selected($event)" placeholder="Search">
             <ion-select-option value="name">Name</ion-select-option>
             <ion-select-option value="code">Code</ion-select-option>
           </ion-select>
@@ -11,29 +11,28 @@
         <ion-col size-xs="9" size-sm="9" size-md="7" size-lg="7" class="ion-padding">
           <ion-row *ngIf="name" class="ion-no-margin ion-no-padding">
             <ion-col size-xs="9" size-md="5" class="ion-no-margin ion-no-padding">
-              <ion-input style="border: 1px solid grey;border-radius: 5px;" class="ion-padding-start"
+              <ion-input style="border: 1px solid grey;border-radius: 5px;background: rgba(0,0,0,0.5);color: white" class="ion-padding-start"
                          placeholder="Ender Name"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-button color="light" fill="clear" size="small">
+              <ion-button style="--border-radius: 50%;width: 25px;height: 25px;margin-left: 10px; margin-top: 10px;" class="ion-no-padding" color="light" size="small">
                 <ion-icon color="dark" name="search-sharp"></ion-icon>
               </ion-button>
             </ion-col>
           </ion-row>
           <ion-row *ngIf="code" class="ion-no-padding ion-no-margin">
             <ion-col size-xs="7" size-md="3" class="ion-no-margin ion-no-padding">
-              <ion-input style="border: 1px solid grey;border-radius: 5px;" class="ion-padding-start"
+              <ion-input style="border: 1px solid grey;border-radius: 5px;background: rgba(0,0,0,0.5);color: white" class="ion-padding-start"
                          placeholder="Ender Code"></ion-input>
             </ion-col>
             <ion-col>
-              <ion-button color="light" fill="clear" size="small">
+              <ion-button style="--border-radius: 50%;width: 25px;height: 25px;margin-left: 10px; margin-top: 10px;" class="ion-no-padding" color="light" size="small">
                 <ion-icon color="dark" name="search-sharp"></ion-icon>
-              </ion-button>
-            </ion-col>
+              </ion-button>            </ion-col>
           </ion-row>
         </ion-col>
         <ion-col size-xs="12" size-md="4" class="ion-padding ion-text-right">
-          <ion-button color="warning" size="small" (click)="addFood()">ADD FOOD</ion-button>
+          <ion-button color="light" size="small" (click)="addFood()">ADD FOOD</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
