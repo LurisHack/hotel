@@ -36,13 +36,8 @@ export class TestingPopUpComponent implements OnInit {
   }
 
   addProduct() {
-    // console.log(this.formGroup.value)
-
     this.modalCtrl.dismiss(this.formGroup.value).then()
 
-
-    // this.productList.push(this.formGroup.value)
-    // console.log(this.productList)
   }
 
 }

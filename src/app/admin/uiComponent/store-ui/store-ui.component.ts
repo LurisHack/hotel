@@ -3,7 +3,7 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 
 import {ModalController} from "@ionic/angular";
 
-import {StoreAddProductComponent} from "../../popupComponent/store-add-product-popup-component/store-add-product-popup-component.component";
+import {StoreAddProductPopupComponentComponent} from "../../popupComponent/store-add-product-popup-component/store-add-product-popup-component.component";
 import {TestingPopUpComponent} from "../../../testing-pop-up/testing-pop-up.component";
 import {
     StoreEditPopupComponentComponent
@@ -37,7 +37,7 @@ export class StoreUiComponent implements OnInit {
   async storeUi() {
 
         const modalCtrl = await this.modalCtrl.create({
-          component: StoreAddProductComponent,
+          component: StoreAddProductPopupComponentComponent,
         })
 
     modalCtrl.onDidDismiss().then((data: any) => {
@@ -62,6 +62,7 @@ export class StoreUiComponent implements OnInit {
 
 
 }
+
 
   async  storeEdit(product: any) {
 
