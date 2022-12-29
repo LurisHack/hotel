@@ -7,6 +7,7 @@ import {ToastService} from "../../utility/service/toast.service";
   selector: 'app-admin-welcome',
   templateUrl: './admin-home.page.html',
   styleUrls: ['./admin-home.page.scss'],
+  providers: [RouterService]
 })
 export class AdminHomePage{
 
