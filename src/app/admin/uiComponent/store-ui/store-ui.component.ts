@@ -4,6 +4,10 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {ModalController} from "@ionic/angular";
 
 import {StoreAddProductComponent} from "../../popupComponent/store-add-product-popup-component/store-add-product-popup-component.component";
+import {TestingPopUpComponent} from "../../../testing-pop-up/testing-pop-up.component";
+import {
+    StoreEditPopupComponentComponent
+} from "../../popupComponent/store-edit-popup-component/store-edit-popup-component.component";
 
 type productLitType = {
   Code: string,
@@ -15,7 +19,7 @@ type productLitType = {
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule,StoreAddProductComponent ],
+  imports: [AdminComponentModule,],
   selector: 'app-store-ui',
   templateUrl: './store-ui.component.html',
   styleUrls: ['./store-ui.component.scss'],
@@ -59,4 +63,21 @@ export class StoreUiComponent implements OnInit {
 
 }
 
+  async  storeEdit(product: any) {
+
+      const editModal = await this.modalCtrl.create({
+          component: StoreEditPopupComponentComponent,
+          componentProps: {product: product}
+      })
+      editModal.onDidDismiss().then((value: any) => {
+
+
+          this.productList = this.productList.map((map: any) =>  map.Code === value.data.Code ? value.data : map)
+
+
+      })
+
+      await editModal.present()
+
+  }
 }
