@@ -1,25 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {SiteInformationService} from "../utility/service/siteInformation.service";
 import {ModalController} from "@ionic/angular";
 import {TestingComponent} from "../testingComponent/testing/testing.component";
 import {TestingPopUpComponent} from "../testing-pop-up/testing-pop-up.component";
-
-type productLitType = {
-  Code: number,
-  Name: string,
-  Price: number,
-  Count: number
-};
+import {TestingModel} from "../utility/model/testing-model";
 
 
 @Component({
   selector: 'app-testing',
   templateUrl: './testing.page.html',
   styleUrls: ['./testing.page.scss'],
-})
+ })
 export class TestingPage {
 
-    productList: productLitType[] = []
+    productList: TestingModel[] = []
 
 
 
@@ -34,7 +28,7 @@ export class TestingPage {
     }
 
     generate(){
-      for(let i = 0; i < 20; i++ ){
+      for(let i = 0; i < 5; i++ ){
         this.productList.push({Code: i + 100, Name: 'Name '+i.toString(), Count: i + 123, Price: 233+i},)
       }
     }
@@ -42,7 +36,9 @@ export class TestingPage {
     async testingPopUp() {
 
         const modalCtrl = await this.modalCtrl.create({
-            component: TestingComponent
+            component: TestingComponent,
+          cssClass: 'testing-modal',
+
         })
 
 
