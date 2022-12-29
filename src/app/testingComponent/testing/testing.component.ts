@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../../admin/component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
-
+import {ScrollingModule} from "@angular/cdk/scrolling";
+import {TestingModel} from "../../utility/model/testing-model";
 
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule, ReactiveFormsModule],
+  imports: [AdminComponentModule, ReactiveFormsModule, ScrollingModule],
   selector: 'app-testing-component',
   templateUrl: './testing.component.html',
   styleUrls: ['./testing.component.scss'],
@@ -18,6 +19,7 @@ export class TestingComponent implements OnInit {
 
   formGroup: any;
 
+  productList: TestingModel[] = []
 
   formInputs = [
     {name: 'Code', formControlName: 'Code', type: 'text'},
@@ -26,7 +28,9 @@ export class TestingComponent implements OnInit {
     {name: 'Count', formControlName: 'Count', type: 'number'}
   ]
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(private modalCtrl: ModalController) {
+    this.generate()
+  }
 
   ngOnInit() {
     this.formGroup = new FormGroup({
@@ -35,6 +39,12 @@ export class TestingComponent implements OnInit {
       Count: new FormControl(null, Validators.required),
       Price: new FormControl(null, Validators.required),
     })
+  }
+
+  generate(){
+    for(let i = 0; i < 20; i++ ){
+      this.productList.push({Code: i + 100, Name: 'Name '+i.toString(), Count: i + 123, Price: 233+i},)
+    }
   }
 
   addProduct() {
