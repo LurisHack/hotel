@@ -18,8 +18,6 @@ export class RoomPopupComponent {
   segmentValue = 'itemAdding'
   constructor(public modalController: ModalController) { }
 
-
-
   itemAddingSegment($event: any) {
     this.segmentValue = $event.detail.value
   }

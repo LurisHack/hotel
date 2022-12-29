@@ -19,7 +19,6 @@ import {INVENTORYComponent} from "../component/inventory/inventory.component";
     AdminHomePageRoutingModule,
     ROOMComponent, INVENTORYComponent,
   ],
-  declarations: [AdminHomePage,
-    ]
+  declarations: [AdminHomePage]
 })
 export class AdminHomePageModule {}

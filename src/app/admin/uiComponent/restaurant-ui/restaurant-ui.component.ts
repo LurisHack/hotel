@@ -37,6 +37,8 @@ export class RestaurantUIComponent implements OnInit {
 
     const ModalCtrl = await this.ModalCtrl.create({
       component: RestaurantAddFoodPopupComponentComponent,
+      backdropDismiss: false,
+      cssClass: 'add-food-popup'
     })
 
     ModalCtrl.onDidDismiss().then((value:any)=>{
@@ -57,6 +59,7 @@ export class RestaurantUIComponent implements OnInit {
     const editCtrl = await this.ModalCtrl.create({
       component: RestaurantEditFoodPopupComponent,
       componentProps: {property: property},
+      backdropDismiss: false,
     })
 
      editCtrl.onDidDismiss().then((value: any)=> {

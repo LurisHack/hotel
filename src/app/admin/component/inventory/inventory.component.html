@@ -7,7 +7,7 @@
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title color="light">INVENTORY</ion-title>
+      <ion-title >INVENTORY</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content  class="ion-padding transparent-for-ionic-component-tag">
@@ -19,7 +19,7 @@
 
 
 
-<ion-menu style="--width: 180px ;  --background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat" side="end" contentId="inventory-content">
+<ion-menu  style="--width: 180px ;  --background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat" side="end" contentId="inventory-content">
   <ion-header mode="ios">
     <ion-toolbar  class="ion-text-center transparent-for-ionic-component-tag">
       <ion-text style="color: gold">Inventory Panel</ion-text>
@@ -33,7 +33,7 @@
                 [routerLink]="'/admin-home/INVENTORY/room'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Room ' }}</small></ion-label>
+        <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'Room ' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'bed' + '-outline'" [md]="'bed' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -41,7 +41,7 @@
                 [routerLink]="'/admin-home/INVENTORY/rooftopBar'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label  style="padding-left: 5px" color="light"><small>{{ 'Rooftop Bar' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light"><small>{{ 'Rooftop Bar' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'business'+ '-outline'" [md]="'business' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -49,7 +49,7 @@
                 [routerLink]="'/admin-home/INVENTORY/playground'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Playground' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light"><small>{{ 'Playground' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'golf'+ '-outline'" [md]="'golf' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -57,7 +57,7 @@
                 [routerLink]="'/admin-home/INVENTORY/store'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Store' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light"><small>{{ 'Store' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'storefront'+ '-outline'" [md]="'storefront' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -65,7 +65,7 @@
                 [routerLink]="'/admin-home/INVENTORY/restaurant'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light" ><small>{{ 'Restaurant' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light" ><small>{{ 'Restaurant' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'fast-food'+ '-outline'" [md]="'fast-food' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -74,7 +74,7 @@
                 [routerLink]="'/admin-home/INVENTORY/pos'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'POS' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light"><small>{{ 'POS' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'print'+ '-outline'" [md]="'print' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -82,7 +82,7 @@
                 [routerLink]="'/admin-home/INVENTORY/damage'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Damage' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light"><small>{{ 'Damage' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'trash-bin'+ '-outline'" [md]="'trash-bin' + '-sharp'"></ion-icon>
       </ion-item>
 
@@ -90,7 +90,7 @@
                 [routerLink]="'/admin-home/INVENTORY/expend'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
-        <ion-label style="padding-left: 5px" color="light"><small>{{ 'Expend' }}</small></ion-label>
+        <ion-label class="ion-margin-start"  style="padding-left: 5px" color="light"><small>{{ 'Expend' }}</small></ion-label>
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'wallet'+ '-outline'" [md]="'wallet' + '-sharp'"></ion-icon>
       </ion-item>
 
