@@ -12,6 +12,7 @@ const routes: Routes = [
     path: 'welcome',
      component: WelcomeComponent
    },
+
   {
     path: 'admin-home',
     loadChildren: () => import('./admin/admin-home/admin-home.module').then( m => m.AdminHomePageModule)
@@ -19,7 +20,12 @@ const routes: Routes = [
   {
     path: 'testing',
     loadChildren: () => import('./testing/testing.module').then( m => m.TestingPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./user/page/profile/profile.module').then( m => m.ProfilePageModule)
   }
+
 ];
 
 @NgModule({

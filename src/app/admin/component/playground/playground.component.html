@@ -1,5 +1,4 @@
 <ion-header mode="ios">
-<!--  <ion-toolbar style="&#45;&#45;background: linear-gradient(to right, rgba(9,40,68,0.9), rgba(13,9,68,0.9))">-->
     <ion-toolbar style="--background: transparent">
 
     <ion-buttons slot="start">
@@ -8,9 +7,25 @@
   </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content  class="transparent-for-ionic-component-tag">
   <ion-grid>
     <ion-row>
+
+
+      <ion-col offset-xs="5" offset-sm="5" offset-md="7" offset-lg="9" size-xs="7" size-sm="7" size-md="5" size-lg="3">
+
+        <ion-toolbar class="transparent-for-ionic-component-tag">
+
+          <ion-item style="--min-height: 25px;" fill="outline" class="ion-margin">
+
+            <img src="/assets/images/hotel/hotel1.jpg" class="ion-no-padding" style="width: 50px;height: 50px" >
+            <ion-input #buildingName (keyup.enter)="addBuildingName()"  placeholder="Enter Building Name"></ion-input>
+          <ion-button>OKAY </ion-button>
+          </ion-item>
+        </ion-toolbar>
+      </ion-col>
 
       <ion-col *ngFor="let playGround of playGroundUrl" size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="4">
 <!---->
