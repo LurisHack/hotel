@@ -1,27 +1,27 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .height-col-one {
-    height: 45%;
+    height: 200px;
     width: 100%;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .height-col-one {
-    height: 45%;
+    height: 30%;
     width: 100%;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .height-col-two {
-    height: 45%;
+    height: 60%;
     width: 100%;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .height-col-two {
-    height: 95%;
+    height: 92%;
     width: 100%;
   }
 }

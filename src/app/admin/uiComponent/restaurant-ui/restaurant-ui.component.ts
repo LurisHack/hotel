@@ -7,6 +7,8 @@ import {
 import {
   RestaurantEditFoodPopupComponent
 } from "../../popupComponent/restaurant-edit-food-popup/restaurant-edit-food-popup.component";
+import {Storage} from "@ionic/storage-angular";
+import {RestaurantEnum} from "../../../utility/enum/restaurant-enum";
 
 type addPropertyType = {
   Code: string,
@@ -20,6 +22,7 @@ type addPropertyType = {
   selector: 'app-restaurant-ui',
   templateUrl: './restaurant-ui.component.html',
   styleUrls: ['./restaurant-ui.component.scss'],
+  providers: [Storage]
 })
 
 
@@ -29,7 +32,9 @@ export class RestaurantUIComponent implements OnInit {
   code = false;
   propertyList: addPropertyType[] = []
 
-  constructor(private ModalCtrl: ModalController) { }
+  constructor(private ModalCtrl: ModalController,private storage: Storage) {
+    this.getPropertyListData()
+  }
 
   ngOnInit() {}
 
@@ -43,15 +48,17 @@ export class RestaurantUIComponent implements OnInit {
 
     ModalCtrl.onDidDismiss().then((value:any)=>{
 
-     if(value.data){
-       this.propertyList.push(value.data)
-
-       this.propertyList = this.propertyList.map(m => m)
-     }
+     // if(value.data){
+     //   this.propertyList.push(value.data)
+     //
+     //   this.propertyList = this.propertyList.map(m => m)
+     // }
+      this.getPropertyListData()
 
     })
 
     await ModalCtrl.present()
+
   }
 
    async editFood(property: any) {
@@ -82,4 +89,13 @@ export class RestaurantUIComponent implements OnInit {
       this.code = true;
     }
   }
+  getPropertyListData(){
+    this.storage.create().then((storage:any) => {
+      storage.get(RestaurantEnum.RESTAURANT_STORAGE).then((storageData: addPropertyType[]) => {
+        console.log(storageData)
+        this.propertyList = storageData
+      })
+    })
+  }
+
 }

@@ -4,6 +4,9 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {ModalController} from "@ionic/angular";
 import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-ui.component";
 import {ScrollingModule} from "@angular/cdk/scrolling";
+import {Storage} from "@ionic/storage-angular";
+import {RestaurantEnum} from "../../../utility/enum/restaurant-enum";
+import {getStorage} from "@angular/fire/storage";
 
 
 type addPropertyType = {
@@ -22,7 +25,8 @@ type addPropertyType = {
     ReactiveFormsModule,
     RestaurantUIComponent,
     ScrollingModule,
-  ]
+  ],
+  providers: [Storage]
 })
 export class RestaurantAddFoodPopupComponentComponent implements OnInit {
 
@@ -37,7 +41,7 @@ export class RestaurantAddFoodPopupComponentComponent implements OnInit {
     {name: 'Price', formControlName: 'Price', type: 'number'},
   ]
 
-  constructor(public ModalCtrl: ModalController) {
+  constructor(public ModalCtrl: ModalController,private storage: Storage) {
   }
 
   ngOnInit() {
@@ -51,11 +55,39 @@ export class RestaurantAddFoodPopupComponentComponent implements OnInit {
   }
 
    addFood() {
-    this.ModalCtrl.dismiss(this.formGroup.value).then()
+    // this.ModalCtrl.dismiss(this.formGroup.value).then()
+
   }
   foodList() {
-    this.propertyList.push(this.formGroup.value)
-    this.propertyList = this.propertyList.map(m => m)
+    // this.propertyList.push(this.formGroup.value)
+    // this.propertyList = this.propertyList.map(m => m)
     this.label = true;
+
+    const addPropertyListData = () => {
+      this.propertyList.push(this.formGroup.value),
+      this.formGroup.reset()
+    }
+    this.storage.create().then(storage => {
+      let tempAry: any = []
+
+      storage.get(RestaurantEnum.RESTAURANT_STORAGE).then(getStorage => {
+        console.log('storage value', getStorage)
+
+        if (!getStorage) {
+          tempAry.push(this.formGroup.value)
+          storage.set(RestaurantEnum.RESTAURANT_STORAGE, tempAry).then(t => {
+            {
+              console.log('Successfully')
+              addPropertyListData()
+            }
+          })
+        }else {
+          storage.set(RestaurantEnum.RESTAURANT_STORAGE, [...getStorage, this.formGroup.value]).then(t => {
+            console.log('Successfully')
+            addPropertyListData()
+          })
+        }
+      })
+    })
   }
 }
