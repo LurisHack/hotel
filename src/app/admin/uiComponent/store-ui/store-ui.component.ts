@@ -38,6 +38,7 @@ export class StoreUiComponent implements OnInit {
 
         const modalCtrl = await this.modalCtrl.create({
           component: StoreAddProductPopupComponentComponent,
+            cssClass: 'add-store-item'
         })
 
     modalCtrl.onDidDismiss().then((data: any) => {
@@ -62,7 +63,6 @@ export class StoreUiComponent implements OnInit {
 
 
 }
-
 
   async  storeEdit(product: any) {
 

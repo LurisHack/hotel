@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {IonicModule} from "@ionic/angular";
+import {IonicModule, ModalController} from "@ionic/angular";
 import {NgForOf, NgIf} from "@angular/common";
+import {AdminComponentModule} from "../../component/admin-component.module";
+import {UserDetailPopupComponent} from "../../popupComponent/user-detail-popup/user-detail-popup.component";
 
 @Component({
   standalone: true,
@@ -8,21 +10,22 @@ import {NgForOf, NgIf} from "@angular/common";
   templateUrl: './user-ui.component.html',
   styleUrls: ['./user-ui.component.scss'],
   imports: [
-    IonicModule,
-    NgForOf,
-    NgIf
+    AdminComponentModule,
   ]
 })
 export class UserUIComponent implements OnInit {
 
   loaded = true
-  constructor() {
-    setTimeout(()=>{
-      this.loaded=false
-    },5000)
-  }
+  constructor(private ModalCtrl: ModalController) { }
 
-  //TODO to create ngOninit
   ngOnInit() {}
 
+
+  async userDetail() {
+
+    const ModalCtrl = await this.ModalCtrl.create({
+      component: UserDetailPopupComponent,
+    })
+    await ModalCtrl.present()
+  }
 }

@@ -21,7 +21,8 @@ export class StoreEditPopupComponentComponent implements OnInit {
     {name: 'Code', formControlName: 'Code', type: 'text'},
     {name: 'Name', formControlName: 'Name', type: 'text'},
     {name:  'Price', formControlName: 'Price', type: 'number'},
-    {name: 'Count', formControlName: 'Count', type: 'number'}
+    {name: 'Count', formControlName: 'Count', type: 'number'},
+    {name: 'Total', formControlName: 'Total', type: 'number'}
   ]
 
   constructor(private modalCtrl: ModalController) {}
@@ -32,6 +33,7 @@ export class StoreEditPopupComponentComponent implements OnInit {
       Name: new FormControl(this.product.Name, Validators.required),
       Count: new FormControl(this.product.Count, Validators.required),
       Price: new FormControl(this.product.Price, Validators.required),
+      Total: new FormControl(this.product.Total, Validators.required),
     })
   }
 

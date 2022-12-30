@@ -58,6 +58,13 @@ ion-modal.testing-modal{
 
 }
 
+ion-modal.add-store-item{
+  --height: 100vh;
+  --width: 80%;
+  --backdrop-opacity: var(--ion-backdrop-opacity, .8);
+
+}
+
 @media screen and (max-width: 767px) {
   ion-modal.add-food-popup{
     --height: 100%;

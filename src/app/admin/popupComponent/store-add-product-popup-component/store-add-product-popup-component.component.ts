@@ -3,6 +3,7 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
 import {StoreEditPopupComponentComponent} from "../store-edit-popup-component/store-edit-popup-component.component";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 type productLitType = {
   Code: string,
@@ -19,7 +20,8 @@ type productLitType = {
   styleUrls: ['./store-add-product-popup-component.component.scss'],
   imports: [
     AdminComponentModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScrollingModule
   ]
 })
 export class StoreAddProductPopupComponentComponent implements OnInit {
@@ -37,8 +39,6 @@ export class StoreAddProductPopupComponentComponent implements OnInit {
     {name: 'Count', formControlName: 'Count', type: 'number'},
     {name: 'Total', formControlName: 'Total', type: 'number'},
   ]
-
-
 
   constructor( private modalCtrl: ModalController) { }
 
@@ -60,51 +60,15 @@ export class StoreAddProductPopupComponentComponent implements OnInit {
   addProduct() {
     this.modalCtrl.dismiss( this.formGroup.value).then()
   }
-  async storeUi() {
-
-    const modalCtrl = await this.modalCtrl.create({
-      component: StoreAddProductPopupComponentComponent,
-    })
-
-    modalCtrl.onDidDismiss().then((data: any) => {
-
-      console.log(data.data)
 
 
-      if (!data.data){
-        return
-      }
+    storeEdit(product: productLitType) {
 
-      console.log(data.data)
+    }
 
-      this.productList.push(data.data)
+    addList() {
+      this.productList.push(this.formGroup.value)
       this.productList = this.productList.map(m => m)
 
-      console.log(this.productList)
-
-    }).catch()
-
-    await modalCtrl.present()
-
-
-  }
-
-
-  async  storeEdit(product: any) {
-
-    const editModal = await this.modalCtrl.create({
-      component: StoreEditPopupComponentComponent,
-      componentProps: {product: product}
-    })
-    editModal.onDidDismiss().then((value: any) => {
-
-
-      this.productList = this.productList.map((map: any) =>  map.Code === value.data.Code ? value.data : map)
-
-
-    })
-
-    await editModal.present()
-
-  }
+    }
 }
