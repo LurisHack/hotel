@@ -8,6 +8,10 @@ import {TestingPopUpComponent} from "../../../testing-pop-up/testing-pop-up.comp
 import {
     StoreEditPopupComponentComponent
 } from "../../popupComponent/store-edit-popup-component/store-edit-popup-component.component";
+import {TestingEnum} from "../../../utility/enum/testing-enum";
+import {TestingModel} from "../../../utility/model/testing-model";
+import {Storage} from "@ionic/storage-angular";
+import {StoreEnum} from "../../../utility/enum/store-enum";
 
 type productLitType = {
   Code: string,
@@ -23,6 +27,7 @@ type productLitType = {
   selector: 'app-store-ui',
   templateUrl: './store-ui.component.html',
   styleUrls: ['./store-ui.component.scss'],
+  providers: [Storage]
 })
 export class StoreUiComponent implements OnInit {
 
@@ -30,7 +35,10 @@ export class StoreUiComponent implements OnInit {
 
   loaded = true
 
-  constructor(private modalCtrl: ModalController) { }
+
+  constructor(private modalCtrl: ModalController,private storage: Storage) {
+      this.getProductListData()
+  }
 
   ngOnInit() {}
 
@@ -42,21 +50,7 @@ export class StoreUiComponent implements OnInit {
         })
 
     modalCtrl.onDidDismiss().then((data: any) => {
-
-        console.log(data.data)
-
-
-        if (!data.data){
-            return
-        }
-
-        console.log(data.data)
-
-          this.productList.push(data.data)
-          this.productList = this.productList.map(m => m)
-
-        console.log(this.productList)
-
+        this.getProductListData()
         }).catch()
 
     await modalCtrl.present()
@@ -71,14 +65,24 @@ export class StoreUiComponent implements OnInit {
           componentProps: {product: product}
       })
       editModal.onDidDismiss().then((value: any) => {
-
-
-          this.productList = this.productList.map((map: any) =>  map.Code === value.data.Code ? value.data : map)
-
-
+          this.getProductListData()
       })
 
       await editModal.present()
 
   }
+    getProductListData() {
+
+        this.storage.create().then((storage: any) => {
+
+            storage.get(StoreEnum.STORE_STORAGE )
+                .then((storageData: productLitType[]) => {
+
+                    console.log(storageData)
+                    this.productList = storageData
+
+                })
+        })
+
+    }
 }

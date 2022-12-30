@@ -4,9 +4,9 @@ import {ModalController} from "@ionic/angular";
 import {TestingComponent} from "../testingComponent/testing/testing.component";
 import {TestingPopUpComponent} from "../testing-pop-up/testing-pop-up.component";
 import {TestingModel} from "../utility/model/testing-model";
+// @ts-ignore
 import {Storage} from "@ionic/storage-angular"
 import {TestingEnum} from "../utility/enum/testing-enum";
-
 @Component({
   selector: 'app-testing',
   templateUrl: './testing.page.html',

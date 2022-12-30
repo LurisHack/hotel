@@ -2,13 +2,15 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { TestingComponent } from './testing.component';
+import any = jasmine.any;
+import {getStorage} from "@angular/fire/storage";
 
 describe('TestingComponent', () => {
   let component: TestingComponent;
   let fixture: ComponentFixture<TestingComponent>;
-
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+
       declarations: [ TestingComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
