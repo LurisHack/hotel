@@ -34,8 +34,10 @@ export class RoomTypeCreationComponent{
       return
     }
 
-      this.siteInformationService
-        .addRoomType(roomTypeName, generateId(), 'roomType')
+      // this.siteInformationService
+      //   .addRoomType(roomTypeName, generateId(), 'roomType')
+
+
     }
 
 

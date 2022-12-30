@@ -1,28 +1,28 @@
 <!--    <ion-item lines="none">-->
-<!--      <ion-label>Select Room Type</ion-label>-->
-<!--      <ion-select #roomType placeholder="Select Room Type" *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">-->
+<!--      <ion-label>Select RoomEnum Type</ion-label>-->
+<!--      <ion-select #roomType placeholder="Select RoomEnum Type" *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">-->
 <!--        <ion-select-option  *ngFor="let roomType of siteInformationService.siteInformation.roomType"-->
 <!--                            [value]="roomType" [innerText]="roomType.name">-->
 <!--        </ion-select-option>-->
 <!--      </ion-select>-->
 
 <!--      <ion-item fill="outline" class="ion-no-margin ion-no-padding" color="none">-->
-<!--        <ion-label position="floating">Enter Room Name</ion-label>-->
+<!--        <ion-label position="floating">Enter RoomEnum Name</ion-label>-->
 <!--        <ion-input #roomName></ion-input>-->
 <!--      </ion-item>-->
 
 <!--      <ion-button (click)="addRoom()" size="small">-->
-<!--        <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add Room-->
+<!--        <ion-icon slot="icon-only" name="add-circle"></ion-icon>Add RoomEnum-->
 <!--      </ion-button>-->
 <!--    </ion-item>-->
 
 <ion-header>
-  <ion-card-title class="ion-padding">Add Room</ion-card-title>
+  <ion-card-title class="ion-padding">Add RoomEnum</ion-card-title>
 
   <ion-grid class="ion-no-padding ion-no-margin">
     <ion-row class="ion-no-margin ion-no-padding ion-padding-bottom">
       <ion-col style="margin-left: 8px;" size-xs="12" size-sm="4" size-md="4" size-lg="2">
-        <ion-select #roomType placeholder="Select Room Type" interface="popover"
+        <ion-select #roomType placeholder="Select RoomEnum Type" interface="popover"
                     *ngIf="siteInformationService.siteInformation && siteInformationService.siteInformation.roomType.length">
           <ion-select-option *ngFor="let roomType of siteInformationService.siteInformation.roomType"
                              [value]="roomType" [innerText]="roomType.name">
@@ -30,7 +30,7 @@
         </ion-select>
       </ion-col>
       <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="2" class="ion-margin-start">
-        <ion-input placeholder="Ender Room Name" #roomName></ion-input>
+        <ion-input placeholder="Ender RoomEnum Name" #roomName></ion-input>
       </ion-col>
       <ion-col size-xs="12" size-sm="auto" class="ion-margin-start">
         <ion-button style="width: 90%" color="light" size="small" (click)="addRoom()">ADD</ion-button>
