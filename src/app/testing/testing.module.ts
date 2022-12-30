@@ -7,16 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { TestingPageRoutingModule } from './testing-routing.module';
 
 import { TestingPage } from './testing.page';
-import {TestingPipe} from "../testing.pipe";
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    TestingPageRoutingModule
-  ],
-  declarations: [TestingPage, TestingPipe]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        TestingPageRoutingModule
+    ],
+
+    declarations: [TestingPage]
 })
 export class TestingPageModule {}

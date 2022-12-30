@@ -26,7 +26,6 @@ export class TestingPage {
 
     this.getProductListData()
 
-
   }
 
 

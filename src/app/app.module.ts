@@ -17,22 +17,22 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
-declarations: [AppComponent],
-  imports: [
-    IonicModule.forRoot(),
-    BrowserModule,
-    WelcomeComponent,
-    AppRoutingModule,
-    StoreModule.forRoot(reducers),
-    AngularFireModule.initializeApp(environment.firebase),
-    BrowserAnimationsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideFunctions(() => getFunctions()),
-    provideStorage(() => getStorage())],
+    declarations: [AppComponent],
+    imports: [
+        IonicModule.forRoot(),
+        BrowserModule,
+        WelcomeComponent,
+        AppRoutingModule,
+        StoreModule.forRoot(reducers),
+        AngularFireModule.initializeApp(environment.firebase),
+        BrowserAnimationsModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideAuth(() => getAuth()),
+        provideFirestore(() => getFirestore()),
+        provideFunctions(() => getFunctions()),
+        provideStorage(() => getStorage())],
     bootstrap: [AppComponent],
-  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}]
+    providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}]
 })
 
 export class AppModule{}

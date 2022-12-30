@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AuthService} from "../../user/component/auth/auth.service";
 import {RouterService} from "../../utility/service/router.service";
 import {ToastService} from "../../utility/service/toast.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-admin-welcome',
@@ -13,7 +14,7 @@ export class AdminHomePage{
 
   public appPages = [
     {title: 'ROOM', icon: 'bed'},
-    // {title: 'POS',  icon: 'print'},
+    {title: 'POS',  icon: 'print'},
     {title: 'ROOFTOPBAR', icon: 'business'},
     {title: 'PLAYGROUND', icon: 'golf'},
     {title: 'STORE', icon: 'storefront'},
@@ -35,9 +36,11 @@ export class AdminHomePage{
   private to: any;
   Golden72: any;
 
+
   constructor(private authService: AuthService,
               private routeService: RouterService,
-              private toastService: ToastService) {}
+              private toastService: ToastService,
+              public activatedRoute: ActivatedRoute) {}
 
   signOut() {
     this.authService.signOut()
@@ -57,7 +60,15 @@ export class AdminHomePage{
 
   ionSplitPaneVisible($event: any) {
     console.log('split pane event ', $event)
-    this.showSplit = !$event.detail.visible
-  }
+
+    // let splitPaneState = 'SplitPaneHide'
+    //
+    // if ($event.detail.visible){
+    //   splitPaneState = 'SplitPaneShow'
+    // }
+    //
+    // this.routeService.setFragment({link: 'admin-home', fragment:  splitPaneState}).then()
+
+   }
 
 }
