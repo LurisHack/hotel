@@ -1,0 +1,20 @@
+@media screen and (max-width: 767px) {
+  .background-item{
+    background: none;
+  }
+  .color-item {
+    color: #464444;
+  }
+  .header-item{
+    header: TITLE;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .background-item{
+    background: #3c3c3c;
+  }
+  .color-item{
+    color: #eeeeee;
+  }
+}

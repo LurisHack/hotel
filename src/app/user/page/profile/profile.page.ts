@@ -10,6 +10,7 @@ import {RouterService} from "../../../utility/service/router.service";
 })
 export class ProfilePage implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
