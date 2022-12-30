@@ -1,0 +1,57 @@
+<ion-header mode="ios">
+  <ion-toolbar style="--background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">Admin Panel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ng-container>
+    <ng-template>
+      <span>Hello world!</span>
+    </ng-template>
+  </ng-container>
+
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="3" *ngFor="let data of adminWelcomeData">
+        <ion-card mode="ios" style="height: 200px; width: 100%"   button="true" [routerLink]="data.link">
+          <ion-img style="height: 130px; width: 100%; object-fit: cover" [src]="data.img"></ion-img>
+          <ion-item lines="none">
+            <ion-label>
+              <h1><strong>{{data.header}}</strong></h1>
+              <p>{{data.subHeader}}</p>
+            </ion-label>
+          </ion-item>
+         </ion-card>
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+<!--  <ion-text>-->
+<!--    <ins>Golden additional features</ins>-->
+<!--  </ion-text>-->
+<!--  <ion-grid>-->
+<!--    <ion-row>-->
+<!--      <ion-col>-->
+<!--        <ion-card button="true" routerLink="/admin-home/USERS">-->
+<!--          <ion-card-title class="ion-padding">Users</ion-card-title>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+<!--      <ion-col>-->
+<!--        <ion-card button="true" routerLink="/admin-home/PERMISSIONS">-->
+<!--          <ion-card-title class="ion-padding">Permissions</ion-card-title>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+<!--      <ion-col>-->
+<!--        <ion-card button="true" routerLink="/admin-home/">-->
+<!--          <ion-card-title class="ion-padding">Log out</ion-card-title>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+</ion-content>

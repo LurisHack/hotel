@@ -3,7 +3,7 @@ import {AdminComponentModule} from "../admin/component/admin-component.module";
 import {ModalController} from "@ionic/angular";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 
-@Component({
+ @Component({
   standalone:true,
   imports: [AdminComponentModule, ReactiveFormsModule],
   selector: 'app-testing-pop-up',
@@ -36,9 +36,12 @@ export class TestingPopUpComponent implements OnInit {
   }
 
   addProduct() {
+
+
+
     // console.log(this.formGroup.value)
 
-    this.modalCtrl.dismiss(this.formGroup.value).then()
+    // this.modalCtrl.dismiss(this.formGroup.value).then()
 
 
     // this.productList.push(this.formGroup.value)

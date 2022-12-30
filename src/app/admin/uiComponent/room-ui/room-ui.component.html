@@ -1,4 +1,4 @@
-<ion-card *ngIf="roomData" color="light" class="ion-no-padding">
+<ion-card *ngIf="roomData"  class="ion-no-padding">
   <ion-grid style="border-bottom: 1px solid lightgray">
     <ion-row class="ion-align-items-center">
       <ion-col size="auto" class="ion-text-center">
@@ -131,6 +131,7 @@
       <ion-label><small class="ion-text-uppercase">IN</small></ion-label>
     </ion-button>
   </ion-row>
-  <ion-progress-bar color="success" [value]="progress"></ion-progress-bar>
+
+  <ion-progress-bar color="warning" [value]="progress"></ion-progress-bar>
 
 </ion-card>

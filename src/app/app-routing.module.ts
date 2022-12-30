@@ -9,6 +9,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'admin-home',
+    redirectTo: 'admin-home/ADMINWELCOMCOMPONENT',
+    pathMatch: 'full',
+  },
+  {
     path: 'welcome',
      component: WelcomeComponent
    },

@@ -10,4 +10,8 @@ export class RouterService {
    return  this.router.navigateByUrl(param.link)
   }
 
+  setFragment(param: {link: string, fragment: string}){
+    return this.router.navigate([param.link], {fragment: param.fragment})
+  }
+
 }
