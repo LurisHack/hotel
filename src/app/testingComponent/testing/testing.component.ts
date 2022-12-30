@@ -100,6 +100,7 @@ export class TestingComponent implements OnInit {
 
               storage.set(TestingEnum.TESTING_STORAGE, [...getStorage, this.formGroup.value])
                 .then(t => {
+
                   console.log('Successfully stored')
                    addProductListData()
                 })
