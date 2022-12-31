@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
 import {RouterModule} from "@angular/router";
 import {NavigationDetailCardComponent} from "../../uiComponent/navigation-detail-card/navigation-detail-card.component";
-[]
+
 @Component({
   standalone: true,
   imports: [AdminComponentModule, RouterModule, NavigationDetailCardComponent],
