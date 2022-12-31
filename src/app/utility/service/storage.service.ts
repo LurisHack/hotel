@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {IonicStorageModule, Storage} from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class StorageService {
   }
 
   setStorage(){
-    this.createdStorage.set()
+    this.createdStorage.set('testing', 'testing')
   }
 
 }

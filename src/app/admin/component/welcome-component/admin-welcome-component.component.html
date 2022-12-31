@@ -9,27 +9,13 @@
 
 <ion-content>
 
-  <ng-container>
-    <ng-template>
-      <span>Hello world!</span>
-    </ng-template>
-  </ng-container>
+
 
   <ion-grid class="ion-text-center">
     <ion-row>
       <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="4" size-xl="3" *ngFor="let data of adminWelcomeData">
-        <ion-card mode="ios" style="height: 200px; width: 100%"   button="true" [routerLink]="data.link">
-          <ion-img style="height: 130px; width: 100%; object-fit: cover" [src]="data.img"></ion-img>
-          <ion-item lines="none">
-            <ion-label>
-              <h1><strong>{{data.header}}</strong></h1>
-              <p>{{data.subHeader}}</p>
-            </ion-label>
-          </ion-item>
-         </ion-card>
+        <app-navigation-detail-card [navigationDetailData]="data"></app-navigation-detail-card>
       </ion-col>
-
-
     </ion-row>
   </ion-grid>
 <!--  <ion-text>-->

@@ -34,6 +34,7 @@ import {
   SalaryPackageCreationComponent
 } from "../creationComponent/salary-package-creation/salary-package-creation.component";
 import {AdminWelcomeComponentComponent} from "../component/welcome-component/admin-welcome-component.component";
+import {SettingUiComponentComponent} from "../uiComponent/setting-ui-component/setting-ui-component.component";
 
 
 const routes: Routes = [
@@ -77,6 +78,10 @@ const routes: Routes = [
         path: 'SETTING',
         component: SETTINGComponent,
         children: [
+          {
+            path: 'settingWelcome',
+            component: SettingUiComponentComponent
+          },
           {
             path: 'welcomePresentation',
             component: WelcomePresentationCreationComponent,

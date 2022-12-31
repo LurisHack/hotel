@@ -1,11 +1,11 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
 import {BuildingFilterPipe} from "../../../utility/pipe/building-filter.pipe";
 import {IonInput} from "@ionic/angular";
 import {ToastService} from "../../../utility/service/toast.service";
-import {generateId} from "../../../utility/function/generateId";
+import {StorageService} from "../../../utility/service/storage.service";
 
 @Component({
   standalone:true,
@@ -22,7 +22,11 @@ export class RoomTypeCreationComponent{
   check = true;
 
   constructor(public activatedRoute: ActivatedRoute, private toastService: ToastService,
-              public siteInformationService: SiteInformationService) {}
+              public siteInformationService: SiteInformationService, public storageService: StorageService) {
+
+    storageService.setStorage()
+
+  }
 
 
   AddRoomType() {

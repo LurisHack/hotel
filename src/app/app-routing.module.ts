@@ -8,10 +8,16 @@ const routes: Routes = [
     redirectTo: 'welcome#Login',
     pathMatch: 'full'
   },
+
   {
     path: 'admin-home',
     redirectTo: 'admin-home/ADMINWELCOMCOMPONENT',
-    pathMatch: 'full',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin-home/SETTING',
+    redirectTo: 'admin-home/SETTING/settingWelcome',
+    pathMatch: 'full'
   },
   {
     path: 'welcome',
@@ -29,7 +35,7 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./user/page/profile/profile.module').then( m => m.ProfilePageModule)
-  }
+  },
 
 ];
 
