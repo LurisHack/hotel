@@ -1,0 +1,9 @@
+<ion-card mode="ios" style="height: 200px; width: 100%"   button="true" [routerLink]="navigationDetailData.link">
+  <ion-img style="height: 130px; width: 100%; object-fit: cover" [src]="navigationDetailData.img"></ion-img>
+  <ion-item lines="none">
+    <ion-label>
+      <h1><strong>{{navigationDetailData.header}}</strong></h1>
+      <p>{{navigationDetailData.subHeader}}</p>
+    </ion-label>
+  </ion-item>
+</ion-card>
