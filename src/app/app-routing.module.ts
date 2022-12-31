@@ -8,7 +8,6 @@ const routes: Routes = [
     redirectTo: 'welcome#Login',
     pathMatch: 'full'
   },
-
   {
     path: 'admin-home',
     redirectTo: 'admin-home/ADMINWELCOMCOMPONENT',
