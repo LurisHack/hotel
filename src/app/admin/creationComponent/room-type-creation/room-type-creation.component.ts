@@ -5,7 +5,6 @@ import {SiteInformationService} from "../../../utility/service/siteInformation.s
 import {BuildingFilterPipe} from "../../../utility/pipe/building-filter.pipe";
 import {IonInput} from "@ionic/angular";
 import {ToastService} from "../../../utility/service/toast.service";
-import {StorageService} from "../../../utility/service/storage.service";
 
 @Component({
   standalone:true,
@@ -13,7 +12,7 @@ import {StorageService} from "../../../utility/service/storage.service";
   selector: 'app-room-type-creation',
   templateUrl: './room-type-creation.component.html',
   styleUrls: ['./room-type-creation.component.scss'],
-})
+ })
 
 export class RoomTypeCreationComponent{
 
@@ -22,9 +21,8 @@ export class RoomTypeCreationComponent{
   check = true;
 
   constructor(public activatedRoute: ActivatedRoute, private toastService: ToastService,
-              public siteInformationService: SiteInformationService, public storageService: StorageService) {
+              public siteInformationService: SiteInformationService) {
 
-    storageService.setStorage()
 
   }
 
