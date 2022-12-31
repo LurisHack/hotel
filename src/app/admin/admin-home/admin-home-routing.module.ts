@@ -35,6 +35,8 @@ import {
 } from "../creationComponent/salary-package-creation/salary-package-creation.component";
 import {AdminWelcomeComponentComponent} from "../component/welcome-component/admin-welcome-component.component";
 import {SettingUiComponentComponent} from "../uiComponent/setting-ui-component/setting-ui-component.component";
+import {PosComponent} from "../component/pos/pos.component";
+import {PosCreationComponent} from "../creationComponent/pos-creation/pos-creation.component";
 
 
 const routes: Routes = [
@@ -49,6 +51,10 @@ const routes: Routes = [
       {
         path: 'ROOM',
         component: ROOMComponent
+      },
+      {
+        path:'POS',
+        component: PosComponent
       },
       {
         path: 'ROOFTOPBAR',
@@ -101,6 +107,10 @@ const routes: Routes = [
           {
             path: 'buildingListCreation/roomListCreation/:id',
             component: RoomListCreationComponent
+          },
+          {
+            path: 'posCreation',
+            component: PosCreationComponent
           },
           {
             path: 'rooftopBar',
