@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
-import {StoreEditPopupComponentComponent} from "../store-edit-popup-component/store-edit-popup-component.component";
-import {ScrollingModule} from "@angular/cdk/scrolling";
+ import {ScrollingModule} from "@angular/cdk/scrolling";
 import {Storage} from "@ionic/storage-angular";
-import {TestingEnum} from "../../../utility/enum/testing-enum";
-import {StoreEnum} from "../../../utility/enum/store-enum";
 
 type productLitType = {
   Code: string,
@@ -71,27 +68,27 @@ export class StoreAddProductPopupComponentComponent implements OnInit {
 
           let tempAry: any = []
 
-          storage.get(StoreEnum.STORE_STORAGE).then((getStorage: any) => {
-                console.log('storage value ', getStorage)
+          // storage.get(StoreEnum.STORE_STORAGE).then((getStorage: any) => {
+          //       console.log('storage value ', getStorage)
+          //
+          //       if (!getStorage){
+          // tempAry.push(this.formGroup.value)
+          //         storage.set(StoreEnum.STORE_STORAGE ,  tempAry).then((t: any) => {
+          //           {
+          //               console.log('Successfully stored')
+          //             addProductListData()
+          //           }
+          //         })
+          //       }else {
 
-                if (!getStorage){
-          tempAry.push(this.formGroup.value)
-                  storage.set(StoreEnum.STORE_STORAGE ,  tempAry).then((t: any) => {
-                    {
-                        console.log('Successfully stored')
-                      addProductListData()
-                    }
-                  })
-                }else {
+                  // storage.set(StoreEnum.STORE_STORAGE, [...getStorage, this.formGroup.value]).then((t: any) => {
+                  //     console.log('Successfully stored')
+                  //       addProductListData()
+                  //     })
 
-                  storage.set(StoreEnum.STORE_STORAGE, [...getStorage, this.formGroup.value]).then((t: any) => {
-                      console.log('Successfully stored')
-                        addProductListData()
-                      })
-
-                }
-
-              })
+                // }
+              //
+              // })
 
 
 

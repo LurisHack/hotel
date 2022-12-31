@@ -1,17 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
-
 import {ModalController} from "@ionic/angular";
-
 import {StoreAddProductPopupComponentComponent} from "../../popupComponent/store-add-product-popup-component/store-add-product-popup-component.component";
-import {TestingPopUpComponent} from "../../../testing-pop-up/testing-pop-up.component";
-import {
+ import {
     StoreEditPopupComponentComponent
 } from "../../popupComponent/store-edit-popup-component/store-edit-popup-component.component";
-import {TestingEnum} from "../../../utility/enum/testing-enum";
-import {TestingModel} from "../../../utility/model/testing-model";
+
 import {Storage} from "@ionic/storage-angular";
-import {StoreEnum} from "../../../utility/enum/store-enum";
 
 type productLitType = {
   Code: string,
@@ -75,13 +70,13 @@ export class StoreUiComponent implements OnInit {
 
         this.storage.create().then((storage: any) => {
 
-            storage.get(StoreEnum.STORE_STORAGE )
-                .then((storageData: productLitType[]) => {
-
-                    console.log(storageData)
-                    this.productList = storageData
-
-                })
+            // storage.get(StoreEnum.STORE_STORAGE )
+            //     .then((storageData: productLitType[]) => {
+            //
+            //         console.log(storageData)
+            //         this.productList = storageData
+            //
+            //     })
         })
 
     }
