@@ -33,6 +33,7 @@ import {PayrollComponent} from "../component/payroll/payroll.component";
 import {
   SalaryPackageCreationComponent
 } from "../creationComponent/salary-package-creation/salary-package-creation.component";
+import {AdminWelcomeComponentComponent} from "../component/welcome-component/admin-welcome-component.component";
 
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: '',
     component: AdminHomePage,
     children: [
+      {
+        path: 'ADMINWELCOMCOMPONENT',
+        component: AdminWelcomeComponentComponent
+       },
       {
         path: 'ROOM',
         component: ROOMComponent
@@ -104,7 +109,8 @@ const routes: Routes = [
            path: 'salaryPackage',
            component: SalaryPackageCreationComponent
           }
-        ]
+        ],
+
       },
 
       {
@@ -168,7 +174,6 @@ const routes: Routes = [
         component: PERMISSIONSComponent
       }
     ]
-
   }]
 
 
