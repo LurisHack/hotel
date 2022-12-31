@@ -3,7 +3,7 @@
     background: none;
   }
   .color-item {
-    color: #464444;
+    color: white;
   }
   .header-item{
     header: TITLE;
@@ -12,9 +12,9 @@
 
 @media screen and (min-width: 768px) {
   .background-item{
-    background: #3c3c3c;
+    background: #000000;
   }
   .color-item{
-    color: #eeeeee;
+    color: rgba(255, 255, 255, 0.62);
   }
 }

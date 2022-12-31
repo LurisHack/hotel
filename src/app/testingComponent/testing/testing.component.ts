@@ -8,6 +8,9 @@ import {Storage} from "@ionic/storage-angular";
 import {TestingEnum} from "../../utility/enum/testing-enum";
 
 
+
+
+
 @Component({
   standalone: true,
   imports: [AdminComponentModule, ReactiveFormsModule, ScrollingModule],
@@ -19,6 +22,7 @@ import {TestingEnum} from "../../utility/enum/testing-enum";
 
 
 export class TestingComponent implements OnInit {
+
 
   formGroup: any;
 
@@ -46,11 +50,11 @@ export class TestingComponent implements OnInit {
     })
   }
 
-
   addProduct() {
    // console.log(this.formGroup.value)
 
     // this.modalCtrl.dismiss( this.formGroup.value).then()
+
 
 
     const addProductListData = () => {
@@ -77,19 +81,20 @@ export class TestingComponent implements OnInit {
 
 
     this.storage.create()
-      .then(storage => {
+
+      .then((storage :any)=> {
 
         let tempAry: any = []
 
         storage.get(TestingEnum.TESTING_STORAGE)
-          .then(getStorage => {
+          .then((getStorage: any) => {
             console.log('storage value ', getStorage)
 
 
 
             if (!getStorage){
               tempAry.push(this.formGroup.value)
-              storage.set(TestingEnum.TESTING_STORAGE ,  tempAry).then(t => {
+              storage.set(TestingEnum.TESTING_STORAGE ,  tempAry).then((t: any) => {
                 {
                   console.log('Successfully stored')
                   addProductListData()
@@ -99,8 +104,7 @@ export class TestingComponent implements OnInit {
             }else {
 
               storage.set(TestingEnum.TESTING_STORAGE, [...getStorage, this.formGroup.value])
-                .then(t => {
-
+                .then((t: any) => {
                   console.log('Successfully stored')
                    addProductListData()
                 })

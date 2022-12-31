@@ -1,0 +1,12 @@
+@media screen and (min-width: 576px) {
+  .hide-label{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .hide-item-divider{
+    display: none;
+
+  }
+}

@@ -6,9 +6,7 @@
   <form [formGroup]="formGroup" (ngSubmit)="addProduct()">
 
     <ion-list>
-<!--      <ion-list-header color="success">-->
-<!--        Add Product-->
-<!--      </ion-list-header>-->
+
       <ion-item-group>
         <ion-item-divider>
           <ion-card-subtitle>This is subtitle</ion-card-subtitle>
@@ -18,7 +16,7 @@
           <ion-input [type]="inputs.type" [formControlName]="inputs.formControlName"></ion-input>
         </ion-item>
         <ion-item-divider>
-          <ion-button [disabled]="formGroup.invalid" type="submit">Edit Ok</ion-button>
+          <ion-button [disabled]="formGroup.invalid" type="submit"> Ok</ion-button>
         </ion-item-divider>
       </ion-item-group>
     </ion-list>

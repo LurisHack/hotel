@@ -3,21 +3,31 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 
 import {ModalController} from "@ionic/angular";
 
-import {StoreAddProductComponent} from "../../popupComponent/store-add-product/store-add-product.component";
+import {StoreAddProductPopupComponentComponent} from "../../popupComponent/store-add-product-popup-component/store-add-product-popup-component.component";
+import {TestingPopUpComponent} from "../../../testing-pop-up/testing-pop-up.component";
+import {
+    StoreEditPopupComponentComponent
+} from "../../popupComponent/store-edit-popup-component/store-edit-popup-component.component";
+import {TestingEnum} from "../../../utility/enum/testing-enum";
+import {TestingModel} from "../../../utility/model/testing-model";
+import {Storage} from "@ionic/storage-angular";
+import {StoreEnum} from "../../../utility/enum/store-enum";
+
 type productLitType = {
-  no: number,
-  name: string,
-  price: number,
-  count: number,
-  total: number,
+  Code: string,
+  Name: string,
+  Price: string,
+  Count: number,
+  Total: number,
 }
 
 @Component({
   standalone: true,
-  imports: [AdminComponentModule,StoreAddProductComponent ],
+  imports: [AdminComponentModule,],
   selector: 'app-store-ui',
   templateUrl: './store-ui.component.html',
   styleUrls: ['./store-ui.component.scss'],
+  providers: [Storage]
 })
 export class StoreUiComponent implements OnInit {
 
@@ -25,21 +35,22 @@ export class StoreUiComponent implements OnInit {
 
   loaded = true
 
-  constructor(private modalCtrl: ModalController) { }
+
+  constructor(private modalCtrl: ModalController,private storage: Storage) {
+      this.getProductListData()
+  }
 
   ngOnInit() {}
 
   async storeUi() {
 
         const modalCtrl = await this.modalCtrl.create({
-          component: StoreAddProductComponent,
+          component: StoreAddProductPopupComponentComponent,
+            cssClass: 'add-store-item'
         })
-    modalCtrl.onDidDismiss()
-        .then((data: any) => {
 
-          this.productList.push(data.data)
-          this.productList = this.productList.map(m => m)
-
+    modalCtrl.onDidDismiss().then((data: any) => {
+        this.getProductListData()
         }).catch()
 
     await modalCtrl.present()
@@ -47,4 +58,31 @@ export class StoreUiComponent implements OnInit {
 
 }
 
+  async  storeEdit(product: any) {
+
+      const editModal = await this.modalCtrl.create({
+          component: StoreEditPopupComponentComponent,
+          componentProps: {product: product}
+      })
+      editModal.onDidDismiss().then((value: any) => {
+          this.getProductListData()
+      })
+
+      await editModal.present()
+
+  }
+    getProductListData() {
+
+        this.storage.create().then((storage: any) => {
+
+            storage.get(StoreEnum.STORE_STORAGE )
+                .then((storageData: productLitType[]) => {
+
+                    console.log(storageData)
+                    this.productList = storageData
+
+                })
+        })
+
+    }
 }

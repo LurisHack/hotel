@@ -1,21 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TestingComponent } from './testing.component';
-import any = jasmine.any;
-import {getStorage} from "@angular/fire/storage";
+import { StoreEditPopupComponentComponent } from './store-edit-popup-component.component';
 
-describe('TestingComponent', () => {
-  let component: TestingComponent;
-  let fixture: ComponentFixture<TestingComponent>;
+describe('StoreEditPopupComponentComponent', () => {
+  let component: StoreEditPopupComponentComponent;
+  let fixture: ComponentFixture<StoreEditPopupComponentComponent>;
+
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-
-      declarations: [ TestingComponent ],
+      declarations: [ StoreEditPopupComponentComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TestingComponent);
+    fixture = TestBed.createComponent(StoreEditPopupComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
