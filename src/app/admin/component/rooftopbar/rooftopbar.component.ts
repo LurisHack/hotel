@@ -6,8 +6,8 @@ import {
 } from "../../popupComponent/roof-top-bar-popup-component/roof-top-bar-popup-component.component";
 
 @Component({
-  standalone:true,
-  imports:[AdminComponentModule],
+  standalone: true,
+  imports:[AdminComponentModule, RoofTopBarPopupComponentComponent],
   selector: 'app-rooftopbar',
   templateUrl: './rooftopbar.component.html',
   styleUrls: ['./rooftopbar.component.scss'],
@@ -24,12 +24,9 @@ export class RooftopbarComponent implements OnInit {
 
     const modalCtrl = await this.modalCtrl.create({
       component: RoofTopBarPopupComponentComponent,
-      componentProps: {props: i}
+      cssClass: 'roof-top-bar-popup-modal',
     })
-
-
    await modalCtrl.present()
-
   }
 
 }

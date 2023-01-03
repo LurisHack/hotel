@@ -22,7 +22,7 @@ import {Storage} from "@ionic/storage-angular";
   styleUrls: ['./pos-creation.component.scss'],
 
 })
-export class PosCreationComponent implements OnInit,  MultiListModel {
+export class PosCreationComponent implements OnInit, MultiListModel {
 
 
    splitPaneState = false;

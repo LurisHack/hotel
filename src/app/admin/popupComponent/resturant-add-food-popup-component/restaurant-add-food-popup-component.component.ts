@@ -31,7 +31,6 @@ export class RestaurantAddFoodPopupComponentComponent implements OnInit {
   formGroup: any;
   propertyList: addPropertyType[] = []
   label = false;
-  number = 1
 
   foodItem = [
     {name: 'Code', formControlName: 'Code', type: 'text'},
