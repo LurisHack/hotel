@@ -16,6 +16,9 @@
 
   <div #divElement>
 
+<!--    Get width checking - {{divElement.clientWidth}}-->
+
+    <!--    {{divElement.clientWidth + (splitPaneState === true ? 50 : 0)}}-->
     <div *ngIf="(divElement.clientWidth + (splitPaneState === true ? 50 : 0)) as getWidth">
       <ion-grid>
         <ion-row>
@@ -27,6 +30,9 @@
                         *ngIf="segmentData === 'Search'" fill="clear" expand="block" (click)="searchStateChange()">
               Search with  {{searchState}}
             </ion-button>
+
+<!--            <app-multi-form *ngIf="segmentData === 'Add'" [formData]="addFormData"-->
+<!--                            (formOutput)="formOutput($event)"></app-multi-form>-->
 
             <app-multi-form *ngIf="segmentData === 'Search'" [formData]="searchFormData"></app-multi-form>
 
