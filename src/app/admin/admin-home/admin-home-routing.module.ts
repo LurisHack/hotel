@@ -122,7 +122,7 @@ const routes: Routes = [
           },
           {
             path: 'restaurant',
-            component: RESTURANTComponent
+            component: RESTAURANTComponent
           }
         ],
 
