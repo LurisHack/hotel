@@ -1,51 +1,108 @@
-
 <ion-header mode="ios">
   <ion-toolbar style="--background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">
-    <ion-title class="ion-text-start" color="light">
-      POS
-    </ion-title>
-    <ion-segment value="AllItem" (ionChange)="segmentEventValue($event)">
-      <ion-segment-button value="AllItem">All Items</ion-segment-button>
-<!--      <ion-segment-button value="Add">Add</ion-segment-button>-->
-      <ion-segment-button value="Search">Search</ion-segment-button>
-    </ion-segment>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">Pos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  <div #divElement>
-
-<!--    Get width checking - {{divElement.clientWidth}}-->
-
-    <!--    {{divElement.clientWidth + (splitPaneState === true ? 50 : 0)}}-->
-    <div *ngIf="(divElement.clientWidth + (splitPaneState === true ? 50 : 0)) as getWidth">
-      <ion-grid>
-        <ion-row>
-
-          <ion-col [sizeXs]="getWidth < 992 ? 12 : 3">
-
-            <ion-button style="color: #869960;--font-family: Tahoma, sans-serif; font-weight: bold;
-                               --text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4)"
-                        *ngIf="segmentData === 'Search'" fill="clear" expand="block" (click)="searchStateChange()">
-              Search with  {{searchState}}
-            </ion-button>
-
-<!--            <app-multi-form *ngIf="segmentData === 'Add'" [formData]="addFormData"-->
-<!--                            (formOutput)="formOutput($event)"></app-multi-form>-->
-
-            <app-multi-form *ngIf="segmentData === 'Search'" [formData]="searchFormData"></app-multi-form>
-
+<ion-grid class="ion-no-margin ion-no-padding">
+  <ion-row class="ion-no-margin ion-no-padding">
+    <ion-col size-xs="6" size-sm="6" size-md="12" size-lg="12">
+      <ion-grid class="ion-no-margin ion-no-padding">
+        <ion-row class="ion-no-margin ion-no-padding">
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item">
+              <span style="display: block; text-align: center; width: 100%">Name</span>
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item ">
+              <span style="display: block; text-align: center; width: 100%">Price</span>
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item">
+              <span style="display: block; text-align: center; width: 100%">Code</span>
+            </ion-item-divider>
           </ion-col>
 
-          <ion-col [size]="segmentData === 'AllItem' || getWidth  < 992 ? 12 : 9">
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item">
+              <span style="display: block; text-align: center; width: 100%">Count</span>
+            </ion-item-divider>
+          </ion-col>
 
-            <app-multi-list-ui [listData]="dataList" [getWidth]="getWidth"></app-multi-list-ui>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item">
+              <span style="display: block; text-align: center; width: 100%">Capital</span>
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item">
+              <span style="display: block; text-align: center; width: 100%">Total</span>
+            </ion-item-divider>
+          </ion-col>
 
+
+
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider class="background-item color-item">
+              <span style="display: block; text-align: center; width: 100%">Action</span>
+            </ion-item-divider>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-col>
+
+    <ion-col size-xs="6" size-sm="6" size-md="12" size-lg="12">
+
+      <ion-grid class="ion-no-margin ion-no-padding">
+        <ion-row class="ion-no-margin ion-no-padding">
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+              ROBERT
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+              $500
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+            307
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+              55
+            </ion-item-divider>
+          </ion-col>
+
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+              $1000
+            </ion-item-divider>
+          </ion-col>
+
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+              $500
+            </ion-item-divider>
+          </ion-col>
+          <ion-col size-xs="12" size-sm="12" size-md="1.714285714285714285" size-lg="1.714285714285714285">
+            <ion-item-divider color="black">
+              <ion-icon name="ban-sharp"></ion-icon>
+            </ion-item-divider>
           </ion-col>
 
         </ion-row>
       </ion-grid>
-    </div>
-  </div>
-</ion-content>
+    </ion-col>
+
+
+  </ion-row>
+</ion-grid>
+
