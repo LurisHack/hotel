@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {AdminComponentModule} from "../../component/admin-component.module";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ModalController} from "@ionic/angular";
-import {RestaurantUIComponent} from "../../uiComponent/restaurant-ui/restaurant-ui.component";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {Storage} from "@ionic/storage-angular";
 import {RestaurantEnum} from "../../../utility/enum/restaurant-enum";
@@ -23,7 +22,6 @@ type addPropertyType = {
   imports: [
     AdminComponentModule,
     ReactiveFormsModule,
-    RestaurantUIComponent,
     ScrollingModule,
   ],
   providers: [Storage]

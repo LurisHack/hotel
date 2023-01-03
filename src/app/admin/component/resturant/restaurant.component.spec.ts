@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RESTURANTComponent } from './resturant.component';
+import { RESTURANTComponent } from './restaurant.component';
 
 describe('RESTURANTComponent', () => {
   let component: RESTURANTComponent;

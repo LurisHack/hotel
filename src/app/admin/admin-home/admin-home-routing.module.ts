@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AdminHomePage} from './admin-home.page';
 import {ROOMComponent} from "../component/room/room.component";
-import {RESTURANTComponent} from "../component/resturant/resturant.component";
+import {RESTAURANTComponent} from "../component/resturant/restaurant.component";
 import {INVENTORYComponent} from "../component/inventory/inventory.component";
 import {LOGComponent} from "../component/log/log.component";
 import {SETTINGComponent} from "../component/setting/setting.component";
@@ -66,7 +66,7 @@ const routes: Routes = [
       },
       {
         path: 'RESTAURANT',
-        component: RESTURANTComponent
+        component: RESTAURANTComponent
       },
       {
         path: 'INVENTORY',

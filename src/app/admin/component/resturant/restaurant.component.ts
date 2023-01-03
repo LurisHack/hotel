@@ -1,29 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminComponentModule} from "../../component/admin-component.module";
-import {IonSplitPane, ModalController} from "@ionic/angular";
-import {
-  RestaurantAddFoodPopupComponentComponent
-} from "../../popupComponent/resturant-add-food-popup-component/restaurant-add-food-popup-component.component";
-import {
-  RestaurantEditFoodPopupComponent
-} from "../../popupComponent/restaurant-edit-food-popup/restaurant-edit-food-popup.component";
-import {Storage} from "@ionic/storage-angular";
-import {RestaurantEnum} from "../../../utility/enum/restaurant-enum";
+import {AdminComponentModule} from "../admin-component.module";
 import {MultiFormComponent} from "../../../utility/component/multi-form/multi-form.component";
-import {MultiListUiComponent} from "../multi-list-ui/multi-list-ui.component";
+import {MultiListUiComponent} from "../../uiComponent/multi-list-ui/multi-list-ui.component";
 import {MultiListModel} from "../../../utility/model/multi-list.model";
-
+import {IonSplitPane} from "@ionic/angular";
 @Component({
   standalone: true,
   imports: [
     AdminComponentModule, MultiFormComponent, MultiListUiComponent
   ],
-   selector: 'app-restaurant-ui',
-   templateUrl: './restaurant-ui.component.html',
-   styleUrls: ['./restaurant-ui.component.scss'],
+  selector: 'app-restaurant',
+  templateUrl: './restaurant.component.html',
+  styleUrls: ['./restaurant.component.scss'],
 
 })
-export class RestaurantUiComponent implements OnInit,  MultiListModel {
+export class RESTAURANTComponent implements OnInit,  MultiListModel {
 
 
   splitPaneState = false;
