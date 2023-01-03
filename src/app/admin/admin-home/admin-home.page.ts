@@ -17,7 +17,6 @@ export class AdminHomePage{
     {title: 'POS',  icon: 'print'},
     {title: 'ROOFTOPBAR', icon: 'business'},
     {title: 'PLAYGROUND', icon: 'golf'},
-    {title: 'RESTAURANT', icon: 'fast-food'},
     {title: 'INVENTORY', icon: 'reader'},
     {title: 'LOG',  icon: 'library'},
     {title: 'SETTING',  icon: 'settings'},

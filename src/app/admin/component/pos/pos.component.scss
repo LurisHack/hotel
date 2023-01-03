@@ -1,0 +1,21 @@
+
+@media screen and (max-width: 767px) {
+  .background-item{
+    background: none;
+  }
+  .color-item {
+    color: #070707;
+  }
+  .header-item{
+    header: TITLE;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .background-item{
+    background: #000000;
+  }
+  .color-item{
+    color: rgba(255, 255, 255, 0.63);
+  }
+}

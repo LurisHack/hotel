@@ -45,7 +45,7 @@ const routes: Routes = [
     component: AdminHomePage,
     children: [
       {
-        path: 'ADMINWELCOMCOMPONENT',
+        path: 'ADMINWELCOMECOMPONENT',
         component: AdminWelcomeComponentComponent
        },
       {
@@ -119,6 +119,10 @@ const routes: Routes = [
           {
            path: 'salaryPackageCreation',
            component: SalaryPackageCreationComponent
+          },
+          {
+            path: 'restaurant',
+            component: RESTURANTComponent
           }
         ],
 
