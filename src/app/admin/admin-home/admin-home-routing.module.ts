@@ -69,10 +69,6 @@ const routes: Routes = [
         component: RESTURANTComponent
       },
       {
-        path: 'STORE',
-        component: StoreUiComponent
-      },
-      {
         path: 'INVENTORY',
         component: INVENTORYComponent
       },
@@ -121,7 +117,7 @@ const routes: Routes = [
             component: PlayGroundCreationComponent
           },
           {
-           path: 'salaryPackage',
+           path: 'salaryPackageCreation',
            component: SalaryPackageCreationComponent
           }
         ],

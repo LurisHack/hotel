@@ -7,6 +7,7 @@ import {StoreAddProductPopupComponentComponent} from "../../popupComponent/store
 } from "../../popupComponent/store-edit-popup-component/store-edit-popup-component.component";
 
 import {Storage} from "@ionic/storage-angular";
+import {StoreEnum} from "../../../utility/enum/store-enum";
 
 type productLitType = {
   Code: string,
@@ -70,13 +71,13 @@ export class StoreUiComponent implements OnInit {
 
         this.storage.create().then((storage: any) => {
 
-            // storage.get(StoreEnum.STORE_STORAGE )
-            //     .then((storageData: productLitType[]) => {
-            //
-            //         console.log(storageData)
-            //         this.productList = storageData
-            //
-            //     })
+            storage.get(StoreEnum.STORE_STORAGE )
+                .then((storageData: productLitType[]) => {
+
+                    console.log(storageData)
+                    this.productList = storageData
+
+                })
         })
 
     }

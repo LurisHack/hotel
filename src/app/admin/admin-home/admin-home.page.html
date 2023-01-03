@@ -3,39 +3,47 @@
 
     <ion-header mode="ios" style="--background: transparent" routerLink="/welcome" fragment="Login">
       <ion-toolbar class="ion-text-center"   style="--background: transparent ; cursor: pointer">
-        <ion-text  color="warning" ><strong>Golden72</strong></ion-text>
+        <ion-text  color="warning"><small>Golden</small><sup>72</sup></ion-text>
        </ion-toolbar>
     </ion-header>
 
     <ion-content   style="--background:  transparent">
-      <ion-list  style="background: transparent">
+      <ion-list  style="background: transparent; border-bottom: 1px solid lightcyan">
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-          <ion-item   style="--background: transparent; --color: white" routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/'+p.title"
-                    lines="none" detail="false"
-                    routerLinkActive="selected">
-            <ion-icon style="color: white"  class="ion-margin-start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-            <ion-label style="padding-left: 5px"><small>{{ p.title }}</small></ion-label>
-          </ion-item>
+<!--          <ion-item   style="&#45;&#45;background: transparent; &#45;&#45;color: white" routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/'+p.title"-->
+<!--                    lines="none" detail="false"-->
+<!--                    routerLinkActive="selected">-->
+            <ion-button size="small" [title]="p.title" fill="clear"  [routerLink]="'/admin-home/'+p.title">
+            <ion-icon  size="small"  slot="icon-only"  style="color: white"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+<!--            <ion-label style="padding-left: 5px"><small>{{ p.title }}</small></ion-label>-->
+            </ion-button>
+<!--          </ion-item>-->
         </ion-menu-toggle>
       </ion-list>
 
       <ion-list style="background: transparent" id="labels-list">
-        <ion-list-header style="color: white">Additional Features</ion-list-header>
+<!--        <ion-list-header style="color: white">Additional Features</ion-list-header>-->
+<!--        <ion-item-divider class="transparent-for-ionic-component-tag"></ion-item-divider>-->
 
         <ion-menu-toggle auto-hide="false" *ngFor="let additionalFeature of additionalFeatures">
-          <ion-item style="--background: transparent" routerDirection="root" class="ion-no-padding ion-no-margin"
-                    [routerLink]="'/admin-home/'+additionalFeature.title" lines="none">
-            <ion-icon style="color: white" class="ion-margin-start" [ios]="additionalFeature.icon + '-outline'"
+<!--          <ion-item style="&#45;&#45;background: transparent" routerDirection="root" class="ion-no-padding ion-no-margin"-->
+<!--                    [routerLink]="'/admin-home/'+additionalFeature.title" lines="none">-->
+
+          <ion-button size="small" [title]="additionalFeature.title" fill="clear"   [routerLink]="'/admin-home/'+additionalFeature.title">
+
+          <ion-icon size="small"  slot="icon-only"  style="color: white"  [ios]="additionalFeature.icon + '-outline'"
                       [md]="additionalFeature.icon + '-sharp'"></ion-icon>
-            <ion-label style="padding-left: 5px; color: white"><small>{{ additionalFeature.title }}</small></ion-label>
-          </ion-item>
+
+          </ion-button>
+<!--            <ion-label style="padding-left: 5px; color: white"><small>{{ additionalFeature.title }}</small></ion-label>-->
+<!--          </ion-item>-->
         </ion-menu-toggle>
 
         <ion-menu-toggle auto-hide="false">
           <ion-item  style="--background:  transparent" class="ion-no-padding ion-no-margin" routerDirection="root" routerLink="" (click)="signOut()"
                     lines="none">
             <ion-icon style="color: white" class="ion-margin-start" [ios]="'log-out-outline'" [md]="'log-out-sharp'"></ion-icon>
-            <ion-label style="padding-left: 5px; color: white">Logout</ion-label>
+<!--            <ion-label style="padding-left: 5px; color: white">Logout</ion-label>-->
           </ion-item>
         </ion-menu-toggle>
 
