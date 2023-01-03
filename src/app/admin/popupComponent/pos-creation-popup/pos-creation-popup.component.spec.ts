@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RESTURANTComponent } from './resturant.component';
+import { PosCreationPopupComponent } from './pos-creation-popup.component';
 
-describe('RESTURANTComponent', () => {
-  let component: RESTURANTComponent;
-  let fixture: ComponentFixture<RESTURANTComponent>;
+describe('PosCreationPopupComponent', () => {
+  let component: PosCreationPopupComponent;
+  let fixture: ComponentFixture<PosCreationPopupComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RESTURANTComponent ],
+      declarations: [ PosCreationPopupComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(RESTURANTComponent);
+    fixture = TestBed.createComponent(PosCreationPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
