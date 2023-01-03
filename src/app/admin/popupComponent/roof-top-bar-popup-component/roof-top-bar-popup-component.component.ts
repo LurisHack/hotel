@@ -31,24 +31,54 @@ export class RoofTopBarPopupComponentComponent implements OnInit, MultiListModel
   // splitPaneState = false;
 
   constructor() {
-    //
-    // ionSplitPane.ionSplitPaneVisible.subscribe(s => {
-    //   console.log(s.detail.visible)
-    //   this.splitPaneState = s.detail.visible
-    // })
 
   }
 
-  searchState = 'Code'
+  // fromData: string[] = []
+  // searchFormData = [{
+  //   name: 'Code',
+  //   sizeXs: '12',
+  // }]
 
-  formData: string[] = []
-  searchFormData = [{
-    name: 'Code',
-    sizeXs: '12',
-  }]
+  addFormData = [
+    {
+      name: 'Code',
+      sizeXs: '4',
+      sizeMd: '4',
+      sizeLg: '12'
+    },
+    {
+      name: 'Name',
+      sizeXs: '8',
+      sizeMd: '8',
+      sizeLg: '12'
+    },
+    {
+      name: 'Count',
+      sizeXs: '4',
+      sizeMd: '4',
+      sizeLg: '12'
 
-  segmentData = 'AllItem'
+    },
 
+    {
+      name: 'Capital',
+      sizeXs: '4',
+      sizeMd: '4',
+      sizeLg: '12'
+
+    },
+    {
+      name: 'Price',
+      sizeXs: '4',
+      sizeMd: '4',
+      sizeLg: '12'
+
+    },
+
+
+
+  ]
 
   dataList: {
     header: {
@@ -87,14 +117,13 @@ export class RoofTopBarPopupComponentComponent implements OnInit, MultiListModel
 
   }
 
-  segmentEventValue($event: any){
-    this.segmentData = $event.detail.value
-  }
+  formOutput($event: any) {
+    console.log($event)
+    this.dataList.data.push($event)
 
-  searchStateChange(){
-    this.searchState = this.searchState === 'Code' ? 'Name' : 'Code'
-  }
+    this.dataList.data = this.dataList.data.map(m => m)
 
+  }
 
 
 }
