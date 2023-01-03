@@ -7,15 +7,48 @@ import {TestingModel} from "../utility/model/testing-model";
 // @ts-ignore
 import {Storage} from "@ionic/storage-angular"
 import {TestingEnum} from "../utility/enum/testing-enum";
+
+
 @Component({
   selector: 'app-testing',
-  templateUrl: './testing.page.html',
+   templateUrl: './testing.page.html',
   styleUrls: ['./testing.page.scss'],
   providers: [Storage]
 })
 export class TestingPage {
 
   productList: TestingModel[] = []
+
+  // 'Code', 'Name', 'Count', 'Price', 'Total', 'Action'
+
+
+  formData =  ['Code', 'Name', 'Count', 'Price']
+
+  dataList = {
+    header:
+      {name: ['Code', 'Name', 'Count', 'Price', 'Total', 'Action'],
+        background: '#869960',
+        color: '#fff',
+        fontFamily: 'Tahoma, sans-serif',
+        textShadow: '1px 1px 0 rgba(0, 0, 0, 0.4)',
+        fontWeight: 'bold',
+        padding: '5px'
+      },
+    data: [{
+      Action: 'Del',
+      Capital: 2000,
+      Code: '001',
+      Count: 45,
+      Name: 'Test name',
+      Price: 3000,
+      Total : 0
+    }]
+
+  }
+
+
+
+
 
 
   loaded = true
@@ -91,5 +124,9 @@ export class TestingPage {
 
   }
 
+  getData($event: any) {
+    console.log('This is testing page ', $event)
+    this.dataList.data.push($event)
+  }
 }
 

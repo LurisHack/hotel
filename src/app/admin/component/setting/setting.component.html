@@ -46,6 +46,18 @@
         <ion-icon style="color: white" class="ion-margin-start" [ios]="'list' + '-outline'" [md]="'list' + '-sharp'"></ion-icon>
       </ion-item>
 
+
+
+      <ion-item routerDirection="root" class="ion-no-padding ion-no-margin transparent-for-ionic-component-tag"
+                [routerLink]="'/admin-home/SETTING/posCreation'"
+                lines="none" detail="false"
+                routerLinkActive="selected">
+        <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'Pos' }}</small></ion-label>
+        <ion-icon style="color: white" class="ion-margin-start" [ios]="'storefront' + '-outline'" [md]="'storefront' + '-sharp'"></ion-icon>
+      </ion-item>
+
+
+
       <ion-item routerDirection="root" class="ion-no-padding ion-no-margin transparent-for-ionic-component-tag"
                 [routerLink]="'/admin-home/SETTING/playground'"
                 lines="none" detail="false"
@@ -63,7 +75,7 @@
       </ion-item>
 
       <ion-item routerDirection="root" class="ion-no-padding ion-no-margin transparent-for-ionic-component-tag"
-                [routerLink]="'/admin-home/SETTING/salaryPackage'"
+                [routerLink]="'/admin-home/SETTING/salaryPackageCreation'"
                 lines="none" detail="false"
                 routerLinkActive="selected">
         <ion-label class="ion-margin-start" style="padding-left: 5px" color="light"><small>{{ 'SalaryPackage' }}</small></ion-label>
@@ -79,7 +91,7 @@
 
   <ion-router-outlet></ion-router-outlet>
 
- </ion-content>
+</ion-content>
 
 
 

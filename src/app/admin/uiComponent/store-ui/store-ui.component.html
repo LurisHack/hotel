@@ -1,114 +1,114 @@
 <ion-header mode="ios" class="ion-no-padding ion-no-margin">
-  <ion-toolbar style="--background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">
-    <ion-grid class="ion-no-padding ion-no-margin">
-      <ion-row>
+<!--  <ion-toolbar style="&#45;&#45;background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">-->
+<!--    <ion-grid class="ion-no-padding ion-no-margin">-->
+<!--      <ion-row>-->
 
-        <ion-col style="padding-top: 30px;" size-xs="12" size-sm="1">
-          <ion-title color="light" style="width: auto;font-size: 20px;" class="ion-no-padding ion-no-margin">
-            store
-          </ion-title>
-        </ion-col>
+<!--        <ion-col style="padding-top: 30px;" size-xs="12" size-sm="1">-->
+<!--          <ion-title color="light" style="width: auto;font-size: 20px;" class="ion-no-padding ion-no-margin">-->
+<!--            store-->
+<!--          </ion-title>-->
+<!--        </ion-col>-->
 
-        <ion-col size-sm="auto" style="padding-top: 5px;" size-xs="auto">
-          <ion-input mode="ios" class="ion-text-center"
-                     style="width: 120px; background: rgba(250,250,250,1);border: solid 1px rgba(218,218,218,1);height: 25px;border-radius: 7px;"
-                     placeholder="Enter Code"></ion-input>
-        </ion-col>
-        <ion-col size-sm="auto" size-xs="auto">
-          <ion-button color="light" mode="ios" style="width: auto;height: 25px;" size="small">
-            OK
-          </ion-button>
-        </ion-col>
+<!--        <ion-col size-sm="auto" style="padding-top: 5px;" size-xs="auto">-->
+<!--          <ion-input mode="ios" class="ion-text-center"-->
+<!--                     style="width: 120px; background: rgba(250,250,250,1);border: solid 1px rgba(218,218,218,1);height: 25px;border-radius: 7px;"-->
+<!--                     placeholder="Enter Code"></ion-input>-->
+<!--        </ion-col>-->
+<!--        <ion-col size-sm="auto" size-xs="auto">-->
+<!--          <ion-button color="light" mode="ios" style="width: auto;height: 25px;" size="small">-->
+<!--            OK-->
+<!--          </ion-button>-->
+<!--        </ion-col>-->
 
-        <ion-col class="ion-text-sm-right" size-xs="12" size-sm="7" size-lg="8.5">
-          <ion-button (click)="storeUi()" color="light" mode="ios" style="width: auto;height: 25px" size="small">
-            Add Product
-          </ion-button>
-        </ion-col>
+<!--        <ion-col class="ion-text-sm-right" size-xs="12" size-sm="7" size-lg="8.5">-->
+<!--          <ion-button (click)="storeUi()" color="light" mode="ios" style="width: auto;height: 25px" size="small">-->
+<!--            Add Product-->
+<!--          </ion-button>-->
+<!--        </ion-col>-->
 
-      </ion-row>
-    </ion-grid>
+<!--      </ion-row>-->
+<!--    </ion-grid>-->
 
-  </ion-toolbar>
+<!--  </ion-toolbar>-->
 </ion-header>
 <ion-content class=" transparent-for-ionic-component-tag">
-  <ion-item-divider class="hide-item-divider"  sticky="true">
-<ion-grid>
-  <ion-row>
+<!--  <ion-item-divider class="hide-item-divider"  sticky="true">-->
+<!--<ion-grid>-->
+<!--  <ion-row>-->
 
 
-    <ion-col class="ion-text-center ion-padding-top" size-xs="12" size-sm="2">
-      <ion-label>Code</ion-label>
-    </ion-col>
-<ion-col>
-  <ion-grid>
-    <ion-row>
-    <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5">
-      <ion-label>Name</ion-label>
-    </ion-col>
+<!--    <ion-col class="ion-text-center ion-padding-top" size-xs="12" size-sm="2">-->
+<!--      <ion-label>Code</ion-label>-->
+<!--    </ion-col>-->
+<!--<ion-col>-->
+<!--  <ion-grid>-->
+<!--    <ion-row>-->
+<!--    <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5">-->
+<!--      <ion-label>Name</ion-label>-->
+<!--    </ion-col>-->
 
-    <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5">
-      <ion-label>Price</ion-label>
-    </ion-col>
+<!--    <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5">-->
+<!--      <ion-label>Price</ion-label>-->
+<!--    </ion-col>-->
 
-    <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5">
-      <ion-label>Count</ion-label>
-    </ion-col>
+<!--    <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5">-->
+<!--      <ion-label>Count</ion-label>-->
+<!--    </ion-col>-->
 
-    <ion-col class="ion-text-center" size-xs="12" size-sm="2.5">
-      <ion-label>Total</ion-label>
-    </ion-col>
-
-
-    <ion-col class="ion-text-center" size-xs="12" size-sm="2">
-      <ion-label>Action</ion-label>
-    </ion-col>
+<!--    <ion-col class="ion-text-center" size-xs="12" size-sm="2.5">-->
+<!--      <ion-label>Total</ion-label>-->
+<!--    </ion-col>-->
 
 
-    </ion-row>
-  </ion-grid>
-</ion-col>
-</ion-row>
-</ion-grid>
+<!--    <ion-col class="ion-text-center" size-xs="12" size-sm="2">-->
+<!--      <ion-label>Action</ion-label>-->
+<!--    </ion-col>-->
+
+
+<!--    </ion-row>-->
+<!--  </ion-grid>-->
+<!--</ion-col>-->
+<!--</ion-row>-->
+<!--</ion-grid>-->
 
 
 
 
-  </ion-item-divider>
+<!--  </ion-item-divider>-->
 
-  <ion-item-divider   *ngFor="let product of productList" class="--inner-padding-bottom">
-    <ion-grid class="ion-no-padding ion-no-margin">
-      <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">
-        <ion-col class="ion-text-center" size="2"  style="color: black"  style="padding-top: 10px" >
-          <ion-label color="dark">{{product.Code}}</ion-label>
-         </ion-col>
-        <ion-col>
-          <ion-grid>
-            <ion-row>
-              <ion-col class="ion-text-center" style="padding-top: 10px"  size-xs="12" size-sm="2" push-sm="10">
-                <ion-icon (click)="storeEdit(product)" color="dark" name="create"></ion-icon>
-              </ion-col>
-              <ion-col class="ion-text-center"  size-xs="12" size-sm="2.5" pull-sm="2" style="padding-top: 10px" >
-                <ion-label class="hide-label">Name</ion-label>
-                <ion-label color="dark">{{product.Name}}</ion-label>
-              </ion-col>
-              <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5"  pull-sm="2" style="padding-top: 10px" >
-                <ion-label class="hide-label">Price</ion-label>
-                <ion-label style="color: red">{{product.Price}}</ion-label>
-              </ion-col>
-              <ion-col class="ion-text-center"  size-xs="12"  size-sm="2.5"  pull-sm="2" style="padding-top: 10px" >
-                <ion-label class="hide-label">Count</ion-label>
-                <ion-label  style="color: red">{{product.Count}}</ion-label>
-              </ion-col>
-              <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5"  pull-sm="2" style="padding-top: 10px" >
-                <ion-label class="hide-label">Total</ion-label>
-                <ion-label  style="color: red">{{product.Total}}</ion-label>
-              </ion-col>
+<!--  <ion-item-divider   *ngFor="let product of productList" class="&#45;&#45;inner-padding-bottom">-->
+<!--    <ion-grid class="ion-no-padding ion-no-margin">-->
+<!--      <ion-row style="align-items: center" class="ion-no-padding ion-no-margin">-->
+<!--        <ion-col class="ion-text-center" size="2"  style="color: black"  style="padding-top: 10px" >-->
+<!--          <ion-label color="dark">{{product.Code}}</ion-label>-->
+<!--         </ion-col>-->
+<!--        <ion-col>-->
+<!--          <ion-grid>-->
+<!--            <ion-row>-->
+<!--              <ion-col class="ion-text-center" style="padding-top: 10px"  size-xs="12" size-sm="2" push-sm="10">-->
+<!--                <ion-icon (click)="storeEdit(product)" color="dark" name="create"></ion-icon>-->
+<!--              </ion-col>-->
+<!--              <ion-col class="ion-text-center"  size-xs="12" size-sm="2.5" pull-sm="2" style="padding-top: 10px" >-->
+<!--                <ion-label class="hide-label">Name</ion-label>-->
+<!--                <ion-label color="dark">{{product.Name}}</ion-label>-->
+<!--              </ion-col>-->
+<!--              <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5"  pull-sm="2" style="padding-top: 10px" >-->
+<!--                <ion-label class="hide-label">Price</ion-label>-->
+<!--                <ion-label style="color: red">{{product.Price}}</ion-label>-->
+<!--              </ion-col>-->
+<!--              <ion-col class="ion-text-center"  size-xs="12"  size-sm="2.5"  pull-sm="2" style="padding-top: 10px" >-->
+<!--                <ion-label class="hide-label">Count</ion-label>-->
+<!--                <ion-label  style="color: red">{{product.Count}}</ion-label>-->
+<!--              </ion-col>-->
+<!--              <ion-col class="ion-text-center" size-xs="12"  size-sm="2.5"  pull-sm="2" style="padding-top: 10px" >-->
+<!--                <ion-label class="hide-label">Total</ion-label>-->
+<!--                <ion-label  style="color: red">{{product.Total}}</ion-label>-->
+<!--              </ion-col>-->
 
-            </ion-row>
-          </ion-grid>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item-divider>
+<!--            </ion-row>-->
+<!--          </ion-grid>-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+<!--    </ion-grid>-->
+<!--  </ion-item-divider>-->
 </ion-content>
