@@ -1,0 +1,45 @@
+<ion-grid *ngIf="listData && getWidth > 767">
+  <ion-row *ngIf="listData.header as header">
+    <ion-col style="background: yellowgreen; padding: 0" *ngFor="let list of header.name">
+        <span style="display:block" [ngStyle]="{background: header.background,
+      color: header.color, fontFamily: header.fontFamily, textShadow: header.textShadow,
+      fontWeight: header.fontWeight, padding: header.padding}">
+        {{list}}
+      </span>
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row *ngFor="let specification of listData.data; index as i"
+           [ngStyle]="{background: i % 2 === 0 ? '#e5e9dc' : '#FFFFFF'}">
+    <ion-col *ngFor="let spec of listData.header.name">
+      {{specification[spec]}}</ion-col>
+  </ion-row>
+
+</ion-grid>
+
+
+<ion-grid *ngIf="listData && getWidth < 768">
+  <ion-row>
+    <ion-col size="12">
+
+      <ion-card *ngFor="let specification of listData.data">
+        <ion-grid>
+          <ion-row>
+
+            <ion-col *ngFor="let spec of listData.header.name" size="3">
+              <ion-note><small>{{spec}}</small></ion-note>
+              <br>
+              <ion-text color="dark">{{specification[spec]}}</ion-text>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
