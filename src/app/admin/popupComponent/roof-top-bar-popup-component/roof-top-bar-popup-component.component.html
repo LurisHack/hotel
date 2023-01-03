@@ -1,34 +1,81 @@
-<h1>{{props}}</h1>
+
+<!--<ion-content>-->
+<!--  <ion-grid>-->
+<!--    <ion-row>-->
+<!--      <ion-col>-->
+<!--            <ion-list inset="true">-->
+<!--              <ion-item-divider *ngFor="let i of [1,2,3,4,5]">-->
+<!--                <ion-grid>-->
+<!--                  <ion-row class="ion-align-items-center">-->
+<!--                    <ion-col size="3">-->
+<!--                      <ion-text>Pokémon Yellow</ion-text>-->
+<!--                    </ion-col>-->
+
+<!--                    <ion-col size="3.25">-->
+<!--                      <ion-label>Price</ion-label>-->
+<!--                    </ion-col>-->
+
+<!--                    <ion-col size="2.5">-->
+<!--                      <strong>Count</strong>-->
+<!--                    </ion-col>-->
+
+<!--                    <ion-col size="3.25">-->
+<!--                      <ion-label>total</ion-label>-->
+<!--                    </ion-col>-->
+
+<!--                  </ion-row>-->
+<!--                </ion-grid>-->
+<!--              </ion-item-divider>-->
+
+<!--            </ion-list>-->
+<!--      </ion-col>-->
+<!--          </ion-row>-->
+<!--        </ion-grid>-->
+<!--</ion-content>-->
+
+<ion-header mode="ios">
+  <ion-toolbar style="--background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">
+    <ion-title class="ion-text-start" color="light">
+      ROOF TOP BAR POPUP
+    </ion-title>
+    <ion-segment value="Add" (ionChange)="segmentEventValue($event)">
+      <ion-segment-button value="AllItem">All Items</ion-segment-button>
+      <ion-segment-button value="Search">Search</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-            <ion-list inset="true">
-              <ion-item-divider *ngFor="let i of [1,2,3,4,5]">
-                <ion-grid>
-                  <ion-row class="ion-align-items-center">
-                    <ion-col size="3">
-                      <ion-text>Pokémon Yellow</ion-text>
-                    </ion-col>
 
-                    <ion-col size="3.25">
-                      <ion-label>Price</ion-label>
-                    </ion-col>
+  <div #divElement>
 
-                    <ion-col size="2.5">
-                      <strong>Count</strong>
-                    </ion-col>
+    <div *ngIf="divElement.clientWidth as getWidth">
 
-                    <ion-col size="3.25">
-                      <ion-label>total</ion-label>
-                    </ion-col>
+      <ion-grid>
 
-                  </ion-row>
-                </ion-grid>
-              </ion-item-divider>
+        <ion-row>
 
-            </ion-list>
-      </ion-col>
-          </ion-row>
-        </ion-grid>
+          <ion-col [sizeXs]="getWidth < 992 ? 12 : 3">
+
+            <ion-button style="color: #869960;--font-family: Tahoma, sans-serif; font-weight: bold;
+                               --text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4)"
+                        *ngIf="segmentData === 'Search'" fill="clear" expand="block"
+                        (click)="searchStateChange()">
+              Search with  {{searchState}}
+            </ion-button>
+
+            <app-multi-form *ngIf="segmentData === 'Search'" [formData]="searchFormData"></app-multi-form>
+
+          </ion-col>
+
+          <ion-col [size]="segmentData === 'AllItem' || getWidth  < 992 ? 12 : 9">
+
+            <app-multi-list-ui [listData]="dataList" [getWidth]="getWidth"></app-multi-list-ui>
+
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>
