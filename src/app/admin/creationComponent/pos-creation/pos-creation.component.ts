@@ -12,8 +12,21 @@ import {AdminComponentModule} from "../../component/admin-component.module";
 })
 export class PosCreationComponent implements OnInit {
 
+  name = false;
+  code = false;
+
   constructor() { }
 
   ngOnInit() {}
+
+  selected($event: any) {
+    if ($event.detail.value == 'name') {
+      this.name = true;
+      this.code = false;
+    }else if ($event.detail.value == 'code') {
+      this.name = false;
+      this.code = true;
+    }
+  }
 
 }

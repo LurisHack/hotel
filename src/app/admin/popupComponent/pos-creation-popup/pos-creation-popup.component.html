@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="dark" class="ion-padding-start" style="font-weight: bold;">
+    ADD FOOD
+    <ion-icon slot="end" size="small" color="light" class="ion-margin" name="close"
+              (click)="ModalCtrl.dismiss()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="false">
+  <ion-grid>
+    <ion-row style="height: 90vh">
+      <ion-col class="height-col-one ion-no-margin ion-no-padding"
+               size-xs="12" offset-sm="2" size-sm="8" offset-md="3" size-md="6" offset-lg="0" size-lg="4">
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row class="ion-no-margin ion-no-padding">
+            <ion-col class="ion-no-margin ion-no-padding">
+              <form [formGroup]="formGroup" (ngSubmit)="addList()">
+                <ion-item-group class="ion-no-margin ion-no-padding">
+                  <ion-item *ngFor="let item of posItem" class="ion-margin" fill="outline">
+                    <ion-label position="" [innerText]="item.name"></ion-label>
+                    <ion-input [formControlName]="item.formControlName"></ion-input>
+                  </ion-item>
+                  <ion-item-divider style="border-bottom: none;">
+                    <ion-button slot="end" [disabled]="formGroup.invalid" color="dark"
+                                class="ion-no-margin ion-margin-end">
+                      <ion-text color="light">ADD List</ion-text>
+                    </ion-button>
+                  </ion-item-divider>
+                </ion-item-group>
+              </form>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
