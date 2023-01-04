@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'admin-home',
-    redirectTo: 'admin-home/ADMINWELCOMCOMPONENT',
+    redirectTo: 'admin-home/ADMINWELCOMECOMPONENT#Golden72',
     pathMatch: 'full'
   },
   {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminComponentModule} from "../admin-component.module";
 import {MultiFormComponent} from "../../../utility/component/multi-form/multi-form.component";
-import {MultiListUiComponent} from "../../uiComponent/multi-list-ui/multi-list-ui.component";
+import {MultiListUiComponent} from "../../../utility/component/multi-list-ui/multi-list-ui.component";
 import {MultiListModel} from "../../../utility/model/multi-list.model";
 import {IonSplitPane} from "@ionic/angular";
 @Component({

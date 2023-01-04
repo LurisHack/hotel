@@ -3,7 +3,7 @@ import {AdminComponentModule} from "../admin-component.module";
 import {MultiListModel} from "../../../utility/model/multi-list.model";
 import {IonSplitPane} from "@ionic/angular";
 import {MultiFormComponent} from "../../../utility/component/multi-form/multi-form.component";
-import {MultiListUiComponent} from "../../uiComponent/multi-list-ui/multi-list-ui.component";
+import {MultiListUiComponent} from "../../../utility/component/multi-list-ui/multi-list-ui.component";
 
 @Component({
   standalone:true,
@@ -28,7 +28,7 @@ export class PosComponent implements OnInit,  MultiListModel {
   }
 
   searchState = 'Code'
-  segmentData = 'AllItem'
+
 
   formData: string[] = []
   searchFormData = [{
@@ -124,9 +124,7 @@ export class PosComponent implements OnInit,  MultiListModel {
 
   }
 
-  segmentEventValue($event: any){
-    this.segmentData = $event.detail.value
-  }
+
 
   // formOutput($event: any) {
   //   console.log($event)

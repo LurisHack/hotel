@@ -10,7 +10,7 @@ import {
 import {Storage} from "@ionic/storage-angular";
 import {RestaurantEnum} from "../../../utility/enum/restaurant-enum";
 import {MultiFormComponent} from "../../../utility/component/multi-form/multi-form.component";
-import {MultiListUiComponent} from "../multi-list-ui/multi-list-ui.component";
+import {MultiListUiComponent} from "../../../utility/component/multi-list-ui/multi-list-ui.component";
 import {MultiListModel} from "../../../utility/model/multi-list.model";
 
 @Component({

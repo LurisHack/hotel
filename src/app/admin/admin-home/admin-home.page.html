@@ -1,49 +1,43 @@
 <ion-split-pane (ionSplitPaneVisible)="ionSplitPaneVisible($event)" when="md" contentId="main">
-  <ion-menu contentId="main" style="--background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat">
+  <ion-menu contentId="main"
+            style="--background: url('./assets/admin/admin_sidebar_background.jpg') 0 0/100% 100% no-repeat">
 
     <ion-header mode="ios" style="--background: transparent" routerLink="/welcome" fragment="Login">
-      <ion-toolbar class="ion-text-center"   style="--background: transparent ; cursor: pointer">
-        <ion-text  color="warning"><small>Golden</small><sup>72</sup></ion-text>
-       </ion-toolbar>
+      <ion-toolbar class="ion-text-center" style="--background: transparent ; cursor: pointer">
+        <ion-text color="warning"><small>Golden</small><sup>72</sup></ion-text>
+      </ion-toolbar>
     </ion-header>
 
-    <ion-content   style="--background:  transparent">
-      <ion-list  style="background: transparent; border-bottom: 1px solid lightcyan">
+    <ion-content style="--background:  transparent">
+      <ion-list style="background: transparent">
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-<!--          <ion-item   style="&#45;&#45;background: transparent; &#45;&#45;color: white" routerDirection="root" class="ion-no-padding ion-no-margin" [routerLink]="'/admin-home/'+p.title"-->
-<!--                    lines="none" detail="false"-->
-<!--                    routerLinkActive="selected">-->
-            <ion-button size="small" [title]="p.title" fill="clear"  [routerLink]="'/admin-home/'+p.title">
-            <ion-icon  size="small"  slot="icon-only"  style="color: white"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-<!--            <ion-label style="padding-left: 5px"><small>{{ p.title }}</small></ion-label>-->
-            </ion-button>
-<!--          </ion-item>-->
+
+          <ion-button size="small" [title]="p.title" fill="clear" [routerLink]="'/admin-home/'+p.title"
+                      [fragment]="p.title">
+            <ion-icon size="small" slot="icon-only" style="color: white" [ios]="p.icon + '-outline'"
+                      [md]="p.icon + '-sharp'"></ion-icon>
+          </ion-button>
         </ion-menu-toggle>
       </ion-list>
 
+
+      <div style="border-bottom: 1px solid lightcyan; margin: 5px;"></div>
       <ion-list style="background: transparent" id="labels-list">
-<!--        <ion-list-header style="color: white">Additional Features</ion-list-header>-->
-<!--        <ion-item-divider class="transparent-for-ionic-component-tag"></ion-item-divider>-->
-
         <ion-menu-toggle auto-hide="false" *ngFor="let additionalFeature of additionalFeatures">
-<!--          <ion-item style="&#45;&#45;background: transparent" routerDirection="root" class="ion-no-padding ion-no-margin"-->
-<!--                    [routerLink]="'/admin-home/'+additionalFeature.title" lines="none">-->
+          <ion-button size="small" [title]="additionalFeature.title" fill="clear"
+                      [routerLink]="'/admin-home/'+additionalFeature.title" [fragment]="additionalFeature.title">
 
-          <ion-button size="small" [title]="additionalFeature.title" fill="clear"   [routerLink]="'/admin-home/'+additionalFeature.title">
-
-          <ion-icon size="small"  slot="icon-only"  style="color: white"  [ios]="additionalFeature.icon + '-outline'"
+            <ion-icon size="small" slot="icon-only" style="color: white" [ios]="additionalFeature.icon + '-outline'"
                       [md]="additionalFeature.icon + '-sharp'"></ion-icon>
-
           </ion-button>
-<!--            <ion-label style="padding-left: 5px; color: white"><small>{{ additionalFeature.title }}</small></ion-label>-->
-<!--          </ion-item>-->
         </ion-menu-toggle>
 
         <ion-menu-toggle auto-hide="false">
-          <ion-item  style="--background:  transparent" class="ion-no-padding ion-no-margin" routerDirection="root" routerLink="" (click)="signOut()"
+          <ion-item style="--background:  transparent" class="ion-no-padding ion-no-margin" routerDirection="root"
+                    routerLink="" (click)="signOut()"
                     lines="none">
-            <ion-icon style="color: white" class="ion-margin-start" [ios]="'log-out-outline'" [md]="'log-out-sharp'"></ion-icon>
-<!--            <ion-label style="padding-left: 5px; color: white">Logout</ion-label>-->
+            <ion-icon style="color: white" class="ion-margin-start" [ios]="'log-out-outline'"
+                      [md]="'log-out-sharp'"></ion-icon>
           </ion-item>
         </ion-menu-toggle>
 
@@ -51,53 +45,25 @@
     </ion-content>
   </ion-menu>
   <div class="ion-page" id="main">
-    <!--    <ion-header mode="ios">-->
-    <!--      <ion-toolbar>-->
-    <!--        <ion-buttons slot="start">-->
-    <!--          <ion-menu-button></ion-menu-button>-->
-    <!--        </ion-buttons>-->
-    <!--        <ion-title>Welcome</ion-title>-->
-    <!--       </ion-toolbar>-->
-    <!--    </ion-header>-->
-
-    <!--    <ion-buttons slot="start">-->
-    <!--      <ion-menu-button></ion-menu-button>-->
-    <!--    </ion-buttons>-->
-
-<!--    <ion-content scroll-y="false" class="ion-no-padding ion-no-margin" style="&#45;&#45;background: rgba(14,12,12,0.77);-->
-<!--    box-sizing: border-box">-->
-
-
-<!--        <ion-content scroll-y="false" class="ion-no-padding ion-no-margin"-->
-<!--                     style="&#45;&#45;background: repeating-conic-gradient(rgba(28,105,171,0.97) 1%, rgba(15,71,122,0.89) 5%)">-->
-
-<!--          <ion-content scroll-y="false" class="ion-no-padding ion-no-margin"-->
-<!--                       style="&#45;&#45;background: linear-gradient(to right, rgba(21,65,96,0.32), rgba(138,43,226,0.27));">-->
-
-
-
-
-
-
-
-
 
     <ion-content scroll-y="false" class="ion-no-padding ion-no-margin" style="--background: #F6F7F9">
 
+      <ion-header mode="ios">
+        <ion-toolbar style="--background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <app-multi-header [getFragment]="fragment"></app-multi-header>
 
- <!--       <img src="/assets/admin/admin_background.jpg"-->
-<!--               style=" object-fit: cover;   height: 100vh; width: 100%;    filter: blur(1px)" alt=""/>-->
+          <ion-text   slot="end" color="light" class="ion-margin-end"><strong>{{fragment}}</strong></ion-text>
 
-<!-- <ion-header>-->
-<!--        <ion-toolbar>-->
-<!--          <ion-text >-->
-<!--            <div class="ion-text-center"><b>Golden72</b></div>-->
-<!--          </ion-text>-->
-<!--        </ion-toolbar>-->
-<!--      </ion-header>-->
 
-      <ion-router-outlet></ion-router-outlet>
+        </ion-toolbar>
+      </ion-header>
 
+      <ion-content>
+        <ion-router-outlet></ion-router-outlet>
+      </ion-content>
 
     </ion-content>
   </div>

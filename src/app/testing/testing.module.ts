@@ -7,7 +7,7 @@ import {IonicModule} from '@ionic/angular';
 import {TestingPageRoutingModule} from './testing-routing.module';
 
 import {TestingPage} from './testing.page';
-import {MultiListUiComponent} from "../admin/uiComponent/multi-list-ui/multi-list-ui.component";
+import {MultiListUiComponent} from "../utility/component/multi-list-ui/multi-list-ui.component";
 import {MultiFormComponent} from "../utility/component/multi-form/multi-form.component";
 
 

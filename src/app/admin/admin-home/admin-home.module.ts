@@ -6,7 +6,7 @@ import { AdminHomePageRoutingModule } from './admin-home-routing.module';
 import { AdminHomePage } from './admin-home.page';
 import {ROOMComponent} from "../component/room/room.component";
 import {INVENTORYComponent} from "../component/inventory/inventory.component";
-
+import {MultiHeaderComponent} from "../../utility/component/multi-header/multi-header.component";
 
 @NgModule({
   imports: [
@@ -16,7 +16,8 @@ import {INVENTORYComponent} from "../component/inventory/inventory.component";
     AdminHomePageRoutingModule,
     ROOMComponent,
     INVENTORYComponent,
-  ],
+    MultiHeaderComponent,
+   ],
   declarations: [AdminHomePage]
 })
 export class AdminHomePageModule {}

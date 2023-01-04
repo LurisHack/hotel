@@ -12,5 +12,5 @@ export const activatedRouteReducer =
       case ActivateRouteAction.ACTIVATED_ROUTE:
         return {activatedRoute: action.payload}
     }
-  }
+}
 

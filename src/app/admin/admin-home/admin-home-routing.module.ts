@@ -37,6 +37,7 @@ import {AdminWelcomeComponentComponent} from "../component/welcome-component/adm
 import {SettingUiComponentComponent} from "../uiComponent/setting-ui-component/setting-ui-component.component";
 import {PosComponent} from "../component/pos/pos.component";
 import {PosCreationComponent} from "../creationComponent/pos-creation/pos-creation.component";
+import {RestaurantCreationComponent} from "../creationComponent/restaurant-creation/restaurant-creation.component";
 
 
 const routes: Routes = [
@@ -121,8 +122,8 @@ const routes: Routes = [
            component: SalaryPackageCreationComponent
           },
           {
-            path: 'restaurant',
-            component: RESTAURANTComponent
+            path: 'restaurantCreation',
+            component: RestaurantCreationComponent
           }
         ],
 

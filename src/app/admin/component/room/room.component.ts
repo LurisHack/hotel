@@ -6,6 +6,8 @@ import {RoomSkeletonComponent} from "../../skeletonComponent/room-skeleton/room-
 import {SiteInformationService} from "../../../utility/service/siteInformation.service";
 import {BuildingFilterPipe} from "../../../utility/pipe/building-filter.pipe";
 import {RoomStateFilterPipe} from "../../../utility/pipe/room-state-filter.pipe";
+import {segmentState} from "../../../utility/store/header/header.reducer";
+import {Store} from "@ngrx/store";
 
 @Component({
   standalone: true,
@@ -25,11 +27,19 @@ export class ROOMComponent{
   forTransferBtn = ['CheckIn']
   forAddBtn = ['NearlyTimeUp', 'CheckIn']
 
-  constructor(public siteInformationService: SiteInformationService) {
+  constructor(public siteInformationService: SiteInformationService,
+              private store: Store<{segmentData: {segmentData: segmentState}}>) {
 
     setTimeout(()=>{
       this.loaded = false
     },5000)
+
+    store.select('segmentData')
+      .subscribe((segmentData: any) => {
+
+
+        this.segment = segmentData.segmentData
+      })
 
   }
 
@@ -39,8 +49,8 @@ export class ROOMComponent{
 
   }
 
-  selectedSegment($event: any) {
-    console.log($event.detail.value)
-    this.segment = $event.detail.value
-  }
+  // selectedSegment($event: any) {
+  //   console.log($event.detail.value)
+  //   this.segment = $event.detail.value
+  // }
 }

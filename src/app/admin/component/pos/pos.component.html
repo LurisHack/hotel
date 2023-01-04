@@ -1,44 +1,34 @@
+<!--<ion-header mode="ios">-->
+<!--  <ion-toolbar style="&#45;&#45;background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">-->
+<!--    <ion-title class="ion-text-start" color="light">-->
+<!--      POS-->
+<!--    </ion-title>-->
 
-<ion-header mode="ios">
-  <ion-toolbar style="--background: linear-gradient(to right, #0C3959, rgba(12,57,89,0.81))">
-    <ion-title class="ion-text-start" color="light">
-      POS
-    </ion-title>
-    <ion-segment value="AllItem" (ionChange)="segmentEventValue($event)">
-      <ion-segment-button value="AllItem">All Items</ion-segment-button>
-<!--      <ion-segment-button value="Add">Add</ion-segment-button>-->
-      <ion-segment-button value="Search">Search</ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
-</ion-header>
+<!--    <ion-button size="small" color="warning" style="font-family: Tahoma, sans-serif;-->
+<!--                               &#45;&#45;text-shadow: 1px 1px 0 rgba(255,255,255)"-->
+<!--                fill="clear" expand="block" (click)="searchStateChange()">-->
+<!--      Search with  {{searchState}}-->
+<!--    </ion-button>-->
+
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
 
 <ion-content>
 
   <div #divElement>
 
-<!--    Get width checking - {{divElement.clientWidth}}-->
-
-    <!--    {{divElement.clientWidth + (splitPaneState === true ? 50 : 0)}}-->
     <div *ngIf="(divElement.clientWidth + (splitPaneState === true ? 50 : 0)) as getWidth">
       <ion-grid>
         <ion-row>
 
           <ion-col [sizeXs]="getWidth < 992 ? 12 : 3">
 
-            <ion-button style="color: #869960;--font-family: Tahoma, sans-serif; font-weight: bold;
-                               --text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4)"
-                        *ngIf="segmentData === 'Search'" fill="clear" expand="block" (click)="searchStateChange()">
-              Search with  {{searchState}}
-            </ion-button>
 
-<!--            <app-multi-form *ngIf="segmentData === 'Add'" [formData]="addFormData"-->
-<!--                            (formOutput)="formOutput($event)"></app-multi-form>-->
-
-            <app-multi-form *ngIf="segmentData === 'Search'" [formData]="searchFormData"></app-multi-form>
+            <app-multi-form  [formData]="searchFormData"></app-multi-form>
 
           </ion-col>
 
-          <ion-col [size]="segmentData === 'AllItem' || getWidth  < 992 ? 12 : 9">
+          <ion-col [size]="getWidth  < 992 ? 12 : 9">
 
             <app-multi-list-ui [listData]="dataList" [getWidth]="getWidth"></app-multi-list-ui>
 

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AdminComponentModule} from "../../component/admin-component.module";
-import {MultiListModel} from "../../../utility/model/multi-list.model";
+import {AdminComponentModule} from "../../../admin/component/admin-component.module";
+import {MultiListModel} from "../../model/multi-list.model";
 
 @Component({
   standalone: true,

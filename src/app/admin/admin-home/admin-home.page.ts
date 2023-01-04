@@ -6,11 +6,13 @@ import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-admin-welcome',
-  templateUrl: './admin-home.page.html',
+   templateUrl: './admin-home.page.html',
   styleUrls: ['./admin-home.page.scss'],
   providers: [RouterService]
 })
 export class AdminHomePage{
+
+
 
   public appPages = [
     {title: 'ROOM', icon: 'bed'},
@@ -34,11 +36,22 @@ export class AdminHomePage{
   private to: any;
   Golden72: any;
 
+  fragment: string | undefined;
+
 
   constructor(private authService: AuthService,
               private routeService: RouterService,
               private toastService: ToastService,
-              public activatedRoute: ActivatedRoute) {}
+              public activatedRoute: ActivatedRoute) {
+
+
+    console.log('admin home entered!')
+    activatedRoute.fragment.subscribe(fragment => {
+      console.log(fragment)
+      this.fragment = fragment ? fragment : undefined
+    })
+
+  }
 
   signOut() {
     this.authService.signOut()
