@@ -24,61 +24,19 @@ export class RoofTopBarPopupComponentComponent implements OnInit, MultiListModel
 
   props: any;
   canDismiss: any;
-  //
-  // export class RoofTopBarPopupComponentComponent implements OnInit, MultiListModel {
-
-
-  // splitPaneState = false;
-
   constructor() {
-
   }
 
   // fromData: string[] = []
-  // searchFormData = [{
-  //   name: 'Code',
-  //   sizeXs: '12',
-  // }]
 
-  addFormData = [
-    {
-      name: 'Code',
-      sizeXs: '4',
-      sizeMd: '4',
-      sizeLg: '12'
-    },
-    {
-      name: 'Name',
-      sizeXs: '8',
-      sizeMd: '8',
-      sizeLg: '12'
-    },
-    {
-      name: 'Count',
-      sizeXs: '4',
-      sizeMd: '4',
-      sizeLg: '12'
-
-    },
-
-    {
-      name: 'Capital',
-      sizeXs: '4',
-      sizeMd: '4',
-      sizeLg: '12'
-
-    },
-    {
-      name: 'Price',
-      sizeXs: '4',
-      sizeMd: '4',
-      sizeLg: '12'
-
-    },
-
-
-
-  ]
+  searchFormData = [{
+    name: 'Code',
+    sizeXs: '12',
+    sizeSm: '6',
+    sizeMd: '4',
+    sizeLg: '4',
+    sizeXl: '12',
+  }]
 
   dataList: {
     header: {
@@ -110,20 +68,7 @@ export class RoofTopBarPopupComponentComponent implements OnInit, MultiListModel
         Price: 3000,
         Total : 0
       }]
-
     }
-
   ngOnInit() {
-
   }
-
-  formOutput($event: any) {
-    console.log($event)
-    this.dataList.data.push($event)
-
-    this.dataList.data = this.dataList.data.map(m => m)
-
-  }
-
-
 }

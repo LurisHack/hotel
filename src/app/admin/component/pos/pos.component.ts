@@ -29,8 +29,8 @@ export class PosComponent implements OnInit,  MultiListModel {
 
   searchState = 'Code'
 
-
   formData: string[] = []
+
   searchFormData = [{
     name: 'Code',
     sizeXs: '12',
