@@ -16,3 +16,6 @@ export class PlayGroundPopup implements OnInit {
   ngOnInit() {}
 
 }
+
+export class PlaygroundPopupComponentComponent {
+}
