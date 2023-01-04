@@ -1,0 +1,3 @@
+<ion-segment (ionChange)="segmentChanges($event)">
+  <ion-segment-button   *ngFor="let segment of segmentData" [value]="segment">{{segment}}</ion-segment-button>
+</ion-segment>
